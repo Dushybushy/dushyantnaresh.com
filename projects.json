@@ -1,0 +1,344 @@
+[
+  {
+    "id": "fountains-abbey-ar",
+    "title": "Fountains Abbey AR Experience",
+    "subtitle": "Virtual augmented reality at a UNESCO World Heritage Site",
+    "category": "Heritage & XR",
+    "year": "2024",
+    "role": "Lead Research Technician & Producer",
+    "client": "",
+    "institution": "",
+    "tags": [
+      "heritage",
+      "immersive"
+    ],
+    "coverImage": "",
+    "coverAlt": "Fountains Abbey AR Experience",
+    "introText": "An innovative virtual AR experience at Fountains Abbey, distilling complex geophysical and archaeological data for visitors through interactive storytelling.",
+    "body": "Developed as part of the Visualising Heritage Knowledge Transfer Partnership with the National Trust, this project transforms dense geophysical survey data into an accessible, immersive experience for general visitors at Fountains Abbey — a UNESCO World Heritage Site.\n\nThe experience overlays interpretive layers onto the physical landscape, guiding visitors through archaeological findings that are otherwise invisible to the naked eye. Interactive storytelling elements allow users to move through time, revealing buried structures and historical contexts.\n\nThe project involved close coordination with National Trust stakeholders, archaeological specialists, and accessibility consultants to ensure the final output met public engagement standards.",
+    "tools": [
+      "Unity",
+      "Insta360 Pro 2",
+      "Agisoft Metashape",
+      "After Effects"
+    ],
+    "methods": [
+      "Photogrammetry",
+      "Geophysical Survey",
+      "Stakeholder Engagement",
+      "Public Evaluation"
+    ],
+    "ctaLabel": "Try it now!",
+    "ctaUrl": "https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm",
+    "media": [],
+    "links": [
+      {
+        "label": "University of Bradford — Visualising Heritage",
+        "url": "https://www.bradford.ac.uk/visualising-heritage/"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "projection-relief-model",
+    "title": "Projection Augmented Relief Model",
+    "subtitle": "Animated heritage storytelling for a tactile communication tool",
+    "category": "Heritage & Projection",
+    "year": "2024",
+    "role": "Lead Research Technician & Producer",
+    "client": "Visualising Heritage / Bradford City Council",
+    "institution": "University of Bradford",
+    "tags": [
+      "heritage",
+      "immersive",
+      "film"
+    ],
+    "coverImage": "",
+    "coverAlt": "Projection Augmented Relief Model",
+    "introText": "Designed the narrative approach and produced animated stories on heritage and placemaking for a Projection Augmented Relief Model communication tool.",
+    "body": "Working at the intersection of heritage communication and emerging display technology, this project involved designing the full narrative framework and producing animated content for a Projection Augmented Relief Model — a tactile, physical terrain model onto which dynamic visuals are projected.\n\nThe content was developed in partnership with Bradford City Council to communicate the city's archaeological and cultural heritage to diverse public audiences. Each animated story was crafted to be accessible without specialist knowledge, using visual metaphor and layered imagery to convey complex historical narratives.\n\nThe production process combined photogrammetry-derived data, archival material, and original animation to create outputs that work both as standalone content and as projected overlays on the physical model.",
+    "tools": [
+      "3D Animation",
+      "After Effects",
+      "Agisoft Metashape",
+      "MadMapper"
+    ],
+    "methods": [
+      "Photogrammetry",
+      "Projection Mapping",
+      "Stakeholder Engagement",
+      "Impact Evaluation"
+    ],
+    "ctaLabel": "View full project",
+    "ctaUrl": "#",
+    "media": [],
+    "links": [],
+    "featured": true
+  },
+  {
+    "id": "landmark-trust-visualisations",
+    "title": "Landmark Trust Heritage Visualisations",
+    "subtitle": "Digital capture and storytelling at a historic site",
+    "category": "Heritage Documentation",
+    "year": "2024",
+    "role": "Lead Research Technician & Producer",
+    "client": "Landmark Trust / Visualising Heritage",
+    "institution": "University of Bradford",
+    "tags": [
+      "heritage",
+      "film",
+      "immersive"
+    ],
+    "coverImage": "",
+    "coverAlt": "Landmark Trust Heritage Visualisations",
+    "introText": "Won a Landmark Trust grant for a residency at a heritage site to create visualisations and digital outputs using cutting-edge capture and storytelling methods.",
+    "body": "Awarded a competitive Landmark Trust grant providing a week-long residency at a historic site, this project focused on applying the full suite of digital heritage capture and storytelling methods to a single, focused location.\n\nCapture methods included photogrammetry for 3D model generation, 360° audio-visual recording, drone survey, and conventional DSLR documentation. The resulting outputs encompassed immersive virtual tours, archival-quality 3D models, and narrative video content.\n\nThe project served as both a standalone heritage record and a testing ground for emerging capture workflows developed through the Visualising Heritage KTP.",
+    "tools": [
+      "Insta360 Pro 2",
+      "DJI Mini",
+      "Agisoft Metashape",
+      "Premiere Pro"
+    ],
+    "methods": [
+      "360° Capture",
+      "Photogrammetry",
+      "Drone Survey",
+      "DSLR Documentation"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [
+      {
+        "label": "The Landmark Trust",
+        "url": "https://www.landmarktrust.org.uk/"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "360-immersive-cylinders",
+    "title": "360° Immersive Projection Content",
+    "subtitle": "Spherical video for projection cylinders, VR, and virtual tours",
+    "category": "Immersive Media",
+    "year": "2024",
+    "role": "Lead Research Technician & Producer",
+    "client": "Visualising Heritage / University of Bradford",
+    "institution": "University of Bradford",
+    "tags": [
+      "heritage",
+      "film",
+      "immersive"
+    ],
+    "coverImage": "",
+    "coverAlt": "360° Immersive Projection Content",
+    "introText": "Filmed and produced 360° content for use in immersive projection cylinders, virtual tours, VR headsets, and social media.",
+    "body": "A sustained programme of 360° content production developed for deployment across multiple immersive display formats — including Igloo-style projection cylinders, standalone VR headsets, web-based virtual tours, and social media platforms.\n\nShooting with the Insta360 Pro 2 and Titan cameras, the content was captured across multiple heritage sites in Yorkshire. Post-production involved spatial audio mixing, equirectangular editing in Premiere Pro, and format-specific export for each deployment context.\n\nThe project required close collaboration with the Igloo Core Engine team to ensure content met the technical specifications for cylindrical projection.",
+    "tools": [
+      "Insta360 Pro 2",
+      "Insta360 Titan",
+      "Premiere Pro",
+      "Igloo Core Engine"
+    ],
+    "methods": [
+      "360° Capture",
+      "Spatial Audio",
+      "VR Post-production",
+      "Multi-format Export"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [
+      {
+        "type": "image",
+        "url": "https://www.igloovision.com/images/ImageLib/Standard_9m_cylinder_iso_shadow-HE_projection.jpg",
+        "caption": "Igloo projection cylinder",
+        "layout": "cs-img-wide"
+      }
+    ],
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "lost-treasures-egypt",
+    "title": "Lost Treasures of Egypt",
+    "subtitle": "Production research for National Geographic archaeology docuseries",
+    "category": "Documentary Film",
+    "year": "2023–2024",
+    "role": "Researcher",
+    "client": "Windfall Films / National Geographic",
+    "institution": "",
+    "tags": [
+      "film",
+      "heritage"
+    ],
+    "coverImage": "",
+    "coverAlt": "Lost Treasures of Egypt",
+    "introText": "Conducted production research and fact-checking for two National Geographic archaeology docuseries, coordinating with archaeological teams across the Middle East.",
+    "body": "Joined Windfall Films as a researcher on two concurrent National Geographic docuseries — Lost Treasures of Egypt and Lost Treasures of the Bible — both commissioned for international TV broadcast.\n\nResponsibilities spanned the full research pipeline: pre-production background research, coordination with active archaeological excavations across Egypt, Jordan, and the wider Middle East, and rigorous episode-by-episode fact-checking in compliance with National Geographic's editorial standards.\n\nEach hour-long episode required building relationships with specialist academics and field archaeologists, often working across significant time zone differences to gather accurate, verifiable information under tight production deadlines.",
+    "tools": [
+      "Premiere Pro",
+      "Avid Media Composer"
+    ],
+    "methods": [
+      "Production Research",
+      "Fact-checking",
+      "Archival Research",
+      "Expert Interviews"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [
+      {
+        "label": "National Geographic — Lost Treasures of Egypt",
+        "url": "https://www.nationalgeographic.com/tv/shows/lost-treasures-of-egypt"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "cnn-go-there",
+    "title": "CNN Go There",
+    "subtitle": "Mini-documentaries on climate, indigenous rights, and global affairs",
+    "category": "Documentary Film",
+    "year": "2019–2022",
+    "role": "Video Producer",
+    "client": "CNN Digital",
+    "institution": "",
+    "tags": [
+      "film"
+    ],
+    "coverImage": "",
+    "coverAlt": "CNN Go There",
+    "introText": "Produced 50+ mini-documentaries with a combined 60+ million views for CNN Digital's daily show covering climate change, indigenous rights, and global affairs.",
+    "body": "Spent three years at CNN Digital producing content for 'Go There', a daily short-form documentary series covering underreported stories at the intersection of climate change, indigenous rights, and global affairs.\n\nOver 50 films produced across that period, collectively reaching more than 60 million views. Each film was developed from initial concept through to publication — encompassing story development, field production, scripting, fact-checking, and final edit oversight.\n\nAlongside the flagship show, developed original episodes for new CNN streaming series hosted by Dr Sanjay Gupta, Anderson Cooper, Audie Cornish, and Scott Galloway, working across both CNN Digital and CNN International distribution.",
+    "tools": [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop"
+    ],
+    "methods": [
+      "Field Production",
+      "Scripting",
+      "Fact-checking",
+      "Story Development"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [
+      {
+        "label": "CNN Digital",
+        "url": "https://edition.cnn.com"
+      }
+    ],
+    "featured": true
+  },
+  {
+    "id": "york-archaeology-dept",
+    "title": "University of York Archaeology Department",
+    "subtitle": "Video production and social media content",
+    "category": "Documentary Film",
+    "year": "2022–2023",
+    "role": "Publicity Assistant",
+    "client": "University of York",
+    "institution": "University of York",
+    "tags": [
+      "film",
+      "heritage"
+    ],
+    "coverImage": "",
+    "coverAlt": "University of York Archaeology Department",
+    "introText": "Filmed and edited dozens of videos for the Archaeology Department's social media channels, including faculty interviews and mini-documentaries.",
+    "body": "Embedded within the Archaeology Department at the University of York, producing a sustained programme of video content for the department's social media channels.\n\nThe brief was to build an evergreen content library that communicated the breadth of the department's research and teaching to prospective students, current students, alumni, and the wider public. Content ranged from faculty research profiles and student experience pieces to object-based mini-documentaries produced in collaboration with local museums.\n\nThe role required working sensitively with academic staff across many sub-disciplines, translating highly specialist research into engaging short-form content without sacrificing accuracy.",
+    "tools": [
+      "Sony E-mount",
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop"
+    ],
+    "methods": [
+      "Videography",
+      "Interviewing",
+      "Social Media",
+      "Content Strategy"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [
+      {
+        "label": "University of York — Archaeology",
+        "url": "https://www.york.ac.uk/archaeology/"
+      }
+    ],
+    "featured": false
+  },
+  {
+    "id": "beme-news",
+    "title": "BEME News",
+    "subtitle": "Weekly desk explainer series on CNN's YouTube channel",
+    "category": "Digital Journalism",
+    "year": "2017–2019",
+    "role": "Researcher",
+    "client": "BEME News / CNN",
+    "institution": "",
+    "tags": [
+      "film"
+    ],
+    "coverImage": "",
+    "coverAlt": "BEME News",
+    "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
+    "body": "One of the founding researchers on BEME News, CNN's YouTube-native explainer channel, producing over 100 episodes of the weekly desk show.\n\nDeveloped and maintained the research and fact-checking infrastructure that underpinned every episode — compiling detailed background documents, verifying claims against primary sources, and ensuring all content met broadcast standards before scripts were finalised.\n\nThe channel operated with the pace and editorial standards of a news organisation but the creative sensibility of digital-native video, requiring a constant balance between rigour and accessibility.",
+    "tools": [
+      "Premiere Pro",
+      "After Effects"
+    ],
+    "methods": [
+      "Production Research",
+      "Fact-checking",
+      "Script Development"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [],
+    "featured": false
+  },
+  {
+    "id": "vr-dissertation",
+    "title": "VR & 360° Film in Archaeology Communication",
+    "subtitle": "MSc practice-based research dissertation — Ranked 1st",
+    "category": "Research & XR",
+    "year": "2023",
+    "role": "Researcher & Producer",
+    "client": "University of York — MSc Digital Archaeology",
+    "institution": "University of York",
+    "tags": [
+      "immersive",
+      "heritage"
+    ],
+    "coverImage": "",
+    "coverAlt": "VR and 360 Film in Archaeology Communication",
+    "introText": "Practice-based MSc dissertation exploring the efficacy of VR, 360° film, and participant agency in communicating archaeology. Ranked 1st in the programme.",
+    "body": "A practice-based research project examining whether interactive multimedia experiences — specifically combining virtual reality, 360° film, and participant agency — can communicate archaeological information more effectively than traditional methods.\n\nThe research involved designing and producing an original interactive experience, conducting structured user evaluations with members of the public, and analysing the results against existing literature on heritage interpretation and immersive media.\n\nThe dissertation was awarded the highest mark in the MSc Digital Archaeology cohort at the University of York. Its findings have directly informed the subsequent work undertaken at Visualising Heritage, University of Bradford.",
+    "tools": [
+      "Unity",
+      "Insta360 Pro 2",
+      "Premiere Pro",
+      "RealityScan"
+    ],
+    "methods": [
+      "VR Production",
+      "360° Film",
+      "User Evaluation",
+      "Academic Research"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [],
+    "featured": false
+  }
+]

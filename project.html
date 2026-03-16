@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project — Dushyant Naresh</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+/* ═══════════════════════════════════════════════════════════
+   TOKENS — shared with homepage
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream:      #F4EFE4;
+  --cream-mid:  #EDE6D6;
+  --cream-dark: #DDD4BF;
+  --ink:        #1A1814;
+  --ink-mid:    #3D3930;
+  --ink-soft:   #6B6559;
+  --ink-faint:  #9A9188;
+  --stone:      #B8AC98;
+  --rule:       rgba(26,24,20,0.12);
+  --earth:      #85211C;
+  --footer-bg:  #3D2E1E;
+  --card-overhang: 200px;
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'Syne', sans-serif;
+  --font-m: 'Roboto Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body { background: #F0EBE3; color: var(--ink); font-family: var(--font-b); font-size: 17px; line-height: 1.7; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+
+/* ── NAV ───────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--cream); border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 64px;
+}
+.nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
+.nav-logo em { font-style: italic; color: var(--earth); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--earth); }
+.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
+.nav-cta:hover { background: var(--ink); color: var(--cream); }
+
+/* ── PAGE SHELL ─────────────────────────────── */
+.page { padding-top: 64px; }
+
+/* ── FOLDER TAB / BACK LINK ─────────────────── */
+.cs-folder-tab {
+  position: relative; z-index: 5;
+  display: flex; align-items: stretch; height: 36px;
+  background: var(--cream);
+}
+.cs-folder-tab::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0; height: 1px;
+  background: var(--rule);
+}
+.back-link {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-b); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: #85211C; background: #d2ba98;
+  padding: 0 36px 0 20px;
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 100%, 0 100%);
+  min-width: 220px; transition: color 0.2s, background 0.2s;
+}
+.back-link:hover { color: var(--earth); background: #E2D4BC; }
+.back-link svg { transition: transform 0.2s; flex-shrink: 0; }
+.back-link:hover svg { transform: translateX(-3px); }
+
+/* ── HEADER ─────────────────────────────────── */
+.cs-above {
+  position: relative;
+}
+.cs-header-band {
+  position: absolute; top: 36px; left: 0; right: 0; bottom: 0;
+  z-index: 1;
+  background: #d2ba98;
+
+  background-image: none;
+}
+.cs-header-band::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      108deg,
+      transparent,
+      transparent 5px,
+      rgba(100,70,40,0.032) 5px,
+      rgba(100,70,40,0.032) 6px
+    ),
+    repeating-linear-gradient(
+      18deg,
+      transparent,
+      transparent 6px,
+      rgba(100,70,40,0.023) 6px,
+      rgba(100,70,40,0.023) 7px
+    );
+}
+.cs-header-text {
+  position: relative; z-index: 3;
+  padding: 52px 52px 44px 52px;
+  max-width: 46%;
+  display: flex; flex-direction: column; justify-content: flex-start;
+}
+.cs-eyebrow {
+  font-family: var(--font-b); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.24em; text-transform: uppercase; color: #85211C;
+  display: flex; align-items: center; gap: 12px; margin-bottom: 18px; opacity: 0.7;
+}
+.cs-eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: #85211C; flex-shrink: 0; }
+.cs-title {
+  font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
+  font-weight: 500; font-style: italic; line-height: 1.0; color: #85211C;
+  margin-bottom: 22px; letter-spacing: -0.01em; hyphens: none;
+}
+.cs-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.cs-tag {
+  font-family: var(--font-b); font-size: 9.5px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #85211C; border: 1px solid rgba(133,33,28,0.3); padding: 5px 13px;
+}
+.cs-subtitle {
+  font-family: var(--font-d); font-size: 20px; font-style: normal;
+  line-height: 1.75; color: #85211C; opacity: 0.85; hyphens: none;
+}
+.cs-header-cta { margin-top: 28px; }
+.cs-header-cta a {
+  font-family: var(--font-b); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase; color: #85211C;
+  background: transparent; border: 1.5px solid rgba(133,33,28,0.45);
+  padding: 13px 24px; display: inline-flex; align-items: center; gap: 10px;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.cs-header-cta a:hover { background: #85211C; color: #d2ba98; border-color: #85211C; }
+
+/* ── POSTCARD ────────────────────────────────── */
+.cs-postcard-wrap {
+  position: absolute; right: 52px; top: 28px;
+  width: 50%; bottom: calc(-1 * var(--card-overhang)); z-index: 10;
+}
+.cs-postcard {
+  width: 100%; height: 100%; background: #ffffff;
+  padding: 8px 8px 36px 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14), 0 16px 52px rgba(0,0,0,0.18), 0 32px 80px rgba(0,0,0,0.10);
+  display: flex; flex-direction: column; position: relative; cursor: pointer;
+}
+.cs-postcard.is-video { cursor: default; }
+.cs-postcard-media { flex: 1; min-height: 0; position: relative; background: var(--ink); }
+img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cs-postcard-media video { width: 100%; height: 100%; display: block; }
+.cs-postcard-media iframe { width: 100%; height: 100%; display: block; border: none; }
+.cs-postcard-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 14px;
+  background: rgba(26,24,20,0.5); color: rgba(212,196,174,0.4);
+}
+.cs-postcard-placeholder span { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+
+/* ── BODY ─────────────────────────────────────── */
+.cs-body {
+  background: #F0EBE3;
+  display: grid;
+  grid-template-columns: calc(50% - 104px) 1fr;
+  border-bottom: 1px solid var(--rule);
+}
+.cs-body-left {
+  padding: 28px 64px 80px 52px;
+}
+.cs-body-right {
+  padding: 248px 52px 80px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px 40px;
+  align-content: start;
+}
+.cs-section-label {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-faint); margin-bottom: 32px;
+  display: flex; align-items: center; gap: 14px;
+}
+.cs-section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+.cs-body-text { font-family: var(--font-b); font-size: 17px; line-height: 1.85; color: #4A3E32; }
+.cs-body-text p + p { margin-top: 24px; }
+.cs-body-text a { color: var(--earth); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.cs-body-text a:hover { color: #6e1a16; }
+.cs-body-text iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; margin: 28px 0; }
+.cs-body-text figure { margin: 28px 0; }
+.cs-body-text figure img { width: 100%; display: block; }
+.cs-body-text figure figcaption { font-family: var(--font-m); font-size: 11px; color: var(--ink-faint); margin-top: 8px; letter-spacing: 0.06em; }
+.cs-tools-group { display: flex; flex-direction: column; }
+.cs-tools-label { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+.cs-tools-list { list-style: none; }
+.cs-tools-list li { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A3E32; padding: 12px 0; border-bottom: 1px solid rgba(26,24,20,0.14); }
+.cs-tools-list li:last-child { border-bottom: none; }
+.cs-meta-row {
+  display: flex; flex-wrap: nowrap; gap: 0;
+  margin-top: 52px; padding-top: 32px;
+  border-top: 1px solid var(--rule); overflow: hidden;
+}
+.cs-meta-item { display: flex; flex-direction: column; gap: 5px; padding-right: 28px; flex-shrink: 0; }
+.cs-meta-label { font-family: var(--font-m); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); }
+.cs-meta-value { font-family: var(--font-b); font-size: 15px; color: var(--ink); }
+
+/* ── GALLERY ──────────────────────────────────── */
+.cs-gallery { background: #d2ba98; padding: 72px 52px 96px; }
+.cs-gallery-header { margin-bottom: 40px; }
+.cs-gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
+/* Old layout classes kept for backwards compatibility */
+.cs-img-full  { grid-column: span 12; }
+.cs-img-wide  { grid-column: span 8;  }
+.cs-img-med   { grid-column: span 4;  }
+.cs-img-half  { grid-column: span 6;  }
+.cs-img-third { grid-column: span 4;  }
+/* New semantic layout classes — image determines aspect ratio */
+.cs-img-landscape       { grid-column: span 8;  }
+.cs-img-portrait        { grid-column: span 4;  }
+.cs-img-square          { grid-column: span 5;  }
+.cs-img-equirectangular { grid-column: span 12; height: 420px; }
+/* Images fill their container naturally */
+.cs-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.cs-img-landscape img, .cs-img-portrait img, .cs-img-square img { height: auto; min-height: 200px; }
+.cs-img { position: relative; background: #DDD4BF; cursor: pointer; overflow: hidden; }
+.cs-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.cs-img:hover img { transform: scale(1.03); }
+.cs-img-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--ink-faint); }
+.cs-img-placeholder span { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
+.cs-img-360 { position: relative; cursor: default; }
+.cs-img-360 .pnlm-container { width: 100%; height: 100%; }
+.cs-img-360-badge {
+  position: absolute; top: 10px; right: 10px; z-index: 10;
+  background: rgba(26,20,14,0.72); color: rgba(244,239,228,0.88);
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 5px 10px; pointer-events: none;
+  border: 1px solid rgba(244,239,228,0.2);
+}
+.cs-img-film { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-end; padding: 32px 14px 10px; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%); pointer-events: none; opacity: 0; transition: opacity 0.3s; }
+.cs-img:hover .cs-img-film { opacity: 1; }
+.cs-img-film-title, .cs-img-film-data { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A84A; text-shadow: 0 1px 4px rgba(0,0,0,0.7); line-height: 1; }
+
+/* ── FOOTER ───────────────────────────────────── */
+.site-footer {
+  background: var(--cream); padding: 0 52px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--rule);
+}
+.footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: var(--ink); }
+.footer-logo em { font-style: italic; color: var(--earth); }
+.footer-nav { display: flex; gap: 36px; list-style: none; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.footer-nav a:hover { color: var(--earth); }
+.footer-right { font-family: var(--font-b); font-size: 11px; color: var(--ink-soft); }
+.footer-right a { color: var(--ink-soft); transition: color 0.2s; }
+.footer-right a:hover { color: var(--earth); }
+
+/* ── LIGHTBOX ─────────────────────────────────── */
+#csLightbox { display: none; position: fixed; inset: 0; background: rgba(26,24,20,0.96); z-index: 9999; cursor: pointer; }
+#csLightbox.open { display: grid; place-items: center; }
+.lbx-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; cursor: default; width: 92vw; max-height: 92vh; }
+#lbxImg { max-width: 100%; max-height: 82vh; object-fit: contain; display: block; box-shadow: 0 8px 48px rgba(0,0,0,0.6); }
+.lbx-caption { display: flex; justify-content: space-between; width: 100%; }
+.lbx-caption-title, .lbx-caption-data { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A84A; opacity: 0.8; }
+.lbx-close { position: fixed; top: 28px; right: 36px; background: none; border: 1px solid rgba(244,239,228,0.25); color: rgba(244,239,228,0.6); font-size: 16px; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; z-index: 10000; }
+.lbx-close:hover { border-color: rgba(244,239,228,0.7); color: var(--cream); }
+.lbx-nav-hint { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,228,0.2); }
+
+/* ── ERROR / LOADING ──────────────────────────── */
+.page-loading, .page-error { padding: 120px 52px; text-align: center; }
+.page-loading p, .page-error p { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.page-error h2 { font-family: var(--font-d); font-size: 32px; font-weight: 300; color: var(--ink); margin-bottom: 12px; }
+
+
+/* ── HAMBURGER & MOBILE NAV ─────────────────────────────────── */
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 8px; background: none; border: none; margin-left: auto;
+}
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 1px; transition: all 0.2s; }
+.nav-mobile {
+  display: none; position: fixed; top: 56px; left: 0; right: 0;
+  background: var(--cream); border-bottom: 1px solid var(--rule);
+  padding: 20px 24px 24px; z-index: 199; flex-direction: column;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color 0.2s; }
+.nav-mobile a:last-child { border-bottom: none; }
+.nav-mobile a:hover { color: var(--earth); }
+
+/* ── TABLET LANDSCAPE (≤1100px) ─────────────────────────────── */
+@media (max-width: 1100px) {
+  nav { padding: 0 32px; }
+  .cs-header-text { padding: 44px 32px 36px; max-width: 48%; }
+  .cs-postcard-wrap { right: 32px; }
+  .cs-body-left { padding: 28px 40px 72px 32px; }
+  .cs-body-right { padding: 200px 32px 72px 40px; }
+  .cs-gallery { padding: 56px 32px 80px; }
+  .site-footer { padding: 0 32px; }
+}
+
+/* ── TABLET PORTRAIT (≤768px) ───────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Nav */
+  nav { padding: 0 24px; height: 56px; overflow: visible; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .page { padding-top: 56px; }
+
+  /* ── HEADER ── */
+  .cs-above { display: block; padding-bottom: 36px; background: #d2ba98; }
+
+  /* Band stays absolute — fills cs-above. Add enough bottom so it
+     covers the postcard area too */
+  .cs-header-band {
+    position: absolute;
+    top: 36px; left: 0; right: 0; bottom: 0;
+  }
+
+  .cs-header-text {
+    position: relative; z-index: 3;
+    max-width: 100%; padding: 32px 24px 24px;
+  }
+  .cs-title { font-size: clamp(32px, 8vw, 52px); margin-bottom: 16px; }
+  .cs-subtitle { font-size: 18px; }
+  .cs-eyebrow { margin-bottom: 14px; }
+
+  /* Postcard — pull out of absolute, place below text within the band */
+  .cs-postcard-wrap {
+    position: relative;
+    right: auto; top: auto; bottom: auto;
+    width: calc(100% - 48px);
+    margin: 0 24px;   /* no bottom margin — padding-bottom on cs-above handles spacing */
+    height: auto;
+  }
+  .cs-postcard {
+    width: 100%; height: auto;
+    aspect-ratio: 16/9;
+    padding: 6px 6px 28px 6px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+
+  /* ── BODY ── */
+  .cs-body { display: flex; flex-direction: column; }
+  .cs-body-left { padding: 32px 24px 40px; }
+  .cs-body-right { padding: 32px 24px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .cs-meta-row { flex-wrap: wrap; margin-top: 32px; }
+  .cs-meta-item { padding-bottom: 8px; }
+
+    /* ── GALLERY ── */
+  .cs-gallery { padding: 40px 24px 60px; }
+  .cs-gallery-grid { grid-template-columns: 1fr; gap: 3px; }
+  .cs-img-full, .cs-img-wide, .cs-img-half, .cs-img-third {
+    grid-column: span 1; aspect-ratio: 16/9;
+  }
+  .cs-img-med { grid-column: span 1; aspect-ratio: 4/3; }
+  .cs-img-film { opacity: 1; }
+
+  /* ── FOOTER ── */
+  .site-footer { height: auto; padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-right { text-align: left; }
+}
+
+/* ── MOBILE (≤480px) ────────────────────────────────────────── */
+@media (max-width: 480px) {
+  nav { padding: 0 20px; height: 52px; }
+  .page { padding-top: 52px; }
+  .cs-header-text { padding: 24px 20px 20px; }
+  .cs-title { font-size: clamp(28px, 9vw, 44px); }
+  .cs-subtitle { font-size: 17px; }
+  .cs-postcard-wrap { width: calc(100% - 40px); margin: 0 20px; }
+  .cs-body-left { padding: 28px 20px 32px; }
+  .cs-body-right { padding: 28px 20px 32px; gap: 24px 16px; }
+  .cs-tools-list li { font-size: 11px; padding: 10px 0; }
+  .cs-gallery { padding: 32px 20px 48px; }
+  .site-footer { padding: 20px; }
+  .footer-nav { gap: 18px; flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="photography.html">Photography</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <a href="/cdn-cgi/l/email-protection#d2bcb3a0b7a1bafcb6a7a1ba92b5bfb3bbbefcb1bdbf" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleMobileNav()">Home</a>
+  <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
+  <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
+  <a href="about.html" onclick="toggleMobileNav()">About</a>
+  <a href="/cdn-cgi/l/email-protection#5b353a293e2833753f2e28331b3c363a323775383436" onclick="toggleMobileNav()">Get in touch</a>
+</div>
+
+<div class="page" id="pageRoot">
+  <div class="page-loading"><p>Loading project…</p></div>
+</div>
+
+<div id="csLightbox" onclick="closeLightbox()">
+  <button class="lbx-close" onclick="closeLightbox()">&#x2715;</button>
+  <div class="lbx-inner">
+    <img id="lbxImg" src="" alt=""/>
+    <div class="lbx-caption">
+      <span id="lbxTitle" class="lbx-caption-title"></span>
+      <span id="lbxMeta"  class="lbx-caption-data"></span>
+    </div>
+    <div class="lbx-nav-hint">← → to navigate &nbsp;·&nbsp; Esc to close</div>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// ── Lightbox ─────────────────────────────────────────────────
+var galleryItems = [];
+var galleryIndex = 0;
+
+function openLightbox(el) {
+  galleryIndex = galleryItems.indexOf(el);
+  showLightboxItem(el);
+}
+function showLightboxItem(el) {
+  var lb = document.getElementById('csLightbox');
+  var lbImg = document.getElementById('lbxImg');
+  var srcEl = el.querySelector('img');
+  if (srcEl && srcEl.src && !srcEl.src.endsWith('/')) {
+    lbImg.src = srcEl.src; lbImg.style.display = 'block';
+  } else { lbImg.style.display = 'none'; }
+  document.getElementById('lbxTitle').textContent = el.dataset.title || '';
+  document.getElementById('lbxMeta').textContent  = el.dataset.meta  || '';
+  lb.classList.add('open'); document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('csLightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function openHeroMedia(el) {
+  if (el.classList.contains('is-video')) return;
+  var img = el.querySelector('.cs-media-img');
+  if (!img || !img.src || img.src.endsWith('/')) return;
+  var lb = document.getElementById('csLightbox');
+  document.getElementById('lbxImg').src = img.src;
+  document.getElementById('lbxImg').style.display = 'block';
+  document.getElementById('lbxTitle').textContent = el.dataset.title || '';
+  document.getElementById('lbxMeta').textContent  = '';
+  lb.classList.add('open'); document.body.style.overflow = 'hidden';
+}
+document.addEventListener('keydown', function(e) {
+  var lb = document.getElementById('csLightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowRight') { galleryIndex = (galleryIndex + 1) % galleryItems.length; showLightboxItem(galleryItems[galleryIndex]); }
+  if (e.key === 'ArrowLeft')  { galleryIndex = (galleryIndex - 1 + galleryItems.length) % galleryItems.length; showLightboxItem(galleryItems[galleryIndex]); }
+});
+
+// ── Project renderer ─────────────────────────────────────────
+function esc(str) {
+  return String(str || '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function renderBodyText(text) {
+  if (!text) return '';
+  // Check if text contains HTML tags — if so render as innerHTML directly
+  if (/<[a-z][\s\S]*>/i.test(text)) {
+    // Split on double newlines but preserve HTML blocks
+    return text.split(/\n\n+/).filter(Boolean).map(p => {
+      // If paragraph starts with a block tag, don't wrap in <p>
+      if (/^\s*<(iframe|div|figure|blockquote|ul|ol|h[1-6])/i.test(p)) return p;
+      return `<p>${p.replace(/\n/g,'<br>')}</p>`;
+    }).join('');
+  }
+  return text.split('\n\n').filter(Boolean)
+    .map(p => `<p>${esc(p).replace(/\n/g,'<br>')}</p>`).join('');
+}
+
+function renderToolsList(items, label) {
+  if (!items || !items.length) return '';
+  const lis = items.map(t => `<li>${esc(t)}</li>`).join('');
+  return `<div class="cs-tools-group">
+    <div class="cs-tools-label">${esc(label)}</div>
+    <ul class="cs-tools-list">${lis}</ul>
+  </div>`;
+}
+
+function renderGallery(media) {
+  if (!media || !media.length) return '';
+  // Sort by order field if present
+  var sorted = media.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); });
+  const cells = sorted.map((m, i) => {
+    const layoutClass = m.layout || 'cs-img-half';
+    if (m.type === 'video') {
+      return `<div class="${layoutClass} cs-img">
+        <iframe src="${esc(m.url)}" allowfullscreen></iframe>
+      </div>`;
+    }
+    if (m.type === '360') {
+      const pid = 'pnlm-' + i;
+      return `<div class="${layoutClass} cs-img cs-img-360" data-pnlm-src="${esc(m.url)}" id="${pid}">
+        <div class="cs-img-360-badge">360°</div>
+        <div class="cs-img-film">
+          <span class="cs-img-film-title">${esc(m.caption || '')}</span>
+        </div>
+      </div>`;
+    }
+    return `<div class="${layoutClass} cs-img"
+      data-title="${esc(m.caption || '')}" data-meta=""
+      onclick="openLightbox(this)">
+      <img src="${esc(m.url)}" alt="${esc(m.caption || '')}"
+           onerror="this.style.display='none'" loading="lazy"/>
+      <div class="cs-img-placeholder">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1"/></svg>
+        <span>Image</span>
+      </div>
+      <div class="cs-img-film">
+        <span class="cs-img-film-title">${esc(m.caption || '')}</span>
+        <span class="cs-img-film-data"></span>
+      </div>
+    </div>`;
+  }).join('');
+  return `<div class="cs-gallery">
+    <div class="cs-gallery-header">
+      <div class="cs-section-label" style="width:100%;margin-bottom:0">Project media</div>
+    </div>
+    <div class="cs-gallery-grid">${cells}</div>
+  </div>`;
+}
+
+async function loadProject() {
+  const root = document.getElementById('pageRoot');
+  const id = new URLSearchParams(window.location.search).get('id');
+
+  if (!id) {
+    root.innerHTML = '<div class="page-error"><h2>No project specified</h2><p>Return to <a href="projects.html" style="color:var(--earth)">all projects</a>.</p></div>';
+    return;
+  }
+
+  let project;
+  try {
+    const res = await fetch('projects.json');
+    if (!res.ok) throw new Error();
+    const all = await res.json();
+    project = all.find(p => p.id === id);
+  } catch(e) {
+    root.innerHTML = '<div class="page-error"><h2>Could not load project</h2><p>Please try again later.</p></div>';
+    return;
+  }
+
+  if (!project) {
+    root.innerHTML = `<div class="page-error"><h2>Project not found</h2><p>No project matching "${esc(id)}".</p></div>`;
+    return;
+  }
+
+  document.title = `${project.title} — Dushyant Naresh`;
+
+  // Cover media for postcard
+  const hasCover    = !!project.coverImage;
+  const isVideoHero = project.coverImage && (project.coverImage.includes('youtube') || project.coverImage.includes('vimeo') || project.coverImage.includes('embed'));
+  const postcardClass = isVideoHero ? 'cs-postcard is-video' : 'cs-postcard';
+
+  let mediaInner = '';
+  if (hasCover && isVideoHero) {
+    mediaInner = `<iframe src="${esc(project.coverImage)}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+  } else if (hasCover) {
+    mediaInner = `<img class="cs-media-img" src="${esc(project.coverImage)}" alt="${esc(project.coverAlt || project.title)}">`;
+  } else {
+    mediaInner = `<div class="cs-postcard-placeholder">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+        <rect x="4" y="10" width="40" height="28" rx="2" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.2"/>
+        <circle cx="24" cy="24" r="3" fill="currentColor" opacity="0.4"/>
+      </svg>
+      <span>Image coming soon</span>
+    </div>`;
+  }
+
+  const ctaHTML = (project.ctaLabel && project.ctaUrl)
+    ? `<div class="cs-header-cta"><a href="${esc(project.ctaUrl)}" target="_blank" rel="noopener">${esc(project.ctaLabel)} →</a></div>`
+    : '';
+
+  const tagsHTML = (project.tags || []).map(t => `<span class="cs-tag">${esc(t)}</span>`).join('');
+
+  const toolsHTML  = renderToolsList(project.tools,   'Tools');
+  const methodsHTML = renderToolsList(project.methods, 'Methods');
+
+  const metaItems = [
+    project.year        && `<div class="cs-meta-item"><div class="cs-meta-label">Year</div><div class="cs-meta-value">${esc(project.year)}</div></div>`,
+    project.role        && `<div class="cs-meta-item"><div class="cs-meta-label">Role</div><div class="cs-meta-value">${esc(project.role)}</div></div>`,
+    project.client      && `<div class="cs-meta-item"><div class="cs-meta-label">Client</div><div class="cs-meta-value">${esc(project.client)}</div></div>`,
+    project.institution && `<div class="cs-meta-item"><div class="cs-meta-label">Institution</div><div class="cs-meta-value">${esc(project.institution)}</div></div>`,
+  ].filter(Boolean).join('');
+
+  const galleryHTML = renderGallery(project.media);
+
+  root.innerHTML = `
+    <div class="cs-above">
+
+      <div class="cs-folder-tab">
+        <a href="projects.html" class="back-link">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
+            <path d="M15 5H1M6 1.5L1.5 5 6 8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Back to projects
+        </a>
+      </div>
+
+      <div class="cs-header-band"></div>
+
+      <div class="cs-header-text">
+        <h1 class="cs-title">${esc(project.title)}</h1>
+        <div class="cs-tags">${tagsHTML}</div>
+        <p class="cs-subtitle">${esc(project.subtitle)}</p>
+        ${ctaHTML}
+      </div>
+
+      <div class="cs-postcard-wrap">
+        <div class="${postcardClass}" data-title="${esc(project.title)}"
+             onclick="openHeroMedia(this)">
+          <div class="cs-postcard-media">${mediaInner}</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cs-body">
+      <div class="cs-body-left">
+        <div class="cs-section-label">Project overview</div>
+        <div class="cs-body-text">
+          ${renderBodyText(project.introText)}
+          ${renderBodyText(project.body)}
+        </div>
+        ${metaItems ? `<div class="cs-meta-row">${metaItems}</div>` : ''}
+      </div>
+      <div class="cs-body-right">
+        ${toolsHTML}
+        ${methodsHTML}
+      </div>
+    </div>
+        ${galleryHTML}
+
+    <footer class="site-footer">
+      <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
+      <ul class="footer-nav">
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="footer-right"><a href="mailto:naresh.dush@gmail.com">naresh.dush@gmail.com</a></div>
+    </footer>`;
+
+  // Registe
+  // Register gallery items for lightbox
+  galleryItems = Array.from(document.querySelectorAll('.cs-img[data-title]'));
+
+  // Initialise Pannellum 360 viewers
+  document.querySelectorAll('.cs-img-360[data-pnlm-src]').forEach(function(el) {
+    var src = el.getAttribute('data-pnlm-src');
+    if (!src || typeof pannellum === 'undefined') return;
+    pannellum.viewer(el.id, {
+      type: 'equirectangular',
+      panorama: src,
+      autoLoad: true,
+      showFullscreenCtrl: true,
+      showZoomCtrl: false,
+      mouseZoom: false,
+      compass: false,
+      hfov: 100,
+    });
+  });
+}
+
+loadProject();
+
+// ── MOBILE NAV ────────────────────────────────────────────────
+function toggleMobileNav() {
+  document.getElementById('navMobile').classList.toggle('open');
+}
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('navMobile');
+  var btn = document.getElementById('navHamburger');
+  if (nav && nav.classList.contains('open') && !nav.contains(e.target) && btn && !btn.contains(e.target)) {
+    nav.classList.remove('open');
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects Admin — Dushyant Naresh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:    #F4EFE4;
+  --tan:      #E2D4BC;
+  --sandy:    #d2ba98;
+  --ink:      #1A1814;
+  --ink-soft: #6B6559;
+  --ink-faint:#9A9188;
+  --rule:     rgba(26,24,20,0.12);
+  --earth:    #85211C;
+  --earth-dim:rgba(133,33,28,0.08);
+  --green:    #2A6040;
+  --green-dim:rgba(42,96,64,0.1);
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'Syne', sans-serif;
+  --font-m: 'Roboto Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--ink); font-family: var(--font-b); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+
+/* ── TOPBAR ──────────────────────────────────────────────────── */
+.topbar {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--ink); color: var(--cream);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 56px;
+  border-bottom: 1px solid rgba(244,239,228,0.1);
+}
+.topbar-logo { font-family: var(--font-d); font-size: 17px; }
+.topbar-logo em { font-style: italic; color: var(--sandy); }
+.topbar-title { font-family: var(--font-m); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,228,0.45); }
+.topbar-actions { display: flex; gap: 12px; align-items: center; }
+
+/* ── BUTTONS ─────────────────────────────────────────────────── */
+.btn {
+  font-family: var(--font-b); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 10px 22px; cursor: pointer; border: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+.btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.btn-primary { background: var(--earth); color: var(--cream); }
+.btn-primary:hover:not(:disabled) { background: #6e1a16; }
+.btn-ghost { background: transparent; color: rgba(244,239,228,0.7); border: 1px solid rgba(244,239,228,0.2); }
+.btn-ghost:hover:not(:disabled) { background: rgba(244,239,228,0.08); color: var(--cream); }
+.btn-light { background: var(--tan); color: var(--ink); border: 1px solid var(--rule); }
+.btn-light:hover:not(:disabled) { background: var(--sandy); }
+.btn-danger { background: transparent; color: var(--earth); border: 1px solid rgba(133,33,28,0.3); }
+.btn-danger:hover:not(:disabled) { background: var(--earth); color: var(--cream); }
+.btn-sm { padding: 8px 16px; font-size: 13px; }
+.btn-icon { padding: 7px 10px; }
+
+/* ── LAYOUT ──────────────────────────────────────────────────── */
+.workspace {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 56px);
+}
+
+/* ── SIDEBAR ─────────────────────────────────────────────────── */
+.sidebar {
+  background: var(--tan);
+  border-right: 1px solid var(--rule);
+  display: flex; flex-direction: column;
+}
+.sidebar-header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sidebar-label {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.project-list { flex: 1; overflow-y: auto; padding: 8px 0; }
+.project-item {
+  display: flex; align-items: center; gap: 0;
+  cursor: pointer; transition: background 0.15s;
+  border-left: 3px solid transparent;
+  position: relative;
+}
+.project-item:hover { background: var(--sandy); }
+.project-item.active { background: var(--cream); border-left-color: var(--earth); }
+.project-item-drag {
+  padding: 12px 8px;
+  cursor: grab; color: var(--ink-faint); font-size: 14px;
+  flex-shrink: 0; line-height: 1;
+}
+.project-item-drag:active { cursor: grabbing; }
+.project-item-info { flex: 1; padding: 12px 12px 12px 4px; min-width: 0; }
+.project-item-title {
+  font-family: var(--font-b); font-size: 14px; font-weight: 600;
+  color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.project-item-meta {
+  font-family: var(--font-m); font-size: 13px; color: var(--ink-faint);
+  margin-top: 2px; letter-spacing: 0.04em;
+}
+.project-item-del {
+  padding: 12px 12px 12px 4px; color: var(--ink-faint);
+  opacity: 0; transition: opacity 0.15s; background: none; border: none; cursor: pointer;
+  font-size: 14px; flex-shrink: 0;
+}
+.project-item:hover .project-item-del { opacity: 1; }
+.project-item-del:hover { color: var(--earth); }
+
+/* Drag state */
+.project-item.dragging { opacity: 0.4; }
+.project-item.drag-over { border-top: 2px solid var(--earth); }
+
+/* ── EDITOR PANEL ────────────────────────────────────────────── */
+.editor {
+  display: flex; flex-direction: column;
+  background: var(--cream);
+  overflow-y: auto;
+}
+.editor-empty {
+  flex: 1; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 16px;
+  color: var(--ink-faint);
+}
+.editor-empty-icon { font-size: 40px; opacity: 0.3; }
+.editor-empty p { font-family: var(--font-m); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; }
+
+.editor-header {
+  padding: 28px 40px 24px;
+  border-bottom: 1px solid var(--rule);
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;
+  position: sticky; top: 0; background: var(--cream); z-index: 10;
+}
+.editor-header-left { min-width: 0; }
+.editor-project-title {
+  font-family: var(--font-d); font-size: 30px; font-weight: 300;
+  color: var(--ink); line-height: 1.1;
+}
+.editor-project-id {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.08em;
+  color: var(--ink-faint); margin-top: 4px;
+}
+.editor-header-actions { display: flex; gap: 10px; flex-shrink: 0; padding-top: 4px; }
+
+.editor-body { padding: 36px 40px 80px; display: flex; flex-direction: column; gap: 48px; }
+
+/* ── SECTIONS ────────────────────────────────────────────────── */
+.form-section {}
+.form-section-title {
+  font-family: var(--font-m); font-size: 12px; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.form-section-title::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+.form-grid { display: grid; gap: 18px; }
+.form-grid-2 { grid-template-columns: 1fr 1fr; }
+.form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+/* ── FIELDS ──────────────────────────────────────────────────── */
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-label {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-soft);
+}
+.field-hint {
+  font-family: var(--font-b); font-size: 13px; color: var(--ink-faint);
+  margin-top: -2px;
+}
+input[type="text"], input[type="url"], textarea, select {
+  font-family: var(--font-b); font-size: 15px; color: var(--ink);
+  background: var(--tan); border: 1px solid var(--rule);
+  padding: 12px 16px; outline: none; width: 100%;
+  transition: border-color 0.15s, background 0.15s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+input[type="text"]:focus, input[type="url"]:focus, textarea:focus, select:focus {
+  border-color: rgba(133,33,28,0.5);
+  background: var(--cream);
+}
+textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+textarea.tall { min-height: 160px; }
+
+/* Toggle */
+.toggle-row { display: flex; align-items: center; justify-content: space-between; padding: 12px 14px; background: var(--tan); border: 1px solid var(--rule); }
+.toggle-label { font-family: var(--font-b); font-size: 15px; color: var(--ink); }
+.toggle { position: relative; width: 40px; height: 22px; flex-shrink: 0; }
+.toggle input { opacity: 0; width: 0; height: 0; }
+.toggle-track {
+  position: absolute; inset: 0; background: var(--sandy); cursor: pointer;
+  transition: background 0.2s; border-radius: 11px;
+}
+.toggle-track::after {
+  content: ''; position: absolute; left: 3px; top: 3px;
+  width: 16px; height: 16px; background: white; border-radius: 50%;
+  transition: transform 0.2s;
+}
+.toggle input:checked + .toggle-track { background: var(--earth); }
+.toggle input:checked + .toggle-track::after { transform: translateX(18px); }
+
+/* Tag chips */
+.tags-input { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 8px 10px; background: var(--tan); border: 1px solid var(--rule); min-height: 44px; cursor: text; }
+.tags-input:focus-within { border-color: rgba(133,33,28,0.5); background: var(--cream); }
+.tag-chip {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-b); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--sandy); color: var(--ink);
+  padding: 4px 10px; border-radius: 0;
+}
+.tag-chip-del { background: none; border: none; cursor: pointer; color: var(--ink-soft); font-size: 12px; padding: 0; line-height: 1; }
+.tag-chip-del:hover { color: var(--earth); }
+.tag-input-field { border: none; background: transparent; outline: none; font-family: var(--font-b); font-size: 15px; color: var(--ink); min-width: 80px; flex: 1; padding: 2px 4px; }
+
+/* List editor (tools/methods/links) */
+.list-editor { display: flex; flex-direction: column; gap: 4px; }
+.list-item { display: flex; align-items: center; gap: 6px; }
+.list-item input { flex: 1; }
+.list-item-del { background: none; border: 1px solid var(--rule); padding: 10px 12px; cursor: pointer; color: var(--ink-faint); font-size: 14px; transition: color 0.15s, border-color 0.15s; flex-shrink: 0; }
+.list-item-del:hover { color: var(--earth); border-color: rgba(133,33,28,0.3); }
+.list-add { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--earth); background: none; border: 1px dashed rgba(133,33,28,0.3); padding: 9px 16px; cursor: pointer; transition: background 0.15s; width: 100%; }
+.list-add:hover { background: var(--earth-dim); }
+
+/* Gallery items */
+.gallery-item {
+  border: 1px solid var(--rule); background: var(--tan);
+  padding: 16px; display: flex; flex-direction: column; gap: 12px;
+  position: relative;
+}
+.gallery-item-header { display: flex; align-items: center; justify-content: space-between; }
+.gallery-item-num { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.gallery-item-del { background: none; border: none; cursor: pointer; color: var(--ink-faint); font-size: 16px; padding: 0; transition: color 0.15s; }
+.gallery-item-del:hover { color: var(--earth); }
+.gallery-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+/* ── STATUS TOAST ────────────────────────────────────────────── */
+.toast {
+  position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
+  background: var(--ink); color: var(--cream);
+  font-family: var(--font-m); font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 12px 24px; z-index: 999;
+  transition: transform 0.3s ease;
+  display: flex; align-items: center; gap: 10px;
+  white-space: nowrap;
+}
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.success { background: var(--green); }
+.toast.error { background: var(--earth); }
+
+/* ── SAVE PANEL ──────────────────────────────────────────────── */
+.save-panel {
+  position: fixed; bottom: 0; right: 0;
+  width: calc(100% - 280px);
+  background: var(--cream); border-top: 1px solid var(--rule);
+  padding: 16px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  z-index: 50;
+}
+.save-panel-hint { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+
+/* ── LOAD SCREEN ─────────────────────────────────────────────── */
+.load-overlay {
+  position: fixed; inset: 0; background: var(--cream);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+  z-index: 500;
+}
+.load-overlay.hidden { display: none; }
+.load-title { font-family: var(--font-d); font-size: 28px; font-weight: 300; color: var(--ink); }
+.load-sub { font-family: var(--font-m); font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
+.load-error { font-family: var(--font-b); font-size: 13px; color: var(--earth); max-width: 400px; text-align: center; line-height: 1.6; }
+
+/* Snippet generator */
+.snippet-bar {
+  display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px;
+}
+.snippet-btn {
+  font-family: var(--font-b); font-size: 12px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  background: var(--tan); color: var(--ink-soft);
+  border: 1px solid var(--rule); padding: 8px 14px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  display: inline-flex; align-items: center; gap: 7px;
+}
+.snippet-btn:hover { background: var(--sandy); color: var(--ink); }
+.snippet-modal {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  background: rgba(26,24,20,0.5); align-items: center; justify-content: center;
+}
+.snippet-modal.open { display: flex; }
+.snippet-dialog {
+  background: var(--cream); padding: 28px 32px 32px; width: 480px; max-width: 95vw;
+  display: flex; flex-direction: column; gap: 16px;
+}
+.snippet-dialog-title {
+  font-family: var(--font-d); font-size: 22px; font-weight: 300; color: var(--ink);
+}
+.snippet-dialog-hint {
+  font-family: var(--font-b); font-size: 13px; color: var(--ink-faint); margin-top: -8px;
+}
+.snippet-dialog .field { display: flex; flex-direction: column; gap: 6px; }
+.snippet-dialog .field-label { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+.snippet-dialog input[type="text"], .snippet-dialog input[type="url"] {
+  font-family: var(--font-b); font-size: 15px; color: var(--ink);
+  background: var(--tan); border: 1px solid var(--rule);
+  padding: 10px 14px; outline: none; width: 100%; border-radius: 0;
+}
+.snippet-dialog input:focus { border-color: rgba(133,33,28,0.5); background: var(--cream); }
+.snippet-dialog-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 4px; }
+.snippet-output {
+  font-family: var(--font-m); font-size: 12px; color: var(--ink-soft);
+  background: var(--tan); border: 1px solid var(--rule);
+  padding: 10px 14px; word-break: break-all; line-height: 1.6;
+  display: none;
+}
+.snippet-output.visible { display: block; }
+.snippet-copy-hint {
+  font-family: var(--font-b); font-size: 12px; color: var(--earth);
+  display: none;
+}
+.snippet-copy-hint.visible { display: block; }
+
+</style>
+</head>
+<body>
+
+<!-- Load overlay -->
+<div class="load-overlay" id="loadOverlay">
+  <div class="load-title">Dushyant <em style="font-style:italic;color:var(--sandy)">Naresh</em></div>
+  <div class="load-sub">Projects Admin</div>
+  <div class="load-error" id="loadError" style="display:none"></div>
+  <button class="btn btn-light" id="loadBtn" onclick="loadFromFile()" style="margin-top:8px">
+    Load projects.json
+  </button>
+  <input type="file" id="fileInput" accept=".json" style="display:none" onchange="onFileChosen(event)">
+</div>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div style="display:flex;align-items:center;gap:24px">
+    <div class="topbar-logo">Dushyant <em>Naresh</em></div>
+    <div class="topbar-title">Projects Admin</div>
+  </div>
+  <div class="topbar-actions">
+    <button class="btn btn-ghost btn-sm" onclick="loadFromFile()">↑ Load new file</button>
+    <button class="btn btn-primary btn-sm" id="saveBtn" onclick="saveToFile()" disabled>↓ Save projects.json</button>
+  </div>
+</div>
+
+<!-- Workspace -->
+<div class="workspace">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-label" id="projectCount">0 projects</div>
+      <button class="btn btn-light btn-sm" onclick="newProject()">+ New</button>
+    </div>
+    <div class="project-list" id="projectList"></div>
+  </div>
+
+  <!-- Editor -->
+  <div class="editor" id="editor">
+    <div class="editor-empty" id="editorEmpty">
+      <div class="editor-empty-icon">⬡</div>
+      <p>Select a project to edit</p>
+    </div>
+    <div id="editorForm" style="display:none; flex-direction:column;">
+      <!-- Editor header -->
+      <div class="editor-header">
+        <div class="editor-header-left">
+          <div class="editor-project-title" id="formHeading">—</div>
+          <div class="editor-project-id" id="formId">id: —</div>
+        </div>
+        <div class="editor-header-actions">
+          <button class="btn btn-danger btn-sm" onclick="deleteProject()">Delete project</button>
+        </div>
+      </div>
+
+      <!-- Form body -->
+      <div class="editor-body">
+
+        <!-- ── IDENTITY ── -->
+        <div class="form-section">
+          <div class="form-section-title">Identity</div>
+          <div class="form-grid">
+            <div class="field">
+              <label class="field-label">Title</label>
+              <input type="text" id="f-title" oninput="onTitleInput()" placeholder="Project title">
+            </div>
+            <div class="field">
+              <label class="field-label">Subtitle <span style="opacity:0.5;font-size:0.9em">— italic tagline</span></label>
+              <input type="text" id="f-subtitle" placeholder="One sentence summary">
+            </div>
+            <div class="field">
+              <label class="field-label">Tags</label>
+              <div class="field-hint">Press Enter or comma to add</div>
+              <div class="tags-input" id="tags-input" onclick="focusTagInput()">
+                <input class="tag-input-field" id="tag-field" placeholder="e.g. Heritage" onkeydown="onTagKey(event)">
+              </div>
+            </div>
+            <div class="field">
+              <label class="field-label">Slug (ID) <span style="opacity:0.5;font-size:0.9em">— used in URLs: project.html?id=<strong id="slugPreview">…</strong></span></label>
+              <div class="field-hint">Only change this if you want to break existing links intentionally</div>
+              <input type="text" id="f-id" placeholder="e.g. fountains-abbey-ar">
+            </div>
+            <div class="field">
+              <label class="field-label">Featured</label>
+              <div class="toggle-row">
+                <span class="toggle-label">Show on homepage</span>
+                <label class="toggle">
+                  <input type="checkbox" id="f-featured">
+                  <span class="toggle-track"></span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── HERO MEDIA ── -->
+        <div class="form-section">
+          <div class="form-section-title">Hero Media</div>
+          <div class="form-grid">
+            <div class="field">
+              <label class="field-label">Cover image or embed URL</label>
+              <div class="field-hint">Image path, or YouTube/Vimeo embed URL</div>
+              <input type="url" id="f-coverImage" placeholder="images/hero.jpg  or  https://youtube.com/embed/…">
+            </div>
+            <div class="field">
+              <label class="field-label">Alt text <span style="opacity:0.5;font-size:0.9em">— optional</span></label>
+              <input type="text" id="f-coverAlt" placeholder="Descriptive alt text">
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CTA ── -->
+        <div class="form-section">
+          <div class="form-section-title">CTA Button <span style="opacity:0.5;font-size:0.85em;letter-spacing:0;text-transform:none;font-family:var(--font-b)">— optional, both fields required to show</span></div>
+          <div class="form-grid form-grid-2">
+            <div class="field">
+              <label class="field-label">Button label</label>
+              <input type="text" id="f-ctaLabel" placeholder="e.g. View full project">
+            </div>
+            <div class="field">
+              <label class="field-label">Button URL</label>
+              <input type="url" id="f-ctaUrl" placeholder="https://…">
+            </div>
+          </div>
+        </div>
+
+        <!-- ── BODY TEXT ── -->
+        <div class="form-section">
+          <div class="form-section-title">Body Text</div>
+          <div class="form-grid">
+            <div class="field">
+              <label class="field-label">Body text</label>
+              <div class="field-hint">Separate paragraphs with a blank line. Shown full-width below tools.</div>
+              <textarea class="tall" id="f-body" placeholder="Main project description…&#10;&#10;Second paragraph…"></textarea>
+              <div class="snippet-bar">
+                <button class="snippet-btn" onclick="openSnippet('link')" type="button">
+                  ↗ Link
+                </button>
+                <button class="snippet-btn" onclick="openSnippet('youtube')" type="button">
+                  ▶ YouTube embed
+                </button>
+                <button class="snippet-btn" onclick="openSnippet('vimeo')" type="button">
+                  ▶ Vimeo embed
+                </button>
+                <button class="snippet-btn" onclick="openSnippet('image')" type="button">
+                  ◻ Image embed
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── TOOLS & METHODS ── -->
+        <div class="form-section">
+          <div class="form-section-title">Tools &amp; Methods</div>
+          <div class="form-grid form-grid-2">
+            <div class="field">
+              <label class="field-label">Tools</label>
+              <div class="list-editor" id="tools-list"></div>
+              <button class="list-add" onclick="addListItem('tools-list', 'tool')">+ Add tool</button>
+            </div>
+            <div class="field">
+              <label class="field-label">Methods</label>
+              <div class="list-editor" id="methods-list"></div>
+              <button class="list-add" onclick="addListItem('methods-list', 'method')">+ Add method</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── PROJECT METADATA ── -->
+        <div class="form-section">
+          <div class="form-section-title">Project Metadata <span style="opacity:0.5;font-size:0.85em;letter-spacing:0;text-transform:none;font-family:var(--font-b)">— all optional</span></div>
+          <div class="form-grid form-grid-2">
+            <div class="field">
+              <label class="field-label">Year</label>
+              <input type="text" id="f-year" placeholder="2024">
+            </div>
+            <div class="field">
+              <label class="field-label">Role</label>
+              <input type="text" id="f-role" placeholder="e.g. Lead Producer">
+            </div>
+            <div class="field">
+              <label class="field-label">Client</label>
+              <input type="text" id="f-client" placeholder="e.g. National Trust">
+            </div>
+            <div class="field">
+              <label class="field-label">Institution</label>
+              <input type="text" id="f-institution" placeholder="e.g. University of Bradford">
+            </div>
+          </div>
+        </div>
+
+        <!-- ── GALLERY ── -->
+        <div class="form-section">
+          <div class="form-section-title">Gallery</div>
+          <div id="gallery-list" style="display:flex;flex-direction:column;gap:10px;"></div>
+          <button class="list-add" onclick="addGalleryItem()" style="margin-top:10px">+ Add media item</button>
+        </div>
+
+      </div><!-- /editor-body -->
+    </div><!-- /editorForm -->
+  </div><!-- /editor -->
+</div><!-- /workspace -->
+
+<!-- Save panel (only visible when a project is open) -->
+<div class="save-panel" id="savePanel" style="display:none">
+  <div class="save-panel-hint" id="savePanelHint">Unsaved changes</div>
+  <div style="display:flex;gap:10px">
+    <button class="btn btn-light btn-sm" onclick="revertProject()">Revert</button>
+    <button class="btn btn-primary btn-sm" onclick="applyAndSave()">Apply &amp; save ↓</button>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ── One-time event delegation for dirty state ───────────────
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('editorForm').addEventListener('input', function(e) {
+    if (e.target.closest('#editorForm')) markDirty();
+  });
+  // Use 'change' only for checkboxes and selects, via delegation
+  // Exclude gallery-item selects — they use inline onchange to avoid double-fire
+  document.getElementById('editorForm').addEventListener('change', function(e) {
+    if (e.target.closest('.gallery-item')) return;
+    if (e.target.tagName === 'SELECT' || e.target.type === 'checkbox') markDirty();
+  });
+});
+
+// ── State ────────────────────────────────────────────────────
+var projects = [];
+var activeIndex = -1;
+var dirty = false;
+
+// ── Load ─────────────────────────────────────────────────────
+function loadFromFile() {
+  document.getElementById('fileInput').click();
+}
+
+function onFileChosen(e) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      projects = JSON.parse(ev.target.result);
+      document.getElementById('loadOverlay').classList.add('hidden');
+      document.getElementById('saveBtn').disabled = false;
+      renderSidebar();
+      showToast('Loaded ' + projects.length + ' projects', 'success');
+    } catch(err) {
+      showError('Invalid JSON file. Please check the file and try again.');
+    }
+  };
+  reader.readAsText(file);
+  // Reset so same file can be reloaded
+  e.target.value = '';
+}
+
+function showError(msg) {
+  var el = document.getElementById('loadError');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+// ── Save ─────────────────────────────────────────────────────
+function saveToFile() {
+  if (dirty && activeIndex >= 0) applyChanges();
+  var json = JSON.stringify(projects, null, 2);
+  var blob = new Blob([json], { type: 'application/json' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'projects.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('projects.json downloaded', 'success');
+  setDirty(false);
+}
+
+function applyAndSave() {
+  applyChanges();
+  saveToFile();
+}
+
+// ── Dirty state ───────────────────────────────────────────────
+function setDirty(val) {
+  dirty = val;
+  var panel = document.getElementById('savePanel');
+  panel.style.display = (val && activeIndex >= 0) ? 'flex' : 'none';
+}
+
+function markDirty() { setDirty(true); }
+
+// ── Sidebar ───────────────────────────────────────────────────
+function renderSidebar() {
+  var list = document.getElementById('projectList');
+  list.innerHTML = '';
+  projects.forEach(function(p, i) {
+    var item = document.createElement('div');
+    item.className = 'project-item' + (i === activeIndex ? ' active' : '');
+    item.draggable = true;
+    item.dataset.index = i;
+    item.innerHTML =
+      '<div class="project-item-drag" title="Drag to reorder">⠿</div>'
+      +'<div class="project-item-info">'
+      +'<div class="project-item-title">'+(p.title||'Untitled project')+'</div>'
+      +'<div class="project-item-meta">'+(p.year||'—')+' · '+(p.id||'no-id')+'</div>'
+      +'</div>'
+      +'<button class="project-item-del" onclick="deleteProjectAt(event,'+i+')" title="Delete">✕</button>';
+    item.addEventListener('click', function(e) {
+      if (e.target.classList.contains('project-item-del') || e.target.closest('.project-item-del')) return;
+      selectProject(i);
+    });
+    // Drag events
+    item.addEventListener('dragstart', onDragStart);
+    item.addEventListener('dragover',  onDragOver);
+    item.addEventListener('drop',      onDrop);
+    item.addEventListener('dragend',   onDragEnd);
+    list.appendChild(item);
+  });
+  document.getElementById('projectCount').textContent = projects.length + ' project' + (projects.length !== 1 ? 's' : '');
+}
+
+// ── Drag & drop reorder ───────────────────────────────────────
+var dragSrcIndex = -1;
+function onDragStart(e) {
+  dragSrcIndex = parseInt(e.currentTarget.dataset.index);
+  e.currentTarget.classList.add('dragging');
+  e.dataTransfer.effectAllowed = 'move';
+}
+function onDragOver(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+  document.querySelectorAll('.project-item').forEach(function(el) { el.classList.remove('drag-over'); });
+  e.currentTarget.classList.add('drag-over');
+}
+function onDrop(e) {
+  e.preventDefault();
+  var targetIndex = parseInt(e.currentTarget.dataset.index);
+  if (dragSrcIndex === targetIndex) return;
+  if (dirty && activeIndex >= 0) applyChanges();
+  var moved = projects.splice(dragSrcIndex, 1)[0];
+  projects.splice(targetIndex, 0, moved);
+  // Update active index to follow the moved item
+  if (activeIndex === dragSrcIndex) activeIndex = targetIndex;
+  else if (activeIndex > dragSrcIndex && activeIndex <= targetIndex) activeIndex--;
+  else if (activeIndex < dragSrcIndex && activeIndex >= targetIndex) activeIndex++;
+  renderSidebar();
+  setDirty(true);
+}
+function onDragEnd(e) {
+  document.querySelectorAll('.project-item').forEach(function(el) {
+    el.classList.remove('dragging', 'drag-over');
+  });
+}
+
+// ── Select / edit project ─────────────────────────────────────
+function selectProject(i) {
+  if (dirty && activeIndex >= 0 && activeIndex !== i) applyChanges();
+  activeIndex = i;
+  renderSidebar();
+  populateForm(projects[i]);
+  document.getElementById('editorEmpty').style.display = 'none';
+  document.getElementById('editorForm').style.display = 'flex';
+  setDirty(false);
+}
+
+function populateForm(p) {
+  document.getElementById('formHeading').textContent = p.title || 'Untitled project';
+  document.getElementById('formId').textContent = 'id: ' + (p.id || '—');
+  document.getElementById('f-title').value       = p.title       || '';
+  document.getElementById('f-subtitle').value    = p.subtitle    || '';
+  document.getElementById('f-coverImage').value  = p.coverImage  || '';
+  document.getElementById('f-coverAlt').value    = p.coverAlt    || '';
+  document.getElementById('f-ctaLabel').value    = p.ctaLabel    || '';
+  document.getElementById('f-ctaUrl').value      = p.ctaUrl      || '';
+  document.getElementById('f-body').value        = p.body        || '';
+  document.getElementById('f-year').value        = p.year        || '';
+  document.getElementById('f-role').value        = p.role        || '';
+  document.getElementById('f-client').value      = p.client      || '';
+  document.getElementById('f-institution').value = p.institution || '';
+  document.getElementById('f-featured').checked  = !!p.featured;
+  document.getElementById('f-id').value          = p.id || '';
+  updateSlugPreview(p.id || '');
+
+  renderTags(p.tags || []);
+  renderList('tools-list',   p.tools   || [], 'tool');
+  renderList('methods-list', p.methods || [], 'method');
+  renderGallery(p.media || []);
+
+}
+
+// ── Apply changes back to projects array ──────────────────────
+function applyChanges() {
+  if (activeIndex < 0) return;
+  var p = projects[activeIndex];
+  p.title       = v('f-title');
+  p.subtitle    = v('f-subtitle');
+  p.coverImage  = v('f-coverImage');
+  p.coverAlt    = v('f-coverAlt');
+  p.ctaLabel    = v('f-ctaLabel');
+  p.ctaUrl      = v('f-ctaUrl');
+  p.body        = v('f-body');
+  p.year        = v('f-year');
+  p.role        = v('f-role');
+  p.client      = v('f-client');
+  p.institution = v('f-institution');
+  p.featured    = document.getElementById('f-featured').checked;
+  p.id          = v('f-id') || slugify(p.title);
+  p.tags        = getTags();
+  p.tools       = getList('tools-list');
+  p.methods     = getList('methods-list');
+  p.media       = getGallery();
+  // Preserve fields not in the form
+  if (!p.links) p.links = [];
+  // Update heading
+  document.getElementById('formHeading').textContent = p.title || 'Untitled project';
+  document.getElementById('formId').textContent = 'id: ' + p.id;
+  renderSidebar();
+}
+
+function v(id) { return document.getElementById(id).value.trim(); }
+
+// ── New / delete project ──────────────────────────────────────
+function newProject() {
+  var p = {
+    id: '', title: '', subtitle: '', year: '', role: '', client: '', institution: '',
+    tags: [], coverImage: '', coverAlt: '', ctaLabel: '', ctaUrl: '',
+    body: '', tools: [], methods: [], media: [], links: [], featured: false
+  };
+  projects.push(p);
+  renderSidebar();
+  selectProject(projects.length - 1);
+  document.getElementById('f-title').focus();
+}
+
+function deleteProject() { deleteProjectAt(null, activeIndex); }
+
+function deleteProjectAt(e, i) {
+  if (e) e.stopPropagation();
+  if (!confirm('Delete "' + (projects[i].title || 'this project') + '"?')) return;
+  projects.splice(i, 1);
+  if (activeIndex === i) {
+    activeIndex = -1;
+    document.getElementById('editorEmpty').style.display = 'flex';
+    document.getElementById('editorForm').style.display = 'none';
+    setDirty(false);
+  } else if (activeIndex > i) {
+    activeIndex--;
+  }
+  renderSidebar();
+  setDirty(true);
+}
+
+function revertProject() {
+  populateForm(projects[activeIndex]);
+  setDirty(false);
+}
+
+// ── Slug ──────────────────────────────────────────────────────
+function slugify(s) {
+  return (s||'').toLowerCase().trim()
+    .replace(/[^\w\s-]/g,'').replace(/[\s_]+/g,'-').replace(/^-+|-+$/g,'');
+}
+
+function onTitleInput() {
+  markDirty();
+  var idField = document.getElementById('f-id');
+  // Only auto-generate slug if the field is empty (new project)
+  if (!idField.value) {
+    var slug = slugify(document.getElementById('f-title').value);
+    idField.value = slug;
+    updateSlugPreview(slug);
+    document.getElementById('formId').textContent = 'id: ' + (slug || '—');
+  }
+}
+
+function updateSlugPreview(slug) {
+  var el = document.getElementById('slugPreview');
+  if (el) el.textContent = slug || '…';
+  document.getElementById('formId').textContent = 'id: ' + (slug || '—');
+}
+
+// ── Tags ──────────────────────────────────────────────────────
+var currentTags = [];
+
+function renderTags(tags) {
+  currentTags = tags.slice();
+  var container = document.getElementById('tags-input');
+  // Remove existing chips
+  container.querySelectorAll('.tag-chip').forEach(function(el) { el.remove(); });
+  var field = document.getElementById('tag-field');
+  currentTags.forEach(function(tag, i) {
+    var chip = document.createElement('span');
+    chip.className = 'tag-chip';
+    chip.innerHTML = esc(tag) + '<button class="tag-chip-del" onclick="removeTag('+i+')">✕</button>';
+    container.insertBefore(chip, field);
+  });
+}
+
+function onTagKey(e) {
+  if (e.key === 'Enter' || e.key === ',') {
+    e.preventDefault();
+    var val = e.target.value.replace(',','').trim();
+    if (val) { currentTags.push(val); renderTags(currentTags); e.target.value = ''; markDirty(); }
+  } else if (e.key === 'Backspace' && !e.target.value && currentTags.length) {
+    currentTags.pop(); renderTags(currentTags); markDirty();
+  }
+}
+
+function removeTag(i) { currentTags.splice(i, 1); renderTags(currentTags); markDirty(); }
+function getTags() { return currentTags.slice(); }
+function focusTagInput() { document.getElementById('tag-field').focus(); }
+
+// ── List editor (tools / methods) ────────────────────────────
+function renderList(containerId, items, placeholder) {
+  var el = document.getElementById(containerId);
+  el.innerHTML = '';
+  items.forEach(function(item, i) {
+    el.appendChild(makeListItem(containerId, item, placeholder, i));
+  });
+}
+
+function makeListItem(containerId, value, placeholder, index) {
+  var row = document.createElement('div');
+  row.className = 'list-item';
+  var inp = document.createElement('input');
+  inp.type = 'text';
+  inp.value = value;
+  inp.placeholder = placeholder;
+  inp.oninput = markDirty;
+  var del = document.createElement('button');
+  del.className = 'list-item-del';
+  del.innerHTML = '✕';
+  del.onclick = function() { row.remove(); markDirty(); };
+  row.appendChild(inp);
+  row.appendChild(del);
+  return row;
+}
+
+function addListItem(containerId, placeholder) {
+  var el = document.getElementById(containerId);
+  el.appendChild(makeListItem(containerId, '', placeholder, el.children.length));
+  el.lastChild.querySelector('input').focus();
+  markDirty();
+}
+
+function getList(containerId) {
+  return Array.from(document.getElementById(containerId).querySelectorAll('input'))
+    .map(function(i) { return i.value.trim(); }).filter(Boolean);
+}
+
+// ── Gallery ───────────────────────────────────────────────────
+var layoutOptions = [
+  { value: 'cs-img-landscape',      label: 'Landscape' },
+  { value: 'cs-img-portrait',       label: 'Portrait' },
+  { value: 'cs-img-square',         label: 'Square' },
+  { value: 'cs-img-equirectangular',label: 'Equirectangular (360°)' },
+];
+
+function renderGallery(items) {
+  var el = document.getElementById('gallery-list');
+  el.innerHTML = '';
+  items.forEach(function(item, i) {
+    el.appendChild(makeGalleryItem(item, i));
+  });
+}
+
+function makeGalleryItem(item, index) {
+  var div = document.createElement('div');
+  div.className = 'gallery-item';
+  var layoutOpts = layoutOptions.map(function(o) {
+    return '<option value="'+o.value+'"'+(item.layout===o.value?' selected':'')+'>'+o.label+'</option>';
+  }).join('');
+  div.innerHTML =
+    '<div class="gallery-item-header">'
+    +'<span class="gallery-item-num">Media item '+(index+1)+'</span>'
+    +'<button class="gallery-item-del" onclick="this.closest(\'.gallery-item\').remove();markDirty()">✕</button>'
+    +'</div>'
+    +'<div class="gallery-grid-2">'
+    +'<div class="field"><label class="field-label">URL / path</label><input type="url" class="g-url" value="'+esc(item.url||'')+'" placeholder="images/photo.jpg or embed URL" oninput="markDirty()"></div>'
+    +'<div class="field"><label class="field-label">Caption</label><input type="text" class="g-caption" value="'+esc(item.caption||'')+'" placeholder="Caption" oninput="markDirty()"></div>'
+    +'<div class="field"><label class="field-label">Layout</label><select class="g-layout" onchange="markDirty()">'+layoutOpts+'</select></div>'
+    +'<div class="field"><label class="field-label">Type</label><select class="g-type" onchange="markDirty()"><option value="image"'+(item.type==='image'?' selected':'')+'>Image</option><option value="video"'+(item.type==='video'?' selected':'')+'>Video</option><option value="360"'+(item.type==='360'?' selected':'')+'>360° equirectangular</option></select></div>'
+    +'<div class="field" style="grid-column:span 2"><label class="field-label">Order</label><div class="field-hint">Lower numbers appear first</div><input type="text" class="g-order" value="'+(item.order != null ? item.order : '')+'" placeholder="1" oninput="markDirty()"></div>'
+    +'</div>';
+  return div;
+}
+
+function addGalleryItem() {
+  var el = document.getElementById('gallery-list');
+  el.appendChild(makeGalleryItem({ url:'', caption:'', layout:'cs-img-landscape', type:'image', order: el.children.length+1 }, el.children.length));
+  markDirty();
+}
+
+function getGallery() {
+  return Array.from(document.getElementById('gallery-list').querySelectorAll('.gallery-item')).map(function(item) {
+    return {
+      url:     item.querySelector('.g-url').value.trim(),
+      caption: item.querySelector('.g-caption').value.trim(),
+      layout:  item.querySelector('.g-layout').value,
+      type:    item.querySelector('.g-type').value,
+      order:   parseInt(item.querySelector('.g-order').value) || 0,
+    };
+  }).filter(function(item) { return item.url; });
+}
+
+// ── Toast ─────────────────────────────────────────────────────
+var toastTimer;
+function showToast(msg, type) {
+  var t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show' + (type ? ' '+type : '');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function() { t.classList.remove('show'); }, 3000);
+}
+
+// ── Utils ─────────────────────────────────────────────────────
+function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+
+
+// ── Snippet generator ─────────────────────────────────────────
+var currentSnippetType = null;
+var snippetDefs = {
+  link: {
+    title: 'Insert link',
+    hint: 'Creates a clickable link in the body text.',
+    fields: [
+      { id: 'sn-text', label: 'Link text', placeholder: 'e.g. View the project' },
+      { id: 'sn-url',  label: 'URL', placeholder: 'https://…', type: 'url' }
+    ],
+    build: function() {
+      var text = document.getElementById('sn-text').value.trim();
+      var url  = document.getElementById('sn-url').value.trim();
+      if (!url) return null;
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + (text || url) + '</a>';
+    }
+  },
+  youtube: {
+    title: 'Embed YouTube video',
+    hint: 'Paste the YouTube video URL or just the video ID.',
+    fields: [
+      { id: 'sn-url',     label: 'YouTube URL or video ID', placeholder: 'https://youtube.com/watch?v=… or VIDEO_ID', type: 'url' },
+      { id: 'sn-caption', label: 'Caption (optional)',      placeholder: 'e.g. Site walkthrough' }
+    ],
+    build: function() {
+      var raw = document.getElementById('sn-url').value.trim();
+      var cap = document.getElementById('sn-caption').value.trim();
+      var id = raw;
+      var m = raw.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
+      if (m) id = m[1];
+      if (!id) return null;
+      var iframe = '<iframe src="https://www.youtube.com/embed/' + id + '" allowfullscreen></iframe>';
+      return cap ? '<figure>' + iframe + '<figcaption>' + cap + '</figcaption></figure>' : iframe;
+    }
+  },
+  vimeo: {
+    title: 'Embed Vimeo video',
+    hint: 'Paste the Vimeo URL or numeric video ID.',
+    fields: [
+      { id: 'sn-url',     label: 'Vimeo URL or video ID', placeholder: 'https://vimeo.com/123456789', type: 'url' },
+      { id: 'sn-caption', label: 'Caption (optional)',     placeholder: 'e.g. Behind the scenes' }
+    ],
+    build: function() {
+      var raw = document.getElementById('sn-url').value.trim();
+      var cap = document.getElementById('sn-caption').value.trim();
+      var id = raw;
+      var m = raw.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+      if (m) id = m[1];
+      if (!id || isNaN(id)) return null;
+      var iframe = '<iframe src="https://player.vimeo.com/video/' + id + '" allowfullscreen></iframe>';
+      return cap ? '<figure>' + iframe + '<figcaption>' + cap + '</figcaption></figure>' : iframe;
+    }
+  },
+  image: {
+    title: 'Embed image',
+    hint: 'Inserts a full-width image with optional caption.',
+    fields: [
+      { id: 'sn-url',     label: 'Image path or URL', placeholder: 'images/project/photo.jpg or https://…', type: 'url' },
+      { id: 'sn-alt',     label: 'Alt text',          placeholder: 'Describe the image' },
+      { id: 'sn-caption', label: 'Caption (optional)', placeholder: 'e.g. Geophysical survey grid' }
+    ],
+    build: function() {
+      var url = document.getElementById('sn-url').value.trim();
+      var alt = document.getElementById('sn-alt').value.trim();
+      var cap = document.getElementById('sn-caption').value.trim();
+      if (!url) return null;
+      var img = '<img src="' + url + '" alt="' + alt + '">';
+      return cap ? '<figure>' + img + '<figcaption>' + cap + '</figcaption></figure>' : img;
+    }
+  }
+};
+
+function openSnippet(type) {
+  currentSnippetType = type;
+  var def = snippetDefs[type];
+  document.getElementById('snippetTitle').textContent  = def.title;
+  document.getElementById('snippetHint').textContent   = def.hint;
+  document.getElementById('snippetOutput').className   = 'snippet-output';
+  document.getElementById('snippetCopyHint').className = 'snippet-copy-hint';
+  var fieldsEl = document.getElementById('snippetFields');
+  fieldsEl.innerHTML = '';
+  def.fields.forEach(function(f) {
+    var div = document.createElement('div');
+    div.className = 'field';
+    div.innerHTML = '<label class="field-label">' + f.label + '</label>'
+      + '<input type="' + (f.type || 'text') + '" id="' + f.id + '" placeholder="' + (f.placeholder || '') + '">';
+    fieldsEl.appendChild(div);
+  });
+  document.getElementById('snippetModal').classList.add('open');
+  setTimeout(function() {
+    var first = fieldsEl.querySelector('input');
+    if (first) first.focus();
+  }, 50);
+}
+
+function generateSnippet() {
+  var def = snippetDefs[currentSnippetType];
+  if (!def) return;
+  var result = def.build();
+  var out  = document.getElementById('snippetOutput');
+  var hint = document.getElementById('snippetCopyHint');
+  if (!result) {
+    out.textContent = 'Please fill in the required fields.';
+    out.className = 'snippet-output visible';
+    hint.className = 'snippet-copy-hint';
+    return;
+  }
+  out.textContent = result;
+  out.className = 'snippet-output visible';
+  navigator.clipboard.writeText(result).then(function() {
+    hint.textContent = '✓ Copied to clipboard — paste into body text';
+    hint.className = 'snippet-copy-hint visible';
+  }).catch(function() {
+    hint.textContent = 'Copy the text above and paste into body text.';
+    hint.className = 'snippet-copy-hint visible';
+  });
+}
+
+function closeSnippet() {
+  document.getElementById('snippetModal').classList.remove('open');
+  currentSnippetType = null;
+}
+
+function closeSnippetIfOutside(e) {
+  if (e.target === document.getElementById('snippetModal')) closeSnippet();
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('snippetModal').classList.contains('open')) return;
+  if (e.key === 'Enter')  { e.preventDefault(); generateSnippet(); }
+  if (e.key === 'Escape') closeSnippet();
+});
+
+</script>
+
+<!-- Snippet generator modal -->
+<div class="snippet-modal" id="snippetModal" onclick="closeSnippetIfOutside(event)">
+  <div class="snippet-dialog" id="snippetDialog">
+    <div class="snippet-dialog-title" id="snippetTitle">Insert link</div>
+    <div class="snippet-dialog-hint" id="snippetHint">Fill in the fields and copy the generated HTML.</div>
+    <div id="snippetFields"></div>
+    <div class="snippet-output" id="snippetOutput"></div>
+    <div class="snippet-copy-hint" id="snippetCopyHint">✓ Copied to clipboard</div>
+    <div class="snippet-dialog-actions">
+      <button class="btn btn-light btn-sm" onclick="closeSnippet()">Cancel</button>
+      <button class="btn btn-primary btn-sm" id="snippetGenBtn" onclick="generateSnippet()">Generate</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

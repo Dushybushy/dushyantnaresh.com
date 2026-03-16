@@ -1,0 +1,45 @@
+{
+  "albums": [
+    { "id": "heritage", "name": "Heritage", "order": 1 },
+    { "id": "landscape", "name": "Landscape", "order": 2 },
+    { "id": "fieldwork", "name": "Fieldwork", "order": 3 }
+  ],
+  "photos": [
+    {
+      "id": "photo-001",
+      "title": "Fountains Abbey — West Range",
+      "album": "heritage",
+      "tags": ["heritage", "architecture", "england"],
+      "src": "",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/250s",
+      "order": 1
+    },
+    {
+      "id": "photo-002",
+      "title": "Geophysical Survey Grid",
+      "album": "fieldwork",
+      "tags": ["fieldwork", "archaeology"],
+      "src": "",
+      "orientation": "landscape",
+      "focalLength": "35mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/500s",
+      "order": 1
+    },
+    {
+      "id": "photo-003",
+      "title": "Yorkshire Dales",
+      "album": "landscape",
+      "tags": ["landscape", "england"],
+      "src": "",
+      "orientation": "landscape",
+      "focalLength": "16mm",
+      "aperture": "f/11",
+      "shutterSpeed": "1/125s",
+      "order": 1
+    }
+  ]
+}

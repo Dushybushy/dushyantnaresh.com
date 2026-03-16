@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Dushyant Naresh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream:     #F4EFE4;
+  --tan:       #E2D4BC;
+  --sandy:     #C9B497;
+  --ink:       #1A1814;
+  --ink-soft:  #6B6559;
+  --ink-faint: #9A9188;
+  --rule:      rgba(26,24,20,0.12);
+  --earth:     #85211C;
+  --l4-bg:     #361A0B;
+  --l4-fg:     #F4EFE4;
+  --l4-sub:    #B8AC98;
+  --l4-acc:    #D4736F;
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'Syne', sans-serif;
+  --font-m: 'Roboto Mono', monospace;
+}
+html { scroll-behavior: smooth; }
+body { color: var(--ink); font-family: var(--font-b); font-size: 16px; line-height: 1.65; }
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+
+/* ── NAV ─────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: #F0EBE3; border-bottom: 1px solid var(--rule);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 64px; overflow: visible;
+}
+.nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
+.nav-logo em { font-style: italic; color: var(--earth); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.nav-links a:hover { color: var(--earth); }
+.nav-links a.active { color: var(--earth); }
+.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
+.nav-cta:hover { background: var(--ink); color: var(--cream); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; margin-left: auto; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 1px; }
+.nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #F0EBE3; border-bottom: 1px solid var(--rule); padding: 20px 24px 24px; z-index: 199; flex-direction: column; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); padding: 14px 0; border-bottom: 1px solid var(--rule); transition: color 0.2s; }
+.nav-mobile a:last-child { border-bottom: none; }
+.nav-mobile a:hover { color: var(--earth); }
+
+/* ── PAGE ────────────────────────────────────────────────────── */
+.page { padding-top: 64px; }
+
+/* ── FOLDER TAB ──────────────────────────────────────────────── */
+.page-folder-tab {
+  display: flex; align-items: stretch; height: 38px;
+  background: #F0EBE3; position: relative; z-index: 5;
+}
+.page-folder-tab::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.08); }
+.page-breadcrumb {
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 0 40px 0 20px; width: 350px; color: var(--l4-fg);
+  background: var(--l4-bg);
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+  white-space: nowrap;
+}
+.bc-ctx  { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.06em; opacity: 0.65; }
+.bc-pip  { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: 0.3; flex-shrink: 0; }
+.bc-name { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; opacity: 0.55; }
+
+/* ── HEADER ──────────────────────────────────────────────────── */
+.page-header {
+  background: var(--l4-bg);
+  padding: 52px 52px 48px;
+  position: relative; height: 260px; overflow: hidden;
+
+  background-image: none;
+}
+/* Crosshatch on header */
+.page-header::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    repeating-linear-gradient(
+      108deg,
+      transparent,
+      transparent 5px,
+      rgba(244,239,228,0.025) 5px,
+      rgba(244,239,228,0.025) 6px
+    ),
+    repeating-linear-gradient(
+      18deg,
+      transparent,
+      transparent 6px,
+      rgba(244,239,228,0.018) 6px,
+      rgba(244,239,228,0.018) 7px
+    );
+}
+.page-header-inner { position: relative; z-index: 1; max-width: 52%; }
+.page-title {
+  font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
+  font-weight: 500; font-style: italic; line-height: 1.0; color: #D4736F;
+  margin-bottom: 22px; letter-spacing: -0.01em;
+}
+
+
+/* ── BODY ────────────────────────────────────────────────────── */
+.page-body { background: #F0EBE3;; }
+
+/* ── ABOUT GRID ──────────────────────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 0;
+  min-height: 60vh;
+}
+
+/* Left col — portrait */
+.about-portrait-col {
+  border-right: 1px solid var(--rule);
+  padding: 64px 48px 64px 52px;
+  display: flex; flex-direction: column; gap: 32px;
+  position: sticky; top: 64px; align-self: start;
+}
+.portrait-frame {
+  width: 100%;
+  background: #fff;
+  padding: 10px 10px 38px 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10), 0 8px 28px rgba(0,0,0,0.14), 0 20px 52px rgba(0,0,0,0.08);
+  position: relative;
+}
+.portrait-frame-img {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--tan); overflow: hidden; position: relative;
+}
+.portrait-frame-img img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+}
+.portrait-placeholder {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  color: var(--ink-faint);
+}
+.portrait-placeholder span {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; opacity: 0.5;
+}
+.portrait-frame-img { position: relative; }
+.portrait-name-strip {
+  display: flex; align-items: center;
+  padding: 6px 0 0 0;
+  pointer-events: none;
+}
+.portrait-name-strip span {
+  font-family: var(--font-m); font-size: 13px; letter-spacing: 0.06em;
+  color: #6B5848; opacity: 0.85; white-space: nowrap;
+}
+.portrait-caption {
+  font-family: var(--font-b); font-size: 17px; color: var(--ink-soft);
+  line-height: 1.7; padding-top: 8px;
+}
+
+/* CV download button */
+.cv-download {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--l4-fg); background: var(--l4-bg);
+  border: none; padding: 14px 22px; cursor: pointer;
+  text-decoration: none; width: 100%; justify-content: center;
+  transition: background 0.2s;
+}
+.cv-download:hover { background: #280F04; }
+.cv-download svg { flex-shrink: 0; }
+.portrait-right { display: flex; flex-direction: column; gap: 16px; }
+
+/* Right col — content */
+.about-content-col {
+  padding: 64px 52px 80px 64px;
+  display: flex; flex-direction: column; gap: 72px;
+}
+
+/* Bio */
+.about-bio-section {}
+.about-eyebrow {
+  font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--earth);
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 32px;
+}
+.about-eyebrow::before { content: ''; display: block; width: 32px; height: 1px; background: var(--earth); flex-shrink: 0; }
+.about-bio-lead {
+  font-family: var(--font-d); font-size: clamp(22px, 2.2vw, 30px);
+  font-weight: 300; line-height: 1.55; color: var(--ink);
+  margin-bottom: 28px;
+}
+.about-bio-body {
+  font-family: var(--font-b); font-size: 17px; line-height: 1.8;
+  color: var(--ink-soft); max-width: 580px;
+}
+.about-bio-body p + p { margin-top: 18px; }
+
+/* Skills */
+.about-skills-section {}
+.skills-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+  border-top: 1px solid var(--rule);
+  max-width: 640px;
+}
+.skill-group { padding: 28px 0; border-bottom: 1px solid var(--rule); }
+.skill-group:nth-child(odd) { padding-right: 52px; border-right: 1px solid var(--rule); }
+.skill-group:nth-child(even) { padding-left: 52px; }
+.skill-group-title {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--ink-faint);
+  margin-bottom: 16px;
+}
+.skill-list {
+  list-style: none; display: flex; flex-direction: column; gap: 9px;
+}
+.skill-list li {
+  font-family: var(--font-b); font-size: 17px; color: var(--ink-soft);
+  display: flex; align-items: center; gap: 10px; line-height: 1.4;
+}
+.skill-list li::before {
+  content: ''; display: block; width: 4px; height: 4px;
+  border-radius: 50%; background: var(--earth); opacity: 0.5; flex-shrink: 0;
+}
+
+/* ── CONTACT STRIP ───────────────────────────────────────────── */
+.contact-strip {
+  background: var(--l4-bg); padding: 52px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; flex-wrap: wrap;
+}
+.contact-strip-left {}
+.contact-strip-title {
+  font-family: var(--font-d); font-size: clamp(28px, 3vw, 44px);
+  font-weight: 300; color: var(--l4-fg); line-height: 1.15;
+  margin-bottom: 12px;
+}
+.contact-strip-sub {
+  font-family: var(--font-b); font-size: 14px;
+  color: var(--l4-sub); line-height: 1.7;
+}
+.contact-strip-actions { display: flex; gap: 14px; flex-shrink: 0; } /* unused */
+.btn-primary-dark {
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  background: var(--l4-acc); color: var(--l4-fg);
+  border: none; padding: 14px 28px; cursor: pointer;
+  transition: background 0.2s; display: inline-block;
+}
+.btn-primary-dark:hover { background: #C0614E; }
+.btn-outline-light {
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--l4-fg); border: 1px solid rgba(244,239,228,0.25);
+  padding: 14px 28px; cursor: pointer;
+  transition: background 0.2s, border-color 0.2s; display: inline-block;
+}
+.btn-outline-light:hover { background: rgba(244,239,228,0.08); border-color: rgba(244,239,228,0.5); }
+
+/* ── FOOTER ──────────────────────────────────────────────────── */
+.site-footer {
+  background: #EDE5D8; padding: 0 52px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--rule);
+}
+.footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
+.footer-logo em { font-style: italic; color: var(--earth); }
+.footer-nav { display: flex; gap: 36px; list-style: none; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.footer-nav a:hover { color: var(--earth); }
+.footer-right { font-family: var(--font-b); font-size: 11px; color: var(--ink-soft); }
+.footer-right a { color: var(--ink-soft); transition: color 0.2s; }
+.footer-right a:hover { color: var(--earth); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────── */
+@media (max-width: 1100px) {
+  nav { padding: 0 32px; }
+  .page-header { padding: 52px 32px 48px; height: auto; min-height: 0; }
+  .about-portrait-col { padding: 48px 36px 48px 32px; }
+  .about-content-col { padding: 48px 32px 64px 48px; }
+  .about-grid { grid-template-columns: 280px 1fr; }
+  .contact-strip { padding: 40px 32px; }
+  .site-footer { padding: 0 32px; }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 24px; height: 56px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-mobile { top: 56px; }
+  .page { padding-top: 56px; }
+  .page-header { padding: 40px 24px 36px; height: auto; min-height: 0; }
+  .page-header-inner { grid-template-columns: 1fr; gap: 16px; }
+  .page-header-meta { text-align: left; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-portrait-col {
+    position: static; border-right: none;
+    border-bottom: 1px solid rgba(244,239,228,0.1);
+    padding: 36px 24px;
+    display: grid; grid-template-columns: 180px 1fr; gap: 24px; align-items: start;
+  }
+  .portrait-frame { aspect-ratio: 3/4; }
+  .portrait-right { justify-content: flex-start; }
+  .portrait-caption { padding-top: 0; }
+  .about-content-col { padding: 40px 24px 60px; gap: 52px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skill-group:nth-child(odd) { border-right: none; padding-right: 0; }
+  .skill-group:nth-child(even) { padding-left: 0; }
+  .contact-strip { flex-direction: column; align-items: flex-start; padding: 40px 24px; gap: 28px; }
+  .contact-strip-actions { flex-direction: column; width: 100%; }
+  .btn-primary-dark, .btn-outline-light { text-align: center; }
+  .site-footer { height: auto; padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  nav { padding: 0 20px; height: 52px; }
+  .page { padding-top: 52px; }
+  .nav-mobile { top: 52px; }
+  .page-header { padding: 32px 20px 28px; height: auto; min-height: 0; }
+  .about-portrait-col { grid-template-columns: 1fr; padding: 28px 20px; }
+  .portrait-frame { max-width: 200px; }
+  .portrait-caption { padding-top: 0; }
+  .about-content-col { padding: 32px 20px 52px; }
+  .contact-strip { padding: 32px 20px; }
+  .site-footer { padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<nav id="siteNav">
+  <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="photography.html">Photography</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+  </ul>
+  <a href="/cdn-cgi/l/email-protection#a3cdc2d1c6d0cb8dc7d6d0cbe3c4cec2cacf8dc0ccce" class="nav-cta">Get in touch</a>
+  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+  <a href="index.html" onclick="toggleMobileNav()">Home</a>
+  <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
+  <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
+  <a href="about.html" onclick="toggleMobileNav()">About</a>
+  <a href="/cdn-cgi/l/email-protection#523c332037213a7c3627213a12353f333b3e7c313d3f" onclick="toggleMobileNav()">Get in touch</a>
+</div>
+
+<div class="page">
+
+  <!-- Folder tab -->
+  <div class="page-folder-tab">
+    <div class="page-breadcrumb">
+      <span class="bc-ctx">CTX.004</span>
+      <span class="bc-pip"></span>
+      <span class="bc-name">Layer IV — Base Deposit</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <div class="page-header">
+    <div class="page-header-inner">
+      <h1 class="page-title">About me</h1>
+
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="page-body">
+    <div class="about-grid">
+
+      <!-- Portrait col -->
+      <div class="about-portrait-col">
+        <div class="portrait-frame">
+          <!-- Replace with: <img src="images/portrait.jpg" alt="Dushyant Naresh"> -->
+          <div class="portrait-frame-img">
+          <div class="portrait-placeholder">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+              <circle cx="18" cy="13" r="7" stroke="currentColor" stroke-width="1.1"/>
+              <path d="M4 34c0-7.732 6.268-14 14-14s14 6.268 14 14" stroke="currentColor" stroke-width="1.1" fill="none"/>
+            </svg>
+            <span>Portrait</span>
+          </div>
+          </div>
+        <div class="portrait-name-strip"><span>Dushyant Naresh</span></div>
+        </div>
+        <div class="portrait-right">
+        <div class="portrait-caption">
+          Archaeologist &amp; Multimedia Producer<br>
+          York, United Kingdom
+        </div>
+        <a href="DN_Resume_December_2025.pdf" download class="cv-download">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M7 1v8M4 6l3 3 3-3M2 11h10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Download CV
+        </a>
+        </div><!-- /portrait-right -->
+      </div>
+
+      <!-- Content col -->
+      <div class="about-content-col">
+
+        <!-- Bio -->
+        <div class="about-bio-section">
+          <div class="about-eyebrow">Who I am</div>
+          <p class="about-bio-lead">
+            A multimedia producer and archaeologist with a passion for making the ancient world viscerally present.
+          </p>
+          <div class="about-bio-body">
+            <p>
+              My practice sits at the boundary between rigorous archaeological research and experiential storytelling. I work across immersive media, documentary filmmaking, and heritage communication — finding new languages to bring the past into the present.
+            </p>
+            <p>
+              Currently I lead research at Visualising Heritage, University of Bradford, where I develop innovative approaches to communicating heritage through 360° film, VR, projection mapping, and photogrammetry. Previously, I produced documentary content for CNN and National Geographic, telling character-driven stories with global reach.
+            </p>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="about-skills-section">
+          <div class="about-eyebrow">Skills &amp; practice</div>
+          <div class="skills-grid">
+
+            <div class="skill-group">
+              <div class="skill-group-title">Research &amp; Archaeology</div>
+              <ul class="skill-list">
+                <li>Heritage communication</li>
+                <li>Geophysical survey</li>
+                <li>Photogrammetry &amp; 3D</li>
+                <li>Stakeholder engagement</li>
+                <li>Grant writing</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-group-title">Film &amp; Production</div>
+              <ul class="skill-list">
+                <li>Documentary filmmaking</li>
+                <li>Field &amp; studio videography</li>
+                <li>360° capture &amp; editing</li>
+                <li>Science communication</li>
+                <li>Fact-checking &amp; research</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-group-title">Immersive &amp; XR</div>
+              <ul class="skill-list">
+                <li>VR production (Unity)</li>
+                <li>Projection mapping</li>
+                <li>Interactive storytelling</li>
+                <li>AR experience design</li>
+                <li>360° film direction</li>
+              </ul>
+            </div>
+
+            <div class="skill-group">
+              <div class="skill-group-title">Tools &amp; Software</div>
+              <ul class="skill-list">
+                <li>Adobe Creative Suite</li>
+                <li>DaVinci Resolve</li>
+                <li>Agisoft Metashape</li>
+                <li>MadMapper / Igloo</li>
+                <li>Insta360 Pro 2 / Titan</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /about-content-col -->
+    </div><!-- /about-grid -->
+
+    <!-- Contact strip -->
+    <div class="contact-strip">
+      <div class="contact-strip-left">
+        <div class="contact-strip-title">Let's work together.</div>
+        <div class="contact-strip-sub">
+          Open to commissions, collaborations, and consultancy<br>
+          in heritage, film, and immersive media.
+        </div>
+      </div>
+      <div class="contact-strip-actions">
+        <a href="/cdn-cgi/l/email-protection#523c332037213a7c3627213a12353f333b3e7c313d3f" class="btn-primary-dark">Get in touch</a>
+      </div>
+    </div>
+
+  </div><!-- /page-body -->
+
+  <footer class="site-footer">
+    <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
+    <ul class="footer-nav">
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="footer-right"><a href="/cdn-cgi/l/email-protection#0d636c7f687e652369787e654d6a606c6461236e6260"><span class="__cf_email__" data-cfemail="204e41524553480e4455534860474d41494c0e434f4d">[email&#160;protected]</span></a></div>
+  </footer>
+
+</div><!-- /page -->
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+</body>
+</html>
