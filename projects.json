@@ -1,43 +1,74 @@
 [
   {
-    "id": "fountains-abbey-ar",
-    "title": "Fountains Abbey AR Experience",
-    "subtitle": "Virtual augmented reality at a UNESCO World Heritage Site",
-    "category": "Heritage & XR",
-    "year": "2024",
-    "role": "Lead Research Technician & Producer",
-    "client": "",
-    "institution": "",
+    "id": "york-archaeology-dept",
+    "title": "University of York Archaeology Department",
+    "subtitle": "Video production and social media content",
+    "category": "Documentary Film",
+    "year": "2022–2023",
+    "role": "Publicity Assistant",
+    "client": "University of York",
+    "institution": "University of York",
     "tags": [
-      "heritage",
-      "immersive"
+      "film",
+      "heritage"
     ],
     "coverImage": "",
-    "coverAlt": "Fountains Abbey AR Experience",
-    "introText": "An innovative virtual AR experience at Fountains Abbey, distilling complex geophysical and archaeological data for visitors through interactive storytelling.",
-    "body": "Developed as part of the Visualising Heritage Knowledge Transfer Partnership with the National Trust, this project transforms dense geophysical survey data into an accessible, immersive experience for general visitors at Fountains Abbey — a UNESCO World Heritage Site.\n\nThe experience overlays interpretive layers onto the physical landscape, guiding visitors through archaeological findings that are otherwise invisible to the naked eye. Interactive storytelling elements allow users to move through time, revealing buried structures and historical contexts.\n\nThe project involved close coordination with National Trust stakeholders, archaeological specialists, and accessibility consultants to ensure the final output met public engagement standards.",
+    "coverAlt": "University of York Archaeology Department",
+    "introText": "Filmed and edited dozens of videos for the Archaeology Department's social media channels, including faculty interviews and mini-documentaries.",
+    "body": "Embedded within the Archaeology Department at the University of York, producing a sustained programme of video content for the department's social media channels.\n\nThe brief was to build an evergreen content library that communicated the breadth of the department's research and teaching to prospective students, current students, alumni, and the wider public. Content ranged from faculty research profiles and student experience pieces to object-based mini-documentaries produced in collaboration with local museums.\n\nThe role required working sensitively with academic staff across many sub-disciplines, translating highly specialist research into engaging short-form content without sacrificing accuracy.",
     "tools": [
-      "Unity",
-      "Insta360 Pro 2",
-      "Agisoft Metashape",
-      "After Effects"
+      "Sony E-mount",
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop"
     ],
     "methods": [
-      "Photogrammetry",
-      "Geophysical Survey",
-      "Stakeholder Engagement",
-      "Public Evaluation"
+      "Videography",
+      "Interviewing",
+      "Social Media",
+      "Content Strategy"
     ],
-    "ctaLabel": "Try it now!",
-    "ctaUrl": "https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm",
+    "ctaLabel": "",
+    "ctaUrl": "",
     "media": [],
     "links": [
       {
-        "label": "University of Bradford — Visualising Heritage",
-        "url": "https://www.bradford.ac.uk/visualising-heritage/"
+        "label": "University of York — Archaeology",
+        "url": "https://www.york.ac.uk/archaeology/"
       }
     ],
-    "featured": true
+    "featured": false
+  },
+  {
+    "id": "beme-news",
+    "title": "BEME News",
+    "subtitle": "Weekly desk explainer series on CNN's YouTube channel",
+    "category": "Digital Journalism",
+    "year": "2017–2019",
+    "role": "Researcher",
+    "client": "BEME News / CNN",
+    "institution": "",
+    "tags": [
+      "film"
+    ],
+    "coverImage": "",
+    "coverAlt": "BEME News",
+    "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
+    "body": "One of the founding researchers on BEME News, CNN's YouTube-native explainer channel, producing over 100 episodes of the weekly desk show.\n\nDeveloped and maintained the research and fact-checking infrastructure that underpinned every episode — compiling detailed background documents, verifying claims against primary sources, and ensuring all content met broadcast standards before scripts were finalised.\n\nThe channel operated with the pace and editorial standards of a news organisation but the creative sensibility of digital-native video, requiring a constant balance between rigour and accessibility.",
+    "tools": [
+      "Premiere Pro",
+      "After Effects"
+    ],
+    "methods": [
+      "Production Research",
+      "Fact-checking",
+      "Script Development"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [],
+    "featured": false
   },
   {
     "id": "projection-relief-model",
@@ -150,10 +181,11 @@
     "ctaUrl": "",
     "media": [
       {
-        "type": "image",
         "url": "https://www.igloovision.com/images/ImageLib/Standard_9m_cylinder_iso_shadow-HE_projection.jpg",
         "caption": "Igloo projection cylinder",
-        "layout": "cs-img-wide"
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 0
       }
     ],
     "links": [],
@@ -234,77 +266,6 @@
       }
     ],
     "featured": true
-  },
-  {
-    "id": "york-archaeology-dept",
-    "title": "University of York Archaeology Department",
-    "subtitle": "Video production and social media content",
-    "category": "Documentary Film",
-    "year": "2022–2023",
-    "role": "Publicity Assistant",
-    "client": "University of York",
-    "institution": "University of York",
-    "tags": [
-      "film",
-      "heritage"
-    ],
-    "coverImage": "",
-    "coverAlt": "University of York Archaeology Department",
-    "introText": "Filmed and edited dozens of videos for the Archaeology Department's social media channels, including faculty interviews and mini-documentaries.",
-    "body": "Embedded within the Archaeology Department at the University of York, producing a sustained programme of video content for the department's social media channels.\n\nThe brief was to build an evergreen content library that communicated the breadth of the department's research and teaching to prospective students, current students, alumni, and the wider public. Content ranged from faculty research profiles and student experience pieces to object-based mini-documentaries produced in collaboration with local museums.\n\nThe role required working sensitively with academic staff across many sub-disciplines, translating highly specialist research into engaging short-form content without sacrificing accuracy.",
-    "tools": [
-      "Sony E-mount",
-      "Premiere Pro",
-      "After Effects",
-      "Photoshop"
-    ],
-    "methods": [
-      "Videography",
-      "Interviewing",
-      "Social Media",
-      "Content Strategy"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
-    "links": [
-      {
-        "label": "University of York — Archaeology",
-        "url": "https://www.york.ac.uk/archaeology/"
-      }
-    ],
-    "featured": false
-  },
-  {
-    "id": "beme-news",
-    "title": "BEME News",
-    "subtitle": "Weekly desk explainer series on CNN's YouTube channel",
-    "category": "Digital Journalism",
-    "year": "2017–2019",
-    "role": "Researcher",
-    "client": "BEME News / CNN",
-    "institution": "",
-    "tags": [
-      "film"
-    ],
-    "coverImage": "",
-    "coverAlt": "BEME News",
-    "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
-    "body": "One of the founding researchers on BEME News, CNN's YouTube-native explainer channel, producing over 100 episodes of the weekly desk show.\n\nDeveloped and maintained the research and fact-checking infrastructure that underpinned every episode — compiling detailed background documents, verifying claims against primary sources, and ensuring all content met broadcast standards before scripts were finalised.\n\nThe channel operated with the pace and editorial standards of a news organisation but the creative sensibility of digital-native video, requiring a constant balance between rigour and accessibility.",
-    "tools": [
-      "Premiere Pro",
-      "After Effects"
-    ],
-    "methods": [
-      "Production Research",
-      "Fact-checking",
-      "Script Development"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
-    "links": [],
-    "featured": false
   },
   {
     "id": "vr-dissertation",
