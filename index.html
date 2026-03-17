@@ -237,7 +237,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 /* ═══════════════════════════════════
    LAYER 0 — HERO
 ═══════════════════════════════════ */
-.hero-postcard { display: grid; grid-template-columns: 38% 62%; height: calc(100vh - 102px); align-items: stretch; overflow: hidden; }
+.hero-postcard { display: grid; grid-template-columns: 38% 62%; min-height: calc(100vh - 102px); max-height: calc(100vh - 102px); align-items: stretch; overflow: hidden; }
 .hp-left { padding: 52px 44px 52px 52px; display: flex; flex-direction: column; justify-content: center; }
 .hp-eyebrow { font-family: var(--font-b); font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
 .hp-rule { display: block; width: 28px; height: 1.5px; background: var(--earth); flex-shrink: 0; }
@@ -253,20 +253,20 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .hp-scroll-hint { margin-top: 60px; display: flex; flex-direction: column; align-items: center; width: fit-content; gap: 12px; }
 .hp-scroll-text { font-family: var(--font-b); font-size: 14px; font-weight: 400; letter-spacing: 0.1em; color: var(--ink-soft); opacity: 0.75; }
 .hp-scroll-arrow { display: flex; justify-content: center; opacity: 0.55; }
-.hp-right { position: relative; padding: 28px 40px 28px 8px; display: flex; align-items: stretch; }
-.hp-photo-mount { position: relative; width: 100%; display: flex; flex-direction: column; }
-.hp-photo-frame { background: #ffffff; padding: 10px 10px 48px 10px; box-shadow: 0 4px 12px rgba(26,24,20,0.1), 0 16px 48px rgba(26,24,20,0.14); position: relative; flex: 1; display: flex; flex-direction: column; }
+.hp-right { position: relative; padding: 20px 40px 20px 8px; display: flex; align-items: stretch; max-height: calc(100vh - 142px); }
+.hp-photo-mount { position: relative; width: 100%; display: flex; flex-direction: column; min-height: 0; }
+.hp-photo-frame { background: #ffffff; padding: 10px 10px 56px 10px; box-shadow: 0 4px 12px rgba(26,24,20,0.1), 0 16px 48px rgba(26,24,20,0.14); position: relative; flex: 1; display: flex; flex-direction: column; }
 .hp-photo-img { display: block; width: 100%; height: 100%; flex: 1; object-fit: cover; object-position: center 60%; min-height: 0; transition: filter 0.5s ease; }
 .hp-photo-frame:hover .hp-photo-img { filter: saturate(0.55) sepia(0.25) brightness(0.92); }
-.film-meta { position: absolute; bottom: 48px; left: 10px; right: 10px; display: flex; align-items: flex-end; justify-content: space-between; padding: 28px 14px 10px; background: linear-gradient(to top, rgba(0,0,0,0.52) 0%, transparent 100%); pointer-events: none; }
-.film-title, .film-data { font-family: var(--font-m); font-size: 17px; font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A84A; text-shadow: 0 1px 4px rgba(0,0,0,0.7); line-height: 1; }
-.hero-info-card { position: absolute; bottom: 56px; left: 18px; max-width: 300px; background: rgba(26,24,20,0.88); padding: 16px 20px 18px; opacity: 0; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: none; z-index: 10; transform: translateY(6px); }
+.film-meta { position: absolute; bottom: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; }
+.film-title, .film-data { font-family: var(--font-m); font-size: 16px; letter-spacing: 0.05em; color: #6B5848; opacity: 0.85; line-height: 1; }
+.hero-info-card { position: absolute; bottom: 56px; left: 18px; max-width: 350px; background: rgba(243, 240, 233, 0.75); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); padding: 16px 20px 18px; opacity: 0; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: none; z-index: 10; transform: translateY(6px); }
 .hp-photo-frame:hover .hero-info-card { opacity: 1; transform: translateY(0); }
-.hero-info-site { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: var(--cream); margin-bottom: 3px; }
-.hero-info-period { font-family: var(--font-m); font-size: 9.5px; letter-spacing: 0.12em; color: #E8A84A; text-transform: uppercase; margin-bottom: 10px; }
-.hero-info-desc { font-family: var(--font-b); font-size: 12px; line-height: 1.7; color: rgba(244,239,228,0.72); }
-.hero-360-badge { position: absolute; top: 16px; right: 16px; z-index: 10; display: flex; align-items: center; gap: 7px; background: rgba(26,24,20,0.80); border: 1px solid rgba(244,239,228,0.22); color: rgba(244,239,228,0.88); font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; padding: 8px 14px 8px 10px; cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s; }
-.hero-360-badge:hover { background: rgba(232,168,74,0.92); border-color: rgba(232,168,74,0.8); color: #1A1814; }
+.hero-info-site { font-family: var(--font-d); font-size: 24px; font-weight: 400; ;font-style:italic; color: #1A1814; margin-bottom: 3px; }
+.hero-info-period { font-family: var(--font-m); font-size: 10px; letter-spacing: 0.12em; color: var(--earth); text-transform: uppercase; margin-bottom: 10px; }
+.hero-info-desc { font-family: var(--font-b); font-size: 13px; line-height: 1.7; color: rgba(26,24,20,0.65); }
+.hero-360-badge { position: absolute; top: 20px; right: 20px; z-index: 10; display: flex; align-items: center; gap: 7px; background: rgba(26,24,20,0.80); border: 1px solid rgba(244,239,228,0.22); color: rgba(244,239,228,0.88); font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.12em; padding: 8px 14px 8px 10px; cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s; }
+.hero-360-badge:hover { background: var(--earth); border-color: rgba(255, 255, 255, 1); color: #ffffff; }
 
 /* ═══════════════════════════════════
    LAYER 1 — DISCIPLINES
@@ -321,7 +321,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .photo-polaroid-img .placeholder { width: 100%; height: 100%; background: rgba(69,34,16,0.08); }
 .photo-polaroid-img .placeholder span { display: none; }
 .photo-polaroid-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.photo-polaroid-label { font-family: var(--font-d); font-size: 13px; font-weight: 400; color: var(--ink-mid); text-align: center; padding: 10px 4px 0; line-height: 1.3; }
+.photo-polaroid-label { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.06em; color: #6B5848; opacity: 0.85; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; position: absolute; bottom: 0; left: 0; right: 0; height: 36px; display: flex; align-items: center; padding: 0 9px; pointer-events: none; }
 
 /* ═══════════════════════════════════
    LAYER 4 — ABOUT
@@ -495,7 +495,8 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 @media (max-width: 1100px) {
   nav { padding: 0 32px; }
   .nav-links { gap: 24px; }
-  .hero-postcard { grid-template-columns: 44% 56%; }
+  .hero-postcard { grid-template-columns: 44% 56%; height: auto; min-height: 0; }
+  .hp-right { max-height: calc(100vh - 130px); }
   .hp-left { padding: 40px 32px; }
   .hp-name { font-size: clamp(44px, 5vw, 72px); }
   .hp-right { padding: 20px 24px 20px 8px; }
@@ -510,10 +511,28 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   #depthRail { left: 10px; }
 }
 
+@media (max-width: 900px) {
+  .hero-postcard { display: flex; flex-direction: column; height: auto; overflow: visible; }
+  .hp-left { order: 1; padding: 36px 32px 24px; justify-content: flex-start; }
+  .hp-name { font-size: clamp(40px, 9vw, 72px); }
+  .hp-scroll-hint { margin-top: 28px; display: flex; }
+  .hp-right { order: 2; padding: 0 32px 40px; display: block; height: auto; flex: none; max-height: none; }
+  /* Photo sizes itself via aspect-ratio — no fixed height needed */
+  .hp-photo-mount { display: block; width: 100%; height: auto; }
+  .hp-photo-frame { width: 100%; height: auto; padding: 8px 8px 48px 8px; display: block; position: relative; }
+  .hp-photo-img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
+  .hp-photo-frame:hover .hp-photo-img { filter: none; }
+  .film-meta { height: 48px; padding: 0 10px; }
+  .film-title, .film-data { font-size: 14px; }
+  .hero-info-card { display: block !important; opacity: 0; pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; bottom: 48px; left: 8px; right: 8px; max-width: none; }
+  .hp-photo-frame.tapped .hero-info-card { opacity: 1; transform: translateY(0); }
+}
+
 @media (max-width: 768px) {
   .layer { position: relative !important; top: auto !important; height: auto !important; overflow-y: visible !important; box-shadow: none !important; }
   .layer-spacer { display: none; }
   #depthRail { display: none; }
+  #stratDepthCounter { display: none; }
   .l0, .l1, .l2, .l3, .l4 { height: auto; }
 
   nav { padding: 0 24px; height: 56px; overflow: visible; }
@@ -533,15 +552,15 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   /* Photo block */
   .hp-right { order: 2; padding: 0 24px 36px; display: block; height: auto; flex: none; }
   .hp-photo-mount { display: block; width: 100%; height: 260px; }
-  .hp-photo-frame { width: 100%; height: 100%; padding: 6px 6px 28px 6px; display: block; position: relative; }
+  .hp-photo-frame { width: 100%; height: 100%; padding: 6px 6px 44px 6px; display: block; position: relative; }
   .hp-photo-img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0; }
   .hp-photo-frame:hover .hp-photo-img { filter: none; }
   /* FIX 2: Tap to show info card */
   .hero-info-card { display: block !important; opacity: 0; pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; bottom: 28px; left: 6px; right: 6px; max-width: none; }
   .hp-photo-frame.tapped .hero-info-card { opacity: 1; transform: translateY(0); }
   /* FIX 3: Film meta at bottom edge of photo (inside the 28px white border) */
-  .film-meta { bottom: 28px; left: 6px; right: 6px; }
-  .film-title, .film-data { font-size: 11px; }
+  .film-meta { height: 44px; padding: 0 8px; }
+  .film-title, .film-data { font-size: 13px; }
 
   /* FIX 4: Strat bar — fixed 350px on mobile, solid row background */
   .strat-bar-left { width: 350px !important; padding: 0 32px 0 16px; white-space: nowrap; }
@@ -609,6 +628,113 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
 /* Hamburger */
 /* Hamburger and mobile nav — base rules before media queries */
+
+
+
+.capstone-svg {
+  position: absolute; inset: 10px 10px 56px 10px;
+  width: calc(100% - 20px); height: calc(100% - 66px);
+  pointer-events: none; z-index: 6;
+}
+#capstoneZone { pointer-events: all; cursor: default; }
+
+/* ── CAPSTONE OVERLAY ────────────────────────────────────────── */
+.capstone-overlay {
+  position: absolute; inset: 10px 10px 56px 10px;
+  width: calc(100% - 20px); height: calc(100% - 66px);
+  object-fit: cover; object-position: center 60%;
+  mix-blend-mode: normal;
+  pointer-events: none; z-index: 3;
+  opacity: 0; transition: opacity 0.4s ease;
+}
+.hp-photo-frame.capstone-active .capstone-overlay { opacity: 1; }
+
+/* ── CAPSTONE SCANNER ────────────────────────────────────────── */
+/* ── CAPSTONE SCANNER ────────────────────────────────────────── */
+@keyframes scanSweep {
+  0%   { left: 21%; opacity: 1; }
+  100% { left: 104%; opacity: 1; }
+}
+.capstone-scanner {
+  position: absolute; inset: 10px 10px 56px 10px;
+  width: calc(100% - 20px); height: calc(100% - 66px);
+  pointer-events: none; z-index: 4;
+  opacity: 0; transition: opacity 0.2s ease;
+  -webkit-mask-image: url('/images/site/cors-y-gedol3.png');
+  -webkit-mask-size: cover;
+  -webkit-mask-position: center 60%;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url('/images/site/cors-y-gedol3.png');
+  mask-size: cover;
+  mask-position: center 60%;
+  mask-repeat: no-repeat;
+}
+.hp-photo-frame.capstone-active .capstone-scanner { opacity: 1; transition: none; }
+.scan-line {
+  position: absolute; top: 0; bottom: 0; left: 30%;
+  width: 2%;
+  background: linear-gradient(to right,
+    transparent 0%,
+    rgba(255, 230, 132, 0.3) 50%,
+    rgba(255, 247, 228, 0.95) 85%,
+    rgb(255, 223, 213) 100%
+  );
+  filter: blur(0.6px);
+  animation: scanSweep 1.8s ease-in infinite;
+  animation-play-state: paused;
+  mix-blend-mode: screen;
+}
+.hp-photo-frame.capstone-active .scan-line {
+  animation-play-state: running;
+}
+
+/* ── CAPSTONE LABEL CHIP ─────────────────────────────────────── */
+.capstone-chip {
+  position: absolute;
+  left: calc(10px + 76%);
+  top: calc(10px + 33%);
+  z-index: 8;
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(244,239,228,0.92);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(26,24,20,0.12);
+  padding: 6px 12px 6px 10px;
+  pointer-events: none;
+  opacity: 0; transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(5px);
+  white-space: nowrap;
+}
+.capstone-chip::before {
+  content: '';
+  display: block; width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--earth);
+  flex-shrink: 0;
+}
+.capstone-chip span {
+  font-family: var(--font-m);
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: #1A1814;
+}
+.hp-photo-frame.capstone-active .capstone-chip {
+  opacity: 1; transform: translateY(0);
+}
+
+
+/* ── CAPSTONE CONNECTOR LINE ─────────────────────────────────── */
+.capstone-connector {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none; z-index: 9;
+  overflow: visible;
+}
+.conn-line {
+  stroke: var(--earth);
+  stroke-width: 1px;
+  fill: none;
+}
 </style>
 </head>
 <body>
@@ -734,6 +860,34 @@ nav.dark .nav-hamburger span { background: var(--cream); }
                alt="Cors y Gedol burial chamber, Gwynedd, Wales"
                class="hp-photo-img" id="heroPhoto" />
 
+
+
+          <!-- Invisible hotspot zone — triggers capstone overlay -->
+          <svg class="capstone-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <polygon id="capstoneZone"
+              points="76.12 50.18 74.84 47.42 73.48 44.91 71.17 42.39 67.57 43.47 66.05 42.27 64.22 42.63 61.1 42.15 56.87 43.47 55.51 43.11 51.76 44.55 46.57 47.06 42.97 50.3 42.01 52.7 37.7 55.69 34.11 58.09 32.43 61.68 32.51 63.84 35.54 64.44 39.86 65.04 44.33 65.04 46.49 66.36 50.48 66.24 51.6 63 52.8 58.81 54.55 56.65 57.43 55.81 61.18 54.85 63.5 56.77 64.62 58.33 66.37 57.13 67.89 55.81 69.49 54.25 71.25 53.54 74.52 52.46"
+              fill="transparent" stroke="none"
+            />
+          </svg>
+
+          <!-- Capstone overlay — full colour cutout, lighten blend -->
+          <img src="/images/site/cors-y-gedol3.png"
+               alt="" class="capstone-overlay" aria-hidden="true"/>
+
+          <!-- Scanner — masked to PNG shape -->
+          <div class="capstone-scanner">
+            <div class="scan-line"></div>
+          </div>
+
+          <!-- Capstone label chip -->
+          <div class="capstone-chip"><span>Capstone</span></div>
+          <!-- Capstone connector line -->
+          <svg class="capstone-connector" id="capstoneConnector"
+               xmlns="http://www.w3.org/2000/svg"
+               width="100%" height="100%">
+            <line class="conn-line" id="connLine"
+              x1="0" y1="0" x2="0" y2="0"/>
+          </svg>
           <!-- Hover info card — fades in on hover -->
           <div class="hero-info-card">
             <div class="hero-info-site">Cors y Gedol</div>
@@ -743,7 +897,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
           <!-- 360° badge — always visible in top-right corner -->
           <button class="hero-360-badge" onclick="open360Viewer(event)" title="View 360° panorama">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <svg width="30" height="24" viewBox="0 0 16 16" fill="none">
               <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/>
               <ellipse cx="8" cy="8" rx="6.5" ry="2.8" stroke="currentColor" stroke-width="1.2"/>
               <line x1="8" y1="1.5" x2="8" y2="14.5" stroke="currentColor" stroke-width="1.2"/>
@@ -751,14 +905,11 @@ nav.dark .nav-hamburger span { background: var(--cream); }
             <span>360°</span>
           </button>
 
-          <!-- Film metadata overlay -->
           <div class="film-meta">
-            <span class="film-title">CORS Y GEDOL</span>
-            <span class="film-data">24MM &nbsp; F/2.8 &nbsp; 1/1250</span>
+            <span class="film-title">Cors y Gedol</span>
+            <span class="film-data">24mm &nbsp;·&nbsp; f/2.8 &nbsp;·&nbsp; 1/1250s</span>
           </div>
         </div>
-
-
       </div>
     </div>
 
@@ -826,7 +977,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
       <a href="projects.html" class="link-all">All projects →</a>
     </div>
 
-    <div class="projects-grid-equal">
+    <div class="projects-grid-equal" id="l2ProjectGrid">
 
       <a href="project.html?id=projection-relief-model" class="proj-card-eq">
         <div class="proj-visual-eq">
@@ -925,52 +1076,11 @@ nav.dark .nav-hamburger span { background: var(--cream); }
       <p class="section-intro" style="color:var(--l3-sub)">I love taking photos. Here is a gallery of shots I’ve taken all over the world, from Peruvian landscapes to medieval English castles.</p>
       <a href="#" class="link-all" style="color:var(--l3-acc)">Full gallery →</a>
     </div>
-    <div class="photo-strip">
-      <div class="photo-polaroid" data-title="Druid's Home · Wales" data-src="" onclick="openLightbox(this)">
-        <div class="photo-polaroid-img">
-          <div class="placeholder">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="2" y="5" width="24" height="18" rx="2" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-              <circle cx="14" cy="14" r="5" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-            </svg>
-          </div>
-        </div>
-        <div class="photo-polaroid-label">Druid's Home · Wales</div>
+    <div class="photo-strip" id="l3PhotoStrip">
+      
+      
+      
       </div>
-      <div class="photo-polaroid" data-title="Add photo title" data-src="" onclick="openLightbox(this)">
-        <div class="photo-polaroid-img">
-          <div class="placeholder">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="2" y="5" width="24" height="18" rx="2" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-              <circle cx="14" cy="14" r="5" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-            </svg>
-          </div>
-        </div>
-        <div class="photo-polaroid-label">Add photo title</div>
-      </div>
-      <div class="photo-polaroid" data-title="Liverpool Dusk" data-src="" onclick="openLightbox(this)">
-        <div class="photo-polaroid-img">
-          <div class="placeholder">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="2" y="5" width="24" height="18" rx="2" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-              <circle cx="14" cy="14" r="5" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-            </svg>
-          </div>
-        </div>
-        <div class="photo-polaroid-label">Liverpool Dusk</div>
-      </div>
-      <div class="photo-polaroid" data-title="Add photo title" data-src="" onclick="openLightbox(this)">
-        <div class="photo-polaroid-img">
-          <div class="placeholder">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="2" y="5" width="24" height="18" rx="2" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-              <circle cx="14" cy="14" r="5" stroke="rgba(244,239,228,0.4)" stroke-width="1"/>
-            </svg>
-          </div>
-        </div>
-        <div class="photo-polaroid-label">Add photo title</div>
-      </div>
-    </div>
 
   </div>
   </div><!-- /layer-body -->
@@ -1284,6 +1394,183 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!frame.contains(e.target)) frame.classList.remove('tapped');
   });
 });
+
+// ── L3 PHOTO STRIP — load from photos.json ───────────────────
+(function() {
+  function buildPolaroid(photo) {
+    var div = document.createElement('div');
+    div.className = 'photo-polaroid';
+    div.dataset.title = photo.title || '';
+    div.dataset.src   = photo.src   || '';
+    div.onclick = function() { openLightbox(this); };
+
+    var imgWrap = document.createElement('div');
+    imgWrap.className = 'photo-polaroid-img';
+    if (photo.src) {
+      var img = document.createElement('img');
+      img.src = photo.src;
+      img.alt = photo.title || '';
+      img.onerror = function() { this.style.display = 'none'; };
+      imgWrap.appendChild(img);
+    }
+    var ph = document.createElement('div');
+    ph.className = 'placeholder';
+    ph.innerHTML = '<svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="2" stroke="rgba(244,239,228,0.4)" stroke-width="1"/><circle cx="14" cy="14" r="5" stroke="rgba(244,239,228,0.4)" stroke-width="1"/></svg>';
+    imgWrap.appendChild(ph);
+
+    var label = document.createElement('div');
+    label.className = 'photo-polaroid-label';
+    label.textContent = photo.title || '';
+
+    div.appendChild(imgWrap);
+    div.appendChild(label);
+    return div;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var strip = document.getElementById('l3PhotoStrip');
+    if (!strip) return;
+    fetch('photos.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var photos = data.photos || [];
+        var featured = photos.filter(function(p) { return p.featured; });
+        var selection = featured.length >= 4 ? featured.slice(0, 4) : photos.slice(0, 4);
+        strip.innerHTML = '';
+        selection.forEach(function(p) { strip.appendChild(buildPolaroid(p)); });
+      })
+      .catch(function() {});
+  });
+})();
+
+
+// ── L2 PROJECT GRID — load featured from projects.json ───────
+(function() {
+  var PLACEHOLDER_SVG = '<svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="2" y="5" width="28" height="22" rx="2" stroke="#9A9188" stroke-width="1"/><path d="M2 12h28" stroke="#9A9188" stroke-width="1"/></svg>';
+
+  function esc(s) {
+    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function buildCard(p) {
+    var tags = (p.tags || []).slice(0, 3).map(function(t) {
+      return '<span class="proj-tag">' + esc(t) + '</span>';
+    }).join('');
+
+    var catYear = [p.category, p.year].filter(Boolean).join(' · ');
+    var ctx = p.id ? 'DN-' + p.id.toUpperCase().replace(/-/g,'').slice(0,12) : '';
+
+    var card = document.createElement('a');
+    card.className = 'proj-card-eq';
+    card.href = 'project.html?id=' + esc(p.id);
+    card.innerHTML =
+      '<div class="proj-visual-eq">'
+      + (p.coverImage ? '<img src="' + esc(p.coverImage) + '" alt="' + esc(p.coverAlt || p.title) + '" onerror="this.style.display=\'none\'">' : '')
+      + '<div class="placeholder">' + PLACEHOLDER_SVG + '<span>' + esc(p.title) + '</span></div>'
+      + '</div>'
+      + '<div class="proj-meta-eq">'
+      + (ctx ? '<div class="proj-ctx">' + esc(ctx) + '</div>' : '')
+      + (catYear ? '<div class="proj-cat">' + esc(catYear) + '</div>' : '')
+      + '<div class="proj-name">' + esc(p.title) + '</div>'
+      + (tags ? '<div class="proj-tags">' + tags + '</div>' : '')
+      + '</div>';
+    return card;
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var grid = document.getElementById('l2ProjectGrid');
+    if (!grid) return;
+
+    fetch('projects.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        var projects = Array.isArray(data) ? data : (data.projects || []);
+        var featured = projects.filter(function(p) { return p.featured; }).slice(0, 3);
+        // Fall back to first 3 if none featured
+        if (!featured.length) featured = projects.slice(0, 3);
+        grid.innerHTML = '';
+        featured.forEach(function(p) { grid.appendChild(buildCard(p)); });
+      })
+      .catch(function() {});
+  });
+})();
+
+
+
+
+
+// ── CAPSTONE HOTSPOT ──────────────────────────────────────────
+(function() {
+  var zone  = document.getElementById('capstoneZone');
+  var frame = document.querySelector('.hp-photo-frame');
+  if (!zone || !frame) return;
+  zone.addEventListener('mouseenter', function() {
+    frame.classList.add('capstone-active');
+  });
+  zone.addEventListener('mouseleave', function() {
+    frame.classList.remove('capstone-active');
+  });
+})();
+
+
+
+
+
+// ── CAPSTONE CONNECTOR ────────────────────────────────────────
+(function() {
+  var svg   = document.getElementById('capstoneConnector');
+  var line  = document.getElementById('connLine');
+  var frame = document.querySelector('.hp-photo-frame');
+  var chip  = document.querySelector('.capstone-chip');
+  var zone  = document.getElementById('capstoneZone');
+  if (!svg || !line || !frame || !chip || !zone) return;
+
+  function getCoords() {
+    var fr = frame.getBoundingClientRect();
+    var cr = chip.getBoundingClientRect();
+
+    // Destination: centre of red dot (::before pseudo-element)
+    // Chip padding-left: 10px, dot width: 5px — centre at 12.5px from chip left
+    var x2 = cr.left - fr.left + 14;
+    var y2 = cr.top  - fr.top  + (cr.height / 2) - 5;
+
+    // Origin: fixed offset from chip — stone is always ~same distance from chip
+    var x1 = x2 - 55;
+    var y1 = y2 + 50;
+
+    return { x1:x1, y1:y1, x2:x2, y2:y2 };
+  }
+
+  function drawLine() {
+    var c = getCoords();
+    line.setAttribute('x1', Math.round(c.x1));
+    line.setAttribute('y1', Math.round(c.y1));
+    line.setAttribute('x2', Math.round(c.x2));
+    line.setAttribute('y2', Math.round(c.y2));
+
+    var len = Math.sqrt(Math.pow(c.x2-c.x1,2) + Math.pow(c.y2-c.y1,2));
+    // Reset without transition
+    line.style.transition = 'none';
+    line.style.strokeDasharray = len + 'px';
+    line.style.strokeDashoffset = len + 'px';
+    // Force reflow then animate
+    line.getBoundingClientRect();
+    line.style.transition = 'stroke-dashoffset 0.35s ease';
+    line.style.strokeDashoffset = '0';
+  }
+
+  function hideLine() {
+    line.style.transition = 'none';
+    line.style.strokeDashoffset = line.style.strokeDasharray;
+  }
+
+  zone.addEventListener('mouseenter', drawLine);
+  zone.addEventListener('mouseleave', hideLine);
+  window.addEventListener('resize', function() {
+    if (frame.classList.contains('capstone-active')) drawLine();
+  });
+})();
+
 </script>
 
 </body>
