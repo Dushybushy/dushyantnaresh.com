@@ -140,17 +140,29 @@ nav {
   padding-bottom: 80px;
   background: #F0EBE3;
 }
+/* Alternating album row tints */
+.album-section:nth-child(even) { background: #E8DDD0; }
+.album-section:nth-child(odd)  { background: #F0EBE3; }
 
 /* Album section */
 .album-section { padding: 52px 0 0; }
 .album-section.hidden { display: none; }
+.album-section-alt { position: relative; }
+.album-section-alt .album-header,
+.album-section-alt .carousel-outer { position: relative; z-index: 1; }
 .album-header {
-  display: flex; align-items: baseline; gap: 20px;
-  padding: 0 52px 24px;
+  display: flex; flex-direction: column; gap: 8px;
+  padding: 0 52px 28px;
 }
+.album-label {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--earth); opacity: 0.7;
+  display: flex; align-items: center; gap: 10px;
+}
+.album-label::before { content: ''; display: block; width: 20px; height: 1px; background: var(--earth); opacity: 0.7; }
 .album-name {
-  font-family: var(--font-d); font-size: 32px; font-weight: 300;
-  color: #1A1814; letter-spacing: -0.01em;
+  font-family: var(--font-d); font-size: clamp(36px, 3.8vw, 56px); font-weight: 300;
+  letter-spacing: -0.02em; line-height: 1;
 }
 .album-count { display: none; }
 
@@ -199,12 +211,16 @@ nav {
 .photo-postcard {
   background: #fff;
   padding: 8px 8px 40px 8px;
-  box-shadow:
-    0 2px 8px rgba(0,0,0,0.10),
-    0 8px 28px rgba(0,0,0,0.14),
-    0 20px 52px rgba(0,0,0,0.08);
+  box-shadow: none;
   display: flex; flex-direction: column;
   position: relative;
+  transition: box-shadow 0.3s ease;
+}
+.photo-card:hover .photo-postcard {
+  box-shadow:
+    0 2px 7px rgba(0,0,0,0.09),
+    0 8px 25px rgba(0,0,0,0.126),
+    0 20px 47px rgba(0,0,0,0.072);
 }
 
 /* Image area — adapts to orientation */
@@ -610,14 +626,17 @@ function buildGallery() {
     + '<button onclick="clearFilters()">Clear filters</button>';
   gallery.appendChild(empty);
 
-  allAlbums.forEach(function(album, ai) {
+  var ri = 0; // rendered index — only increments for visible albums
+  allAlbums.forEach(function(album) {
     if (album.hidden) return;
     var photos = allPhotos.filter(function(p) { return p.album === album.id; })
                           .slice().sort(function(a,b){ return a.order - b.order; });
     if (!photos.length) return;
 
+    var isAlt = ri % 2 !== 0;
+
     // Divider (not before first)
-    if (ai > 0) {
+    if (ri > 0) {
       var div = document.createElement('div');
       div.className = 'album-divider album-div-' + album.id;
       gallery.appendChild(div);
@@ -626,11 +645,17 @@ function buildGallery() {
     var section = document.createElement('div');
     section.className = 'album-section';
     section.id = 'album-' + album.id;
+    section.style.background = isAlt ? '#C9B497' : '#F0EBE3';
+    var nameColor = isAlt ? '#7A3520' : '#3F3F3F';
+    if (isAlt) section.style.boxShadow = 'inset 0 3px 4px rgba(26,24,20,0.10), inset 0 -3px 4px rgba(26,24,20,0.07)';
+    if (isAlt) section.classList.add('album-section-alt');
+    ri++;
     section.dataset.albumId = album.id;
 
     section.innerHTML =
       '<div class="album-header">'
-      + '<div class="album-name">' + esc(album.name) + '</div>'
+      + '<div class="album-label">ALBUM.0' + String(album.id.split('').reduce(function(a,c){return((a*31)+c.charCodeAt(0))&0xFFFF;},7) % 90 + 10) + '</div>'
+      + '<div class="album-name" style="color:' + nameColor + '">' + esc(album.name) + '</div>'
       + '<div class="album-count" id="count-' + album.id + '">'
       + photos.length + ' photo' + (photos.length !== 1 ? 's' : '')
       + '</div></div>'
