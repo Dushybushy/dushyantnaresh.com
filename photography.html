@@ -30,23 +30,23 @@ img { display: block; }
 /* ── NAV ─────────────────────────────────────────────────────── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-  background: #F0EBE3; border-bottom: 1px solid rgba(26,24,20,0.1);
+  background: #211007; border-bottom: 1px solid rgba(0,0,0,0.3);
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 52px; height: 64px; overflow: visible;
 }
-.nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
-.nav-logo em { font-style: italic; color: var(--earth); }
+.nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: rgba(244,239,228,0.9); }
+.nav-logo em { font-style: italic; color: #D4736F; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(244,239,228,0.55); transition: color 0.2s; }
 .nav-links a:hover { color: var(--earth); }
 .nav-links a.active { color: var(--earth); }
-.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
-.nav-cta:hover { background: var(--ink); color: var(--cream); }
+.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,239,228,0.88); border: 1px solid rgba(244,239,228,0.25); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
+.nav-cta:hover { background: rgba(244,239,228,0.1); color: var(--cream); }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; margin-left: auto; }
-.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 1px; }
-.nav-mobile { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #F0EBE3; border-bottom: 1px solid var(--rule); padding: 20px 24px 24px; z-index: 199; flex-direction: column; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: rgba(244,239,228,0.8); border-radius: 1px; }
+.nav-mobile { display: none; position: fixed; top: 56px; left: 0; right: 0; background: #211007; border-bottom: 1px solid var(--rule); padding: 20px 24px 24px; z-index: 199; flex-direction: column; }
 .nav-mobile.open { display: flex; }
-.nav-mobile a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.nav-mobile a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(244,239,228,0.55); padding: 14px 0; border-bottom: 1px solid rgba(244,239,228,0.1); }
 .nav-mobile a:last-child { border-bottom: none; }
 .nav-mobile a:hover { color: var(--earth); }
 
@@ -57,7 +57,7 @@ nav {
 .page-folder-tab {
   position: relative; z-index: 5;
   display: flex; align-items: stretch; height: 38px;
-  background: #F4EFE4; /* matches nav */
+  background: #211007; /* matches nav */
 }
 .page-folder-tab::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px; background: rgba(255,255,255,0.08); }
 /* Tab chip — matches homepage strat-bar-left on dark layer */
@@ -75,7 +75,7 @@ nav {
 .page-header {
   background: #5C2E22;
   padding: 52px 52px 48px;
-  position: relative; height: 260px; overflow: hidden;
+  position: relative; height: 200px; overflow: hidden;
 
   background-image: none;
 }
@@ -102,11 +102,13 @@ nav {
 .page-title {
   font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
   font-weight: 500; font-style: italic; line-height: 1.0; color: #E8A87A;
-  margin-bottom: 22px; letter-spacing: -0.01em;
+  margin-bottom: 14px; letter-spacing: -0.01em;
+  letter-spacing: -0.01em; hyphens: none;
+
 }
 .page-subtitle {
   font-family: var(--font-d); font-size: 20px; font-style: normal;
-  line-height: 1.75; color: #E8A87A; opacity: 0.85;
+  line-height: 1.6; color: #E8A87A; opacity: 0.85;
 }
 
 /* ── FILTER BAR ──────────────────────────────────────────────── */
@@ -145,14 +147,14 @@ nav {
 .album-section:nth-child(odd)  { background: #F0EBE3; }
 
 /* Album section */
-.album-section { padding: 52px 0 0; }
+.album-section { padding: 32px 0 0; }
 .album-section.hidden { display: none; }
 .album-section-alt { position: relative; }
 .album-section-alt .album-header,
 .album-section-alt .carousel-outer { position: relative; z-index: 1; }
 .album-header {
   display: flex; flex-direction: column; gap: 8px;
-  padding: 0 52px 28px;
+  padding: 0 52px 16px;
 }
 .album-label {
   font-family: var(--font-m); font-size: 9px; letter-spacing: 0.22em;
@@ -228,11 +230,11 @@ nav {
   position: relative; overflow: hidden; background: #DDD4C0;
 }
 /* Landscape: 4:3 */
-.photo-card.landscape .photo-img-wrap { width: 420px; aspect-ratio: 4/3; }
+.photo-card.landscape .photo-img-wrap { width: 540px; aspect-ratio: 4/3; }
 /* Portrait: 3:4 */
-.photo-card.portrait .photo-img-wrap  { width: 270px; aspect-ratio: 3/4; }
+.photo-card.portrait .photo-img-wrap  { width: 340px; aspect-ratio: 3/4; }
 /* Square */
-.photo-card.square .photo-img-wrap    { width: 340px; aspect-ratio: 1/1; }
+.photo-card.square .photo-img-wrap    { width: 440px; aspect-ratio: 1/1; }
 
 .photo-img-wrap img {
   width: 100%; height: 100%; object-fit: cover; display: block;
@@ -313,8 +315,8 @@ nav {
   position: relative; display: flex;
   align-items: center; justify-content: center;
   gap: 0; width: 100%;
-  padding: 0 80px;
-  max-height: 76vh;
+  padding: 0 70px;
+  max-height: 90vh;
 }
 
 .lbx-arrow {
@@ -337,12 +339,12 @@ nav {
   padding: 10px 10px 48px 10px;
   box-shadow: 0 8px 48px rgba(0,0,0,0.6), 0 32px 80px rgba(0,0,0,0.4);
   flex-shrink: 0; position: relative;
-  max-height: 76vh; display: flex; flex-direction: column;
+  max-height: 90vh; display: flex; flex-direction: column;
 }
 #lbxImg {
   display: block; object-fit: contain;
-  max-height: calc(76vh - 58px); /* subtract padding */
-  max-width: min(80vw, 960px);
+  max-height: calc(90vh - 68px); /* subtract padding */
+  max-width: min(90vw, 1400px);
   width: auto; height: auto;
 }
 
@@ -447,9 +449,44 @@ nav {
   .site-footer { padding: 20px; }
   .footer-nav { gap: 18px; flex-wrap: wrap; }
 }
+
+/* ── DEPTH RAIL ──────────────────────────────────────────────── */
+#depthRail {
+  position: fixed; left: 20px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 150; display: flex; flex-direction: column;
+  align-items: center; gap: 0; pointer-events: none;
+}
+.depth-line { width: 1px; height: 80px; background: rgba(26,24,20,0.15); }
+#depthMarker { width: 5px; height: 5px; border-radius: 50%; background: var(--earth); flex-shrink: 0; }
+@media (max-width: 768px) { #depthRail { display: none; } }
+
+/* ── DEPTH RAIL ──────────────────────────────────────────────── */
+#depthRail {
+  position: fixed; left: 20px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 150; display: flex; flex-direction: column;
+  align-items: center; gap: 0; pointer-events: none;
+}
+.depth-line { width: 1px; height: 80px; background: rgba(26,24,20,0.15); }
+#depthMarker { width: 5px; height: 5px; border-radius: 50%; background: var(--earth); flex-shrink: 0; }
+#depthLabel {
+  font-family: var(--font-m); font-size: 8px; color: var(--ink-soft);
+  letter-spacing: 0.08em; writing-mode: vertical-rl;
+  text-orientation: mixed; transform: rotate(180deg);
+  padding: 10px 0;
+}
+@media (max-width: 768px) { #depthRail { display: none; } }
 </style>
 </head>
 <body>
+
+<div id="depthRail">
+  <div class="depth-line"></div>
+  <div id="depthMarker"></div>
+  <div id="depthLabel">0.0m</div>
+  <div class="depth-line"></div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
@@ -551,26 +588,6 @@ var lbxIndex    = 0;
 async function init() {
   var gallery = document.getElementById('galleryPage');
   try {
-    // TEST DATA
-    allAlbums = [
-      { id:'heritage', name:'Heritage', order:1 },
-      { id:'fieldwork', name:'Fieldwork', order:2 },
-      { id:'landscape', name:'Landscape', order:3 }
-    ];
-    allPhotos = [
-      { id:'p1', title:'Fountains Abbey', album:'heritage', tags:['heritage','england'], src:'https://images.unsplash.com/photo-1548263594-a71ea65a8598?w=800', orientation:'landscape', focalLength:'24mm', aperture:'f/8', shutterSpeed:'1/250s', order:1 },
-      { id:'p2', title:'Studley Royal', album:'heritage', tags:['heritage'], src:'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop', orientation:'portrait', focalLength:'50mm', aperture:'f/2.8', shutterSpeed:'1/500s', order:2 },
-      { id:'p3', title:'Stone Circle', album:'heritage', tags:['heritage','archaeology'], src:'https://images.unsplash.com/photo-1520962922320-2038eebab146?w=800', orientation:'landscape', focalLength:'35mm', aperture:'f/5.6', shutterSpeed:'1/320s', order:3 },
-      { id:'p4', title:'Medieval Arch', album:'heritage', tags:['heritage','architecture'], src:'https://images.unsplash.com/photo-1543722530-d2c3201371e7?w=800', orientation:'landscape', focalLength:'28mm', aperture:'f/7.1', shutterSpeed:'1/200s', order:4 },
-      { id:'p5', title:'Survey Work', album:'fieldwork', tags:['fieldwork','archaeology'], src:'https://images.unsplash.com/photo-1604754742629-3e5728249d73?w=800', orientation:'landscape', focalLength:'35mm', aperture:'f/5.6', shutterSpeed:'1/500s', order:1 },
-      { id:'p6', title:'Field Notes', album:'fieldwork', tags:['fieldwork'], src:'https://images.unsplash.com/photo-1516979187457-637abb4f9353?w=600&h=800&fit=crop', orientation:'portrait', focalLength:'50mm', aperture:'f/4', shutterSpeed:'1/250s', order:2 },
-      { id:'p7', title:'Trench Section', album:'fieldwork', tags:['fieldwork','archaeology'], src:'https://images.unsplash.com/photo-1582560475093-ba66accbc095?w=800', orientation:'landscape', focalLength:'24mm', aperture:'f/8', shutterSpeed:'1/400s', order:3 },
-      { id:'p8', title:'Yorkshire Moors', album:'landscape', tags:['landscape','england'], src:'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=800', orientation:'landscape', focalLength:'16mm', aperture:'f/11', shutterSpeed:'1/125s', order:1 },
-      { id:'p9', title:'Valley Mist', album:'landscape', tags:['landscape'], src:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=800', orientation:'landscape', focalLength:'70mm', aperture:'f/8', shutterSpeed:'1/400s', order:2 },
-      { id:'p10', title:'Golden Hour', album:'landscape', tags:['landscape','england'], src:'https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&h=900&fit=crop', orientation:'portrait', focalLength:'85mm', aperture:'f/2', shutterSpeed:'1/800s', order:3 }
-    ];
-    render(); return;
-    // END TEST DATA
     var res = await fetch('photos.json');
     if (!res.ok) throw new Error();
     var data = await res.json();
@@ -593,7 +610,7 @@ function buildFilterTags() {
   // Collect all unique tags across all photos
   var tagSet = {};
   allPhotos.forEach(function(p) {
-    (p.tags||[]).forEach(function(t) { tagSet[t] = true; });
+    (p.tags||[]).forEach(function(t) { tagSet[t.toLowerCase().trim()] = true; });
   });
   var tags = Object.keys(tagSet).sort();
   var container = document.getElementById('filterTags');
@@ -601,7 +618,7 @@ function buildFilterTags() {
   tags.forEach(function(tag) {
     var btn = document.createElement('button');
     btn.className = 'filter-tag';
-    btn.textContent = tag;
+    btn.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
     btn.dataset.tag = tag;
     btn.addEventListener('click', function() { toggleTag(tag, btn); });
     container.appendChild(btn);
@@ -609,6 +626,7 @@ function buildFilterTags() {
 }
 
 function toggleTag(tag, btn) {
+  tag = tag.toLowerCase().trim();
   var i = activeTags.indexOf(tag);
   if (i >= 0) { activeTags.splice(i, 1); btn.classList.remove('active'); }
   else         { activeTags.push(tag);    btn.classList.add('active'); }
@@ -682,7 +700,7 @@ function makeCard(photo) {
   card.className = 'photo-card ' + orient;
   card.dataset.photoId = photo.id;
   card.dataset.album   = photo.album;
-  card.dataset.tags    = (photo.tags||[]).join(',');
+  card.dataset.tags    = (photo.tags||[]).map(function(t){return t.toLowerCase().trim();}).join(',');
 
   var imgHTML = photo.src
     ? '<img src="' + esc(photo.src) + '" alt="' + esc(photo.title||'') + '" loading="lazy">'
@@ -715,8 +733,8 @@ function applyFilter() {
     var visibleCount = 0;
 
     cards.forEach(function(card) {
-      var tags = card.dataset.tags ? card.dataset.tags.split(',') : [];
-      var show = !hasFilter || activeTags.every(function(t) { return tags.indexOf(t) >= 0; });
+      var tags = card.dataset.tags ? card.dataset.tags.split(',').map(function(t){return t.trim();}) : [];
+      var show = !hasFilter || activeTags.some(function(t) { return tags.indexOf(t) >= 0; });
       card.classList.toggle('filtered-out', !show);
       if (show) visibleCount++;
     });
@@ -767,10 +785,10 @@ function openLightbox(photoId) {
   if (!clickedPhoto) return;
 
   if (activeTags.length > 0) {
-    // Filtered mode: only photos matching ALL active tags, sorted by album order then photo order
+    // Filtered mode: photos matching ANY active tag, sorted by album order then photo order
     lbxSequence = allPhotos.filter(function(p) {
-      var tags = p.tags || [];
-      return activeTags.every(function(t) { return tags.indexOf(t) >= 0; });
+      var tags = (p.tags || []).map(function(t){return t.toLowerCase().trim();});
+      return activeTags.some(function(t) { return tags.indexOf(t) >= 0; });
     }).slice().sort(function(a,b) {
       var aAlbum = allAlbums.findIndex(function(al) { return al.id === a.album; });
       var bAlbum = allAlbums.findIndex(function(al) { return al.id === b.album; });
@@ -852,6 +870,26 @@ function esc(s) {
 }
 
 init();
+
+// ── DEPTH RAIL ────────────────────────────────────────────────
+(function() {
+  var label = document.getElementById('depthLabel');
+  if (!label) return;
+
+  function updateDepth() {
+    var scrollTop  = window.scrollY || document.documentElement.scrollTop;
+    var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var progress = Math.min(scrollTop / docHeight, 1);
+    // Range: 0.0m at top to 1.8m at bottom
+    var depth = (progress * 1.8).toFixed(1);
+    label.textContent = depth + 'm';
+  }
+
+  updateDepth();
+  window.addEventListener('scroll', updateDepth, { passive: true });
+})();
+
 </script>
 </body>
 </html>

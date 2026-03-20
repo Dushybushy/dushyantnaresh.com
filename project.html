@@ -34,7 +34,7 @@
 }
 
 html { scroll-behavior: smooth; }
-body { background: #F0EBE3; color: var(--ink); font-family: var(--font-b); font-size: 17px; line-height: 1.7; }
+body { background: var(--cream); color: var(--ink); font-family: var(--font-b); font-size: 17px; line-height: 1.7; }
 a { color: inherit; text-decoration: none; }
 img { display: block; }
 
@@ -88,26 +88,12 @@ nav {
   position: absolute; top: 36px; left: 0; right: 0; bottom: 0;
   z-index: 1;
   background: #d2ba98;
-
-  background-image: none;
 }
 .cs-header-band::before {
   content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
   background-image:
-    repeating-linear-gradient(
-      108deg,
-      transparent,
-      transparent 5px,
-      rgba(100,70,40,0.032) 5px,
-      rgba(100,70,40,0.032) 6px
-    ),
-    repeating-linear-gradient(
-      18deg,
-      transparent,
-      transparent 6px,
-      rgba(100,70,40,0.023) 6px,
-      rgba(100,70,40,0.023) 7px
-    );
+    repeating-linear-gradient(108deg, transparent, transparent 5px, rgba(100,70,40,0.032) 5px, rgba(100,70,40,0.032) 6px),
+    repeating-linear-gradient(18deg, transparent, transparent 6px, rgba(100,70,40,0.023) 6px, rgba(100,70,40,0.023) 7px);
 }
 .cs-header-text {
   position: relative; z-index: 3;
@@ -170,22 +156,44 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
 .cs-postcard-placeholder span { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
 
 /* ── BODY ─────────────────────────────────────── */
+/* ── BODY ──────────────────────────────────────── */
 .cs-body {
-  background: #F0EBE3;
+  background: #E2D4BC;
+}
+
+/* Row 1 — tools (left col) + meta under hero (right col) */
+.cs-tools-row {
   display: grid;
   grid-template-columns: calc(50% - 104px) 1fr;
-  border-bottom: 1px solid var(--rule);
 }
-.cs-body-left {
-  padding: 28px 64px 80px 52px;
-}
-.cs-body-right {
-  padding: 248px 52px 80px 64px;
+.cs-tools-col {
+  grid-column: 1;
+  padding: 52px 64px 28px 52px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px 40px;
   align-content: start;
 }
+.cs-meta-col {
+  grid-column: 2;
+  padding-top: calc(var(--card-overhang) + 50px);
+  padding-right: 52px;
+  padding-bottom: 28px;
+  padding-left: 64px;
+}
+
+/* Row 2 — full-width body text */
+.cs-body-text-row {
+  padding: 28px 52px 80px 52px;
+}
+
+.cs-meta-row {
+  display: flex; flex-wrap: wrap; gap: 0;
+}
+.cs-meta-item { display: flex; flex-direction: column; gap: 5px; padding-right: 40px; flex-shrink: 0; }
+.cs-meta-label { font-family: var(--font-m); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); }
+.cs-meta-value { font-family: var(--font-b); font-size: 15px; color: var(--ink); white-space: nowrap; }
+
 .cs-section-label {
   font-family: var(--font-m); font-size: 12px; letter-spacing: 0.2em;
   text-transform: uppercase; color: var(--ink-faint); margin-bottom: 32px;
@@ -201,44 +209,54 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
 .cs-body-text figure img { width: 100%; display: block; }
 .cs-body-text figure figcaption { font-family: var(--font-m); font-size: 11px; color: var(--ink-faint); margin-top: 8px; letter-spacing: 0.06em; }
 .cs-tools-group { display: flex; flex-direction: column; }
-.cs-tools-label { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
+.cs-tools-label { font-family: var(--font-m); font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-faint); padding-bottom: 14px; border-bottom: 1px solid var(--rule); }
 .cs-tools-list { list-style: none; }
-.cs-tools-list li { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #4A3E32; padding: 12px 0; border-bottom: 1px solid rgba(26,24,20,0.14); }
+.cs-tools-list li { font-family: var(--font-b); font-size: 14px; font-weight: 400; letter-spacing: 0.08em; color: var(--ink); padding: 12px 0; border-bottom: 1px solid rgba(26,24,20,0.14); }
 .cs-tools-list li:last-child { border-bottom: none; }
-.cs-meta-row {
-  display: flex; flex-wrap: nowrap; gap: 0;
-  margin-top: 52px; padding-top: 32px;
-  border-top: 1px solid var(--rule); overflow: hidden;
-}
-.cs-meta-item { display: flex; flex-direction: column; gap: 5px; padding-right: 28px; flex-shrink: 0; }
-.cs-meta-label { font-family: var(--font-m); font-size: 8px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-faint); }
-.cs-meta-value { font-family: var(--font-b); font-size: 15px; color: var(--ink); }
+
 
 /* ── GALLERY ──────────────────────────────────── */
 .cs-gallery { background: #d2ba98; padding: 72px 52px 96px; }
 .cs-gallery-header { margin-bottom: 40px; }
-.cs-gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 4px; }
-/* Old layout classes kept for backwards compatibility */
-.cs-img-full  { grid-column: span 12; }
-.cs-img-wide  { grid-column: span 8;  }
-.cs-img-med   { grid-column: span 4;  }
-.cs-img-half  { grid-column: span 6;  }
-.cs-img-third { grid-column: span 4;  }
-/* New semantic layout classes — image determines aspect ratio */
-.cs-img-landscape       { grid-column: span 8;  }
-.cs-img-portrait        { grid-column: span 4;  }
-.cs-img-square          { grid-column: span 5;  }
-.cs-img-equirectangular { grid-column: span 12; height: 420px; }
-/* Images fill their container naturally */
-.cs-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-.cs-img-landscape img, .cs-img-portrait img, .cs-img-square img { height: auto; min-height: 200px; }
-.cs-img { position: relative; background: #DDD4BF; cursor: pointer; overflow: hidden; }
-.cs-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
-.cs-img:hover img { transform: scale(1.03); }
-.cs-img-placeholder { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--ink-faint); }
+.cs-gallery-grid {
+  column-count: 3;
+  column-gap: 16px;
+}
+.cs-img {
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background: #fff;
+  padding: 8px 8px 44px 8px;
+  box-shadow: 0 2px 8px rgba(26,24,20,0.10), 0 6px 20px rgba(26,24,20,0.10);
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cs-img:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(26,24,20,0.15), 0 12px 36px rgba(26,24,20,0.12);
+}
+.cs-img img { width: 100%; height: auto; display: block; }
+.cs-img-caption {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 44px;
+  display: flex; align-items: center; padding: 0 10px;
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 0.06em;
+  color: #6B5848; pointer-events: none;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cs-img-placeholder {
+  display: none;
+  aspect-ratio: 4/3;
+  background: #DDD4BF;
+  flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px; color: var(--ink-faint);
+}
 .cs-img-placeholder span { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
-.cs-img-360 { position: relative; cursor: default; }
-.cs-img-360 .pnlm-container { width: 100%; height: 100%; }
+.cs-img-full, .cs-img-wide, .cs-img-med, .cs-img-half, .cs-img-third { }
+.cs-img-360 { cursor: default; }
+.cs-img-360 .pnlm-container { width: 100%; aspect-ratio: 2/1; }
 .cs-img-360-badge {
   position: absolute; top: 10px; right: 10px; z-index: 10;
   background: rgba(26,20,14,0.72); color: rgba(244,239,228,0.88);
@@ -246,9 +264,6 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   text-transform: uppercase; padding: 5px 10px; pointer-events: none;
   border: 1px solid rgba(244,239,228,0.2);
 }
-.cs-img-film { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-end; padding: 32px 14px 10px; background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 100%); pointer-events: none; opacity: 0; transition: opacity 0.3s; }
-.cs-img:hover .cs-img-film { opacity: 1; }
-.cs-img-film-title, .cs-img-film-data { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A84A; text-shadow: 0 1px 4px rgba(0,0,0,0.7); line-height: 1; }
 
 /* ── FOOTER ───────────────────────────────────── */
 .site-footer {
@@ -265,16 +280,55 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
 .footer-right a { color: var(--ink-soft); transition: color 0.2s; }
 .footer-right a:hover { color: var(--earth); }
 
-/* ── LIGHTBOX ─────────────────────────────────── */
-#csLightbox { display: none; position: fixed; inset: 0; background: rgba(26,24,20,0.96); z-index: 9999; cursor: pointer; }
-#csLightbox.open { display: grid; place-items: center; }
-.lbx-inner { display: flex; flex-direction: column; align-items: center; gap: 16px; cursor: default; width: 92vw; max-height: 92vh; }
-#lbxImg { max-width: 100%; max-height: 82vh; object-fit: contain; display: block; box-shadow: 0 8px 48px rgba(0,0,0,0.6); }
-.lbx-caption { display: flex; justify-content: space-between; width: 100%; }
-.lbx-caption-title, .lbx-caption-data { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #E8A84A; opacity: 0.8; }
-.lbx-close { position: fixed; top: 28px; right: 36px; background: none; border: 1px solid rgba(244,239,228,0.25); color: rgba(244,239,228,0.6); font-size: 16px; width: 40px; height: 40px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; z-index: 10000; }
+/* ── LIGHTBOX — photography-style polaroid ───── */
+#csLightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(14,11,9,0.98);
+  z-index: 9999; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+#csLightbox.open { display: flex; }
+.lbx-frame {
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  width: 100%; padding: 0 70px; max-height: 90vh;
+}
+.lbx-postcard {
+  background: #fff; padding: 10px 10px 48px 10px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6), 0 32px 80px rgba(0,0,0,0.4);
+  flex-shrink: 0; position: relative;
+  max-height: 90vh; display: flex; flex-direction: column;
+}
+#lbxImg {
+  display: block; object-fit: contain;
+  max-height: calc(90vh - 68px);
+  max-width: min(90vw, 1400px);
+  width: auto; height: auto;
+}
+.lbx-meta-strip {
+  position: absolute; bottom: 0; left: 0; right: 0; height: 48px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 10px; pointer-events: none;
+}
+.lbx-meta-title {
+  font-family: var(--font-m); font-size: 13px; letter-spacing: 0.06em;
+  color: #6B5848; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex: 1; margin-right: 16px;
+}
+.lbx-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; background: none;
+  border: 1px solid rgba(244,239,228,0.2); color: rgba(244,239,228,0.5);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s, background 0.2s; z-index: 2;
+}
+.lbx-arrow:hover { border-color: rgba(244,239,228,0.7); color: var(--cream); background: rgba(244,239,228,0.08); }
+.lbx-arrow.left { left: 20px; }
+.lbx-arrow.right { right: 20px; }
+.lbx-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.lbx-close { position: fixed; top: 24px; right: 28px; background: none; border: 1px solid rgba(244,239,228,0.2); color: rgba(244,239,228,0.5); font-size: 16px; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; z-index: 10000; }
 .lbx-close:hover { border-color: rgba(244,239,228,0.7); color: var(--cream); }
-.lbx-nav-hint { font-family: var(--font-b); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(244,239,228,0.2); }
+.lbx-counter { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); font-family: var(--font-m); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,239,228,0.25); }
 
 /* ── ERROR / LOADING ──────────────────────────── */
 .page-loading, .page-error { padding: 120px 52px; text-align: center; }
@@ -303,8 +357,12 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   nav { padding: 0 32px; }
   .cs-header-text { padding: 44px 32px 36px; max-width: 48%; }
   .cs-postcard-wrap { right: 32px; }
-  .cs-body-left { padding: 28px 40px 72px 32px; }
-  .cs-body-right { padding: 200px 32px 72px 40px; }
+  .cs-tools-row { grid-template-columns: 1fr 1fr; }
+  .cs-tools-col { padding: 44px 40px 28px 32px; }
+  .cs-meta-col { padding: 28px 32px 28px 40px; }
+  .cs-body-text-row { padding: 28px 32px 0; }
+  .cs-meta-row { padding: 44px 32px 72px; }
+  .cs-gallery { padding: 56px 32px 80px; }
   .cs-gallery { padding: 56px 32px 80px; }
   .site-footer { padding: 0 32px; }
 }
@@ -353,20 +411,17 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   }
 
   /* ── BODY ── */
-  .cs-body { display: flex; flex-direction: column; }
-  .cs-body-left { padding: 32px 24px 40px; }
-  .cs-body-right { padding: 32px 24px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 32px 24px; }
-  .cs-meta-row { flex-wrap: wrap; margin-top: 32px; }
-  .cs-meta-item { padding-bottom: 8px; }
+  .cs-tools-row { display: block; }
+  .cs-tools-col { grid-template-columns: 1fr 1fr; padding: 32px 24px 0; gap: 32px 20px; }
+  .cs-meta-col { padding: 28px 24px; }
+  .cs-body-text-row { padding: 32px 24px 0; }
+  .cs-meta-row { flex-wrap: wrap; padding: 32px 24px 40px; margin-top: 32px; }
+  .cs-meta-item { padding-right: 24px; padding-bottom: 12px; }
 
     /* ── GALLERY ── */
   .cs-gallery { padding: 40px 24px 60px; }
-  .cs-gallery-grid { grid-template-columns: 1fr; gap: 3px; }
-  .cs-img-full, .cs-img-wide, .cs-img-half, .cs-img-third {
-    grid-column: span 1; aspect-ratio: 16/9;
-  }
-  .cs-img-med { grid-column: span 1; aspect-ratio: 4/3; }
-  .cs-img-film { opacity: 1; }
+  .cs-gallery-grid { column-count: 1; column-gap: 12px; }
+  .cs-img { margin-bottom: 12px; }
 
   /* ── FOOTER ── */
   .site-footer { height: auto; padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -381,10 +436,11 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   .cs-title { font-size: clamp(28px, 9vw, 44px); }
   .cs-subtitle { font-size: 17px; }
   .cs-postcard-wrap { width: calc(100% - 40px); margin: 0 20px; }
-  .cs-body-left { padding: 28px 20px 32px; }
-  .cs-body-right { padding: 28px 20px 32px; gap: 24px 16px; }
+  .cs-body { padding: 24px 20px 40px; }
+  .cs-body-right { gap: 20px 14px; }
   .cs-tools-list li { font-size: 11px; padding: 10px 0; }
   .cs-gallery { padding: 32px 20px 48px; }
+  .cs-gallery-grid { column-count: 1; }
   .site-footer { padding: 20px; }
   .footer-nav { gap: 18px; flex-wrap: wrap; }
 }
@@ -418,37 +474,51 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   <div class="page-loading"><p>Loading project…</p></div>
 </div>
 
-<div id="csLightbox" onclick="closeLightbox()">
+<div id="csLightbox">
   <button class="lbx-close" onclick="closeLightbox()">&#x2715;</button>
-  <div class="lbx-inner">
-    <img id="lbxImg" src="" alt=""/>
-    <div class="lbx-caption">
-      <span id="lbxTitle" class="lbx-caption-title"></span>
-      <span id="lbxMeta"  class="lbx-caption-data"></span>
+  <div class="lbx-frame" onclick="closeLightbox()">
+    <button class="lbx-arrow left" onclick="event.stopPropagation();lbxNav(-1)">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lbx-postcard" onclick="event.stopPropagation()">
+      <img id="lbxImg" src="" alt=""/>
+      <div class="lbx-meta-strip">
+        <span id="lbxTitle" class="lbx-meta-title"></span>
+      </div>
     </div>
-    <div class="lbx-nav-hint">← → to navigate &nbsp;·&nbsp; Esc to close</div>
+    <button class="lbx-arrow right" onclick="event.stopPropagation();lbxNav(1)">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
   </div>
+  <div class="lbx-counter" id="lbxCounter"></div>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Lightbox ─────────────────────────────────────────────────
 var galleryItems = [];
 var galleryIndex = 0;
 
 function openLightbox(el) {
   galleryIndex = galleryItems.indexOf(el);
-  showLightboxItem(el);
+  showLightboxItem(galleryIndex);
+  document.getElementById('csLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function showLightboxItem(el) {
-  var lb = document.getElementById('csLightbox');
+function showLightboxItem(idx) {
+  var el = galleryItems[idx];
+  if (!el) return;
   var lbImg = document.getElementById('lbxImg');
   var srcEl = el.querySelector('img');
   if (srcEl && srcEl.src && !srcEl.src.endsWith('/')) {
     lbImg.src = srcEl.src; lbImg.style.display = 'block';
   } else { lbImg.style.display = 'none'; }
   document.getElementById('lbxTitle').textContent = el.dataset.title || '';
-  document.getElementById('lbxMeta').textContent  = el.dataset.meta  || '';
-  lb.classList.add('open'); document.body.style.overflow = 'hidden';
+  var counter = document.getElementById('lbxCounter');
+  if (counter && galleryItems.length > 1) counter.textContent = (idx+1) + ' / ' + galleryItems.length;
+}
+function lbxNav(dir) {
+  galleryIndex = (galleryIndex + dir + galleryItems.length) % galleryItems.length;
+  showLightboxItem(galleryIndex);
 }
 function closeLightbox() {
   document.getElementById('csLightbox').classList.remove('open');
@@ -458,19 +528,20 @@ function openHeroMedia(el) {
   if (el.classList.contains('is-video')) return;
   var img = el.querySelector('.cs-media-img');
   if (!img || !img.src || img.src.endsWith('/')) return;
-  var lb = document.getElementById('csLightbox');
   document.getElementById('lbxImg').src = img.src;
   document.getElementById('lbxImg').style.display = 'block';
   document.getElementById('lbxTitle').textContent = el.dataset.title || '';
-  document.getElementById('lbxMeta').textContent  = '';
-  lb.classList.add('open'); document.body.style.overflow = 'hidden';
+  var counter = document.getElementById('lbxCounter');
+  if (counter) counter.textContent = '';
+  document.getElementById('csLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
 document.addEventListener('keydown', function(e) {
   var lb = document.getElementById('csLightbox');
   if (!lb.classList.contains('open')) return;
   if (e.key === 'Escape')     closeLightbox();
-  if (e.key === 'ArrowRight') { galleryIndex = (galleryIndex + 1) % galleryItems.length; showLightboxItem(galleryItems[galleryIndex]); }
-  if (e.key === 'ArrowLeft')  { galleryIndex = (galleryIndex - 1 + galleryItems.length) % galleryItems.length; showLightboxItem(galleryItems[galleryIndex]); }
+  if (e.key === 'ArrowRight') lbxNav(1);
+  if (e.key === 'ArrowLeft')  lbxNav(-1);
 });
 
 // ── Project renderer ─────────────────────────────────────────
@@ -483,6 +554,13 @@ function renderBodyText(text) {
   if (!text) return '';
   // Check if text contains HTML tags — if so render as innerHTML directly
   if (/<[a-z][\s\S]*>/i.test(text)) {
+    // Convert any youtube.com/watch?v= or youtu.be/ links to nocookie embed iframes
+    text = text.replace(/https?:\/\/(?:www\.)?youtube\.com\/watch\?(?:[^"'\s]*&)?v=([A-Za-z0-9_-]{11})[^"'\s]*/g,
+      'https://www.youtube-nocookie.com/embed/$1');
+    text = text.replace(/https?:\/\/youtu\.be\/([A-Za-z0-9_-]{11})[^"'\s]*/g,
+      'https://www.youtube-nocookie.com/embed/$1');
+    // Also replace any remaining youtube.com/embed with nocookie variant
+    text = text.replace(/youtube\.com\/embed/g, 'youtube-nocookie.com/embed');
     // Split on double newlines but preserve HTML blocks
     return text.split(/\n\n+/).filter(Boolean).map(p => {
       // If paragraph starts with a block tag, don't wrap in <p>
@@ -505,45 +583,33 @@ function renderToolsList(items, label) {
 
 function renderGallery(media) {
   if (!media || !media.length) return '';
-  // Sort by order field if present
   var sorted = media.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); });
-  const cells = sorted.map((m, i) => {
-    const layoutClass = m.layout || 'cs-img-half';
+  var cells = sorted.map(function(m, i) {
+    var lc = m.layout || 'cs-img-half';
+    var url = (m.url || '')
+      .replace(/https?:\/\/(?:www\.)?youtube\.com\/watch\?(?:[^"'\s]*&)?v=([A-Za-z0-9_-]{11})[^"'\s]*/g, 'https://www.youtube-nocookie.com/embed/$1')
+      .replace(/https?:\/\/youtu\.be\/([A-Za-z0-9_-]{11})[^"'\s]*/g, 'https://www.youtube-nocookie.com/embed/$1')
+      .replace('youtube.com/embed', 'youtube-nocookie.com/embed');
     if (m.type === 'video') {
-      return `<div class="${layoutClass} cs-img">
-        <iframe src="${esc(m.url)}" allowfullscreen></iframe>
-      </div>`;
+      return '<div class="'+lc+' cs-img"><iframe src="'+esc(url)+'" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe></div>';
     }
     if (m.type === '360') {
-      const pid = 'pnlm-' + i;
-      return `<div class="${layoutClass} cs-img cs-img-360" data-pnlm-src="${esc(m.url)}" id="${pid}">
-        <div class="cs-img-360-badge">360°</div>
-        <div class="cs-img-film">
-          <span class="cs-img-film-title">${esc(m.caption || '')}</span>
-        </div>
-      </div>`;
+      var pid = 'pnlm-' + i;
+      return '<div class="'+lc+' cs-img cs-img-360" data-pnlm-src="'+esc(url)+'" id="'+pid+'">'
+        +'<div class="cs-img-360-badge">360°</div>'
+        +'</div>';
     }
-    return `<div class="${layoutClass} cs-img"
-      data-title="${esc(m.caption || '')}" data-meta=""
-      onclick="openLightbox(this)">
-      <img src="${esc(m.url)}" alt="${esc(m.caption || '')}"
-           onerror="this.style.display='none'" loading="lazy"/>
-      <div class="cs-img-placeholder">
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1"/></svg>
-        <span>Image</span>
-      </div>
-      <div class="cs-img-film">
-        <span class="cs-img-film-title">${esc(m.caption || '')}</span>
-        <span class="cs-img-film-data"></span>
-      </div>
-    </div>`;
+    var captionHtml = m.caption ? '<div class="cs-img-caption">'+esc(m.caption)+'</div>' : '';
+    return '<div class="'+lc+' cs-img" data-title="'+esc(m.caption||'')+'" data-meta="" onclick="openLightbox(this)">'
+      +'<img src="'+esc(url)+'" alt="'+esc(m.caption||'')+'" loading="lazy" onload="var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p)p.style.display=\'none\';" onerror="this.style.display=\'none\';var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p){p.style.display=\'flex\';}">'
+      +'<div class="cs-img-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1"/></svg><span>Image</span></div>'
+      +captionHtml
+      +'</div>';
   }).join('');
-  return `<div class="cs-gallery">
-    <div class="cs-gallery-header">
-      <div class="cs-section-label" style="width:100%;margin-bottom:0">Project media</div>
-    </div>
-    <div class="cs-gallery-grid">${cells}</div>
-  </div>`;
+  return '<div class="cs-gallery">'
+    +'<div class="cs-gallery-header"><div class="cs-section-label" style="width:100%;margin-bottom:0">Project media</div></div>'
+    +'<div class="cs-gallery-grid">'+cells+'</div>'
+    +'</div>';
 }
 
 async function loadProject() {
@@ -562,7 +628,7 @@ async function loadProject() {
     const all = await res.json();
     project = all.find(p => p.id === id);
   } catch(e) {
-    root.innerHTML = '<div class="page-error"><h2>Could not load project</h2><p>Please try again later.</p></div>';
+    root.innerHTML = '<div class="page-error"><h2>Could not load project</h2><p>Make sure you are running a local server (e.g. VS Code Live Server). Opening HTML files directly as file:// will block fetch() requests.</p></div>';
     return;
   }
 
@@ -612,61 +678,52 @@ async function loadProject() {
 
   const galleryHTML = renderGallery(project.media);
 
-  root.innerHTML = `
-    <div class="cs-above">
+  const allText = renderBodyText(project.introText) + renderBodyText(project.body);
 
-      <div class="cs-folder-tab">
-        <a href="projects.html" class="back-link">
-          <svg width="16" height="10" viewBox="0 0 16 10" fill="none">
-            <path d="M15 5H1M6 1.5L1.5 5 6 8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          Back to projects
-        </a>
-      </div>
+  root.innerHTML =
+    // ── Header ──
+    '<div class="cs-above">'
+    +'<div class="cs-folder-tab">'
+    +'<a href="projects.html" class="back-link"><svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M15 5H1M6 1.5L1.5 5 6 8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>Back to projects</a>'
+    +'</div>'
+    +'<div class="cs-header-band"></div>'
+    +'<div class="cs-header-text">'
+    +'<h1 class="cs-title">'+esc(project.title)+'</h1>'
+    +'<div class="cs-tags">'+tagsHTML+'</div>'
+    +'<p class="cs-subtitle">'+esc(project.subtitle || '')+'</p>'
+    +ctaHTML
+    +'</div>'
+    +'<div class="cs-postcard-wrap">'
+    +'<div class="cs-postcard'+(isVideoHero?' is-video':'')+'" data-title="'+esc(project.title)+'" onclick="openHeroMedia(this)">'
+    +'<div class="cs-postcard-media">'+mediaInner+'</div>'
+    +'</div>'
+    +'</div>'
+    +'</div>'
 
-      <div class="cs-header-band"></div>
+    // ── Body ──
+    +'<div class="cs-body">'
+    // Row 1: tools left, meta right (under hero)
+    +'<div class="cs-tools-row">'
+    +'<div class="cs-tools-col">'
+    +toolsHTML
+    +methodsHTML
+    +'</div>'
+    +(metaItems ? '<div class="cs-meta-col"><div class="cs-meta-row">'+metaItems+'</div></div>' : '<div class="cs-meta-col"></div>')
+    +'</div>'
+    // Row 2: full-width overview
+    +'<div class="cs-body-text-row">'
+    +'<div class="cs-section-label">Project overview</div>'
+    +'<div class="cs-body-text">'+allText+'</div>'
+    +'</div>'
+    +'</div>'
 
-      <div class="cs-header-text">
-        <h1 class="cs-title">${esc(project.title)}</h1>
-        <div class="cs-tags">${tagsHTML}</div>
-        <p class="cs-subtitle">${esc(project.subtitle)}</p>
-        ${ctaHTML}
-      </div>
+    +galleryHTML
 
-      <div class="cs-postcard-wrap">
-        <div class="${postcardClass}" data-title="${esc(project.title)}"
-             onclick="openHeroMedia(this)">
-          <div class="cs-postcard-media">${mediaInner}</div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="cs-body">
-      <div class="cs-body-left">
-        <div class="cs-section-label">Project overview</div>
-        <div class="cs-body-text">
-          ${renderBodyText(project.introText)}
-          ${renderBodyText(project.body)}
-        </div>
-        ${metaItems ? `<div class="cs-meta-row">${metaItems}</div>` : ''}
-      </div>
-      <div class="cs-body-right">
-        ${toolsHTML}
-        ${methodsHTML}
-      </div>
-    </div>
-        ${galleryHTML}
-
-    <footer class="site-footer">
-      <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
-      <ul class="footer-nav">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="photography.html">Photography</a></li>
-        <li><a href="about.html">About</a></li>
-      </ul>
-      <div class="footer-right"><a href="mailto:naresh.dush@gmail.com">naresh.dush@gmail.com</a></div>
-    </footer>`;
+    +'<footer class="site-footer">'
+    +'<a href="index.html" class="footer-logo">Dushyant <em style="font-style:italic;color:var(--earth)">Naresh</em></a>'
+    +'<ul class="footer-nav"><li><a href="projects.html">Projects</a></li><li><a href="photography.html">Photography</a></li><li><a href="about.html">About</a></li></ul>'
+    +'<div class="footer-right"><a href="mailto:naresh.dush@gmail.com">naresh.dush@gmail.com</a></div>'
+    +'</footer>';
 
   // Registe
   // Register gallery items for lightbox

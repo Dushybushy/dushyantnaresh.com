@@ -61,7 +61,7 @@ nav {
 /* ── PAGE SHELL ──────────────────────────────────────────────── */
 .page {
   padding-top: 64px;
-  background: #F0EBE3;
+  background: #EDE5D8;
 }
 .page-folder-tab, .page-header, .filter-bar, .projects-grid, .site-footer { position: relative; z-index: 1; }
 
@@ -90,8 +90,8 @@ nav {
 /* ── HEADER BAND ─────────────────────────────────────────────── */
 .page-header {
   background: var(--hdr-bg);
-  padding: 52px 52px 48px;
-  position: relative; height: 260px; overflow: hidden;
+  padding: 44px 52px 40px;
+  position: relative; height: 200px; overflow: hidden;
 }
 /* Thick/recycled paper texture on header */
 .page-header::before {
@@ -113,16 +113,16 @@ nav {
     );
 }
 .page-header::after { display: none; }
-.page-header-inner { position: relative; z-index: 1; max-width: 52%; }
+.page-header-inner { position: relative; z-index: 1; max-width: 72%; }
 .page-title {
   font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
   font-weight: 500; font-style: italic; line-height: 1.0;
-  color: var(--hdr-fg); margin-bottom: 22px;
+  color: var(--hdr-fg); margin-bottom: 14px;
   letter-spacing: -0.01em; hyphens: none;
 }
 .page-subtitle {
   font-family: var(--font-d); font-size: 20px; font-style: normal;
-  line-height: 1.75; color: var(--hdr-fg); opacity: 0.85; hyphens: none;
+  line-height: 1.6; color: var(--hdr-fg); opacity: 0.85; hyphens: none;
 }
 
 /* ── FILTER BAR ──────────────────────────────────────────────── */
@@ -155,15 +155,15 @@ nav {
 .projects-section { background: transparent; }
 .projects-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 3px; padding: 52px;
+  gap: 20px; padding: 52px;
 }
 
 /* Card */
-.proj-card { background: var(--cream-mid); position: relative; overflow: hidden; transition: opacity 0.3s; }
+.proj-card { background: #F4EFE4; position: relative; overflow: hidden; transition: transform 0.25s ease, box-shadow 0.3s; border: 1px solid rgba(26,24,20,0.12); box-shadow: 0 2px 12px rgba(26,24,20,0.08), 0 1px 3px rgba(26,24,20,0.06); }
 .proj-card.hidden { display: none; }
-.proj-card-link { display: flex; flex-direction: column; min-height: 440px; }
-.proj-card-visual { position: relative; flex-shrink: 0; height: 240px; overflow: hidden; background: var(--cream-dark); }
-.proj-card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.proj-card-link { display: flex; flex-direction: column; min-height: 360px; }
+.proj-card-visual { position: relative; flex-shrink: 0; aspect-ratio: 16/10; overflow: hidden; background: var(--cream-dark); }
+.proj-card-visual img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.6s ease; }
 .proj-card:hover .proj-card-visual img { transform: scale(1.04); }
 .proj-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--ink-faint); }
 .proj-placeholder span { font-family: var(--font-b); font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
@@ -171,16 +171,17 @@ nav {
 /* Accent line */
 .proj-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--earth); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; z-index: 2; }
 .proj-card:hover::before { transform: scaleX(1); }
+.proj-card:hover { box-shadow: 0 6px 28px rgba(26,24,20,0.14); transform: translateY(-2px); }
 
-.proj-card-meta { flex: 1; padding: 24px 28px 28px; display: flex; flex-direction: column; gap: 8px; border-top: 1px solid var(--rule); }
+.proj-card-meta { flex: 1; padding: 18px 22px 18px; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--rule); }
 .proj-card-top { display: flex; align-items: center; justify-content: space-between; }
 .proj-card-category { font-family: var(--font-b); font-size: 8.5px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--earth); }
 .proj-card-year { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.06em; color: var(--ink-faint); }
-.proj-card-title { font-family: var(--font-d); font-size: 22px; font-weight: 400; line-height: 1.2; color: var(--ink); }
+.proj-card-title { font-family: var(--font-d); font-size: 22px; font-weight: 500; font-style: italic; line-height: 1.2; color: var(--ink); }
 .proj-card-summary { font-family: var(--font-b); font-size: 13px; line-height: 1.75; color: var(--ink-soft); flex: 1; }
 .proj-card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
 .proj-tag { font-family: var(--font-b); font-size: 8px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-soft); border: 1px solid var(--rule); padding: 3px 9px; background: rgba(244,239,228,0.7); }
-.proj-card-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--earth); margin-top: 4px; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s; }
+.proj-card-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--earth); margin-top: 2px; display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateX(-6px); transition: opacity 0.25s, transform 0.25s; }
 .proj-card:hover .proj-card-cta { opacity: 1; transform: translateX(0); }
 
 /* Empty state */
@@ -207,7 +208,7 @@ nav {
   nav { padding: 0 32px; }
   .page-header { padding: 44px 32px 40px; height: auto; min-height: 0; }
   .filter-bar { padding: 0 32px; }
-  .projects-grid { grid-template-columns: repeat(2, 1fr); padding: 32px; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); padding: 32px; gap: 16px; }
   .site-footer { padding: 0 32px; }
 }
 
@@ -231,7 +232,7 @@ nav {
   .page-breadcrumb { padding: 0 28px 0 16px; }
 
   /* Grid — single column */
-  .projects-grid { grid-template-columns: 1fr; padding: 20px; gap: 3px; }
+  .projects-grid { grid-template-columns: 1fr; padding: 20px; gap: 16px; }
 
   /* Cards — remove hover effects */
   .proj-card::before { display: none; }
@@ -251,15 +252,39 @@ nav {
   .page-header { padding: 24px 20px 20px; height: auto; min-height: 0; }
   .page-breadcrumb { padding: 0 24px 0 14px; }
   .projects-grid { padding: 16px; }
-  .proj-card-visual { height: 200px; }
+  .proj-card-visual { aspect-ratio: 4/3; }
   .proj-card-meta { padding: 18px 20px 22px; }
   .proj-card-title { font-size: 20px; }
   .site-footer { padding: 20px; }
   .footer-nav { gap: 18px; flex-wrap: wrap; }
 }
+
+/* ── DEPTH RAIL ──────────────────────────────────────────────── */
+#depthRail {
+  position: fixed; left: 20px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 150; display: flex; flex-direction: column;
+  align-items: center; gap: 0; pointer-events: none;
+}
+.depth-line { width: 1px; height: 80px; background: rgba(26,24,20,0.15); }
+#depthMarker { width: 5px; height: 5px; border-radius: 50%; background: var(--earth); flex-shrink: 0; }
+#depthLabel {
+  font-family: var(--font-m); font-size: 8px; color: var(--ink-soft);
+  letter-spacing: 0.08em; writing-mode: vertical-rl;
+  text-orientation: mixed; transform: rotate(180deg);
+  padding: 10px 0;
+}
+@media (max-width: 768px) { #depthRail { display: none; } }
 </style>
 </head>
 <body>
+
+<div id="depthRail">
+  <div class="depth-line"></div>
+  <div id="depthMarker"></div>
+  <div id="depthLabel">0.0m</div>
+  <div class="depth-line"></div>
+</div>
 
 <nav>
   <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
@@ -346,8 +371,11 @@ function esc(str) {
 
 function buildCard(p) {
   const tagsHTML = (p.tags||[]).map(t => `<span class="proj-tag">${esc(t)}</span>`).join('');
-  const img = p.coverImage
-    ? `<img src="${esc(p.coverImage)}" alt="${esc(p.coverAlt||p.title)}" loading="lazy">`
+  // Use thumbnail-flagged media item, or coverImage, or placeholder
+  const thumbItem = (p.media||[]).find(m => m.thumbnail && m.type === 'image' && m.url);
+  const thumbSrc  = thumbItem ? thumbItem.url : p.coverImage;
+  const img = thumbSrc
+    ? `<img src="${esc(thumbSrc)}" alt="${esc(p.coverAlt||p.title)}" loading="lazy">`
     : `<div class="proj-placeholder">
         <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
           <rect x="4" y="8" width="24" height="16" rx="1" stroke="currentColor" stroke-width="1" opacity="0.4"/>
@@ -358,17 +386,17 @@ function buildCard(p) {
       </div>`;
   const el = document.createElement('div');
   el.className = 'proj-card';
-  el.dataset.tags = (p.tags||[]).join(',');
+  el.dataset.tags = [...new Set((p.tags||[]).map(t => t.toLowerCase().trim()).filter(Boolean))].join(',');
   el.innerHTML = `
     <a href="project.html?id=${esc(p.id)}" class="proj-card-link">
       <div class="proj-card-visual">${img}</div>
       <div class="proj-card-meta">
         <div class="proj-card-top">
-          <span class="proj-card-category">${esc(p.category)}</span>
+          <span class="proj-card-category">${esc(p.cardCategory||p.category||'')}</span>
           <span class="proj-card-year">${esc(p.year)}</span>
         </div>
         <h2 class="proj-card-title">${esc(p.title)}</h2>
-        <p class="proj-card-summary">${esc(p.summary||p.introText||'')}</p>
+        <p class="proj-card-summary">${esc(p.summary||p.subtitle||p.introText||'')}</p>
         <div class="proj-card-tags">${tagsHTML}</div>
         <span class="proj-card-cta">View project →</span>
       </div>
@@ -381,8 +409,8 @@ function applyFilter() {
   grid.querySelectorAll('.grid-empty').forEach(el => el.remove());
   let visible = 0;
   grid.querySelectorAll('.proj-card').forEach(card => {
-    const cardTags = (card.dataset.tags||'').split(',');
-    const match = activeTags.size === 0 || [...activeTags].every(t => cardTags.includes(t));
+    const cardTags = (card.dataset.tags||'').split(',').map(t => t.trim());
+    const match = activeTags.size === 0 || [...activeTags].some(t => cardTags.includes(t));
     card.classList.toggle('hidden', !match);
     if (match) visible++;
   });
@@ -412,11 +440,12 @@ function buildFilterBar(tags) {
   const container = document.getElementById('filterTags');
   const core = ['heritage','film','immersive'].filter(t => tags.has(t));
   const extra = [...tags].filter(t => !core.includes(t)).sort();
+  // Normalise tag display: capitalise first letter
   [...core, ...extra].forEach(tag => {
     const btn = document.createElement('button');
     btn.className = 'filter-tag';
     btn.textContent = tag.charAt(0).toUpperCase() + tag.slice(1);
-    btn.addEventListener('click', () => toggleTag(tag, btn));
+    btn.addEventListener('click', () => toggleTag(btn.dataset.tag || tag, btn));
     container.appendChild(btn);
   });
 }
@@ -432,7 +461,10 @@ async function init() {
     return;
   }
   const allTags = new Set();
-  allProjects.forEach(p => (p.tags||[]).forEach(t => allTags.add(t)));
+  allProjects.forEach(p => (p.tags||[]).forEach(t => { const n = t.toLowerCase().trim(); if (n) allTags.add(n); }));
+  // allTags is a Set — no duplicates possible
+  // Also deduplicate tags on each project
+  allProjects.forEach(p => { if (p.tags) p.tags = [...new Set(p.tags.map(t => t.toLowerCase().trim()).filter(Boolean))]; });
   buildFilterBar(allTags);
   grid.innerHTML = '';
   allProjects.forEach(p => grid.appendChild(buildCard(p)));
@@ -447,6 +479,22 @@ async function init() {
 }
 
 init();
+
+// ── DEPTH RAIL ────────────────────────────────────────────────
+(function() {
+  var label = document.getElementById('depthLabel');
+  if (!label) return;
+  function updateDepth() {
+    var scrollTop  = window.scrollY || document.documentElement.scrollTop;
+    var docHeight  = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var depth = (Math.min(scrollTop / docHeight, 1) * 1.0).toFixed(1);
+    label.textContent = depth + 'm';
+  }
+  updateDepth();
+  window.addEventListener('scroll', updateDepth, { passive: true });
+})();
+
 </script>
 </body>
 </html>

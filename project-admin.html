@@ -243,7 +243,27 @@ textarea.tall { min-height: 160px; }
 .gallery-item-del:hover { color: var(--earth); }
 .gallery-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 
-/* ── STATUS TOAST ────────────────────────────────────────────── */
+/* ── GALLERY ITEM DROP ZONE ──────────────────────────────────── */
+.gallery-item-dropzone {
+  border: 2px dashed var(--rule); padding: 14px;
+  text-align: center; cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative; margin-bottom: 10px;
+}
+.gallery-item-dropzone:hover, .gallery-item-dropzone.drag-over {
+  border-color: var(--earth); background: rgba(133,33,28,0.04);
+}
+.gallery-item-dropzone input[type="file"] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+}
+.gallery-item-dropzone-label {
+  font-family: var(--font-m); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint); pointer-events: none;
+}
+.gallery-item-dropzone-label span { color: var(--earth); }
+.gallery-item-thumb { width: 100%; max-height: 120px; object-fit: contain; display: none; margin-bottom: 8px; }
+
+ ────────────────────────────────────────────── */
 .toast {
   position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
   background: var(--ink); color: var(--cream);
@@ -329,6 +349,39 @@ textarea.tall { min-height: 160px; }
 }
 .snippet-copy-hint.visible { display: block; }
 
+
+/* ── GALLERY DROP ZONE ───────────────────────────────────────── */
+.g-file-row {
+  display: flex; align-items: center; gap: 8px;
+  grid-column: span 2;
+}
+.g-dropzone {
+  border: 1.5px dashed var(--rule); background: var(--cream);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 6px;
+  padding: 16px; cursor: pointer; transition: border-color 0.15s, background 0.15s;
+  text-align: center; flex: 1; min-height: 72px; position: relative;
+}
+.g-dropzone:hover, .g-dropzone.drag-over {
+  border-color: var(--earth); background: rgba(133,33,28,0.04);
+}
+.g-dropzone input[type=file] {
+  position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  padding: 0; border: none; background: none;
+}
+.g-dropzone-label {
+  font-family: var(--font-m); font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-faint); pointer-events: none;
+}
+.g-dropzone-sub {
+  font-family: var(--font-b); font-size: 11px; color: var(--ink-faint);
+  pointer-events: none;
+}
+.g-thumb-preview {
+  width: 64px; height: 64px; flex-shrink: 0;
+  object-fit: cover; display: none; border: 1px solid var(--rule);
+}
+.g-thumb-preview.visible { display: block; }
 </style>
 </head>
 <body>
@@ -412,6 +465,14 @@ textarea.tall { min-height: 160px; }
               <label class="field-label">Slug (ID) <span style="opacity:0.5;font-size:0.9em">— used in URLs: project.html?id=<strong id="slugPreview">…</strong></span></label>
               <div class="field-hint">Only change this if you want to break existing links intentionally</div>
               <input type="text" id="f-id" placeholder="e.g. fountains-abbey-ar">
+            </div>
+            <div class="field">
+              <label class="field-label">Card summary <span style="opacity:0.5;font-size:0.9em">— shown on projects page. Falls back to Subtitle if blank</span></label>
+              <input type="text" id="f-summary" placeholder="Short description for the project card">
+            </div>
+            <div class="field">
+              <label class="field-label">Card category <span style="opacity:0.5;font-size:0.9em">— shown on projects page</span></label>
+              <input type="text" id="f-cardCategory" placeholder="e.g. Heritage &amp; XR · 2024">
             </div>
             <div class="field">
               <label class="field-label">Featured</label>
@@ -577,7 +638,7 @@ function onFileChosen(e) {
   var reader = new FileReader();
   reader.onload = function(ev) {
     try {
-      projects = JSON.parse(ev.target.result);
+      projects = JSON.parse(ev.target.result.replace(/^\uFEFF/, ''));
       document.getElementById('loadOverlay').classList.add('hidden');
       document.getElementById('saveBtn').disabled = false;
       renderSidebar();
@@ -713,6 +774,8 @@ function populateForm(p) {
   document.getElementById('f-role').value        = p.role        || '';
   document.getElementById('f-client').value      = p.client      || '';
   document.getElementById('f-institution').value = p.institution || '';
+  document.getElementById('f-summary').value      = p.summary      || '';
+  document.getElementById('f-cardCategory').value = p.cardCategory || '';
   document.getElementById('f-featured').checked  = !!p.featured;
   document.getElementById('f-id').value          = p.id || '';
   updateSlugPreview(p.id || '');
@@ -739,6 +802,8 @@ function applyChanges() {
   p.role        = v('f-role');
   p.client      = v('f-client');
   p.institution = v('f-institution');
+  p.summary      = v('f-summary');
+  p.cardCategory = v('f-cardCategory');
   p.featured    = document.getElementById('f-featured').checked;
   p.id          = v('f-id') || slugify(p.title);
   p.tags        = getTags();
@@ -758,7 +823,7 @@ function v(id) { return document.getElementById(id).value.trim(); }
 // ── New / delete project ──────────────────────────────────────
 function newProject() {
   var p = {
-    id: '', title: '', subtitle: '', year: '', role: '', client: '', institution: '',
+    id: '', title: '', subtitle: '', summary: '', cardCategory: '', year: '', role: '', client: '', institution: '',
     tags: [], coverImage: '', coverAlt: '', ctaLabel: '', ctaUrl: '',
     body: '', tools: [], methods: [], media: [], links: [], featured: false
   };
@@ -896,7 +961,13 @@ function renderGallery(items) {
   var el = document.getElementById('gallery-list');
   el.innerHTML = '';
   items.forEach(function(item, i) {
-    el.appendChild(makeGalleryItem(item, i));
+    var div = makeGalleryItem(item, i);
+    // Populate thumb if url already set
+    if (item.url && /\.(jpe?g|png|webp|gif)$/i.test(item.url)) {
+      var thumb = div.querySelector('.g-thumb-preview');
+      if (thumb) { thumb.src = item.url; thumb.classList.add('visible'); thumb.onerror = function(){ this.classList.remove('visible'); }; }
+    }
+    el.appendChild(div);
   });
 }
 
@@ -906,19 +977,37 @@ function makeGalleryItem(item, index) {
   var layoutOpts = layoutOptions.map(function(o) {
     return '<option value="'+o.value+'"'+(item.layout===o.value?' selected':'')+'>'+o.label+'</option>';
   }).join('');
+
+  // Build drop zone with preview
+  var thumbStyle = item.url ? ' style="display:block"' : '';
+  var thumbSrc   = item.url ? ' src="'+esc(item.url)+'"' : '';
+
   div.innerHTML =
     '<div class="gallery-item-header">'
     +'<span class="gallery-item-num">Media item '+(index+1)+'</span>'
     +'<button class="gallery-item-del" onclick="this.closest(\'.gallery-item\').remove();markDirty()">✕</button>'
     +'</div>'
+    +'<div class="gallery-item-dropzone">'
+    +'<input type="file" accept="image/*,video/*" onchange="onGalleryFilePicked(event,this)">'
+    +'<img class="gallery-item-thumb"'+thumbSrc+thumbStyle+' alt="">'
+    +'<div class="gallery-item-dropzone-label">Drop image here or <span>click to browse</span></div>'
+    +'</div>'
     +'<div class="gallery-grid-2">'
-    +'<div class="field"><label class="field-label">URL / path</label><input type="url" class="g-url" value="'+esc(item.url||'')+'" placeholder="images/photo.jpg or embed URL" oninput="markDirty()"></div>'
+    +'<div class="field"><label class="field-label">URL / path</label><input type="url" class="g-url" value="'+esc(item.url||'')+'" placeholder="images/photo.jpg or embed URL" oninput="markDirty();updateGalleryThumb(this)"></div>'
     +'<div class="field"><label class="field-label">Caption</label><input type="text" class="g-caption" value="'+esc(item.caption||'')+'" placeholder="Caption" oninput="markDirty()"></div>'
     +'<div class="field"><label class="field-label">Layout</label><select class="g-layout" onchange="markDirty()">'+layoutOpts+'</select></div>'
     +'<div class="field"><label class="field-label">Type</label><select class="g-type" onchange="markDirty()"><option value="image"'+(item.type==='image'?' selected':'')+'>Image</option><option value="video"'+(item.type==='video'?' selected':'')+'>Video</option><option value="360"'+(item.type==='360'?' selected':'')+'>360° equirectangular</option></select></div>'
     +'<div class="field" style="grid-column:span 2"><label class="field-label">Order</label><div class="field-hint">Lower numbers appear first</div><input type="text" class="g-order" value="'+(item.order != null ? item.order : '')+'" placeholder="1" oninput="markDirty()"></div>'
+    +'<div class="field" style="grid-column:span 2"><label class="field-label">Use as thumbnail</label><div class="field-hint">Use this image as the card thumbnail on the projects page</div><label class="toggle"><input type="checkbox" class="g-thumbnail"'+(item.thumbnail?' checked':'')+' onchange="markDirty();setThumbnailExclusive(this)"><span class="toggle-track"></span></label></div>'
     +'</div>';
   return div;
+}
+
+function setThumbnailExclusive(el) {
+  // Only one item can be the thumbnail
+  document.querySelectorAll('.g-thumbnail').forEach(function(cb) {
+    if (cb !== el) cb.checked = false;
+  });
 }
 
 function addGalleryItem() {
@@ -930,13 +1019,68 @@ function addGalleryItem() {
 function getGallery() {
   return Array.from(document.getElementById('gallery-list').querySelectorAll('.gallery-item')).map(function(item) {
     return {
-      url:     item.querySelector('.g-url').value.trim(),
-      caption: item.querySelector('.g-caption').value.trim(),
-      layout:  item.querySelector('.g-layout').value,
-      type:    item.querySelector('.g-type').value,
-      order:   parseInt(item.querySelector('.g-order').value) || 0,
+      url:       item.querySelector('.g-url').value.trim(),
+      caption:   item.querySelector('.g-caption').value.trim(),
+      layout:    item.querySelector('.g-layout').value,
+      type:      item.querySelector('.g-type').value,
+      order:     parseInt(item.querySelector('.g-order').value) || 0,
+      thumbnail: item.querySelector('.g-thumbnail') ? item.querySelector('.g-thumbnail').checked : false,
     };
   }).filter(function(item) { return item.url; });
+}
+
+
+// ── GALLERY FILE DROP / SELECT ────────────────────────────────
+function onGalleryFileDrop(e, dropzone) {
+  e.preventDefault();
+  dropzone.classList.remove('drag-over');
+  var file = e.dataTransfer.files[0];
+  if (!file) return;
+  setGalleryFile(dropzone, file);
+}
+
+function onGalleryFileSelect(e, input) {
+  var file = input.files[0];
+  if (!file) return;
+  setGalleryFile(input.closest('.g-dropzone'), file);
+}
+
+function setGalleryFile(dropzone, file) {
+  var item = dropzone.closest('.gallery-item');
+  if (!item) return;
+  var urlInput = item.querySelector('.g-url');
+  var thumb    = item.querySelector('.g-thumb-preview');
+
+  // Set filename as path value (user will have placed file in images/ folder)
+  var folder = 'images/projects/';
+  urlInput.value = folder + file.name;
+
+  // Show preview
+  if (file.type.startsWith('image/')) {
+    var reader = new FileReader();
+    reader.onload = function(ev) {
+      thumb.src = ev.target.result;
+      thumb.classList.add('visible');
+    };
+    reader.readAsDataURL(file);
+  }
+  markDirty();
+}
+
+function onGalleryUrlInput(e, input) {
+  markDirty();
+  // Update thumb preview if it looks like an image path
+  var item = input.closest('.gallery-item');
+  var thumb = item ? item.querySelector('.g-thumb-preview') : null;
+  if (!thumb) return;
+  var val = input.value.trim();
+  if (val && /\.(jpe?g|png|webp|gif)$/i.test(val)) {
+    thumb.src = val;
+    thumb.classList.add('visible');
+    thumb.onerror = function() { thumb.classList.remove('visible'); };
+  } else {
+    thumb.classList.remove('visible');
+  }
 }
 
 // ── Toast ─────────────────────────────────────────────────────
@@ -949,7 +1093,67 @@ function showToast(msg, type) {
   toastTimer = setTimeout(function() { t.classList.remove('show'); }, 3000);
 }
 
-// ── Utils ─────────────────────────────────────────────────────
+
+// ── GALLERY FILE PICKER + DRAG/DROP ──────────────────────────
+function onGalleryFilePicked(e, input) {
+  var file = e.target.files[0];
+  if (!file) return;
+  var item = input.closest('.gallery-item');
+  var urlInput = item.querySelector('.g-url');
+  var thumb = item.querySelector('.gallery-item-thumb');
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    if (thumb) { thumb.src = ev.target.result; thumb.style.display = 'block'; }
+  };
+  reader.readAsDataURL(file);
+  if (urlInput && !urlInput.value) {
+    urlInput.value = 'images/projects/' + file.name;
+    markDirty();
+  }
+}
+
+function updateGalleryThumb(urlInput) {
+  var item = urlInput.closest('.gallery-item');
+  var thumb = item.querySelector('.gallery-item-thumb');
+  if (!thumb) return;
+  var val = urlInput.value.trim();
+  if (val) { thumb.src = val; thumb.style.display = 'block'; }
+  else { thumb.style.display = 'none'; }
+}
+
+document.addEventListener('dragover', function(e) {
+  if (e.target.closest('.gallery-item-dropzone')) e.preventDefault();
+});
+document.addEventListener('dragleave', function(e) {
+  var dz = e.target.closest('.gallery-item-dropzone');
+  if (dz) dz.classList.remove('drag-over');
+});
+document.addEventListener('dragenter', function(e) {
+  var dz = e.target.closest('.gallery-item-dropzone');
+  if (dz) dz.classList.add('drag-over');
+});
+document.addEventListener('drop', function(e) {
+  var dz = e.target.closest('.gallery-item-dropzone');
+  if (!dz) return;
+  e.preventDefault();
+  dz.classList.remove('drag-over');
+  var file = e.dataTransfer.files[0];
+  if (!file || !file.type.startsWith('image/')) return;
+  var item = dz.closest('.gallery-item');
+  var urlInput = item.querySelector('.g-url');
+  var thumb = item.querySelector('.gallery-item-thumb');
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    if (thumb) { thumb.src = ev.target.result; thumb.style.display = 'block'; }
+  };
+  reader.readAsDataURL(file);
+  if (urlInput && !urlInput.value) {
+    urlInput.value = 'images/projects/' + file.name;
+    markDirty();
+  }
+});
+
+
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 
@@ -985,7 +1189,7 @@ var snippetDefs = {
       var m = raw.match(/(?:v=|youtu\.be\/|embed\/)([A-Za-z0-9_-]{11})/);
       if (m) id = m[1];
       if (!id) return null;
-      var iframe = '<iframe src="https://www.youtube.com/embed/' + id + '" allowfullscreen></iframe>';
+      var iframe = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '" allowfullscreen></iframe>';
       return cap ? '<figure>' + iframe + '<figcaption>' + cap + '</figcaption></figure>' : iframe;
     }
   },

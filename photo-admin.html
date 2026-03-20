@@ -271,6 +271,26 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
 .toast { position: fixed; bottom: 72px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--cream); font-family: var(--font-m); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 22px; z-index: 999; white-space: nowrap; display: none; }
 .toast.show { display: block; }
 .toast.success { background: var(--green); }
+
+/* ── TAGS PANEL ─────────────────────────────────────────────── */
+.tags-col { display: flex; flex-direction: column; width: 100%; max-width: 600px; padding: 28px 32px; gap: 0; overflow-y: auto; }
+.tags-hint { font-family: var(--font-m); font-size: 11px; color: var(--ink-faint); letter-spacing: 0.04em; margin-bottom: 20px; }
+.tag-row { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-bottom: 1px solid var(--rule); }
+.tag-row:hover { background: rgba(26,24,20,0.03); }
+.tag-name-display { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.06em; flex: 1; color: var(--ink); }
+.tag-count-badge { font-family: var(--font-m); font-size: 10px; letter-spacing: 0.06em; color: var(--ink-faint); flex-shrink: 0; min-width: 52px; text-align: right; }
+.tag-rename-input { font-family: var(--font-m); font-size: 12px; border: 1px solid var(--earth); padding: 4px 8px; flex: 1; outline: none; background: var(--cream); color: var(--ink); display: none; }
+.tag-rename-input.visible { display: block; }
+.tag-name-display.editing { display: none; }
+.btn-tag-rename { font-family: var(--font-m); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--rule); background: none; cursor: pointer; color: var(--ink-soft); transition: border-color 0.15s, color 0.15s; }
+.btn-tag-rename:hover { border-color: var(--earth); color: var(--earth); }
+.btn-tag-delete { font-family: var(--font-m); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; border: 1px solid var(--rule); background: none; cursor: pointer; color: var(--ink-soft); transition: border-color 0.15s, color 0.15s; }
+.btn-tag-delete:hover { border-color: #c0392b; color: #c0392b; }
+.btn-tag-save { font-family: var(--font-m); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 10px; background: var(--earth); color: var(--cream); border: none; cursor: pointer; display: none; }
+.btn-tag-save.visible { display: block; }
+/* Cross-album drop target highlight */
+.album-row.drop-target { background: rgba(133,33,28,0.12) !important; outline: 2px dashed var(--earth); }
+
 </style>
 </head>
 <body>
@@ -300,6 +320,7 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
 <div class="tabs">
   <button class="tab active" id="tab-photos" onclick="switchTab('photos')">Photos</button>
   <button class="tab" id="tab-albums" onclick="switchTab('albums')">Albums</button>
+  <button class="tab" id="tab-tags" onclick="switchTab('tags')">Tags</button>
 </div>
 
 <!-- Workspace -->
@@ -443,6 +464,18 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
 
   </div>
 
+  <!-- ── TAGS PANEL ── -->
+  <div class="panel" id="panelTags">
+    <div class="tags-col">
+      <div class="album-list-header">
+        <span class="col-label" id="tagCount">0 tags</span>
+        <button class="btn btn-light btn-sm" onclick="refreshTagPanel()">↻ Refresh</button>
+      </div>
+      <div class="tags-hint">Click Rename or Delete to manage a tag across all photos.</div>
+      <div id="tagList"></div>
+    </div>
+  </div>
+
 </div>
 
 <!-- Save bar -->
@@ -471,14 +504,17 @@ function onFileChosen(e) {
   var reader = new FileReader();
   reader.onload = function(ev) {
     try {
-      var data = JSON.parse(ev.target.result);
+      var text = ev.target.result.replace(/^\uFEFF/, '');
+      var data = JSON.parse(text);
       albums = (data.albums||[]).slice().sort(function(a,b){ return (a.order||0)-(b.order||0); });
       photos = data.photos||[];
-      document.getElementById('loadScreen').classList.add('hidden');
-      document.getElementById('saveBtn').disabled = false;
+      var ls = document.getElementById('loadScreen');
+      if (ls) ls.classList.add('hidden');
+      var sb = document.getElementById('saveBtn');
+      if (sb) sb.disabled = false;
       renderAll();
-      showToast('Loaded ' + photos.length + ' photos', 'success');
-    } catch(err) { alert('Invalid JSON.'); }
+    } catch(err) { alert('Failed to load file: ' + err.message); return; }
+    showToast('Loaded ' + photos.length + ' photos', 'success');
   };
   reader.readAsText(file); e.target.value = '';
 }
@@ -510,6 +546,7 @@ function switchTab(tab) {
   document.querySelectorAll('.panel').forEach(function(p){ p.classList.remove('active'); });
   document.getElementById('panel'+tab.charAt(0).toUpperCase()+tab.slice(1)).classList.add('active');
   setDirty(false);
+  if (tab === 'tags') refreshTagPanel();
 }
 
 // ── Render all ────────────────────────────────────────────────
@@ -677,7 +714,11 @@ function renderAlbumList() {
       +(album.hidden?'<span class="album-hidden-badge">hidden</span>':'')
       +'</div></div>';
     row.addEventListener('click', function(){ selectAlbum(i); });
-    row.addEventListener('dragstart', onAlbumDragStart);
+    row.addEventListener('dragstart',  onAlbumDragStart);
+    row.addEventListener('dragenter', onAlbumRowPhotoEnter);
+    row.addEventListener('dragover',  onAlbumRowPhotoOver);
+    row.addEventListener('dragleave', onAlbumRowPhotoLeave);
+    row.addEventListener('drop',      onAlbumRowPhotoDrop);
     row.addEventListener('dragover',  onAlbumDragOver);
     row.addEventListener('drop',      onAlbumDrop);
     row.addEventListener('dragend',   onAlbumDragEnd);
@@ -820,7 +861,7 @@ function onAlbumDragEnd(e) { document.querySelectorAll('.album-row').forEach(fun
 
 // ── Album photo drag (reorder within album) ───────────────────
 var albumPhotoDragId = null;
-function onAlbumPhotoDragStart(e) { albumPhotoDragId=e.currentTarget.dataset.photoId; e.currentTarget.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; }
+function onAlbumPhotoDragStart(e) { albumPhotoDragId=e.currentTarget.dataset.photoId; e.currentTarget.classList.add('dragging'); e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('photoId', albumPhotoDragId); }
 function onAlbumPhotoDragOver(e) { e.preventDefault(); document.querySelectorAll('.album-photo-row').forEach(function(el){el.classList.remove('drag-over');}); e.currentTarget.classList.add('drag-over'); }
 function onAlbumPhotoDrop(e) {
   e.preventDefault();
@@ -841,6 +882,126 @@ function onAlbumPhotoDrop(e) {
   setGlobalDirty();
 }
 function onAlbumPhotoDragEnd(e) { document.querySelectorAll('.album-photo-row').forEach(function(el){el.classList.remove('dragging','drag-over');}); }
+
+
+// ── TAG PANEL ─────────────────────────────────────────────────
+function refreshTagPanel() {
+  var tagMap = {}; // tag -> count
+  photos.forEach(function(p) {
+    (p.tags||[]).forEach(function(t) {
+      var key = t.toLowerCase().trim();
+      tagMap[key] = (tagMap[key]||0) + 1;
+    });
+  });
+  var tags = Object.keys(tagMap).sort();
+  document.getElementById('tagCount').textContent = tags.length + ' tag' + (tags.length !== 1 ? 's' : '');
+  var list = document.getElementById('tagList');
+  list.innerHTML = '';
+  tags.forEach(function(tag) {
+    var row = document.createElement('div');
+    row.className = 'tag-row';
+    var display = document.createElement('span');
+    display.className = 'tag-name-display';
+    display.textContent = tag;
+    var input = document.createElement('input');
+    input.className = 'tag-rename-input';
+    input.type = 'text'; input.value = tag;
+    var badge = document.createElement('span');
+    badge.className = 'tag-count-badge';
+    badge.textContent = tagMap[tag] + ' photo' + (tagMap[tag] !== 1 ? 's' : '');
+    var btnRename = document.createElement('button');
+    btnRename.className = 'btn-tag-rename'; btnRename.textContent = 'Rename';
+    var btnSave = document.createElement('button');
+    btnSave.className = 'btn-tag-save'; btnSave.textContent = 'Save';
+    var btnDelete = document.createElement('button');
+    btnDelete.className = 'btn-tag-delete'; btnDelete.textContent = 'Delete';
+
+    btnRename.addEventListener('click', function() {
+      display.classList.add('editing');
+      input.classList.add('visible');
+      btnRename.style.display = 'none';
+      btnSave.classList.add('visible');
+      input.focus(); input.select();
+    });
+
+    btnSave.addEventListener('click', function() {
+      var newTag = input.value.toLowerCase().trim();
+      if (!newTag || newTag === tag) { cancelEdit(); return; }
+      // Rename tag on all photos
+      photos.forEach(function(p) {
+        if (!p.tags) return;
+        var i = p.tags.map(function(t){return t.toLowerCase().trim();}).indexOf(tag);
+        if (i >= 0) p.tags[i] = newTag;
+      });
+      setGlobalDirty();
+      refreshTagPanel();
+    });
+
+    input.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') btnSave.click();
+      if (e.key === 'Escape') cancelEdit();
+    });
+
+    function cancelEdit() {
+      display.classList.remove('editing');
+      input.classList.remove('visible');
+      btnRename.style.display = '';
+      btnSave.classList.remove('visible');
+      input.value = tag;
+    }
+
+    btnDelete.addEventListener('click', function() {
+      if (!confirm('Remove tag "' + tag + '" from all ' + tagMap[tag] + ' photo(s)?')) return;
+      photos.forEach(function(p) {
+        if (!p.tags) return;
+        p.tags = p.tags.filter(function(t){ return t.toLowerCase().trim() !== tag; });
+      });
+      setGlobalDirty();
+      refreshTagPanel();
+    });
+
+    row.appendChild(display);
+    row.appendChild(input);
+    row.appendChild(badge);
+    row.appendChild(btnRename);
+    row.appendChild(btnSave);
+    row.appendChild(btnDelete);
+    list.appendChild(row);
+  });
+}
+
+// ── CROSS-ALBUM DRAG ──────────────────────────────────────────
+function onAlbumRowPhotoEnter(e) {
+  if (!albumPhotoDragId) return;
+  e.preventDefault();
+  var albumIdx = parseInt(e.currentTarget.dataset.index);
+  if (albumIdx === activeAlbumIndex) return;
+  e.currentTarget.classList.add('drop-target');
+}
+function onAlbumRowPhotoOver(e) {
+  if (!albumPhotoDragId) return;
+  e.preventDefault();
+  e.dataTransfer.dropEffect = 'move';
+}
+function onAlbumRowPhotoLeave(e) {
+  e.currentTarget.classList.remove('drop-target');
+}
+function onAlbumRowPhotoDrop(e) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drop-target');
+  var albumIdx = parseInt(e.currentTarget.dataset.index);
+  if (albumIdx === activeAlbumIndex || !albumPhotoDragId) return;
+  var targetAlbum = albums[albumIdx];
+  var photo = photos.find(function(p){ return p.id === albumPhotoDragId; });
+  if (!photo || !targetAlbum) return;
+  // Move photo to target album, set order to end
+  var targetPhotos = photos.filter(function(p){ return p.album === targetAlbum.id; });
+  photo.album = targetAlbum.id;
+  photo.order = targetPhotos.length + 1;
+  renderAlbumDetail(activeAlbumIndex);
+  setGlobalDirty();
+  showToast('Moved to "' + targetAlbum.name + '"', 'success');
+}
 
 // ── Utils ─────────────────────────────────────────────────────
 function getAlbumName(id) { var a=albums.find(function(al){return al.id===id;}); return a?a.name:(id||'—'); }
@@ -872,5 +1033,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('photoEditorForm').addEventListener('change', function(e){ if(e.target.tagName==='SELECT') markDirty(); });
 });
 </script>
+<div id="toast"></div>
 </body>
 </html>
