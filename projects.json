@@ -84,7 +84,7 @@
     "links": [],
     "featured": true,
     "summary": "",
-    "cardCategory": ""
+    "cardCategory": "Archaeological Visualisation & XR"
   },
   {
     "id": "Southern-Gateway-PARM",
@@ -96,10 +96,11 @@
     "client": "City of Bradford Metropolitan District Council",
     "institution": "Visualising Heritage, University of Bradford",
     "tags": [
-      "heritage"
+      "heritage",
+      "immersive"
     ],
-    "coverImage": "",
-    "coverAlt": "Projection Augmented Relief Model",
+    "coverImage": "www.youtube.com/watch?v=KC9sBMvoYY4",
+    "coverAlt": "Overview of the Southern Gateway PARM",
     "introText": "Designed the narrative approach and produced animated stories on heritage and placemaking for a Projection Augmented Relief Model communication tool.",
     "body": "As a researcher for Visualising Heritage at the University of Bradford, I was involved in a project with the Bradford City Council to tell the story of an area of the city through a cutting-edge visualisation technique called Projection Augmented Relief Mapping (PARM). I crafted bite-sized animations about the history and infrastructure of Bradford that were then projected onto a 3D printed model of the city, bringing the plastic to life. Our evaluations demonstrated our model’s huge potential in education, policymaking, and civic engagement.\n\nAt Visualising Heritage, I largely focused on researching ways to effectively convey complex archaeology, with an emphasis on creatively visualising geospatial data. Additionally, as a team of archaeologists, our work centred heavily on establishing and communicating context. For this project, we decided to utilise innovative, rapid capture technologies used on archaeological sites combined with our experience distilling geospatial information to broad audiences to create an interactive, audience-led 3D printed model that brought the story of Southern Gateway to life.\n\nDuring the capture phase of the project, the Visualising Heritage team at the University of Bradford automated a drone to systematically fly over and photograph a section of Bradford city called Southern Gateway. These photos were stitched together to create a high resolution orthographic aerial image as well as a detailed 3D model using Structure from Motion (SfM) photogrammetry. The model was scaled down, split into tiles, and 3D printed using a white matte bioplastic filament to create a 1.8m x 1.2m sized model.\n\nWe took a multipronged approach for the narrative structure and content types. The primary brief was to generate conversation and understanding around regenerating the Southern Gateway as part of a significant government infrastructure investment, particularly focusing on the potential upheaval of the Bradford Interchange railway station.\n\nOur first goal was to create a series of short stories that provided audiences with the necessary context behind Southern Gateway, such as its topography, history of public transport, and publicly-accessible green spaces. We recorded voiceovers and created animations for eight stories (about two minutes long each) that audiences could select from. We also created numerous static data layers (e.g. land use, historic maps, gradients) that provided additional context and information that could inform peoples’ decisions about regeneration. Finally, we created a series of “drop-in” points that displayed 360° images taken from the ground at various places in Southern Gateway.\n\nThis project was a Knowledge Transfer Partnership with the City of Bradford Metropolitan District Council to develop novel methodologies to digitally record an area of Bradford city, 3D print a scaled down version of it, and project curated content onto the model to communicate the complexities involving city regeneration. This technology, called a Projection Augmented Relief Model (PARM), was designed as part of a larger toolkit to be used in public consultations regarding placemaking.\n\nTo set it all up, a short throw projector was mounted above the model and a TV was placed behind the setup to provide additional information and imagery. All the content and computing was run via a PC using MadMapper, a projection mapping software that allowed us to import the 3D digital model to accurately project maps and animations onto the physical model, as well as create cues and scenes to display content on both the printed model and the contextual TV. A touchscreen was mounted beside the model to allow users to trigger content.\n\nThis tool was evaluated with members of the public in December 2024 and January 2025, with anonymised survey responses demonstrating significant potential for PARM as an effective communication tool in planning, construction, and education.",
     "tools": [
@@ -116,9 +117,161 @@
     ],
     "ctaLabel": "View the introduction",
     "ctaUrl": "https://www.youtube.com/watch?v=ev4gb_8BrKU",
-    "media": [],
+    "media": [
+      {
+        "url": "images/projects/parm/20250218-DSC05839.webp",
+        "caption": "Satellite imagery projected onto the 3d printed model",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/parm/20250122_132703.webp",
+        "caption": "Focus group members using our PARM",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/parm/20250218-DSC05841_compressed.webp",
+        "caption": "Top-down view of the model and back screen",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": true
+      }
+    ],
     "links": [],
-    "featured": true
+    "featured": true,
+    "summary": "",
+    "cardCategory": "Projection Mapping & Communication"
+  },
+  {
+    "id": "landmark-trust-visualisations",
+    "title": "Bringing a medieval home to life through rapid 3D capture",
+    "subtitle": "Using experimental tools and techniques to rapidly document and visualise a heritage property",
+    "category": "Heritage Documentation",
+    "year": "2025",
+    "role": "Lead Research Technician",
+    "client": "Landmark Trust",
+    "institution": "Visualising Heritage",
+    "tags": [
+      "heritage",
+      "immersive"
+    ],
+    "coverImage": "/images/projects/landmarktrust/Xray.webp",
+    "coverAlt": "",
+    "introText": "Won a Landmark Trust grant for a residency at a heritage site to create visualisations and digital outputs using cutting-edge capture and storytelling methods.",
+    "body": "In 2025, I put in a successful bid on behalf of Visualising Heritage that won the team a free stay at “The White House”, a 13th century homestead in Shropshire, UK. We used this opportunity to record, document, and interpret the heritage of the site, test out new equipment, upskill, and take some time away from campus.\n\nWe documented the property internally and externally through various rapid capture techniques using drones, 360° cameras, handheld laser scanners, terrestrial laser scanners, mirrorless cameras, and spatial microphones. Using a combination of these methods allowed us to create different types of digital representations, from high-resolution 3D photogrammetry models to interactive 360° tours of the property.\n\nExperimenting and training up on these novel capture techniques was invaluable, as it gave each team member the opportunity to test new approaches and determine their applicability in our current workflows. This opportunity also provided us a testing bed for experimental storytelling and interpretation using digital surrogates.\n\nOutputs from our stay at The White House are still being produced, and any media will be added below.\n\nFor more information about the White House, visit <a href=\"https://www.landmarktrust.org.uk/properties/white-house/\" target=\"_blank\" rel=\"noopener\">the Landmark Trust website.</a>",
+    "tools": [
+      "Insta360 Pro 2",
+      "DJI Mini 4 Pro",
+      "Leica RTC 360 TLS",
+      "Artec Leo",
+      "Sony a7rIV/a7sIII"
+    ],
+    "methods": [
+      "360° A/V Capture",
+      "Photogrammetry",
+      "3D Laser Scanning",
+      "Drone Survey",
+      "Virtual Tour Building"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [
+      {
+        "url": "/images/projects/landmarktrust/Textured.webp",
+        "caption": "Textured render from the laser scan data of the White House",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": true
+      },
+      {
+        "url": "/images/projects/landmarktrust/Xray.webp",
+        "caption": "\"X-ray\" view of the ground floor of the property",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/20250521-DSC08057.webp",
+        "caption": "Team photo in front of the house",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/20250521-DSC07941.webp",
+        "caption": "Joe flying the Mini 4 Pro",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/20250521-DSC07976.webp",
+        "caption": "Dannie using the Artec Leo to 3D scan a fireplace",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/20250521-DSC07985.webp",
+        "caption": "Yours truly setting up the Insta360 Pro 2 camera",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/GNSS.webp",
+        "caption": "The team using a GNSS to set GPS coordinates",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/SfM.webp",
+        "caption": "A screenshot of the photogrammetry workflow",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 8,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/TLS 2.webp",
+        "caption": "The tie points connecting all the 3D TLS scans together",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 9,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/landmarktrust/TLS 1.webp",
+        "caption": "A WIP look at a 3D scan of the medieval dovecote",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 10,
+        "thumbnail": false
+      }
+    ],
+    "links": [
+      {
+        "label": "The Landmark Trust",
+        "url": "https://www.landmarktrust.org.uk/"
+      }
+    ],
+    "featured": false,
+    "summary": "",
+    "cardCategory": "Heritage Visualisations"
   },
   {
     "id": "an-avebury-story",
@@ -134,7 +287,7 @@
       "heritage",
       "archaeology"
     ],
-    "coverImage": "",
+    "coverImage": "images/projects/aveburystory/splashscreen.webp",
     "coverAlt": "",
     "introText": "Practice-based MSc dissertation exploring the efficacy of VR, 360° film, and participant agency in communicating archaeology. Ranked 1st in the programme.",
     "body": "An Avebury Story is an immersive, choose-your-own-adventure VR experience I created for my Master’s dissertation in Digital Archaeology. Transport yourself to the Neolithic stone circles at Avebury, Wiltshire, where you get to choose which path to traverse and what stories to experience. Filmed on consumer-grade 360° cameras and built in Unity, An Avebury Story is optimised for Meta Quest headsets and is also playable in YouTube’s 360° mode.\n\nThe project was a form of practice-based research, where the creative process itself was the data. By designing, building, and testing the experience, I was able to assess the real affordances and limitations of using immersive media to communicate archaeology, both in theory and in practice.\n\nThe experience was shot entirely on location at Avebury using a consumer-grade 360° camera. I wrote and filmed six stories, each set at a different location within the site, covering topics ranging from a medieval murder mystery to the spiritual significance of the stones. I also featured voices from the local community and volunteers, offering perspectives outside traditional archaeology.\n\nThe editing and post-production were done in Adobe Premiere Pro and After Effects, with the interactive VR environment built in Unity using a plugin called Cutting Room, developed by Digital Creativity Labs at the University of York. Users experienced the story through a Meta Quest 2 headset, determining which path through Avebury they wanted to take.\n\nThe experience was tested with 100 participants (both in-person through VR headsets and remotely through a YouTube 360° version), followed by a detailed survey measuring immersion, presence, emotion, and engagement. The results were overwhelmingly positive, with nearly everyone saying they’d learned something and that they'd want to see a similar project at other heritage sites.\n\nBeyond the quantitative data, what the project revealed was something more fundamental: that narrative will always outperform technology. Once the novelty of VR wore off, participants were more engaged with the stories rather than the novel tech. The stories that resonated most were the ones where the format served the content, where the 360° environment added a dimension to the story that traditional film can’t recreate.\n\nBuilding An Avebury Story also surfaced real challenges around community collaboration, ownership, and representation. One participant withdrew their recorded piece after testing, raising important questions about who controls heritage narratives and how digital archaeologists navigate that responsibly.\n\nThe project demonstrated that immersive, interactive heritage storytelling is not only achievable on a modest budget, but capable of forging genuine connections between audiences and archaeology. As the tools become more accessible and the technology matures, the potential for experiences like these, built by archaeologists and for everyone, is enormous.\n\n<figure><iframe src=\"https://www.youtube.com/embed/vdGoLzcrnuk\" allowfullscreen></iframe><figcaption>Try An Avebury Story!</figcaption></figure>",
@@ -152,9 +305,84 @@
     ],
     "ctaLabel": "Visit the stones (360°)",
     "ctaUrl": "https://www.youtube.com/watch?v=vdGoLzcrnuk",
-    "media": [],
+    "media": [
+      {
+        "url": "images/projects/aveburystory/capture.webp",
+        "caption": "The Insta360 ONE X mounted on a tripod along West Kennet Avenue",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/editing.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/layout.webp",
+        "caption": "The Cutting Room UI and node layout",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/nodes.webp",
+        "caption": "A breakdown of the layer node structure",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/preview1.webp",
+        "caption": "A preview of one of the routes in the Unity test environment",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/splashscreen.webp",
+        "caption": "VR splash screen for An Avebury Story",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/aveburystory/unitytest.webp",
+        "caption": "A preview of one of the stories in the Unity test environment",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/usertest.webp",
+        "caption": "A participant testing out An Avebury Story in VR",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 8,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/aveburystory/usertest2.webp",
+        "caption": "One participant experienced the story laying down, while others either sat or stood up",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 9,
+        "thumbnail": false
+      }
+    ],
     "links": [],
-    "featured": true
+    "featured": true,
+    "summary": "",
+    "cardCategory": "Interactive Storytelling & XR"
   },
   {
     "id": "buried-treasure-york",
@@ -224,47 +452,6 @@
     "ctaUrl": "",
     "media": [],
     "links": [],
-    "featured": false
-  },
-  {
-    "id": "landmark-trust-visualisations",
-    "title": "Landmark Trust Heritage Visualisations",
-    "subtitle": "Digital capture and storytelling at a historic site",
-    "category": "Heritage Documentation",
-    "year": "2024",
-    "role": "Lead Research Technician & Producer",
-    "client": "Landmark Trust / Visualising Heritage",
-    "institution": "University of Bradford",
-    "tags": [
-      "heritage",
-      "film",
-      "immersive"
-    ],
-    "coverImage": "",
-    "coverAlt": "Landmark Trust Heritage Visualisations",
-    "introText": "Won a Landmark Trust grant for a residency at a heritage site to create visualisations and digital outputs using cutting-edge capture and storytelling methods.",
-    "body": "Awarded a competitive Landmark Trust grant providing a week-long residency at a historic site, this project focused on applying the full suite of digital heritage capture and storytelling methods to a single, focused location.\n\nCapture methods included photogrammetry for 3D model generation, 360° audio-visual recording, drone survey, and conventional DSLR documentation. The resulting outputs encompassed immersive virtual tours, archival-quality 3D models, and narrative video content.\n\nThe project served as both a standalone heritage record and a testing ground for emerging capture workflows developed through the Visualising Heritage KTP.",
-    "tools": [
-      "Insta360 Pro 2",
-      "DJI Mini",
-      "Agisoft Metashape",
-      "Premiere Pro"
-    ],
-    "methods": [
-      "360° Capture",
-      "Photogrammetry",
-      "Drone Survey",
-      "DSLR Documentation"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
-    "links": [
-      {
-        "label": "The Landmark Trust",
-        "url": "https://www.landmarktrust.org.uk/"
-      }
-    ],
     "featured": false
   },
   {

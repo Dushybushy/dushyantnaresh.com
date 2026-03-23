@@ -477,6 +477,51 @@ nav {
   padding: 10px 0;
 }
 @media (max-width: 768px) { #depthRail { display: none; } }
+
+/* ── FILTER GRID (masonry, shown when tags active) ─────────── */
+#filterGrid {
+  display: none;
+  padding: 40px 52px 80px;
+  background: #F0EBE3;
+}
+#filterGrid.visible { display: block; }
+.filter-grid-header {
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.filter-grid-header span { color: var(--earth); }
+.filter-grid-wrap {
+  column-count: 3;
+  column-gap: 16px;
+}
+.filter-grid-wrap .photo-card {
+  width: 100%;
+  break-inside: avoid;
+  display: inline-block;
+  margin-bottom: 16px;
+  /* Reset any carousel width so it fills the column */
+  max-width: 100%;
+}
+.filter-grid-wrap .photo-card .photo-postcard { width: 100%; }
+/* Override the hardcoded widths and aspect ratios from carousel CSS */
+.filter-grid-wrap .photo-card.landscape .photo-img-wrap,
+.filter-grid-wrap .photo-card.portrait  .photo-img-wrap,
+.filter-grid-wrap .photo-card.square    .photo-img-wrap {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: unset !important;
+}
+/* Let images render at their natural proportions */
+.filter-grid-wrap .photo-card .photo-img-wrap img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+  object-fit: unset !important;
+}
+@media (max-width: 900px) { .filter-grid-wrap { column-count: 2; } }
+@media (max-width: 480px) { .filter-grid-wrap { column-count: 1; } }
+@media (max-width: 768px) { #filterGrid { padding: 28px 24px 52px; } }
 </style>
 </head>
 <body>
@@ -529,6 +574,12 @@ nav {
   <div class="filter-bar" id="filterBar">
     <span class="filter-label">Filter by</span>
     <div class="filter-tags" id="filterTags"></div>
+  </div>
+
+  <!-- Filter grid (masonry, shown when tags active) -->
+  <div id="filterGrid">
+    <div class="filter-grid-header" id="filterGridHeader"></div>
+    <div class="filter-grid-wrap" id="filterGridWrap"></div>
   </div>
 
   <!-- Gallery -->
@@ -725,40 +776,51 @@ function makeCard(photo) {
 // ── Filter logic ──────────────────────────────────────────────
 function applyFilter() {
   var hasFilter = activeTags.length > 0;
+  var galleryPage = document.getElementById('galleryPage');
+  var filterGrid  = document.getElementById('filterGrid');
+  var gridWrap    = document.getElementById('filterGridWrap');
+  var gridHeader  = document.getElementById('filterGridHeader');
 
-  allAlbums.forEach(function(album) {
-    var section = document.getElementById('album-' + album.id);
-    if (!section) return;
-    var cards = section.querySelectorAll('.photo-card');
-    var visibleCount = 0;
+  if (!hasFilter) {
+    // Restore album view
+    if (filterGrid)  filterGrid.classList.remove('visible');
+    if (galleryPage) galleryPage.style.display = '';
+    return;
+  }
 
-    cards.forEach(function(card) {
-      var tags = card.dataset.tags ? card.dataset.tags.split(',').map(function(t){return t.trim();}) : [];
-      var show = !hasFilter || activeTags.some(function(t) { return tags.indexOf(t) >= 0; });
-      card.classList.toggle('filtered-out', !show);
-      if (show) visibleCount++;
-    });
+  // Build flat masonry grid of matching photos
+  var matched = allPhotos.filter(function(p) {
+    var tags = (p.tags||[]).map(function(t){ return t.toLowerCase().trim(); });
+    return activeTags.some(function(t){ return tags.indexOf(t) >= 0; });
+  }).slice().sort(function(a,b) {
+    var aAlbum = allAlbums.findIndex(function(al){ return al.id === a.album; });
+    var bAlbum = allAlbums.findIndex(function(al){ return al.id === b.album; });
+    if (aAlbum !== bAlbum) return aAlbum - bAlbum;
+    return (a.order||0) - (b.order||0);
+  });
 
-    // Show/hide entire album section
-    var divider = document.querySelector('.album-div-' + album.id);
-    if (visibleCount === 0) {
-      section.classList.add('hidden');
-      if (divider) divider.style.display = 'none';
+  // Hide album carousels, show masonry grid
+  if (galleryPage) galleryPage.style.display = 'none';
+  if (filterGrid)  filterGrid.classList.add('visible');
+
+  // Header
+  if (gridHeader) {
+    gridHeader.innerHTML = '<span>' + matched.length + '</span> photo'
+      + (matched.length !== 1 ? 's' : '') + ' matching: '
+      + activeTags.map(function(t){ return '<span>' + t + '</span>'; }).join(', ');
+  }
+
+  // Render cards into masonry grid
+  if (gridWrap) {
+    gridWrap.innerHTML = '';
+    if (!matched.length) {
+      gridWrap.innerHTML = '<div class="gallery-empty visible"><p>No photos match the selected filters.</p><button onclick="clearFilters()">Clear filters</button></div>';
     } else {
-      section.classList.remove('hidden');
-      if (divider) divider.style.display = '';
-      var countEl = document.getElementById('count-' + album.id);
-      if (countEl) countEl.textContent = visibleCount + ' photo' + (visibleCount !== 1 ? 's' : '');
+      matched.forEach(function(photo) {
+        gridWrap.appendChild(makeCard(photo));
+      });
     }
-  });
-
-  // Show empty state if ALL albums hidden
-  var anyVisible = allAlbums.some(function(album) {
-    var s = document.getElementById('album-' + album.id);
-    return s && !s.classList.contains('hidden');
-  });
-  var emptyEl = document.getElementById('galleryEmpty');
-  if (emptyEl) emptyEl.classList.toggle('visible', !anyVisible && hasFilter);
+  }
 }
 
 function clearFilters() {

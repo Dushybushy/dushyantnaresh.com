@@ -367,7 +367,10 @@ def main():
                 + (f"  [{meta_str}]" if meta_str else "  [no EXIF]")
             )
             if photos_json_path:
-                new_entries.append(build_import_entry(result, photos_json_path, i))
+                # Only add photography images to photos.json — not projects or site images
+                rel = img_path.relative_to(source_root)
+                if rel.parts[0] == 'photography':
+                    new_entries.append(build_import_entry(result, photos_json_path, i))
 
         elif result["status"] == "skipped":
             skip_count += 1

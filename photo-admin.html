@@ -383,6 +383,20 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
                 </select>
               </div>
               <div class="field">
+                <label class="field-label">Featured <span style="opacity:0.5;font-size:0.85em;letter-spacing:0;text-transform:none;font-family:var(--font-b)">— shown on homepage</span></label>
+                <div class="toggle-row">
+                  <span class="toggle-label">Show in homepage gallery</span>
+                  <label class="toggle">
+                    <input type="checkbox" id="pf-featured" onchange="markDirty()">
+                    <span class="toggle-track"></span>
+                  </label>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field-label">Homepage order <span style="opacity:0.5;font-size:0.85em;letter-spacing:0;text-transform:none;font-family:var(--font-b)">— 1–4, controls position in l3 strip</span></label>
+                <input type="number" id="pf-hpOrder" min="1" max="4" placeholder="1" oninput="markDirty()">
+              </div>
+              <div class="field">
                 <label class="field-label">Tags</label>
                 <div class="field-hint">Press Enter or comma to add</div>
                 <div class="tags-input" id="photo-tags-input" onclick="focusPhotoTagInput()">
@@ -596,6 +610,8 @@ function populatePhotoForm(p) {
   document.getElementById('pf-aperture').value    = p.aperture     || '';
   document.getElementById('pf-shutterSpeed').value= p.shutterSpeed || '';
   document.getElementById('pf-orientation').value = p.orientation  || 'landscape';
+  document.getElementById('pf-featured').checked  = !!p.featured;
+  document.getElementById('pf-hpOrder').value     = p.hpOrder != null ? p.hpOrder : '';
   renderAlbumSelect(p.album);
   renderPhotoTags(p.tags || []);
   updatePreview(p.src, p.title);
@@ -630,6 +646,9 @@ function applyPhotoChanges() {
   p.aperture     = v('pf-aperture');
   p.shutterSpeed = v('pf-shutterSpeed');
   p.orientation  = document.getElementById('pf-orientation').value;
+  p.featured     = document.getElementById('pf-featured').checked;
+  var hpO = parseInt(document.getElementById('pf-hpOrder').value);
+  p.hpOrder      = isNaN(hpO) ? null : hpO;
   p.album        = document.getElementById('pf-album').value;
   p.tags         = getPhotoTags();
   p.id           = p.id || ('photo-'+Date.now());

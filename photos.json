@@ -1,20 +1,20 @@
 {
   "albums": [
     {
-      "id": "heritage",
-      "name": "Heritage",
+      "id": "landscape",
+      "name": "Landscapes",
       "order": 1
     },
     {
-      "id": "landscape",
-      "name": "Landscapes",
-      "order": 2
+      "id": "english-countrysides",
+      "name": "English Countrysides",
+      "order": 2,
+      "hidden": false
     },
     {
-      "id": "still-life",
-      "name": "Still Life",
-      "order": 3,
-      "hidden": false
+      "id": "heritage",
+      "name": "Heritage",
+      "order": 3
     },
     {
       "id": "cities",
@@ -23,9 +23,33 @@
       "hidden": false
     },
     {
+      "id": "malaysia",
+      "name": "Malaysia",
+      "order": 5,
+      "hidden": false
+    },
+    {
+      "id": "wales",
+      "name": "Wales",
+      "order": 6,
+      "hidden": false
+    },
+    {
       "id": "animals",
       "name": "Animals",
-      "order": 5,
+      "order": 7,
+      "hidden": false
+    },
+    {
+      "id": "still-life",
+      "name": "Still Life",
+      "order": 8,
+      "hidden": false
+    },
+    {
+      "id": "cornwall",
+      "name": "Cornwall",
+      "order": 9,
       "hidden": false
     }
   ],
@@ -131,7 +155,8 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 8
+      "order": 8,
+      "featured": true
     },
     {
       "id": "photo-dsc08515",
@@ -253,20 +278,6 @@
       "order": 5
     },
     {
-      "id": "photo-dsc09578",
-      "title": "Don’t Look Up",
-      "album": "landscape",
-      "tags": [
-        "landscape"
-      ],
-      "src": "images/photography/DSC09578.webp",
-      "orientation": "landscape",
-      "focalLength": "24mm",
-      "aperture": "f/2.8",
-      "shutterSpeed": "1/400s",
-      "order": 4
-    },
-    {
       "id": "photo-dsc09603",
       "title": "Iridescent",
       "album": "heritage",
@@ -309,7 +320,8 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/80s",
-      "order": 6
+      "order": 6,
+      "featured": true
     },
     {
       "id": "photo-dot",
@@ -323,7 +335,8 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1600s",
-      "order": 22
+      "order": 22,
+      "featured": true
     },
     {
       "id": "photo-english-ivy",
@@ -399,7 +412,8 @@
       "focalLength": "25mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/1000s",
-      "order": 1
+      "order": 1,
+      "featured": true
     },
     {
       "id": "photo-liverpool-nights",
@@ -516,7 +530,7 @@
       "focalLength": "68mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 5
+      "order": 6
     },
     {
       "id": "photo-this-way-to-the-castle",
@@ -611,148 +625,1453 @@
       "order": 8
     },
     {
-      "id": "photo-dsc05070-2",
+      "id": "photo-20250418-dsc01991",
       "title": "",
-      "album": "",
+      "album": "english-countrysides",
       "tags": [],
-      "src": "images/projects/fountainsabbey/DSC05070-2.webp",
+      "src": "images/photography/20250418-DSC01991.webp",
       "orientation": "landscape",
-      "focalLength": "23mm",
+      "focalLength": "24mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/1000s",
+      "order": 40,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250418-dsc02077",
+      "title": "Viaduct",
+      "album": "english-countrysides",
+      "tags": [
+        "landscape",
+        "urban"
+      ],
+      "src": "images/photography/20250418-DSC02077.webp",
+      "orientation": "landscape",
+      "focalLength": "60mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/800s",
+      "order": 41,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250419-dsc02323",
+      "title": "No. 15",
+      "album": "english-countrysides",
+      "tags": [
+        "urban"
+      ],
+      "src": "images/photography/20250419-DSC02323.webp",
+      "orientation": "portrait",
+      "focalLength": "44mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/500s",
+      "order": 42,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250718-dsc02555",
+      "title": "Watchtowers",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/20250718-DSC02555.webp",
+      "orientation": "portrait",
+      "focalLength": "34mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/400s",
+      "order": 43,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02585",
+      "title": "Stretch",
+      "album": "english-countrysides",
+      "tags": [
+        "nature"
+      ],
+      "src": "images/photography/20250719-DSC02585.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/250s",
+      "order": 44,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02595",
+      "title": "Capstone",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250719-DSC02595.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/80s",
+      "order": 45,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02612",
+      "title": "Windy Day in Wales",
+      "album": "animals",
+      "tags": [
+        "wildlife",
+        "nature"
+      ],
+      "src": "images/photography/20250719-DSC02612.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/3.2",
+      "shutterSpeed": "1/800s",
+      "order": 46,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02627-3",
+      "title": "Pile of Rocks",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250719-DSC02627-3.webp",
+      "orientation": "landscape",
+      "focalLength": "",
+      "aperture": "",
+      "shutterSpeed": "",
+      "order": 47,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02640",
+      "title": "",
+      "album": "english-countrysides",
+      "tags": [
+        "nature",
+        "landscape"
+      ],
+      "src": "images/photography/20250719-DSC02640.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/500s",
+      "order": 48,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02653",
+      "title": "Splashing",
+      "album": "wales",
+      "tags": [
+        "people",
+        "landscape"
+      ],
+      "src": "images/photography/20250719-DSC02653.webp",
+      "orientation": "landscape",
+      "focalLength": "48mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/1250s",
+      "order": 49,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02676",
+      "title": "",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250719-DSC02676.webp",
+      "orientation": "portrait",
+      "focalLength": "32mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/1000s",
+      "order": 50,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250720-dsc02744",
+      "title": "Carreg Cennen",
+      "album": "wales",
+      "tags": [
+        "heritage",
+        "landscape",
+        "architecture"
+      ],
+      "src": "images/photography/20250720-DSC02744.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/4",
+      "shutterSpeed": "1/800s",
+      "order": 51,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250720-dsc02795",
+      "title": "Cliffside Defenses",
+      "album": "wales",
+      "tags": [
+        "architecture",
+        "heritage",
+        "architecture"
+      ],
+      "src": "images/photography/20250720-DSC02795.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/640s",
+      "order": 52,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250720-dsc02844",
+      "title": "Road to the Castle",
+      "album": "wales",
+      "tags": [
+        "landscape",
+        "heritage",
+        "architecture"
+      ],
+      "src": "images/photography/20250720-DSC02844.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/320s",
+      "order": 53,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250720-dsc02857",
+      "title": "Milky Way Over Wales",
+      "album": "wales",
+      "tags": [
+        "landscape",
+        "nature"
+      ],
+      "src": "images/photography/20250720-DSC02857.webp",
+      "orientation": "landscape",
+      "focalLength": "25mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "2s",
+      "order": 54,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250721-dsc02874",
+      "title": "Caerleon",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250721-DSC02874.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/1000s",
+      "order": 55,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250824-dsc03045",
+      "title": "Eaves",
+      "album": "cities",
+      "tags": [
+        "architecture",
+        "urban"
+      ],
+      "src": "images/photography/20250824-DSC03045.webp",
+      "orientation": "landscape",
+      "focalLength": "52mm",
+      "aperture": "f/4",
+      "shutterSpeed": "1/500s",
+      "order": 56,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03062",
+      "title": "Taking a Sip",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03062.webp",
+      "orientation": "portrait",
+      "focalLength": "400mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/500s",
+      "order": 57,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03076",
+      "title": "Flamboyance",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03076.webp",
+      "orientation": "landscape",
+      "focalLength": "250mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/1250s",
+      "order": 58,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03090",
+      "title": "Watch Your Backs",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03090.webp",
+      "orientation": "landscape",
+      "focalLength": "400mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/800s",
+      "order": 59,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03126",
+      "title": "Siesta",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03126.webp",
+      "orientation": "landscape",
+      "focalLength": "271mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/800s",
+      "order": 60,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03129",
+      "title": "Stuffed Animal",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03129.webp",
+      "orientation": "landscape",
+      "focalLength": "324mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/800s",
+      "order": 61,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03165",
+      "title": "Hold Tight!",
+      "album": "heritage",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03165.webp",
+      "orientation": "portrait",
+      "focalLength": "253mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/640s",
+      "order": 62,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03181",
+      "title": "Hanging On",
+      "album": "heritage",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03181.webp",
+      "orientation": "portrait",
+      "focalLength": "276mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/640s",
+      "order": 63,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03191",
+      "title": "Bored",
+      "album": "heritage",
+      "tags": [
+        "wildlife",
+        "monochrome"
+      ],
+      "src": "images/photography/20250825-DSC03191.webp",
+      "orientation": "landscape",
+      "focalLength": "179mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/160s",
+      "order": 64,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03197",
+      "title": "Sitting Watch",
+      "album": "heritage",
+      "tags": [
+        "wildlife",
+        "monochrome"
+      ],
+      "src": "images/photography/20250825-DSC03197.webp",
+      "orientation": "landscape",
+      "focalLength": "400mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/200s",
+      "order": 65,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250825-dsc03206",
+      "title": "More!",
+      "album": "heritage",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20250825-DSC03206.webp",
+      "orientation": "portrait",
+      "focalLength": "352mm",
+      "aperture": "f/5.6",
+      "shutterSpeed": "1/160s",
+      "order": 66,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250912-dsc03261",
+      "title": "Cirencester",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/20250912-DSC03261.webp",
+      "orientation": "portrait",
+      "focalLength": "41mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/640s",
+      "order": 67,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250912-dsc03264",
+      "title": "Fanned Out",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/20250912-DSC03264.webp",
+      "orientation": "portrait",
+      "focalLength": "33mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/40s",
+      "order": 68,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250913-dsc03307",
+      "title": "Some Random Rocks",
+      "album": "heritage",
+      "tags": [
+        "heritage",
+        "landscape"
+      ],
+      "src": "images/photography/20250913-DSC03307.webp",
+      "orientation": "landscape",
+      "focalLength": "33mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/1000s",
+      "order": 69,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250913-dsc03442",
+      "title": "Detour",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250913-DSC03442.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/500s",
+      "order": 72,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250914-dsc03468",
+      "title": "",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20250914-DSC03468.webp",
+      "orientation": "portrait",
+      "focalLength": "52mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/50s",
+      "order": 73,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250914-dsc03495",
+      "title": "York Street",
+      "album": "cities",
+      "tags": [
+        "urban",
+        "architecture"
+      ],
+      "src": "images/photography/20250914-DSC03495.webp",
+      "orientation": "landscape",
+      "focalLength": "36mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/125s",
+      "order": 75,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250915-dsc03513",
+      "title": "Vaults",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/20250915-DSC03513.webp",
+      "orientation": "portrait",
+      "focalLength": "32mm",
+      "aperture": "f/6.3",
+      "shutterSpeed": "1/40s",
+      "order": 77,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250915-dsc03534",
+      "title": "Over Avon",
+      "album": "cities",
+      "tags": [
+        "landscape",
+        "architecture",
+        "urban"
+      ],
+      "src": "images/photography/20250915-DSC03534.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/320s",
+      "order": 78,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251010-dsc03794",
+      "title": "Rows of Rocks",
+      "album": "heritage",
+      "tags": [],
+      "src": "images/photography/20251010-DSC03794.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/640s",
+      "order": 79,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251011-dsc03859",
+      "title": "A View of Roche Rock",
+      "album": "cornwall",
+      "tags": [
+        "landscape",
+        "heritage"
+      ],
+      "src": "images/photography/20251011-DSC03859.webp",
+      "orientation": "portrait",
+      "focalLength": "42mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/320s",
+      "order": 80,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251012-dsc03933",
+      "title": "Flying the Coop",
+      "album": "english-countrysides",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/20251012-DSC03933.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/3.5",
+      "shutterSpeed": "1/400s",
+      "order": 81,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251012-dsc03945",
+      "title": "Ancient Woodlands",
+      "album": "english-countrysides",
+      "tags": [
+        "nature",
+        "heritage"
+      ],
+      "src": "images/photography/20251012-DSC03945.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 82,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251013-dsc03951",
+      "title": "Not Quite a Sundial",
+      "album": "heritage",
+      "tags": [
+        "heritage",
+        "landscape"
+      ],
+      "src": "images/photography/20251013-DSC03951.webp",
+      "orientation": "landscape",
+      "focalLength": "34mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 83,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251013-dsc03998",
+      "title": "Kaleidescope",
+      "album": "english-countrysides",
+      "tags": [
+        "nature"
+      ],
+      "src": "images/photography/20251013-DSC03998.webp",
+      "orientation": "landscape",
+      "focalLength": "55mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/60s",
+      "order": 84,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251013-dsc04022",
+      "title": "Conical",
+      "album": "cornwall",
+      "tags": [],
+      "src": "images/photography/20251013-DSC04022.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/800s",
+      "order": 85,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251013-dsc04102",
+      "title": "Lanyon Quoit",
+      "album": "cornwall",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/20251013-DSC04102.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 86,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20251014-dsc04107",
+      "title": "Autumn",
+      "album": "cities",
+      "tags": [
+        "nature",
+        "urban"
+      ],
+      "src": "images/photography/20251014-DSC04107.webp",
+      "orientation": "portrait",
+      "focalLength": "49mm",
       "aperture": "f/3.2",
       "shutterSpeed": "1/500s",
-      "order": 40
+      "order": 87,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-dsc05086",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/DSC05086.webp",
+      "id": "photo-dsc00251",
+      "title": "Lookout",
+      "album": "animals",
+      "tags": [
+        "wildlife"
+      ],
+      "src": "images/photography/DSC00251.webp",
+      "orientation": "portrait",
+      "focalLength": "200mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/800s",
+      "order": 88,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc00402",
+      "title": "Ascent",
+      "album": "english-countrysides",
+      "tags": [
+        "nature",
+        "landscape"
+      ],
+      "src": "images/photography/DSC00402.webp",
       "orientation": "landscape",
-      "focalLength": "22mm",
-      "aperture": "f/3.5",
+      "focalLength": "68mm",
+      "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 41
+      "order": 89,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-dsc09237",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/DSC09237.webp",
+      "id": "photo-dsc00465",
+      "title": "Glimmering",
+      "album": "english-countrysides",
+      "tags": [
+        "nature",
+        "landscape"
+      ],
+      "src": "images/photography/DSC00465.webp",
       "orientation": "landscape",
-      "focalLength": "16mm",
-      "aperture": "f/7.1",
-      "shutterSpeed": "1/100s",
-      "order": 42
+      "focalLength": "111mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/1600s",
+      "order": 90,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-fa-gpr-overlay",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/FA GPR overlay.webp",
+      "id": "photo-dsc00486",
+      "title": "Chilly Mornings",
+      "album": "animals",
+      "tags": [
+        "nature",
+        "wildlife"
+      ],
+      "src": "images/photography/DSC00486.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 43
+      "focalLength": "200mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/1600s",
+      "order": 91,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-img_20250730_153253",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/IMG_20250730_153253.webp",
+      "id": "photo-dsc00503",
+      "title": "Tunnelling",
+      "album": "english-countrysides",
+      "tags": [
+        "landscape",
+        "urban"
+      ],
+      "src": "images/photography/DSC00503.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/1600s",
+      "order": 92,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01062",
+      "title": "Mossy Greens",
+      "album": "wales",
+      "tags": [
+        "people",
+        "nature"
+      ],
+      "src": "images/photography/DSC01062.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/320s",
+      "order": 93,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01121",
+      "title": "Hmm?",
+      "album": "animals",
+      "tags": [
+        "wildlife",
+        "nature"
+      ],
+      "src": "images/photography/DSC01121.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 44
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/200s",
+      "order": 94,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-screenshot-2025-10-31-at-11-21-52-am",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/Screenshot 2025-10-31 at 11.21.52 am.webp",
+      "id": "photo-dsc01168",
+      "title": "Misty Mornings",
+      "album": "wales",
+      "tags": [
+        "nature",
+        "landscape",
+        "wildlife"
+      ],
+      "src": "images/photography/DSC01168.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 45
+      "focalLength": "27mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/250s",
+      "order": 95,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-hub-image-card-crop-iv3ov3pvw",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/fountainsabbey/hub-image-card-crop-iv3ov3pvw.webp",
+      "id": "photo-dsc01189",
+      "title": "Wisps",
+      "album": "wales",
+      "tags": [
+        "landscape",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC01189.webp",
+      "orientation": "portrait",
+      "focalLength": "200mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/250s",
+      "order": 96,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01261",
+      "title": "Silhouetted",
+      "album": "wales",
+      "tags": [
+        "people",
+        "landscape"
+      ],
+      "src": "images/photography/DSC01261.webp",
+      "orientation": "portrait",
+      "focalLength": "37mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/500s",
+      "order": 97,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01274",
+      "title": "Hag Stone",
+      "album": "wales",
+      "tags": [
+        "landscape",
+        "nature"
+      ],
+      "src": "images/photography/DSC01274.webp",
+      "orientation": "portrait",
+      "focalLength": "53mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/500s",
+      "order": 98,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01327",
+      "title": "King",
+      "album": "english-countrysides",
+      "tags": [
+        "urban",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC01327.webp",
+      "orientation": "portrait",
+      "focalLength": "46mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/10s",
+      "order": 101,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01392",
+      "title": "Defenses",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/DSC01392.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 46
+      "focalLength": "36mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 103,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-20250122_132703",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/parm/20250122_132703.webp",
+      "id": "photo-dsc01411",
+      "title": "Placid",
+      "album": "wales",
+      "tags": [
+        "landscape"
+      ],
+      "src": "images/photography/DSC01411.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 47
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 104,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-20250218-dsc05839",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/parm/20250218-DSC05839.webp",
+      "id": "photo-dsc02237",
+      "title": "Valley View",
+      "album": "landscape",
+      "tags": [
+        "landscape",
+        "nature"
+      ],
+      "src": "images/photography/DSC02237.webp",
       "orientation": "landscape",
       "focalLength": "35mm",
-      "aperture": "f/5.6",
+      "aperture": "f/1.8",
+      "shutterSpeed": "1/200s",
+      "order": 7,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02335",
+      "title": "Vinicunca",
+      "album": "landscape",
+      "tags": [
+        "landscape"
+      ],
+      "src": "images/photography/DSC02335.webp",
+      "orientation": "landscape",
+      "focalLength": "85mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/1250s",
+      "order": 8,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02341",
+      "title": "Slide",
+      "album": "landscape",
+      "tags": [
+        "landscape",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC02341.webp",
+      "orientation": "portrait",
+      "focalLength": "85mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/640s",
+      "order": 9,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02347",
+      "title": "Ruby Red",
+      "album": "landscape",
+      "tags": [
+        "landscape"
+      ],
+      "src": "images/photography/DSC02347.webp",
+      "orientation": "portrait",
+      "focalLength": "85mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/640s",
+      "order": 4,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02651",
+      "title": "Long Way to Go",
+      "album": "heritage",
+      "tags": [
+        "landscape",
+        "people",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC02651.webp",
+      "orientation": "portrait",
+      "focalLength": "35mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/400s",
+      "order": 111,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02835",
+      "title": "Necklace",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/DSC02835.webp",
+      "orientation": "landscape",
+      "focalLength": "35mm",
+      "aperture": "f/1.8",
+      "shutterSpeed": "1/400s",
+      "order": 112,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02839",
+      "title": "Vessel",
+      "album": "heritage",
+      "tags": [
+        "heritage"
+      ],
+      "src": "images/photography/DSC02839.webp",
+      "orientation": "landscape",
+      "focalLength": "35mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 113,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02890",
+      "title": "Stratigraphic",
+      "album": "landscape",
+      "tags": [
+        "landscape",
+        "nature",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC02890.webp",
+      "orientation": "landscape",
+      "focalLength": "35mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/500s",
+      "order": 10,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06084",
+      "title": "Needle",
+      "album": "cities",
+      "tags": [
+        "urban",
+        "architecture"
+      ],
+      "src": "images/photography/DSC06084.webp",
+      "orientation": "landscape",
+      "focalLength": "35mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/500s",
+      "order": 115,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06093",
+      "title": "Skyscrapers",
+      "album": "cities",
+      "tags": [
+        "urban",
+        "architecture"
+      ],
+      "src": "images/photography/DSC06093.webp",
+      "orientation": "portrait",
+      "focalLength": "27mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/400s",
+      "order": 116,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06105",
+      "title": "Rays of Light",
+      "album": "malaysia",
+      "tags": [
+        "landscape"
+      ],
+      "src": "images/photography/DSC06105.webp",
+      "orientation": "portrait",
+      "focalLength": "53mm",
+      "aperture": "f/4",
+      "shutterSpeed": "1/160s",
+      "order": 119,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06117",
+      "title": "Gopuram",
+      "album": "malaysia",
+      "tags": [
+        "urban",
+        "architecture"
+      ],
+      "src": "images/photography/DSC06117.webp",
+      "orientation": "portrait",
+      "focalLength": "28mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/30s",
+      "order": 120,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06133",
+      "title": "Moored",
+      "album": "malaysia",
+      "tags": [
+        "still life"
+      ],
+      "src": "images/photography/DSC06133.webp",
+      "orientation": "portrait",
+      "focalLength": "44mm",
+      "aperture": "f/9",
+      "shutterSpeed": "1/500s",
+      "order": 121,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06138",
+      "title": "Life on the Docks",
+      "album": "malaysia",
+      "tags": [
+        "urban",
+        "still life",
+        "architecture"
+      ],
+      "src": "images/photography/DSC06138.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/8",
       "shutterSpeed": "1/60s",
-      "order": 48
+      "order": 122,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-20250218-dsc05841_compressed",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/projects/parm/20250218-DSC05841_compressed.webp",
-      "orientation": "landscape",
-      "focalLength": "16mm",
-      "aperture": "f/5.6",
-      "shutterSpeed": "1/60s",
-      "order": 49
+      "id": "photo-dsc06150",
+      "title": "Gangplank",
+      "album": "malaysia",
+      "tags": [
+        "urban",
+        "still life"
+      ],
+      "src": "images/photography/DSC06150.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/5000s",
+      "order": 123,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-cors-y-gedol",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/site/cors-y-gedol.webp",
+      "id": "photo-dsc06166",
+      "title": "Kodak",
+      "album": "malaysia",
+      "tags": [
+        "still life",
+        "architecture",
+        "urban"
+      ],
+      "src": "images/photography/DSC06166.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 50
+      "focalLength": "33mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/4000s",
+      "order": 124,
+      "featured": false,
+      "hpOrder": null
     },
     {
-      "id": "photo-cors-y-gedol3",
-      "title": "",
-      "album": "",
-      "tags": [],
-      "src": "images/site/cors-y-gedol3.webp",
+      "id": "photo-dsc06187",
+      "title": "Bandit",
+      "album": "animals",
+      "tags": [
+        "nature",
+        "wildlife",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC06187.webp",
       "orientation": "landscape",
-      "focalLength": "",
-      "aperture": "",
-      "shutterSpeed": "",
-      "order": 51
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/1250s",
+      "order": 125,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06206",
+      "title": "Jungle Bridge",
+      "album": "malaysia",
+      "tags": [
+        "nature"
+      ],
+      "src": "images/photography/DSC06206.webp",
+      "orientation": "portrait",
+      "focalLength": "43mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/50s",
+      "order": 126,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06217",
+      "title": "No 4",
+      "album": "heritage",
+      "tags": [
+        "still life",
+        "nature"
+      ],
+      "src": "images/photography/DSC06217.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/30s",
+      "order": 127,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06262",
+      "title": "Blossoms",
+      "album": "malaysia",
+      "tags": [
+        "landscape",
+        "urban"
+      ],
+      "src": "images/photography/DSC06262.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/3200s",
+      "order": 128,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06968",
+      "title": "Windy Road",
+      "album": "english-countrysides",
+      "tags": [
+        "landscape"
+      ],
+      "src": "images/photography/DSC06968.webp",
+      "orientation": "landscape",
+      "focalLength": "67mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/1250s",
+      "order": 129,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06981",
+      "title": "Tip of the Lighthouse",
+      "album": "english-countrysides",
+      "tags": [
+        "architecture"
+      ],
+      "src": "images/photography/DSC06981.webp",
+      "orientation": "portrait",
+      "focalLength": "24mm",
+      "aperture": "f/3.2",
+      "shutterSpeed": "1/2000s",
+      "order": 130,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06999",
+      "title": "Red Sand Beach",
+      "album": "english-countrysides",
+      "tags": [
+        "landscape",
+        "nature"
+      ],
+      "src": "images/photography/DSC06999.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/160s",
+      "order": 131,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc07008",
+      "title": "Steam",
+      "album": "english-countrysides",
+      "tags": [
+        "urban"
+      ],
+      "src": "images/photography/DSC07008.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/250s",
+      "order": 133,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc07069",
+      "title": "Peek at the Peak",
+      "album": "landscape",
+      "tags": [
+        "landscape",
+        "monochrome"
+      ],
+      "src": "images/photography/DSC07069.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 11,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc09639",
+      "title": "Gilded",
+      "album": "still-life",
+      "tags": [
+        "still life",
+        "heritage",
+        "architecture"
+      ],
+      "src": "images/photography/DSC09639.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/125s",
+      "order": 135,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc09648",
+      "title": "Chester Cathedral",
+      "album": "heritage",
+      "tags": [
+        "architecture",
+        "heritage"
+      ],
+      "src": "images/photography/DSC09648.webp",
+      "orientation": "landscape",
+      "focalLength": "38mm",
+      "aperture": "f/4",
+      "shutterSpeed": "1/640s",
+      "order": 136,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc09649",
+      "title": "Deva Vitrix",
+      "album": "cities",
+      "tags": [
+        "urban",
+        "heritage"
+      ],
+      "src": "images/photography/DSC09649.webp",
+      "orientation": "landscape",
+      "focalLength": "25mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/4000s",
+      "order": 137,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc09654",
+      "title": "Merging",
+      "album": "english-countrysides",
+      "tags": [
+        "urban"
+      ],
+      "src": "images/photography/DSC09654.webp",
+      "orientation": "landscape",
+      "focalLength": "44mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 138,
+      "featured": false,
+      "hpOrder": null
     }
   ]
 }

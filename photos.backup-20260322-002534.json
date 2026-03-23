@@ -131,7 +131,8 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 8
+      "order": 8,
+      "featured": true
     },
     {
       "id": "photo-dsc08515",
@@ -309,7 +310,8 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/80s",
-      "order": 6
+      "order": 6,
+      "featured": true
     },
     {
       "id": "photo-dot",
@@ -323,7 +325,8 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1600s",
-      "order": 22
+      "order": 22,
+      "featured": true
     },
     {
       "id": "photo-english-ivy",
@@ -399,7 +402,8 @@
       "focalLength": "25mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/1000s",
-      "order": 1
+      "order": 1,
+      "featured": true
     },
     {
       "id": "photo-liverpool-nights",
