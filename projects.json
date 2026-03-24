@@ -99,7 +99,7 @@
       "heritage",
       "immersive"
     ],
-    "coverImage": "www.youtube.com/watch?v=KC9sBMvoYY4",
+    "coverImage": "https://www.youtube-nocookie.com/embed/KC9sBMvoYY4",
     "coverAlt": "Overview of the Southern Gateway PARM",
     "introText": "Designed the narrative approach and produced animated stories on heritage and placemaking for a Projection Augmented Relief Model communication tool.",
     "body": "As a researcher for Visualising Heritage at the University of Bradford, I was involved in a project with the Bradford City Council to tell the story of an area of the city through a cutting-edge visualisation technique called Projection Augmented Relief Mapping (PARM). I crafted bite-sized animations about the history and infrastructure of Bradford that were then projected onto a 3D printed model of the city, bringing the plastic to life. Our evaluations demonstrated our model’s huge potential in education, policymaking, and civic engagement.\n\nAt Visualising Heritage, I largely focused on researching ways to effectively convey complex archaeology, with an emphasis on creatively visualising geospatial data. Additionally, as a team of archaeologists, our work centred heavily on establishing and communicating context. For this project, we decided to utilise innovative, rapid capture technologies used on archaeological sites combined with our experience distilling geospatial information to broad audiences to create an interactive, audience-led 3D printed model that brought the story of Southern Gateway to life.\n\nDuring the capture phase of the project, the Visualising Heritage team at the University of Bradford automated a drone to systematically fly over and photograph a section of Bradford city called Southern Gateway. These photos were stitched together to create a high resolution orthographic aerial image as well as a detailed 3D model using Structure from Motion (SfM) photogrammetry. The model was scaled down, split into tiles, and 3D printed using a white matte bioplastic filament to create a 1.8m x 1.2m sized model.\n\nWe took a multipronged approach for the narrative structure and content types. The primary brief was to generate conversation and understanding around regenerating the Southern Gateway as part of a significant government infrastructure investment, particularly focusing on the potential upheaval of the Bradford Interchange railway station.\n\nOur first goal was to create a series of short stories that provided audiences with the necessary context behind Southern Gateway, such as its topography, history of public transport, and publicly-accessible green spaces. We recorded voiceovers and created animations for eight stories (about two minutes long each) that audiences could select from. We also created numerous static data layers (e.g. land use, historic maps, gradients) that provided additional context and information that could inform peoples’ decisions about regeneration. Finally, we created a series of “drop-in” points that displayed 360° images taken from the ground at various places in Southern Gateway.\n\nThis project was a Knowledge Transfer Partnership with the City of Bradford Metropolitan District Council to develop novel methodologies to digitally record an area of Bradford city, 3D print a scaled down version of it, and project curated content onto the model to communicate the complexities involving city regeneration. This technology, called a Projection Augmented Relief Model (PARM), was designed as part of a larger toolkit to be used in public consultations regarding placemaking.\n\nTo set it all up, a short throw projector was mounted above the model and a TV was placed behind the setup to provide additional information and imagery. All the content and computing was run via a PC using MadMapper, a projection mapping software that allowed us to import the 3D digital model to accurately project maps and animations onto the physical model, as well as create cues and scenes to display content on both the printed model and the contextual TV. A touchscreen was mounted beside the model to allow users to trigger content.\n\nThis tool was evaluated with members of the public in December 2024 and January 2025, with anonymised survey responses demonstrating significant potential for PARM as an effective communication tool in planning, construction, and education.",
@@ -398,7 +398,7 @@
       "heritage",
       "archaeology"
     ],
-    "coverImage": "https://www.youtube.com/watch?v=g3jwlvQ8X1c",
+    "coverImage": "https://www.youtube-nocookie.com/embed/g3jwlvQ8X1c",
     "coverAlt": "",
     "introText": "Filmed and edited dozens of videos for the Archaeology Department's social media channels, including faculty interviews and mini-documentaries.",
     "body": "This is a short film I made during my Master’s program in Digital Archaeology at the University of York. It’s a lighthearted investigation into what defines “treasure” archaeologically and ties into the history and culture of York. I filmed everything on a Sony a7iii and edited the final piece in DaVinci Resolve.",
@@ -421,6 +421,100 @@
         "url": "https://www.york.ac.uk/archaeology/"
       }
     ],
+    "featured": false,
+    "summary": "",
+    "cardCategory": ""
+  },
+  {
+    "id": "yellow-cab-drivers",
+    "title": "Mini Doc: following NYC’s yellow cab drivers during the height of the pandemic",
+    "subtitle": "A mini-documentary I produced that follows yellow cab drivers during the height of the pandemic in NYC.",
+    "summary": "",
+    "cardCategory": "Documentary",
+    "year": "2021",
+    "role": "Producer",
+    "client": "",
+    "institution": "CNN Digital Productions",
+    "tags": [
+      "film",
+      "documentary"
+    ],
+    "coverImage": "/images/projects/yellowcab/thumb.webp",
+    "coverAlt": "",
+    "ctaLabel": "Watch the video",
+    "ctaUrl": "https://edition.cnn.com/2021/01/09/us/yellow-taxi-drivers-new-york-covid",
+    "body": "This was the first piece I field produced for CNN Digital after Covid-19 had taken hold, and for New York's yellow cab industry, the pandemic was only another item to add to a list of rapidly growing concerns. Medallion debt, the rise of Uber and Lyft, and plummeting ridership had put immense pressure on yellow cab drivers for years. Drivers who had staked their livelihoods on medallions worth over a million dollars at their peak were now sitting on assets worth a fraction of that. The pandemic was the final blow.\n\nThis story follows three drivers whose lives were intertwined through personal loss, and the subsequent solidarity formed between them, looking through the eyes of their families, frontline activists, and industry experts.\n\nProducing this during Covid meant working under strict health protocols and keeping the crew as small as possible. Every interview required careful coordination around medical guidelines, background checks, and safety protocols. Filming inside a moving taxi with a driver added another layer of complexity, both logistically and in terms of managing risk for our subjects.\n\nI conducted the research, interviews, b-cam shooting, scripting, fact-checking, and final publication, and wrote an accompanying article for CNN.\n\n<a href=\"https://edition.cnn.com/2021/01/09/us/yellow-taxi-drivers-new-york-covid\" target=\"_blank\" rel=\"noopener\">Click here to watch the video and read the article.</a>",
+    "tools": [
+      "Sony a7sIII",
+      "Sony FS7",
+      "DJI Osmo Pocket",
+      "Adobe Premiere Pro"
+    ],
+    "methods": [
+      "Pre production and field production",
+      "Research and interviewing",
+      "Scripting and editing",
+      "Fact checking"
+    ],
+    "media": [
+      {
+        "url": "images/projects/yellowcab/intaxi.webp",
+        "caption": "Augustine Tang (Augie), yellow cab driver",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/photos.webp",
+        "caption": "Augie looking at some old photos of his family",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/richardchow.webp",
+        "caption": "Richard Chow, yellow cab driver",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/wainchin.webp",
+        "caption": "Wain Chin, yellow cab driver",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/byriver.webp",
+        "caption": "Richard and Wain praying by the river",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/protest.webp",
+        "caption": "A union protest in DC",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/yellowcab/augie.webp",
+        "caption": "Augie at a yellow cab protest in NYC",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 7,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
     "featured": false
   },
   {

@@ -27,7 +27,7 @@
   --rule:       rgba(26,24,20,0.12);
   --earth:      #85211C;
   --footer-bg:  #3D2E1E;
-  --card-overhang: 200px;
+  --card-overhang: clamp(80px, 12vw, 50px);
   --font-d: 'Cormorant Garamond', Georgia, serif;
   --font-b: 'Syne', sans-serif;
   --font-m: 'Roboto Mono', monospace;
@@ -83,6 +83,9 @@ nav {
 /* ── HEADER ─────────────────────────────────── */
 .cs-above {
   position: relative;
+  display: grid;
+  grid-template-columns: calc(50% - 104px) 1fr;
+  align-items: start;
 }
 .cs-header-band {
   position: absolute; top: 36px; left: 0; right: 0; bottom: 0;
@@ -96,9 +99,9 @@ nav {
     repeating-linear-gradient(18deg, transparent, transparent 6px, rgba(100,70,40,0.023) 6px, rgba(100,70,40,0.023) 7px);
 }
 .cs-header-text {
+  grid-column: 1;
   position: relative; z-index: 3;
   padding: 52px 52px 44px 52px;
-  max-width: 46%;
   display: flex; flex-direction: column; justify-content: flex-start;
 }
 .cs-eyebrow {
@@ -134,20 +137,22 @@ nav {
 
 /* ── POSTCARD ────────────────────────────────── */
 .cs-postcard-wrap {
-  position: absolute; right: 52px; top: 28px;
-  width: 50%; bottom: calc(-1 * var(--card-overhang)); z-index: 10;
+  grid-column: 2;
+  position: relative; z-index: 10;
+  padding: 28px 52px 0 52px;
+  margin-bottom: calc(-1 * var(--card-overhang));
 }
 .cs-postcard {
-  width: 100%; height: 100%; background: #ffffff;
+  width: 100%; background: #ffffff;
   padding: 8px 8px 36px 8px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.14), 0 16px 52px rgba(0,0,0,0.18), 0 32px 80px rgba(0,0,0,0.10);
   display: flex; flex-direction: column; position: relative; cursor: pointer;
 }
 .cs-postcard.is-video { cursor: default; }
-.cs-postcard-media { flex: 1; min-height: 0; position: relative; background: var(--ink); }
-img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.cs-postcard-media video { width: 100%; height: 100%; display: block; }
-.cs-postcard-media iframe { width: 100%; height: 100%; display: block; border: none; }
+.cs-postcard-media { position: relative; background: var(--ink); width: 100%; }
+img.cs-media-img { width: 100%; height: auto; display: block; }
+.cs-postcard-media video { width: 100%; display: block; }
+.cs-postcard-media iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
 .cs-postcard-placeholder {
   position: absolute; inset: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 14px;
@@ -187,6 +192,7 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   padding: 28px 52px 80px 52px;
 }
 
+.cs-meta-row-inline { display: none !important; }
 .cs-meta-row {
   display: flex; flex-wrap: wrap; gap: 0;
 }
@@ -229,7 +235,7 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   margin-bottom: 16px;
   cursor: pointer;
   background: #fff;
-  padding: 8px 8px 44px 8px;
+  padding: 8px 8px 0 8px;
   box-shadow: 0 2px 8px rgba(26,24,20,0.10), 0 6px 20px rgba(26,24,20,0.10);
   position: relative;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -240,11 +246,10 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
 }
 .cs-img img { width: 100%; height: auto; display: block; }
 .cs-img-caption {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 44px;
-  display: flex; align-items: center; padding: 0 10px;
+  padding: 8px 10px 12px;
   font-family: var(--font-m); font-size: 11px; letter-spacing: 0.06em;
   color: #6B5848; pointer-events: none;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  white-space: normal; line-height: 1.4;
 }
 .cs-img-placeholder {
   display: none;
@@ -355,8 +360,9 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
 /* ── TABLET LANDSCAPE (≤1100px) ─────────────────────────────── */
 @media (max-width: 1100px) {
   nav { padding: 0 32px; }
-  .cs-header-text { padding: 44px 32px 36px; max-width: 48%; }
-  .cs-postcard-wrap { right: 32px; }
+  .cs-above { grid-template-columns: 1fr 1fr; }
+  .cs-header-text { padding: 44px 32px 36px; }
+  .cs-postcard-wrap { padding: 28px 32px 0 32px; }
   .cs-tools-row { grid-template-columns: 1fr 1fr; }
   .cs-tools-col { padding: 44px 40px 28px 32px; }
   .cs-meta-col { padding: 28px 32px 28px 40px; }
@@ -400,25 +406,35 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
     position: relative;
     right: auto; top: auto; bottom: auto;
     width: calc(100% - 48px);
-    margin: 0 24px;   /* no bottom margin — padding-bottom on cs-above handles spacing */
+    margin: 0 24px;
     height: auto;
   }
   .cs-postcard {
     width: 100%; height: auto;
-    aspect-ratio: 16/9;
-    padding: 6px 6px 28px 6px;
+    padding: 8px 8px 36px 8px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.18);
   }
 
-  /* ── BODY ── */
+  /* ── BODY — tablet: stack tools + meta together, hide meta col ── */
   .cs-tools-row { display: block; }
-  .cs-tools-col { grid-template-columns: 1fr 1fr; padding: 32px 24px 0; gap: 32px 20px; }
-  .cs-meta-col { padding: 28px 24px; }
+  .cs-tools-col {
+    grid-template-columns: 1fr 1fr;
+    padding: 32px 24px 28px;
+    gap: 32px 20px;
+  }
+  /* Hide the right meta column — meta is shown inside tools col instead */
+  .cs-meta-col { display: none; }
+  /* Show the meta row inline after tools, inside the tools col flow */
+  .cs-tools-col .cs-meta-row-inline {
+    display: flex !important; flex-wrap: wrap; gap: 0;
+    grid-column: 1 / -1;
+    padding-top: 28px;
+    border-top: 1px solid var(--rule);
+  }
   .cs-body-text-row { padding: 32px 24px 0; }
-  .cs-meta-row { flex-wrap: wrap; padding: 32px 24px 40px; margin-top: 32px; }
   .cs-meta-item { padding-right: 24px; padding-bottom: 12px; }
 
-    /* ── GALLERY ── */
+  /* ── GALLERY ── */
   .cs-gallery { padding: 40px 24px 60px; }
   .cs-gallery-grid { column-count: 1; column-gap: 12px; }
   .cs-img { margin-bottom: 12px; }
@@ -436,9 +452,13 @@ img.cs-media-img { width: 100%; height: 100%; object-fit: cover; display: block;
   .cs-title { font-size: clamp(28px, 9vw, 44px); }
   .cs-subtitle { font-size: 17px; }
   .cs-postcard-wrap { width: calc(100% - 40px); margin: 0 20px; }
-  .cs-body { padding: 24px 20px 40px; }
-  .cs-body-right { gap: 20px 14px; }
+  .cs-tools-col { padding: 28px 20px 24px; }
   .cs-tools-list li { font-size: 11px; padding: 10px 0; }
+  /* Meta row on mobile — match tools font size, tight padding, left-aligned */
+  .cs-meta-col { display: none; }
+  .cs-tools-col .cs-meta-row-inline { padding-top: 24px; }
+  .cs-meta-label { font-size: 8px; }
+  .cs-meta-value { font-size: 14px; }
   .cs-gallery { padding: 32px 20px 48px; }
   .cs-gallery-grid { column-count: 1; }
   .site-footer { padding: 20px; }
@@ -599,7 +619,7 @@ function renderGallery(media) {
         +'<div class="cs-img-360-badge">360°</div>'
         +'</div>';
     }
-    var captionHtml = m.caption ? '<div class="cs-img-caption">'+esc(m.caption)+'</div>' : '';
+    var captionHtml = '<div class="cs-img-caption">'+(m.caption ? esc(m.caption) : '')+'</div>';
     return '<div class="'+lc+' cs-img" data-title="'+esc(m.caption||'')+'" data-meta="" onclick="openLightbox(this)">'
       +'<img src="'+esc(url)+'" alt="'+esc(m.caption||'')+'" loading="lazy" onload="var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p)p.style.display=\'none\';" onerror="this.style.display=\'none\';var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p){p.style.display=\'flex\';}">'
       +'<div class="cs-img-placeholder"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="5" width="24" height="18" rx="2" stroke="currentColor" stroke-width="1"/><circle cx="14" cy="14" r="5" stroke="currentColor" stroke-width="1"/></svg><span>Image</span></div>'
@@ -678,7 +698,7 @@ async function loadProject() {
 
   const galleryHTML = renderGallery(project.media);
 
-  const allText = renderBodyText(project.body);
+  const allText = renderBodyText(project.introText) + renderBodyText(project.body);
 
   root.innerHTML =
     // ── Header ──
@@ -707,6 +727,7 @@ async function loadProject() {
     +'<div class="cs-tools-col">'
     +toolsHTML
     +methodsHTML
+    +(metaItems ? '<div class="cs-meta-row-inline cs-meta-row">'+metaItems+'</div>' : '')
     +'</div>'
     +(metaItems ? '<div class="cs-meta-col"><div class="cs-meta-row">'+metaItems+'</div></div>' : '<div class="cs-meta-col"></div>')
     +'</div>'
