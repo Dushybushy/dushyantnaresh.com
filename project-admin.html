@@ -497,8 +497,8 @@ textarea.tall { min-height: 160px; }
               <input type="url" id="f-coverImage" placeholder="images/hero.jpg  or  https://youtube.com/embed/…">
             </div>
             <div class="field">
-              <label class="field-label">Alt text <span style="opacity:0.5;font-size:0.9em">— optional</span></label>
-              <input type="text" id="f-coverAlt" placeholder="Descriptive alt text">
+              <label class="field-label">Hero image caption <span style="opacity:0.5;font-size:0.9em">— shown on polaroid &amp; lightbox</span></label>
+              <input type="text" id="f-coverCaption" placeholder="e.g. Cors y Gedol burial chamber">
             </div>
           </div>
         </div>
@@ -587,6 +587,10 @@ textarea.tall { min-height: 160px; }
         <!-- ── GALLERY ── -->
         <div class="form-section">
           <div class="form-section-title">Gallery</div>
+          <div class="field" style="margin-bottom:16px">
+            <label class="field-label">Images subfolder <span style="opacity:0.5;font-size:0.85em;letter-spacing:0;text-transform:none;font-family:var(--font-b)">— set once per project, e.g. <code>parm</code> → files go to <code>images/projects/parm/</code></span></label>
+            <input type="text" id="f-gallery-folder" placeholder="e.g. parm (leave blank for images/projects/)" oninput="markDirty()">
+          </div>
           <div id="gallery-list" style="display:flex;flex-direction:column;gap:10px;"></div>
           <button class="list-add" onclick="addGalleryItem()" style="margin-top:10px">+ Add media item</button>
         </div>
@@ -766,7 +770,7 @@ function populateForm(p) {
   document.getElementById('f-title').value       = p.title       || '';
   document.getElementById('f-subtitle').value    = p.subtitle    || '';
   document.getElementById('f-coverImage').value  = p.coverImage  || '';
-  document.getElementById('f-coverAlt').value    = p.coverAlt    || '';
+  document.getElementById('f-coverCaption').value = p.coverCaption || p.coverAlt || '';
   document.getElementById('f-ctaLabel').value    = p.ctaLabel    || '';
   document.getElementById('f-ctaUrl').value      = p.ctaUrl      || '';
   document.getElementById('f-body').value        = p.body        || '';
@@ -783,6 +787,7 @@ function populateForm(p) {
   renderTags(p.tags || []);
   renderList('tools-list',   p.tools   || [], 'tool');
   renderList('methods-list', p.methods || [], 'method');
+  document.getElementById('f-gallery-folder').value = p.galleryFolder || '';
   renderGallery(p.media || []);
 
 }
@@ -794,7 +799,8 @@ function applyChanges() {
   p.title       = v('f-title');
   p.subtitle    = v('f-subtitle');
   p.coverImage  = v('f-coverImage');
-  p.coverAlt    = v('f-coverAlt');
+  p.coverCaption = v('f-coverCaption');
+  p.coverAlt    = p.coverCaption; // keep for backwards compat
   p.ctaLabel    = v('f-ctaLabel');
   p.ctaUrl      = v('f-ctaUrl');
   p.body        = v('f-body');
@@ -809,7 +815,8 @@ function applyChanges() {
   p.tags        = getTags();
   p.tools       = getList('tools-list');
   p.methods     = getList('methods-list');
-  p.media       = getGallery();
+  p.galleryFolder = (document.getElementById('f-gallery-folder').value || '').trim();
+  p.media         = getGallery();
   // Preserve fields not in the form
   if (!p.links) p.links = [];
   // Update heading
@@ -824,7 +831,7 @@ function v(id) { return document.getElementById(id).value.trim(); }
 function newProject() {
   var p = {
     id: '', title: '', subtitle: '', summary: '', cardCategory: '', year: '', role: '', client: '', institution: '',
-    tags: [], coverImage: '', coverAlt: '', ctaLabel: '', ctaUrl: '',
+    tags: [], coverImage: '', coverCaption: '', coverAlt: '', ctaLabel: '', ctaUrl: '',
     body: '', tools: [], methods: [], media: [], links: [], featured: false
   };
   projects.push(p);
@@ -1050,12 +1057,10 @@ function setGalleryFile(dropzone, file) {
   if (!item) return;
   var urlInput = item.querySelector('.g-url');
   var thumb    = item.querySelector('.g-thumb-preview');
+  var folderInput = document.getElementById('f-gallery-folder');
+  var sub = folderInput && folderInput.value.trim() ? folderInput.value.trim().replace(/\/$/, '') + '/' : '';
+  urlInput.value = 'images/projects/' + sub + file.name;
 
-  // Set filename as path value (user will have placed file in images/ folder)
-  var folder = 'images/projects/';
-  urlInput.value = folder + file.name;
-
-  // Show preview
   if (file.type.startsWith('image/')) {
     var reader = new FileReader();
     reader.onload = function(ev) {
@@ -1095,6 +1100,12 @@ function showToast(msg, type) {
 
 
 // ── GALLERY FILE PICKER + DRAG/DROP ──────────────────────────
+function gallerySubPath(item, filename) {
+  var folderInput = document.getElementById('f-gallery-folder');
+  var sub = folderInput && folderInput.value.trim() ? folderInput.value.trim().replace(/\/$/, '') + '/' : '';
+  return 'images/projects/' + sub + filename;
+}
+
 function onGalleryFilePicked(e, input) {
   var file = e.target.files[0];
   if (!file) return;
@@ -1107,7 +1118,7 @@ function onGalleryFilePicked(e, input) {
   };
   reader.readAsDataURL(file);
   if (urlInput && !urlInput.value) {
-    urlInput.value = 'images/projects/' + file.name;
+    urlInput.value = gallerySubPath(item, file.name);
     markDirty();
   }
 }
@@ -1148,11 +1159,25 @@ document.addEventListener('drop', function(e) {
   };
   reader.readAsDataURL(file);
   if (urlInput && !urlInput.value) {
-    urlInput.value = 'images/projects/' + file.name;
+    urlInput.value = gallerySubPath(item, file.name);
     markDirty();
   }
 });
 
+
+
+// ── Gallery file path helper ──────────────────────────────────
+// Uses webkitRelativePath when available (drag from finder gives full path),
+// otherwise falls back to just the filename under images/projects/
+function galleryFilePath(file) {
+  if (file.webkitRelativePath && file.webkitRelativePath.length > 0) {
+    // Strip leading path segments before 'images/' if present
+    var rel = file.webkitRelativePath;
+    var idx = rel.indexOf('images/');
+    return idx >= 0 ? rel.slice(idx) : 'images/projects/' + rel;
+  }
+  return 'images/projects/' + file.name;
+}
 
 function esc(s) { return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 

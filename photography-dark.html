@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — Dushyant Naresh</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* ── Dark palette ── */
+  --bg-deep:    #17100d;
+  --bg-mid:     #2C1B15;
+  --bg-lift:    #351F17;
+  --bg-surface: #2b2420;
+  --bg-raised:  #3d2820;
+
+  /* ── Text ── */
+  --gold:       #C8A97A;
+  --gold-light: #E2C99A;
+  --gold-faint: rgba(200,169,122,0.35);
+  --cream:      #F4EFE4;
+  --cream-dim:  rgba(244,239,228,0.65);
+  --cream-faint:rgba(244,239,228,0.25);
+
+  /* ── Accent ── */
+  --earth:      #85211C;
+  --ember:      #C45A3A;
+  --ember-dim:  rgba(196,90,58,0.5);
+
+  /* ── Rules ── */
+  --rule-dark:  rgba(200,169,122,0.1);
+  --rule-mid:   rgba(200,169,122,0.18);
+
+  /* ── Fonts (carried from index.html) ── */
+  --font-d: 'Cormorant Garamond', Georgia, serif;
+  --font-b: 'Syne', sans-serif;
+  --font-m: 'Roboto Mono', monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg-deep);
+  color: var(--gold-light);
+  font-family: var(--font-b);
+  font-size: 16px;
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+
+/* ════════════════════════════════════
+   NAV — dark, consistent with dark layers on index.html
+════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200; overflow: visible;
+  background: var(--bg-deep);
+  border-bottom: 1px solid var(--rule-dark);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px; height: 64px;
+}
+.nav-logo {
+  font-family: var(--font-d); font-size: 18px; font-weight: 400;
+  color: rgba(244,239,228,0.85);
+}
+.nav-logo em { font-style: italic; color: var(--ember); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.65; transition: opacity 0.2s, color 0.2s;
+}
+.nav-links a:hover { opacity: 1; color: var(--gold-light); }
+.nav-links a.active { opacity: 1; color: var(--ember); }
+.nav-cta {
+  font-family: var(--font-b); font-size: 10px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--cream-dim); border: 1px solid var(--cream-faint);
+  padding: 10px 22px; transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.nav-cta:hover { background: rgba(244,239,228,0.08); color: var(--cream); border-color: var(--cream-dim); }
+
+/* hamburger */
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; margin-left: auto; }
+.nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--cream-dim); border-radius: 1px; }
+.nav-mobile { display: none; position: fixed; top: 64px; left: 0; right: 0; background: var(--bg-deep); border-bottom: 1px solid var(--rule-dark); padding: 20px 24px 24px; z-index: 199; flex-direction: column; }
+.nav-mobile.open { display: flex; }
+.nav-mobile a { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.65; padding: 14px 0; border-bottom: 1px solid var(--rule-dark); }
+.nav-mobile a:last-child { border-bottom: none; }
+.nav-mobile a:hover { opacity: 1; color: var(--gold-light); }
+
+/* ════════════════════════════════════
+   PAGE SHELL
+════════════════════════════════════ */
+.page { padding-top: 64px; }
+
+/* ════════════════════════════════════
+   FOLDER TAB — matches index.html strat-bar aesthetic
+════════════════════════════════════ */
+.page-folder-tab {
+  position: relative; z-index: 5;
+  display: flex; align-items: stretch; height: 38px;
+  background: var(--bg-deep);
+}
+.page-folder-tab::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 1px; background: rgba(200,169,122,0.12);
+}
+.page-breadcrumb {
+  display: inline-flex; align-items: center; gap: 16px;
+  padding: 0 40px 0 20px; width: 350px;
+  clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 100%, 0 100%);
+  background: var(--bg-lift);
+  white-space: nowrap; color: var(--gold-light);
+  filter:
+    drop-shadow(0 -1px 0px rgba(200,169,122,0.18))
+    drop-shadow(1px 0 0px rgba(200,169,122,0.18))
+    drop-shadow(0 1px 0px rgba(200,169,122,0.18))
+    drop-shadow(-1px 0 0px rgba(200,169,122,0.18));
+}
+.bc-ctx  { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.06em; opacity: 0.55; }
+.bc-pip  { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: 0.3; flex-shrink: 0; }
+.bc-name { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.26em; text-transform: uppercase; opacity: 0.5; }
+
+/* ════════════════════════════════════
+   PAGE HEADER
+════════════════════════════════════ */
+.page-header {
+  background: var(--bg-lift);
+  padding: 52px 52px 48px;
+  position: relative; height: 220px; overflow: hidden;
+}
+/* Subtle crosshatch texture */
+.page-header::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background-image:
+    repeating-linear-gradient(108deg, transparent, transparent 5px, rgba(200,169,122,0.018) 5px, rgba(200,169,122,0.018) 6px),
+    repeating-linear-gradient(18deg,  transparent, transparent 6px, rgba(200,169,122,0.012) 6px, rgba(200,169,122,0.012) 7px);
+}
+/* Golden gradient fade at right */
+.page-header::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: linear-gradient(90deg, transparent 50%, var(--bg-lift) 100%);
+}
+.page-header-inner { position: relative; z-index: 1; max-width: 52%; }
+.page-title {
+  font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
+  font-weight: 500; font-style: italic; line-height: 1.0;
+  color: var(--gold-light);
+  margin-bottom: 14px; letter-spacing: -0.01em;
+}
+.page-subtitle {
+  font-family: var(--font-d); font-size: 20px; font-style: normal;
+  line-height: 1.6; color: var(--gold); opacity: 0.75;
+}
+
+/* ════════════════════════════════════
+   ALBUM SELECTOR — the key UX upgrade.
+   Full-width grid of clickable album tiles
+   that expand inline. Default: mosaic of album covers.
+════════════════════════════════════ */
+.album-selector {
+  background: var(--bg-deep);
+  padding: 40px 52px 48px;
+  border-bottom: 1px solid var(--rule-dark);
+}
+.album-selector-label {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.5;
+  margin-bottom: 20px; display: flex; align-items: center; gap: 10px;
+}
+.album-selector-label::before { content:''; display:block; width:20px; height:1px; background: currentColor; }
+
+/* Grid of album tiles */
+.album-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2px;
+}
+.album-tile {
+  position: relative; cursor: pointer;
+  aspect-ratio: 3/2; overflow: hidden;
+  background: var(--bg-mid);
+  transition: transform 0.3s ease;
+}
+.album-tile:hover { z-index: 2; }
+.album-tile-bg {
+  position: absolute; inset: 0;
+  background: var(--bg-mid);
+  transition: opacity 0.4s ease;
+}
+/* Overlay gradient for legibility */
+.album-tile::after {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(160deg, transparent 35%, rgba(23,16,13,0.88) 100%);
+  transition: opacity 0.35s ease;
+}
+.album-tile:hover::after { opacity: 0.5; }
+.album-tile-info {
+  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+  padding: 14px 16px 12px;
+  display: flex; flex-direction: column; gap: 3px;
+}
+.album-tile-name {
+  font-family: var(--font-d); font-size: 22px; font-weight: 300;
+  line-height: 1; color: var(--gold-light); letter-spacing: -0.01em;
+}
+.album-tile-count {
+  font-family: var(--font-m); font-size: 8.5px; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.55;
+}
+/* Active/selected tile */
+.album-tile.active .album-tile-name { color: var(--ember); }
+.album-tile.active::before {
+  content: ''; position: absolute; inset: 0; z-index: 3;
+  border: 1.5px solid var(--ember); pointer-events: none;
+}
+/* "All" tile */
+.album-tile.all-tile {
+  background: var(--bg-raised);
+  display: flex; align-items: center; justify-content: center;
+}
+.album-tile.all-tile .album-tile-info {
+  position: static; padding: 0;
+  align-items: center; justify-content: center; height: 100%;
+  text-align: center;
+}
+.album-tile.all-tile .album-tile-name { font-size: 18px; opacity: 0.7; }
+.album-tile.all-tile:hover .album-tile-name { opacity: 1; }
+
+/* ════════════════════════════════════
+   FILTER BAR — tag pills, sticky under nav
+════════════════════════════════════ */
+.filter-bar {
+  background: var(--bg-mid);
+  border-bottom: 1px solid var(--rule-dark);
+  padding: 0 52px; display: flex; align-items: center;
+  height: 50px; position: sticky; top: 64px; z-index: 100;
+  overflow-x: auto; overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; scrollbar-width: none;
+}
+.filter-bar::-webkit-scrollbar { display: none; }
+.filter-label {
+  font-family: var(--font-m); font-size: 8.5px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.35;
+  margin-right: 22px; flex-shrink: 0;
+}
+.filter-divider {
+  width: 1px; height: 18px; background: var(--rule-mid);
+  margin: 0 18px; flex-shrink: 0;
+}
+.filter-tags { display: flex; gap: 5px; flex-wrap: nowrap; flex-shrink: 0; }
+.filter-tag {
+  font-family: var(--font-b); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--gold); opacity: 0.55;
+  background: transparent;
+  border: 1px solid var(--rule-dark); padding: 5px 14px;
+  cursor: pointer; transition: all 0.2s; user-select: none; white-space: nowrap;
+}
+.filter-tag:hover { opacity: 1; border-color: var(--gold-faint); }
+.filter-tag.active {
+  color: var(--bg-deep); background: var(--gold);
+  border-color: var(--gold); opacity: 1;
+}
+
+/* ════════════════════════════════════
+   GALLERY AREA — the main stage
+════════════════════════════════════ */
+.gallery-page { background: var(--bg-deep); padding-bottom: 80px; }
+
+/* ── Album section ── */
+.album-section { padding: 44px 0 0; }
+.album-section.hidden { display: none; }
+/* subtle alternating tints */
+.album-section:nth-child(even) .album-section-body { background: var(--bg-surface); }
+.album-section:nth-child(odd)  .album-section-body { background: var(--bg-deep); }
+.album-section-body { padding-bottom: 8px; }
+
+.album-header {
+  display: flex; flex-direction: column; gap: 6px;
+  padding: 0 52px 20px;
+}
+.album-eyebrow {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--ember); opacity: 0.75;
+  display: flex; align-items: center; gap: 10px;
+}
+.album-eyebrow::before { content: ''; display: block; width: 20px; height: 1px; background: var(--ember); opacity: 0.75; }
+.album-name {
+  font-family: var(--font-d); font-size: clamp(36px, 3.8vw, 56px); font-weight: 300;
+  letter-spacing: -0.02em; line-height: 1;
+  color: var(--gold-light);
+}
+
+/* ── Carousel ── */
+.carousel-outer { position: relative; }
+.carousel-track {
+  display: flex; gap: 3px;
+  overflow-x: auto; overflow-y: visible;
+  scroll-behavior: smooth; scrollbar-width: none;
+  padding: 0 52px 48px;
+  align-items: flex-end;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+
+/* ── Carousel arrows ── */
+.carousel-arrow {
+  position: absolute; top: 40%; transform: translateY(-50%);
+  width: 48px; height: 48px;
+  background: rgba(23,16,13,0.85);
+  border: 1px solid var(--rule-mid);
+  color: var(--gold); cursor: pointer; z-index: 10;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  opacity: 0; pointer-events: none;
+}
+.carousel-outer:hover .carousel-arrow { opacity: 1; pointer-events: auto; }
+.carousel-arrow:hover { background: var(--bg-lift); border-color: var(--gold); color: var(--gold-light); }
+.carousel-arrow.left { left: 4px; }
+.carousel-arrow.right { right: 4px; }
+.carousel-arrow.hidden { display: none; }
+.carousel-arrow svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ════════════════════════════════════
+   PHOTO CARD — frameless, edge-to-edge,
+   with a thin gold underline hover
+════════════════════════════════════ */
+.photo-card {
+  flex-shrink: 0; cursor: pointer; position: relative;
+  transition: transform 0.35s ease;
+}
+.photo-card:hover { transform: translateY(-6px); }
+.photo-card.filtered-out { display: none; }
+
+/* No more white postcard border — image bleeds to edge */
+.photo-postcard {
+  position: relative; display: flex; flex-direction: column;
+  background: var(--bg-surface);
+}
+/* Gold bottom accent line on hover */
+.photo-postcard::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--ember);
+  transform: scaleX(0); transform-origin: left center;
+  transition: transform 0.35s ease;
+}
+.photo-card:hover .photo-postcard::after { transform: scaleX(1); }
+
+/* Image area */
+.photo-img-wrap { position: relative; overflow: hidden; background: var(--bg-mid); }
+.photo-card.landscape .photo-img-wrap { width: 480px; aspect-ratio: 4/3; }
+.photo-card.portrait  .photo-img-wrap { width: 310px; aspect-ratio: 3/4; }
+.photo-card.square    .photo-img-wrap { width: 390px; aspect-ratio: 1/1; }
+.photo-img-wrap img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transition: transform 0.55s ease, filter 0.4s ease;
+}
+.photo-card:hover .photo-img-wrap img {
+  transform: scale(1.035);
+  filter: brightness(1.06) saturate(1.07);
+}
+
+/* Metadata strip */
+.photo-card-meta {
+  height: 38px; display: flex; align-items: center;
+  justify-content: space-between;
+  padding: 0 10px; background: var(--bg-surface);
+  flex-shrink: 0;
+}
+.photo-card-meta-title {
+  font-family: var(--font-m); font-size: 10px; letter-spacing: 0.06em;
+  color: var(--gold); opacity: 0.6;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex: 1; margin-right: 8px;
+  transition: opacity 0.2s;
+}
+.photo-card:hover .photo-card-meta-title { opacity: 1; }
+.photo-card-meta-tech {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.05em;
+  color: var(--gold); opacity: 0.35; white-space: nowrap; flex-shrink: 0;
+}
+
+/* Placeholder */
+.photo-placeholder {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 10px;
+  color: var(--gold-faint);
+}
+.photo-placeholder span {
+  font-family: var(--font-b); font-size: 9px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.4;
+}
+
+/* Divider */
+.album-divider { margin: 0 52px; height: 1px; background: var(--rule-dark); }
+
+/* Empty state */
+.gallery-empty { padding: 80px 52px; text-align: center; display: none; }
+.gallery-empty.visible { display: block; }
+.gallery-empty p { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); opacity: 0.35; margin-bottom: 20px; }
+.gallery-empty button { font-family: var(--font-b); font-size: 9.5px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ember); background: none; border: 1px solid var(--ember-dim); padding: 11px 22px; cursor: pointer; transition: background 0.2s, color 0.2s; }
+.gallery-empty button:hover { background: var(--ember); color: var(--bg-deep); }
+
+/* ════════════════════════════════════
+   FILTER GRID — masonry layout when tags active
+════════════════════════════════════ */
+#filterGrid { display: none; padding: 40px 52px 80px; background: var(--bg-deep); }
+#filterGrid.visible { display: block; }
+.filter-grid-header {
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.55;
+  margin-bottom: 28px;
+}
+.filter-grid-header span { color: var(--ember); opacity: 1; }
+.filter-grid-wrap { column-count: 3; column-gap: 3px; }
+.filter-grid-wrap .photo-card { width: 100%; break-inside: avoid; margin-bottom: 3px; }
+.filter-grid-wrap .photo-card.landscape .photo-img-wrap { width: 100%; }
+.filter-grid-wrap .photo-card.portrait  .photo-img-wrap { width: 100%; }
+.filter-grid-wrap .photo-card.square    .photo-img-wrap { width: 100%; }
+
+/* ════════════════════════════════════
+   LIGHTBOX
+════════════════════════════════════ */
+#photoLightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(14,9,7,0.97);
+  z-index: 9999; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+#photoLightbox.open { display: flex; }
+
+.lbx-album-label {
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.35;
+  margin-bottom: 18px; align-self: center;
+}
+.lbx-frame {
+  position: relative; display: flex;
+  align-items: center; justify-content: center;
+  width: 100%; padding: 0 80px; max-height: 90vh;
+}
+.lbx-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px;
+  background: none; border: 1px solid var(--rule-mid);
+  color: var(--gold); opacity: 0.6; cursor: pointer; z-index: 2;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s, opacity 0.2s, background 0.2s;
+}
+.lbx-arrow:hover { border-color: var(--gold); color: var(--gold-light); opacity: 1; background: rgba(200,169,122,0.07); }
+.lbx-arrow.left { left: 20px; }
+.lbx-arrow.right { right: 20px; }
+.lbx-arrow svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+/* Image in lightbox — frameless, just the photo */
+.lbx-postcard {
+  background: transparent;
+  flex-shrink: 0; position: relative;
+  max-height: 90vh; display: flex; flex-direction: column;
+  gap: 12px;
+}
+#lbxImg {
+  display: block; object-fit: contain;
+  max-height: calc(85vh - 48px);
+  max-width: min(90vw, 1400px);
+  width: auto; height: auto;
+  box-shadow: 0 12px 60px rgba(0,0,0,0.8), 0 4px 20px rgba(0,0,0,0.5);
+}
+.lbx-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  flex-shrink: 0;
+}
+.lbx-title {
+  font-family: var(--font-m); font-size: 12px; letter-spacing: 0.08em;
+  color: var(--gold-light); opacity: 0.85;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  flex: 1; margin-right: 20px;
+}
+.lbx-tech {
+  font-family: var(--font-m); font-size: 11px; letter-spacing: 0.06em;
+  color: var(--gold); opacity: 0.4; white-space: nowrap; flex-shrink: 0;
+}
+.lbx-close {
+  position: fixed; top: 24px; right: 28px;
+  background: none; border: 1px solid var(--rule-mid);
+  color: var(--gold); opacity: 0.5; font-size: 16px;
+  width: 44px; height: 44px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.2s, color 0.2s, opacity 0.2s; z-index: 10000;
+}
+.lbx-close:hover { border-color: var(--gold); color: var(--gold-light); opacity: 1; }
+.lbx-counter {
+  position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--gold); opacity: 0.2;
+}
+
+/* ════════════════════════════════════
+   DEPTH RAIL
+════════════════════════════════════ */
+#depthRail {
+  position: fixed; left: 20px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 150; display: flex; flex-direction: column;
+  align-items: center; gap: 0; pointer-events: none;
+}
+.depth-line { width: 1px; height: 80px; background: rgba(200,169,122,0.12); }
+#depthMarker { width: 5px; height: 5px; border-radius: 50%; background: var(--ember); flex-shrink: 0; }
+#depthLabel {
+  font-family: var(--font-m); font-size: 8px; color: var(--gold); opacity: 0.35;
+  letter-spacing: 0.08em; writing-mode: vertical-rl;
+  text-orientation: mixed; transform: rotate(180deg);
+  padding: 10px 0;
+}
+@media (max-width: 768px) { #depthRail { display: none; } }
+
+/* ════════════════════════════════════
+   FOOTER
+════════════════════════════════════ */
+.site-footer {
+  background: var(--bg-deep);
+  padding: 0 52px; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--rule-dark);
+}
+.footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: var(--cream-dim); }
+.footer-logo em { font-style: italic; color: var(--ember); }
+.footer-nav { display: flex; gap: 36px; list-style: none; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); opacity: 0.45; transition: opacity 0.2s, color 0.2s; }
+.footer-nav a:hover { opacity: 1; color: var(--gold-light); }
+.footer-right { font-family: var(--font-b); font-size: 11px; color: var(--gold); opacity: 0.35; }
+.footer-right a { color: inherit; transition: opacity 0.2s; }
+.footer-right a:hover { opacity: 1; }
+
+/* ════════════════════════════════════
+   LOADING / ERROR
+════════════════════════════════════ */
+.page-loading, .page-error { padding: 100px 52px; text-align: center; }
+.page-loading p, .page-error p { font-family: var(--font-m); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); opacity: 0.35; }
+
+/* ════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════ */
+@media (max-width: 1100px) {
+  nav { padding: 0 32px; }
+  .page-header { padding: 44px 32px 40px; height: auto; min-height: 0; }
+  .filter-bar { padding: 0 32px; }
+  .album-selector { padding: 32px 32px 40px; }
+  .album-header { padding: 0 32px 16px; }
+  .carousel-track { padding: 0 32px 40px; }
+  .album-divider { margin: 0 32px; }
+  .site-footer { padding: 0 32px; }
+  #filterGrid { padding: 32px 32px 60px; }
+}
+@media (max-width: 900px) {
+  .album-tiles { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  nav { padding: 0 24px; height: 56px; }
+  .nav-links, .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .page { padding-top: 56px; }
+  .filter-bar { top: 56px; padding: 0 24px; height: 46px; }
+  .page-header { padding: 32px 24px 28px; height: auto; }
+  .page-header-inner { max-width: 100%; }
+  .page-title { font-size: clamp(34px, 9vw, 50px); }
+  .album-selector { padding: 24px 24px 32px; }
+  .album-tiles { grid-template-columns: repeat(2, 1fr); }
+  .album-header { padding: 0 24px 14px; }
+  .album-name { font-size: 26px; }
+  .carousel-track { padding: 0 24px 32px; gap: 2px; }
+  .carousel-arrow { display: none; }
+  .photo-card.landscape .photo-img-wrap { width: 240px; }
+  .photo-card.portrait  .photo-img-wrap { width: 180px; }
+  .photo-card.square    .photo-img-wrap { width: 210px; }
+  .album-divider { margin: 0 24px; }
+  .lbx-frame { padding: 0 52px; }
+  .lbx-arrow.left { left: 4px; }
+  .lbx-arrow.right { right: 4px; }
+  #lbxImg { max-width: 88vw; }
+  .filter-grid-wrap { column-count: 2; }
+  .site-footer { height: auto; padding: 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+@media (max-width: 480px) {
+  nav { padding: 0 20px; height: 52px; }
+  .page { padding-top: 52px; }
+  .filter-bar { top: 52px; }
+  .album-tiles { grid-template-columns: repeat(2, 1fr); }
+  .photo-card.landscape .photo-img-wrap { width: 200px; }
+  .photo-card.portrait  .photo-img-wrap { width: 150px; }
+  .photo-card.square    .photo-img-wrap { width: 175px; }
+  .lbx-frame { padding: 0 44px; }
+  .lbx-arrow { width: 40px; height: 40px; }
+  .site-footer { padding: 20px; }
+  .footer-nav { gap: 18px; flex-wrap: wrap; }
+  .filter-grid-wrap { column-count: 1; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────────── -->
+<nav>
+  <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="photography-dark.html" class="active">Photography</a></li>
+    <li><a href="#">Films</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <a href="#" class="nav-cta">Contact</a>
+  <button class="nav-hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile">
+  <a href="index.html">Home</a>
+  <a href="photography-dark.html">Photography</a>
+  <a href="#">Films</a>
+  <a href="#">Projects</a>
+  <a href="#">About</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- ── DEPTH RAIL ─────────────────────────────────────────────── -->
+<div id="depthRail">
+  <div class="depth-line"></div>
+  <div id="depthMarker"></div>
+  <div id="depthLabel">0.0m</div>
+  <div class="depth-line"></div>
+</div>
+
+<!-- ── PAGE ──────────────────────────────────────────────────── -->
+<main class="page">
+
+  <!-- Folder tab -->
+  <div class="page-folder-tab">
+    <div class="page-breadcrumb">
+      <span class="bc-ctx">Visual Archive</span>
+      <span class="bc-pip"></span>
+      <span class="bc-name">Photography</span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <h1 class="page-title">Photography</h1>
+      <p class="page-subtitle">Stills from fieldwork, wandering &amp; wonder</p>
+    </div>
+  </header>
+
+  <!-- Album selector grid -->
+  <section class="album-selector" id="albumSelector">
+    <div class="album-selector-label">Browse by album</div>
+    <div class="album-tiles" id="albumTiles">
+      <!-- injected by JS -->
+    </div>
+  </section>
+
+  <!-- Filter bar -->
+  <div class="filter-bar" id="filterBar">
+    <span class="filter-label">Filter</span>
+    <div class="filter-tags" id="filterTags"></div>
+    <div class="filter-divider"></div>
+    <button class="filter-tag" id="clearBtn" onclick="clearFilters()" style="display:none; color:var(--ember); border-color:var(--ember-dim); opacity:1;">
+      ✕ Clear
+    </button>
+  </div>
+
+  <!-- Gallery — album carousels -->
+  <div id="galleryPage" class="gallery-page">
+    <div class="page-loading"><p>Loading photographs…</p></div>
+  </div>
+
+  <!-- Gallery — tag filter flat grid -->
+  <div id="filterGrid">
+    <div class="filter-grid-header" id="filterGridHeader"></div>
+    <div class="filter-grid-wrap" id="filterGridWrap"></div>
+  </div>
+
+</main>
+
+<!-- ── LIGHTBOX ──────────────────────────────────────────────── -->
+<div id="photoLightbox">
+  <div class="lbx-album-label" id="lbxAlbum"></div>
+  <div class="lbx-frame">
+    <button class="lbx-arrow left" onclick="navigateLightbox(-1)" aria-label="Previous">
+      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <div class="lbx-postcard">
+      <img id="lbxImg" src="" alt="">
+      <div class="lbx-meta">
+        <span class="lbx-title" id="lbxTitle"></span>
+        <span class="lbx-tech" id="lbxTech"></span>
+      </div>
+    </div>
+    <button class="lbx-arrow right" onclick="navigateLightbox(1)" aria-label="Next">
+      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+  <button class="lbx-close" onclick="closeLightbox()" aria-label="Close">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/></svg>
+  </button>
+  <div class="lbx-counter" id="lbxCounter"></div>
+</div>
+
+<!-- ── FOOTER ────────────────────────────────────────────────── -->
+<footer class="site-footer">
+  <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
+  <ul class="footer-nav">
+    <li><a href="#">Photography</a></li>
+    <li><a href="#">Films</a></li>
+    <li><a href="#">Projects</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="footer-right">&copy; 2025</div>
+</footer>
+
+<script>
+// ── Data & state ──────────────────────────────────────────────
+var allAlbums  = [];
+var allPhotos  = [];
+var activeTags = [];
+var activeAlbumId = null; // null = show all
+var lbxSequence = [];
+var lbxIndex    = 0;
+
+// ── Bootstrap ─────────────────────────────────────────────────
+function init() {
+  fetch('photos.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allAlbums = (data.albums || []).filter(function(a) { return !a.hidden; });
+      allAlbums.sort(function(a,b) { return (a.order||99) - (b.order||99); });
+      allPhotos = data.photos || [];
+
+      buildAlbumTiles();
+      buildFilterTags();
+      renderGallery(null);
+    })
+    .catch(function() {
+      document.getElementById('galleryPage').innerHTML =
+        '<div class="page-error"><p>Could not load photographs.</p></div>';
+    });
+}
+
+// ── Album tiles ───────────────────────────────────────────────
+function buildAlbumTiles() {
+  var container = document.getElementById('albumTiles');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // "All" tile
+  var allTile = document.createElement('div');
+  allTile.className = 'album-tile all-tile active';
+  allTile.dataset.albumId = '';
+  allTile.innerHTML =
+    '<div class="album-tile-info">'
+    + '<span class="album-tile-name">All</span>'
+    + '<span class="album-tile-count">' + allPhotos.length + ' photos</span>'
+    + '</div>';
+  allTile.addEventListener('click', function() { selectAlbum(null); });
+  container.appendChild(allTile);
+
+  allAlbums.forEach(function(album) {
+    var count = allPhotos.filter(function(p) { return p.album === album.id; }).length;
+    // Pick cover photo: first in album by order
+    var coverPhoto = allPhotos
+      .filter(function(p) { return p.album === album.id; })
+      .sort(function(a,b) { return (a.order||0)-(b.order||0); })[0];
+
+    var tile = document.createElement('div');
+    tile.className = 'album-tile';
+    tile.dataset.albumId = album.id;
+
+    var bgHTML = '';
+    if (coverPhoto && coverPhoto.src) {
+      bgHTML = '<img class="album-tile-bg" src="' + esc(coverPhoto.src)
+        + '" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;">';
+    } else {
+      bgHTML = '<div class="album-tile-bg"></div>';
+    }
+
+    tile.innerHTML = bgHTML
+      + '<div class="album-tile-info">'
+      + '<span class="album-tile-name">' + esc(album.name) + '</span>'
+      + '<span class="album-tile-count">' + count + ' photo' + (count!==1?'s':'') + '</span>'
+      + '</div>';
+
+    tile.addEventListener('click', function() { selectAlbum(album.id); });
+    container.appendChild(tile);
+  });
+}
+
+function selectAlbum(albumId) {
+  activeAlbumId = albumId;
+  // Update tile highlight
+  document.querySelectorAll('.album-tile').forEach(function(t) {
+    var tId = t.dataset.albumId;
+    if (albumId === null && tId === '') {
+      t.classList.add('active');
+    } else if (tId === albumId) {
+      t.classList.add('active');
+    } else {
+      t.classList.remove('active');
+    }
+  });
+  renderGallery(albumId);
+}
+
+// ── Filter tags ───────────────────────────────────────────────
+function buildFilterTags() {
+  var tagSet = {};
+  allPhotos.forEach(function(p) {
+    (p.tags||[]).forEach(function(t) {
+      var k = t.toLowerCase().trim();
+      tagSet[k] = (tagSet[k]||0) + 1;
+    });
+  });
+  var sorted = Object.keys(tagSet).sort();
+  var container = document.getElementById('filterTags');
+  if (!container) return;
+  container.innerHTML = '';
+  sorted.forEach(function(tag) {
+    var btn = document.createElement('button');
+    btn.className = 'filter-tag';
+    btn.textContent = tag;
+    btn.addEventListener('click', function() { toggleTag(tag, btn); });
+    container.appendChild(btn);
+  });
+}
+
+function toggleTag(tag, btn) {
+  var idx = activeTags.indexOf(tag);
+  if (idx >= 0) {
+    activeTags.splice(idx, 1);
+    btn.classList.remove('active');
+  } else {
+    activeTags.push(tag);
+    btn.classList.add('active');
+  }
+  var clearBtn = document.getElementById('clearBtn');
+  if (clearBtn) clearBtn.style.display = activeTags.length > 0 ? '' : 'none';
+  applyFilter();
+}
+
+// ── Render gallery (album view) ───────────────────────────────
+function renderGallery(albumId) {
+  var galleryPage = document.getElementById('galleryPage');
+  if (!galleryPage) return;
+  galleryPage.innerHTML = '';
+
+  var albumsToShow = albumId
+    ? allAlbums.filter(function(a) { return a.id === albumId; })
+    : allAlbums;
+
+  if (!albumsToShow.length) {
+    galleryPage.innerHTML = '<div class="page-loading"><p>No albums found.</p></div>';
+    return;
+  }
+
+  albumsToShow.forEach(function(album, i) {
+    var photos = allPhotos
+      .filter(function(p) { return p.album === album.id; })
+      .sort(function(a,b) { return (a.order||0)-(b.order||0); });
+
+    var section = document.createElement('div');
+    section.className = 'album-section';
+    section.id = 'album-' + album.id;
+
+    var body = document.createElement('div');
+    body.className = 'album-section-body';
+
+    // Album header
+    body.innerHTML =
+      '<div class="album-header">'
+      + '<div class="album-eyebrow">Album ' + String(i+1).padStart(2,'0') + '</div>'
+      + '<div class="album-name">' + esc(album.name) + '</div>'
+      + '</div>'
+      + '<div class="carousel-outer" id="outer-' + album.id + '">'
+      + '<button class="carousel-arrow left" onclick="scrollCarousel(\'' + album.id + '\',-1)" aria-label="Previous">'
+      + '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>'
+      + '</button>'
+      + '<div class="carousel-track" id="track-' + album.id + '"></div>'
+      + '<button class="carousel-arrow right" onclick="scrollCarousel(\'' + album.id + '\',1)" aria-label="Next">'
+      + '<svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>'
+      + '</button>'
+      + '</div>';
+
+    section.appendChild(body);
+
+    // Divider between sections
+    if (i < albumsToShow.length - 1) {
+      var div = document.createElement('div');
+      div.className = 'album-divider';
+      section.appendChild(div);
+    }
+
+    galleryPage.appendChild(section);
+
+    // Fill track
+    var track = document.getElementById('track-' + album.id);
+    if (track) {
+      if (!photos.length) {
+        track.innerHTML = '<div class="gallery-empty visible"><p>No photos yet.</p></div>';
+      } else {
+        photos.forEach(function(photo) {
+          track.appendChild(makeCard(photo));
+        });
+      }
+    }
+  });
+
+  // Re-apply tag filter visually if any active
+  if (activeTags.length > 0) applyFilter();
+}
+
+// ── Card builder ──────────────────────────────────────────────
+function makeCard(photo) {
+  var card = document.createElement('div');
+  card.className = 'photo-card ' + (photo.orientation || 'landscape');
+  card.id = 'card-' + photo.id;
+
+  var imgHTML = photo.src
+    ? '<img src="' + esc(photo.src) + '" alt="' + esc(photo.title||'') + '" loading="lazy">'
+    : '<div class="photo-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg><span>Coming soon</span></div>';
+
+  var tech = [photo.focalLength, photo.aperture, photo.shutterSpeed].filter(Boolean).join(' · ');
+  card.innerHTML =
+    '<div class="photo-postcard">'
+    + '<div class="photo-img-wrap">' + imgHTML + '</div>'
+    + '<div class="photo-card-meta">'
+    + '<span class="photo-card-meta-title">' + esc(photo.title||'') + '</span>'
+    + (tech ? '<span class="photo-card-meta-tech">' + esc(tech) + '</span>' : '')
+    + '</div>'
+    + '</div>';
+
+  card.addEventListener('click', function() { openLightbox(photo.id); });
+  return card;
+}
+
+// ── Filter logic ──────────────────────────────────────────────
+function applyFilter() {
+  var hasFilter = activeTags.length > 0;
+  var galleryPage = document.getElementById('galleryPage');
+  var filterGrid  = document.getElementById('filterGrid');
+  var gridWrap    = document.getElementById('filterGridWrap');
+  var gridHeader  = document.getElementById('filterGridHeader');
+
+  if (!hasFilter) {
+    if (filterGrid)  filterGrid.classList.remove('visible');
+    if (galleryPage) galleryPage.style.display = '';
+    return;
+  }
+
+  var matched = allPhotos.filter(function(p) {
+    var tags = (p.tags||[]).map(function(t){ return t.toLowerCase().trim(); });
+    return activeTags.some(function(t){ return tags.indexOf(t) >= 0; });
+  }).slice().sort(function(a,b) {
+    var aAlbum = allAlbums.findIndex(function(al){ return al.id === a.album; });
+    var bAlbum = allAlbums.findIndex(function(al){ return al.id === b.album; });
+    if (aAlbum !== bAlbum) return aAlbum - bAlbum;
+    return (a.order||0) - (b.order||0);
+  });
+
+  if (galleryPage) galleryPage.style.display = 'none';
+  if (filterGrid)  filterGrid.classList.add('visible');
+
+  if (gridHeader) {
+    gridHeader.innerHTML = '<span>' + matched.length + '</span> photo'
+      + (matched.length !== 1 ? 's' : '') + ' tagged: '
+      + activeTags.map(function(t){ return '<span>' + esc(t) + '</span>'; }).join(', ');
+  }
+
+  if (gridWrap) {
+    gridWrap.innerHTML = '';
+    if (!matched.length) {
+      gridWrap.innerHTML = '<div class="gallery-empty visible"><p>No photos match the selected filters.</p><button onclick="clearFilters()">Clear filters</button></div>';
+    } else {
+      matched.forEach(function(photo) { gridWrap.appendChild(makeCard(photo)); });
+    }
+  }
+}
+
+function clearFilters() {
+  activeTags = [];
+  document.querySelectorAll('.filter-tag').forEach(function(b) { b.classList.remove('active'); });
+  var clearBtn = document.getElementById('clearBtn');
+  if (clearBtn) clearBtn.style.display = 'none';
+  applyFilter();
+}
+
+// ── Carousel scrolling ────────────────────────────────────────
+function scrollCarousel(albumId, dir) {
+  var track = document.getElementById('track-' + albumId);
+  if (!track) return;
+  var card = track.querySelector('.photo-card');
+  var w = card ? card.offsetWidth + 3 : 360;
+  track.scrollBy({ left: dir * w * 2, behavior: 'smooth' });
+}
+
+// ── Lightbox ──────────────────────────────────────────────────
+function openLightbox(photoId) {
+  var clickedPhoto = allPhotos.find(function(p) { return p.id === photoId; });
+  if (!clickedPhoto) return;
+
+  if (activeTags.length > 0) {
+    lbxSequence = allPhotos.filter(function(p) {
+      var tags = (p.tags||[]).map(function(t){return t.toLowerCase().trim();});
+      return activeTags.some(function(t) { return tags.indexOf(t) >= 0; });
+    }).slice().sort(function(a,b) {
+      var aAlbum = allAlbums.findIndex(function(al) { return al.id === a.album; });
+      var bAlbum = allAlbums.findIndex(function(al) { return al.id === b.album; });
+      if (aAlbum !== bAlbum) return aAlbum - bAlbum;
+      return a.order - b.order;
+    });
+  } else if (activeAlbumId) {
+    lbxSequence = allPhotos
+      .filter(function(p) { return p.album === activeAlbumId; })
+      .slice().sort(function(a,b) { return a.order - b.order; });
+  } else {
+    lbxSequence = allPhotos
+      .filter(function(p) { return p.album === clickedPhoto.album; })
+      .slice().sort(function(a,b) { return a.order - b.order; });
+  }
+
+  lbxIndex = lbxSequence.findIndex(function(p) { return p.id === photoId; });
+  if (lbxIndex < 0) lbxIndex = 0;
+  showLightboxPhoto();
+  document.getElementById('photoLightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLightboxPhoto() {
+  var photo = lbxSequence[lbxIndex];
+  if (!photo) return;
+  var img = document.getElementById('lbxImg');
+  img.src = photo.src || '';
+  img.alt = photo.title || '';
+  img.style.display = photo.src ? 'block' : 'none';
+  var album = allAlbums.find(function(a) { return a.id === photo.album; });
+  document.getElementById('lbxAlbum').textContent = album ? album.name.toUpperCase() : '';
+  document.getElementById('lbxTitle').textContent = photo.title || '';
+  var tech = [photo.focalLength, photo.aperture, photo.shutterSpeed].filter(Boolean).join('  ·  ');
+  document.getElementById('lbxTech').textContent = tech;
+  document.getElementById('lbxCounter').textContent =
+    (lbxIndex + 1) + ' / ' + lbxSequence.length;
+}
+
+function navigateLightbox(dir) {
+  lbxIndex = (lbxIndex + dir + lbxSequence.length) % lbxSequence.length;
+  showLightboxPhoto();
+}
+
+function closeLightbox() {
+  document.getElementById('photoLightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('photoLightbox').classList.contains('open')) return;
+  if (e.key === 'Escape')     closeLightbox();
+  if (e.key === 'ArrowRight') navigateLightbox(1);
+  if (e.key === 'ArrowLeft')  navigateLightbox(-1);
+});
+
+document.getElementById('photoLightbox').addEventListener('click', function(e) {
+  var inside = e.target.closest &&
+    (e.target.closest('.lbx-postcard') ||
+     e.target.closest('.lbx-arrow') ||
+     e.target.closest('.lbx-close'));
+  if (!inside) closeLightbox();
+});
+
+// ── Utils ─────────────────────────────────────────────────────
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ── Depth rail ────────────────────────────────────────────────
+(function() {
+  var label = document.getElementById('depthLabel');
+  if (!label) return;
+  function updateDepth() {
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    var depth = (Math.min(scrollTop / docHeight, 1) * 1.8).toFixed(1);
+    label.textContent = depth + 'm';
+  }
+  updateDepth();
+  window.addEventListener('scroll', updateDepth, { passive: true });
+})();
+
+init();
+</script>
+</body>
+</html>

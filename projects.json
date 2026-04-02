@@ -9,11 +9,10 @@
     "institution": "Visualising Heritage, University of Bradford",
     "tags": [
       "Heritage",
-      "Archaeology",
       "Immersive"
     ],
     "coverImage": "https://www.youtube-nocookie.com/embed/Il8QQf33mRo",
-    "coverAlt": "",
+    "coverAlt": "Watch our short project overview",
     "ctaLabel": "Try it out!",
     "ctaUrl": "https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm",
     "body": "In 2025, Visualising Heritage partnered with the National Trust to create a standalone interactive digital experience to put visitors in the shoes of an archaeologist at the medieval site of Fountains Abbey in North Yorkshire. Every year, hundreds of thousands of visitors flock to Fountains Abbey to walk among the ruins of what was once the largest monastery in England. Above the ground, the structures that remain are exceptional. However, beneath the seemingly untouched East Green, lies a trove of archaeology that is neither seen nor heard in the broader narrative of Fountains Abbey, yet fundamentally changes the story of the site.\n\nI was tasked with designing the entire experience, from brainstorming how we intuitively showcase complex geophysics, to structuring the narrative, to building the interactive tour.\n\nFirst, our team conducted high-resolution geophysical surveys using Ground Penetrating Radar (GPR) and Magnetometry on the East Green, confirming previously discovered features and uncovering new ones. The geophysical data highlighted fascinating features that visitors can’t engage with on-site, such as a large cemetery buried under the East Green, a mysterious row of burials away from the graveyard, and the foundations of a massive industrial complex. Our goal was to tell the story of Fountains Abbey through these findings, bridging the gap between high-level geophysical data and information meant for broad audiences of all ages.\n\nWe settled on building an on-site, “AR-lite” experience that simulated the feeling of Augmented Reality without putting excess strain on everyday consumer devices. Using a pro-grade 360° camera, we captured high resolution panoramas along various spots along the East Green where geophysical survey had been conducted. Those photos were imported into Blender, where we created a projection that enabled us to place the geophysical data onto the East Green, viewable from a first-person POV.\n\nI then created animations in Adobe After Effects using the geophysics data to highlight archaeological features that appeared in the imagery, allowing users to interpret the data the same way an archaeologist would.\n\nAll media, including animations, videos, photos, and the reprojected geophysics were imported into 3DVista, a platform used primarily for virtual real estate tours. We created an annotated map of Fountains Abbey with Points of Interest marked along the East Green, with each location consisting of a 360° base panorama layer (taken from the same spot in real life) and interactive buttons to cue text, animations, or video.\n\nWe formed our narrative approach around providing visitors agency and allowing them to decide where to go, in which order, and what they were interested in learning. This non-linear approach gave us additional flexibility with the narrative approach, with each location uncovering a piece of the puzzle to understanding the broader story of Fountains Abbey.\n\nThe experience is filled with various types of media spanning different genres, from raw geophysical data to video clips and pop culture references.\n\nFountains Abbey: Revealed! was evaluated with members of the public during the CBA Festival of Archaeology 2025 at Fountains Abbey. Our evaluation results demonstrated the impact of using creative visualisations and storytelling in communicating archaeological and geophysical data, especially to a broad audience.\n\nIf you’d like to try it out for yourself, we’ve created an at-home version here (works on all devices but best on a tablet): <a href=\"https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm\" target=\"_blank\" rel=\"noopener\">Fountains Abbey Revealed!</a>",
@@ -84,7 +83,8 @@
     "links": [],
     "featured": true,
     "summary": "",
-    "cardCategory": "Archaeological Visualisation & XR"
+    "cardCategory": "Heritage & XR",
+    "coverCaption": "Watch our short project overview"
   },
   {
     "id": "Southern-Gateway-PARM",
@@ -93,14 +93,14 @@
     "category": "Heritage & Projection",
     "year": "2025",
     "role": "Lead Researcher",
-    "client": "City of Bradford Metropolitan District Council",
-    "institution": "Visualising Heritage, University of Bradford",
+    "client": "Bradford City Council",
+    "institution": "Visualising Heritage",
     "tags": [
       "heritage",
       "immersive"
     ],
     "coverImage": "https://www.youtube-nocookie.com/embed/KC9sBMvoYY4",
-    "coverAlt": "Overview of the Southern Gateway PARM",
+    "coverAlt": "Watch our project overview",
     "introText": "Designed the narrative approach and produced animated stories on heritage and placemaking for a Projection Augmented Relief Model communication tool.",
     "body": "As a researcher for Visualising Heritage at the University of Bradford, I was involved in a project with the Bradford City Council to tell the story of an area of the city through a cutting-edge visualisation technique called Projection Augmented Relief Mapping (PARM). I crafted bite-sized animations about the history and infrastructure of Bradford that were then projected onto a 3D printed model of the city, bringing the plastic to life. Our evaluations demonstrated our model’s huge potential in education, policymaking, and civic engagement.\n\nAt Visualising Heritage, I largely focused on researching ways to effectively convey complex archaeology, with an emphasis on creatively visualising geospatial data. Additionally, as a team of archaeologists, our work centred heavily on establishing and communicating context. For this project, we decided to utilise innovative, rapid capture technologies used on archaeological sites combined with our experience distilling geospatial information to broad audiences to create an interactive, audience-led 3D printed model that brought the story of Southern Gateway to life.\n\nDuring the capture phase of the project, the Visualising Heritage team at the University of Bradford automated a drone to systematically fly over and photograph a section of Bradford city called Southern Gateway. These photos were stitched together to create a high resolution orthographic aerial image as well as a detailed 3D model using Structure from Motion (SfM) photogrammetry. The model was scaled down, split into tiles, and 3D printed using a white matte bioplastic filament to create a 1.8m x 1.2m sized model.\n\nWe took a multipronged approach for the narrative structure and content types. The primary brief was to generate conversation and understanding around regenerating the Southern Gateway as part of a significant government infrastructure investment, particularly focusing on the potential upheaval of the Bradford Interchange railway station.\n\nOur first goal was to create a series of short stories that provided audiences with the necessary context behind Southern Gateway, such as its topography, history of public transport, and publicly-accessible green spaces. We recorded voiceovers and created animations for eight stories (about two minutes long each) that audiences could select from. We also created numerous static data layers (e.g. land use, historic maps, gradients) that provided additional context and information that could inform peoples’ decisions about regeneration. Finally, we created a series of “drop-in” points that displayed 360° images taken from the ground at various places in Southern Gateway.\n\nThis project was a Knowledge Transfer Partnership with the City of Bradford Metropolitan District Council to develop novel methodologies to digitally record an area of Bradford city, 3D print a scaled down version of it, and project curated content onto the model to communicate the complexities involving city regeneration. This technology, called a Projection Augmented Relief Model (PARM), was designed as part of a larger toolkit to be used in public consultations regarding placemaking.\n\nTo set it all up, a short throw projector was mounted above the model and a TV was placed behind the setup to provide additional information and imagery. All the content and computing was run via a PC using MadMapper, a projection mapping software that allowed us to import the 3D digital model to accurately project maps and animations onto the physical model, as well as create cues and scenes to display content on both the printed model and the contextual TV. A touchscreen was mounted beside the model to allow users to trigger content.\n\nThis tool was evaluated with members of the public in December 2024 and January 2025, with anonymised survey responses demonstrating significant potential for PARM as an effective communication tool in planning, construction, and education.",
     "tools": [
@@ -145,8 +145,9 @@
     ],
     "links": [],
     "featured": true,
-    "summary": "",
-    "cardCategory": "Projection Mapping & Communication"
+    "summary": "Our team developed a unique communication tool using 3d printing and projectors to bring a city to life.",
+    "cardCategory": "Communication & XR",
+    "coverCaption": "Watch our project overview"
   },
   {
     "id": "landmark-trust-visualisations",
@@ -270,8 +271,9 @@
       }
     ],
     "featured": false,
-    "summary": "",
-    "cardCategory": "Heritage Visualisations"
+    "summary": "A render of the laser scan data taken of the property",
+    "cardCategory": "Heritage Visualisations",
+    "coverCaption": ""
   },
   {
     "id": "an-avebury-story",
@@ -279,16 +281,15 @@
     "subtitle": "Creating an interactive VR game set in the Neolithic stone circles at Avebury",
     "category": "Research & XR",
     "year": "2023",
-    "role": "MSc Student - Digital Archaeology",
+    "role": "MSc Student, Digital Archaeology",
     "client": "",
     "institution": "University of York",
     "tags": [
       "immersive",
-      "heritage",
-      "archaeology"
+      "heritage"
     ],
     "coverImage": "images/projects/aveburystory/splashscreen.webp",
-    "coverAlt": "",
+    "coverAlt": "Splash screen for the VR experience",
     "introText": "Practice-based MSc dissertation exploring the efficacy of VR, 360° film, and participant agency in communicating archaeology. Ranked 1st in the programme.",
     "body": "An Avebury Story is an immersive, choose-your-own-adventure VR experience I created for my Master’s dissertation in Digital Archaeology. Transport yourself to the Neolithic stone circles at Avebury, Wiltshire, where you get to choose which path to traverse and what stories to experience. Filmed on consumer-grade 360° cameras and built in Unity, An Avebury Story is optimised for Meta Quest headsets and is also playable in YouTube’s 360° mode.\n\nThe project was a form of practice-based research, where the creative process itself was the data. By designing, building, and testing the experience, I was able to assess the real affordances and limitations of using immersive media to communicate archaeology, both in theory and in practice.\n\nThe experience was shot entirely on location at Avebury using a consumer-grade 360° camera. I wrote and filmed six stories, each set at a different location within the site, covering topics ranging from a medieval murder mystery to the spiritual significance of the stones. I also featured voices from the local community and volunteers, offering perspectives outside traditional archaeology.\n\nThe editing and post-production were done in Adobe Premiere Pro and After Effects, with the interactive VR environment built in Unity using a plugin called Cutting Room, developed by Digital Creativity Labs at the University of York. Users experienced the story through a Meta Quest 2 headset, determining which path through Avebury they wanted to take.\n\nThe experience was tested with 100 participants (both in-person through VR headsets and remotely through a YouTube 360° version), followed by a detailed survey measuring immersion, presence, emotion, and engagement. The results were overwhelmingly positive, with nearly everyone saying they’d learned something and that they'd want to see a similar project at other heritage sites.\n\nBeyond the quantitative data, what the project revealed was something more fundamental: that narrative will always outperform technology. Once the novelty of VR wore off, participants were more engaged with the stories rather than the novel tech. The stories that resonated most were the ones where the format served the content, where the 360° environment added a dimension to the story that traditional film can’t recreate.\n\nBuilding An Avebury Story also surfaced real challenges around community collaboration, ownership, and representation. One participant withdrew their recorded piece after testing, raising important questions about who controls heritage narratives and how digital archaeologists navigate that responsibly.\n\nThe project demonstrated that immersive, interactive heritage storytelling is not only achievable on a modest budget, but capable of forging genuine connections between audiences and archaeology. As the tools become more accessible and the technology matures, the potential for experiences like these, built by archaeologists and for everyone, is enormous.\n\n<figure><iframe src=\"https://www.youtube.com/embed/vdGoLzcrnuk\" allowfullscreen></iframe><figcaption>Try An Avebury Story!</figcaption></figure>",
     "tools": [
@@ -390,16 +391,15 @@
     "subtitle": "A lighthearted exploration of how York’s heritage and archaeology live in the present day.",
     "category": "Documentary Film",
     "year": "2023",
-    "role": "MSc Student - Digital Archaeology",
+    "role": "MSc Student, Digital Archaeology",
     "client": "",
     "institution": "University of York",
     "tags": [
       "film",
-      "heritage",
-      "archaeology"
+      "heritage"
     ],
     "coverImage": "https://www.youtube-nocookie.com/embed/g3jwlvQ8X1c",
-    "coverAlt": "",
+    "coverAlt": "Watch the video!",
     "introText": "Filmed and edited dozens of videos for the Archaeology Department's social media channels, including faculty interviews and mini-documentaries.",
     "body": "This is a short film I made during my Master’s program in Digital Archaeology at the University of York. It’s a lighthearted investigation into what defines “treasure” archaeologically and ties into the history and culture of York. I filmed everything on a Sony a7iii and edited the final piece in DaVinci Resolve.",
     "tools": [
@@ -412,9 +412,74 @@
       "Interviewing and scripting",
       "Video production and editing"
     ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
+    "ctaLabel": "Watch on Youtube",
+    "ctaUrl": "https://www.youtube.com/watch?v=g3jwlvQ8X1c",
+    "media": [
+      {
+        "url": "images/projects/buriedtreasure/viking.webp",
+        "caption": "A viking reenacter charges at me during the annual Jorvik viking festival",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/buriedtreasure/woodworking.webp",
+        "caption": "A woodworker at the Viking encampment",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/jim.webp",
+        "caption": "Jim Glazzard, experimental archaeologist",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/smithing.webp",
+        "caption": "Jim crafting a metal tool at the Viking encampment",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/emily.webp",
+        "caption": "Emily North, curator at Yorkshire Museum",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/mysteryobject.webp",
+        "caption": "A medieval mystery object. What was it used for? Nobody knows!",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/shambles.webp",
+        "caption": "A shot of the iconic Shambles in York",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/buriedtreasure/pottery.webp",
+        "caption": "Ceramics being made at the Viking encampment",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 8,
+        "thumbnail": false
+      }
+    ],
     "links": [
       {
         "label": "University of York — Archaeology",
@@ -423,7 +488,75 @@
     ],
     "featured": false,
     "summary": "",
-    "cardCategory": ""
+    "cardCategory": "Heritage Filmmaking",
+    "coverCaption": "Watch the video!"
+  },
+  {
+    "id": "the-huntingdon-exhibit",
+    "title": "The Huntingdon Exhibit - A VR Museum",
+    "subtitle": "A fully interactive virtual museum looking at artifacts, 3D models, media, and more from the Star Carr Mesolithic site.",
+    "year": "2022",
+    "role": "MSc Student, Digital Archaeology",
+    "client": "",
+    "institution": "University of York",
+    "tags": [
+      "Heritage",
+      "Immersive"
+    ],
+    "coverImage": "images/projects/huntingdonexhibit/Using space to navigate waypoints.webp",
+    "coverAlt": "A screenshot of the virtual museum",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "The Huntingdon Exhibit is a virtual reality museum dedicated to the excavations undertaken at the Mesolithic site of Star Carr, Yorkshire. The main room was modelled after the Huntingdon Room at King’s Manor in York, and the displays incorporate photos, video, text, audio, 3D objects, and interactive elements. The exhibit was mostly built in the now-defunct Mozilla Spoke, with some 3D modelling done in Blender. The final project was an interactive, multiplayer, multimedia digital museum that allowed users to pick up, throw, wear, and interact with the virtual artifacts.",
+    "tools": [
+      "Blender",
+      "Mozilla Spoke",
+      "Adobe Suite"
+    ],
+    "methods": [
+      "Museum curation and design",
+      "3D Modelling",
+      "VR Development"
+    ],
+    "media": [
+      {
+        "url": "images/projects/huntingdonexhibit/Using space to navigate waypoints.webp",
+        "caption": "The interior of the museum",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/huntingdonexhibit/Exhibit wide shot.webp",
+        "caption": "A view of the main exhibit during virtual construction",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/huntingdonexhibit/overhead view.webp",
+        "caption": "Top view of the exhibit, including lighting and windows",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/huntingdonexhibit/Adding the artefacts.webp",
+        "caption": "What the Mozilla Spoke builder looked like",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "summary": "",
+    "cardCategory": "Heritage & XR",
+    "coverCaption": "A screenshot of the virtual museum"
   },
   {
     "id": "yellow-cab-drivers",
@@ -544,37 +677,6 @@
     ],
     "ctaLabel": "",
     "ctaUrl": "",
-    "media": [],
-    "links": [],
-    "featured": false
-  },
-  {
-    "id": "the-huntingdon-exhibit",
-    "title": "The Huntingdon Exhibit - A VR Museum",
-    "subtitle": "A fully interactive virtual museum looking at artifacts, 3D models, media, and more from the Star Carr Mesolithic site.",
-    "year": "2023",
-    "role": "MSc Student - Digital Archaeology",
-    "client": "",
-    "institution": "University of York",
-    "tags": [
-      "Heritage",
-      "Immersive"
-    ],
-    "coverImage": "",
-    "coverAlt": "",
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "body": "The Huntingdon Exhibit is a virtual reality museum dedicated to the excavations undertaken at the Mesolithic site of Star Carr, Yorkshire. The main room was modelled after the Huntingdon Room at King’s Manor in York, and the displays incorporate photos, video, text, audio, 3D objects, and interactive elements. The exhibit was mostly built in the now-defunct Mozilla Spoke, with some 3D modelling done in Blender. The final project was an interactive, multiplayer, multimedia digital museum that allowed users to pick up, throw, wear, and interact with the virtual artifacts.",
-    "tools": [
-      "Blender",
-      "Mozilla Spoke",
-      "Adobe Suite"
-    ],
-    "methods": [
-      "Curation and design",
-      "3D Modelling",
-      "VR Development"
-    ],
     "media": [],
     "links": [],
     "featured": false
