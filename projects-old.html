@@ -45,7 +45,7 @@ nav {
 .nav-links { display: flex; gap: 36px; list-style: none; }
 .nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--earth); }
-.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
+.nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
 .nav-cta:hover { background: var(--earth); color: var(--cream); }
 .nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; margin-left: auto; }
 .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 1px; transition: all 0.2s; }
@@ -454,7 +454,7 @@ nav {
     <li><a href="photography.html">Photography</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="#" class="nav-cta" id="navCta">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#b8d6d9caddcbd096dccdcbd0f8dfd5d9d1d496dbd7d5" class="nav-cta">Get in touch</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
   </button>
@@ -465,7 +465,7 @@ nav {
   <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
   <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
   <a href="about.html" onclick="toggleMobileNav()">About</a>
-  <a href="#" id="mobileNavCta" onclick="toggleMobileNav()">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#c3ada2b1a6b0abeda7b6b0ab83a4aea2aaafeda0acae" onclick="toggleMobileNav()">Get in touch</a>
 </div>
 
 <div class="page">
@@ -512,24 +512,10 @@ nav {
     <li><a href="photography.html">Photography</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <div class="footer-right"></div>
+  <div class="footer-right"><a href="/cdn-cgi/l/email-protection#c5aba4b7a0b6adeba1b0b6ad85a2a8a4aca9eba6aaa8"><span class="__cf_email__" data-cfemail="4729263522342f692332342f07202a262e2b6924282a">[email&#160;protected]</span></a></div>
 </footer>
 
 <script>
-// ── EMAIL PROTECTION ─────────────────────────────────────────
-(function() {
-  var u = 'hsud.hseran', d = 'gmail', t = 'com';
-  var addr = u.split('').reverse().join('') + '@' + d + '.' + t;
-  var href = 'mailto:' + addr;
-  ['navCta','mobileNavCta'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = href;
-    });
-  });
-})();
-
 /* ── Mobile nav ──────────────────────────────────────────────── */
 function toggleMobileNav() {
   document.getElementById('navMobile').classList.toggle('open');

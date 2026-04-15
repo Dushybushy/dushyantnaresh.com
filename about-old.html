@@ -608,23 +608,6 @@ nav {
 @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 .about-bio-section    { animation: fadeUp 0.7s ease both; }
 .about-skills-section { animation: fadeUp 0.7s ease 0.15s both; }
-
-/* ── DEPTH RAIL ──────────────────────────────────────────────── */
-#depthRail {
-  position: fixed; left: 20px; top: 50%;
-  transform: translateY(-50%);
-  z-index: 150; display: flex; flex-direction: column;
-  align-items: center; gap: 0; pointer-events: none;
-}
-.depth-line { width: 1px; height: 80px; background: rgba(244,239,228,0.12); }
-#depthMarker { width: 5px; height: 5px; border-radius: 50%; background: #e6b168; flex-shrink: 0; }
-#depthLabel {
-  font-family: var(--font-m); font-size: 8px; color: var(--l4-sub);
-  letter-spacing: 0.08em; writing-mode: vertical-rl;
-  text-orientation: mixed; transform: rotate(180deg);
-  padding: 10px 0;
-}
-@media (max-width: 768px) { #depthRail { display: none; } }
 </style>
 </head>
 <body>
@@ -637,25 +620,18 @@ nav {
     <li><a href="photography.html">Photography</a></li>
     <li><a href="about.html" class="active">About</a></li>
   </ul>
-  <a href="#" class="nav-cta" id="navCta">Get in touch</a>
+  <a href="mailto:hello@dushyantnaresh.com" class="nav-cta">Get in touch</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
-<div id="depthRail">
-  <div class="depth-line"></div>
-  <div id="depthMarker"></div>
-  <div id="depthLabel">0.0m</div>
-  <div class="depth-line"></div>
-</div>
 
 <div class="nav-mobile" id="navMobile">
   <a href="index.html" onclick="toggleMobileNav()">Home</a>
   <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
   <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
   <a href="about.html" onclick="toggleMobileNav()">About</a>
-  <a href="#" id="mobileNavCta" onclick="toggleMobileNav()">Get in touch</a>
+  <a href="mailto:hello@dushyantnaresh.com" onclick="toggleMobileNav()">Get in touch</a>
 </div>
 
 <div class="page">
@@ -863,7 +839,7 @@ nav {
         </div>
       </div>
       <div class="contact-strip-actions">
-        <a href="#" class="btn-primary-dark" id="contactCta">Get in touch</a>
+        <a href="mailto:hello@dushyantnaresh.com" class="btn-primary-dark">Get in touch</a>
       </div>
     </div>
 
@@ -876,7 +852,7 @@ nav {
       <li><a href="photography.html">Photography</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
-    <div class="footer-right"></div>
+    <div class="footer-right"><a href="mailto:hello@dushyantnaresh.com">hello@dushyantnaresh.com</a></div>
   </footer>
 
 </div><!-- /page -->
@@ -907,21 +883,6 @@ nav {
 </div>
 
 <script>
-// ── EMAIL PROTECTION ─────────────────────────────────────────
-// Address is never in the HTML as plain text — assembled at click time only.
-(function() {
-  var u = 'hsud.hseran', d = 'gmail', t = 'com';
-  var addr = u.split('').reverse().join('') + '@' + d + '.' + t;
-  var href = 'mailto:' + addr;
-  ['navCta','mobileNavCta','contactCta'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = href;
-    });
-  });
-})();
-
 // ── MOBILE NAV ────────────────────────────────────────────────
 function toggleMobileNav() {
   document.getElementById('navMobile').classList.toggle('open');
@@ -1119,21 +1080,6 @@ function escHtml(s) {
       singleSlots.forEach(function(s) { s.style.display = 'none'; });
       rowSlots.forEach(function(s)    { s.style.display = 'none'; });
     });
-})();
-
-// ── DEPTH RAIL ────────────────────────────────────────────────
-(function() {
-  var label = document.getElementById('depthLabel');
-  if (!label) return;
-  function updateDepth() {
-    var scrollTop = window.scrollY || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight <= 0) return;
-    var depth = (Math.min(scrollTop / docHeight, 1) * 1.2).toFixed(1);
-    label.textContent = depth + 'm';
-  }
-  updateDepth();
-  window.addEventListener('scroll', updateDepth, { passive: true });
 })();
 </script>
 </body>

@@ -17,11 +17,12 @@
     "ctaUrl": "https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm",
     "body": "In 2025, Visualising Heritage partnered with the National Trust to create a standalone interactive digital experience to put visitors in the shoes of an archaeologist at the medieval site of Fountains Abbey in North Yorkshire. Every year, hundreds of thousands of visitors flock to Fountains Abbey to walk among the ruins of what was once the largest monastery in England. Above the ground, the structures that remain are exceptional. However, beneath the seemingly untouched East Green, lies a trove of archaeology that is neither seen nor heard in the broader narrative of Fountains Abbey, yet fundamentally changes the story of the site.\n\nI was tasked with designing the entire experience, from brainstorming how we intuitively showcase complex geophysics, to structuring the narrative, to building the interactive tour.\n\nFirst, our team conducted high-resolution geophysical surveys using Ground Penetrating Radar (GPR) and Magnetometry on the East Green, confirming previously discovered features and uncovering new ones. The geophysical data highlighted fascinating features that visitors can’t engage with on-site, such as a large cemetery buried under the East Green, a mysterious row of burials away from the graveyard, and the foundations of a massive industrial complex. Our goal was to tell the story of Fountains Abbey through these findings, bridging the gap between high-level geophysical data and information meant for broad audiences of all ages.\n\nWe settled on building an on-site, “AR-lite” experience that simulated the feeling of Augmented Reality without putting excess strain on everyday consumer devices. Using a pro-grade 360° camera, we captured high resolution panoramas along various spots along the East Green where geophysical survey had been conducted. Those photos were imported into Blender, where we created a projection that enabled us to place the geophysical data onto the East Green, viewable from a first-person POV.\n\nI then created animations in Adobe After Effects using the geophysics data to highlight archaeological features that appeared in the imagery, allowing users to interpret the data the same way an archaeologist would.\n\nAll media, including animations, videos, photos, and the reprojected geophysics were imported into 3DVista, a platform used primarily for virtual real estate tours. We created an annotated map of Fountains Abbey with Points of Interest marked along the East Green, with each location consisting of a 360° base panorama layer (taken from the same spot in real life) and interactive buttons to cue text, animations, or video.\n\nWe formed our narrative approach around providing visitors agency and allowing them to decide where to go, in which order, and what they were interested in learning. This non-linear approach gave us additional flexibility with the narrative approach, with each location uncovering a piece of the puzzle to understanding the broader story of Fountains Abbey.\n\nThe experience is filled with various types of media spanning different genres, from raw geophysical data to video clips and pop culture references.\n\nFountains Abbey: Revealed! was evaluated with members of the public during the CBA Festival of Archaeology 2025 at Fountains Abbey. Our evaluation results demonstrated the impact of using creative visualisations and storytelling in communicating archaeological and geophysical data, especially to a broad audience.\n\nIf you’d like to try it out for yourself, we’ve created an at-home version here (works on all devices but best on a tablet): <a href=\"https://visualisingheritage.org/projects/fountainsabbey/fountainsabbeyrevealed/index.htm\" target=\"_blank\" rel=\"noopener\">Fountains Abbey Revealed!</a>",
     "tools": [
-      "Insta360 Titan 360° camera",
+      "Insta360 Titan camera",
       "Adobe Premiere Pro",
       "Adobe After Effects",
       "3D Vista",
-      "Blender"
+      "Blender",
+      "Sony A7s III/Sony A7R IV"
     ],
     "methods": [
       "360° photo + video capture",
@@ -83,8 +84,9 @@
     "links": [],
     "featured": true,
     "summary": "",
-    "cardCategory": "Heritage & XR",
-    "coverCaption": "Watch our short project overview"
+    "cardCategory": "Immersive Storytelling",
+    "coverCaption": "Watch our short project overview",
+    "galleryFolder": ""
   },
   {
     "id": "Southern-Gateway-PARM",
@@ -96,7 +98,6 @@
     "client": "Bradford City Council",
     "institution": "Visualising Heritage",
     "tags": [
-      "heritage",
       "immersive"
     ],
     "coverImage": "https://www.youtube-nocookie.com/embed/KC9sBMvoYY4",
@@ -146,8 +147,9 @@
     "links": [],
     "featured": true,
     "summary": "Our team developed a unique communication tool using 3d printing and projectors to bring a city to life.",
-    "cardCategory": "Communication & XR",
-    "coverCaption": "Watch our project overview"
+    "cardCategory": "Experimental Communication",
+    "coverCaption": "Watch our project overview",
+    "galleryFolder": ""
   },
   {
     "id": "landmark-trust-visualisations",
@@ -163,8 +165,7 @@
       "immersive"
     ],
     "coverImage": "/images/projects/landmarktrust/Xray.webp",
-    "coverAlt": "",
-    "introText": "Won a Landmark Trust grant for a residency at a heritage site to create visualisations and digital outputs using cutting-edge capture and storytelling methods.",
+    "coverAlt": "\"X-ray\" view of the ground floor of the property",
     "body": "In 2025, I put in a successful bid on behalf of Visualising Heritage that won the team a free stay at “The White House”, a 13th century homestead in Shropshire, UK. We used this opportunity to record, document, and interpret the heritage of the site, test out new equipment, upskill, and take some time away from campus.\n\nWe documented the property internally and externally through various rapid capture techniques using drones, 360° cameras, handheld laser scanners, terrestrial laser scanners, mirrorless cameras, and spatial microphones. Using a combination of these methods allowed us to create different types of digital representations, from high-resolution 3D photogrammetry models to interactive 360° tours of the property.\n\nExperimenting and training up on these novel capture techniques was invaluable, as it gave each team member the opportunity to test new approaches and determine their applicability in our current workflows. This opportunity also provided us a testing bed for experimental storytelling and interpretation using digital surrogates.\n\nOutputs from our stay at The White House are still being produced, and any media will be added below.\n\nFor more information about the White House, visit <a href=\"https://www.landmarktrust.org.uk/properties/white-house/\" target=\"_blank\" rel=\"noopener\">the Landmark Trust website.</a>",
     "tools": [
       "Insta360 Pro 2",
@@ -189,7 +190,7 @@
         "layout": "cs-img-landscape",
         "type": "image",
         "order": 1,
-        "thumbnail": true
+        "thumbnail": false
       },
       {
         "url": "/images/projects/landmarktrust/Xray.webp",
@@ -197,7 +198,7 @@
         "layout": "cs-img-landscape",
         "type": "image",
         "order": 2,
-        "thumbnail": false
+        "thumbnail": true
       },
       {
         "url": "images/projects/landmarktrust/20250521-DSC08057.webp",
@@ -273,11 +274,163 @@
     "featured": false,
     "summary": "A render of the laser scan data taken of the property",
     "cardCategory": "Heritage Visualisations",
-    "coverCaption": ""
+    "coverCaption": "\"X-ray\" view of the ground floor of the property",
+    "galleryFolder": ""
+  },
+  {
+    "id": "lost-treasures-egypt",
+    "title": "Lost Treasures of Egypt",
+    "subtitle": "Follow archaeologists as they uncover ancient tombs, temples, and treasures across Egypt.",
+    "category": "Documentary Film",
+    "year": "2023–2024",
+    "role": "Researcher",
+    "client": "National Geographic",
+    "institution": "Windfall Films",
+    "tags": [
+      "film",
+      "heritage"
+    ],
+    "coverImage": "images/projects/losttreasuresegypt/cover.webp",
+    "coverAlt": "A still from season 5",
+    "introText": "Conducted production research and fact-checking for two National Geographic archaeology docuseries, coordinating with archaeological teams across the Middle East.",
+    "body": "Lost Treasures of Egypt is a National Geographic/Windfall Films docuseries following international teams of archaeologists as they excavate some of the most incredible sites in Egypt, from massive necropolises to hidden tombs.\n\nI joined Windfall Films as a production researcher, leaning heavily on my background in archaeology to dig into the detail behind the stories we were telling. That meant extensive desk-based research into ancient Egyptian history, mythology, funerary practices, and the archaeological evidence underpinning each episode's narrative. Alongside that, I conducted archival research, trawling through field notes, sketches, and reports from 19th and 20th century Egyptologists.\n\nA significant part of my role was centred around people and logistics. I coordinated with field teams who were planning their annual excavation missions in Egypt, helping align their schedules and research priorities with the production's needs. I also communicated regularly with archaeologists and experts, who provided the scientific rigour behind each episode. Additionally, I worked extensively with museums and collections around the world, both for research purposes and to license media.\n\nI also oversaw voiceover recording with talent to ensure pronunciations and information were authentic and accurate.\n\nLastly, I fact-checked each episode in coordination with National Geographic’s editorial team in the US, ensuring our show met the rigorous standards of Nat Geo.\n\nTo see where you can watch the show, visit <a href=\"https://www.disneyplus.com/en-gb/browse/entity-788ea963-bfbd-45ad-899f-1db7c26585f1\" target=\"_blank\" rel=\"noopener\">Disney+</a> or <a href=\"https://www.natgeotv.com/za/shows/natgeo/lost-treasures-of-egypt\" target=\"_blank\" rel=\"noopener\">National Geographic</a>.",
+    "tools": [
+      "Premiere Pro",
+      "MS Office Suite"
+    ],
+    "methods": [
+      "Archival Research",
+      "Fact-checking",
+      "Expert Interviews",
+      "Production Coordination"
+    ],
+    "ctaLabel": "Watch the show",
+    "ctaUrl": "https://www.natgeotv.com/za/shows/natgeo/lost-treasures-of-egypt",
+    "media": [
+      {
+        "url": "images/projects/losttreasuresegypt/cover.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/losttreasuresegypt/khufu.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/losttreasuresegypt/mummytombs.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/losttreasuresegypt/ramses.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/losttreasuresegypt/sunkings.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      }
+    ],
+    "links": [
+      {
+        "label": "National Geographic — Lost Treasures of Egypt",
+        "url": "https://www.nationalgeographic.com/tv/shows/lost-treasures-of-egypt"
+      }
+    ],
+    "featured": false,
+    "coverCaption": "A still from season 5",
+    "summary": "",
+    "cardCategory": "Factual TV",
+    "galleryFolder": "losttreasuresegypt"
+  },
+  {
+    "id": "lost-treasures-bible",
+    "title": "Lost Treasures of the Bible - National Geographic",
+    "subtitle": "The stories from The Bible, interpreted and challenged through active archaeology in the Middle East.",
+    "summary": "",
+    "cardCategory": "Factual TV",
+    "year": "2024",
+    "role": "Researcher",
+    "client": "National Geographic",
+    "institution": "Windfall Films",
+    "tags": [
+      "Film",
+      "Heritage"
+    ],
+    "coverImage": "images/projects/losttreasuresbible/babel.webp",
+    "coverCaption": "A still frame from the first season of the show",
+    "coverAlt": "A still frame from the first season of the show",
+    "ctaLabel": "Watch the show",
+    "ctaUrl": "https://www.natgeotv.com/uk/shows/natgeo/lost-treasures-of-the-bible",
+    "body": "Lost Treasures of the Bible is a National Geographic/Windfall Films docuseries following archaeological teams across the Middle East as they excavate the cities and civilisations behind the Bible's most famous stories. My research role on this series covered a wide range of disciplines, including biblical archaeology, ancient Near Eastern history and mythology, and the broader religious and cultural contexts that connect these sites to the stories people know.\n\nI relied on my background in archaeology to dig into the detail behind the stories we were telling, providing scientific rigour and deep archival research. As with Lost Treasures of Egypt, I worked closely with archaeologists and field teams, coordinated with museums and collections for research and media licensing, and fact-checked each episode against National Geographic's editorial standards.\n\nOrganising shoots across Egypt, Jordan, and Türkiye was complex enough, but several episodes required us to work in active conflict zones, including Israel and Iraq. Getting crews, archaeologists, and equipment into those regions safely demanded constant communication, careful planning, and the agility to quickly change plans if necessary.\n\nTo find out more, visit <a href=\"https://www.disneyplus.com/en-gb/browse/entity-37ae376c-0615-4162-9d09-cca49ac82557\" target=\"_blank\" rel=\"noopener\">Disney+</a> or <a href=\"https://www.natgeotv.com/uk/shows/natgeo/lost-treasures-of-the-bible\" target=\"_blank\" rel=\"noopener\">National Geographic</a>.",
+    "tools": [
+      "Adobe Creative Suite",
+      "Google/MS Office Suite"
+    ],
+    "methods": [
+      "Archival Research",
+      "Production Coordination",
+      "Fact Checking",
+      "Expert Interviews"
+    ],
+    "media": [
+      {
+        "url": "images/projects/losttreasuresbible/babel.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/losttreasuresbible/exodus.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/losttreasuresbible/flood.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/losttreasuresbible/nineveh.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "losttreasuresbible"
   },
   {
     "id": "an-avebury-story",
-    "title": "An Avebury Story",
+    "title": "An Avebury Story - a 360° interactive story",
     "subtitle": "Creating an interactive VR game set in the Neolithic stone circles at Avebury",
     "category": "Research & XR",
     "year": "2023",
@@ -383,7 +536,9 @@
     "links": [],
     "featured": true,
     "summary": "",
-    "cardCategory": "Interactive Storytelling & XR"
+    "cardCategory": "Immersive Storytelling",
+    "coverCaption": "Splash screen for the VR experience",
+    "galleryFolder": ""
   },
   {
     "id": "buried-treasure-york",
@@ -492,6 +647,160 @@
     "coverCaption": "Watch the video!"
   },
   {
+    "id": "prehistoric-firelighting",
+    "title": "Prehistoric Firelighting - Experimental Archaeology",
+    "subtitle": "A short video documenting the prehistoric firestarting process.",
+    "summary": "",
+    "cardCategory": "Social Media",
+    "year": "2023",
+    "role": "Publicity Assistant",
+    "client": "",
+    "institution": "University of York",
+    "tags": [
+      "Heritage",
+      "Film"
+    ],
+    "coverImage": "https://www.youtube-nocookie.com/embed/M0V6QHP9eR0",
+    "coverCaption": "The full video with Chris Woodland",
+    "coverAlt": "The full video with Chris Woodland",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "As a publicity assistant at the University of York, I produced this film documenting experimental archaeology in action. I love experimental archaeology, and believe it to be one of the most effective ways of not just communicating heritage, but also empathising with the people who came before us by trialling and testing their techniques. This video, featuring experimental archaeologist Chris Woodland, explores a prehistoric firestarting process that many neolithic and prehistoric peoples would have employed in the UK and mainland Europe.\n\nI pitched, filmed, and edited the piece, and shot it on-location at the University of York’s YEAR Centre, dedicated specifically to experimental archaeology.\n\nThe film was published through the department's social channels as part of the ongoing content program I managed during my time there.",
+    "tools": [
+      "Sony A7 III",
+      "Rode Wireless Go lav mics",
+      "DaVinci Resolve"
+    ],
+    "methods": [
+      "Videography + Direction",
+      "Audio recording",
+      "Editing"
+    ],
+    "media": [
+      {
+        "url": "images/projects/firelighting/tools.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/firelighting/lighting.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/firelighting/kindling.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/firelighting/fire.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/firelighting/watching.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "firelighting"
+  },
+  {
+    "id": "ancient-dna-lab",
+    "title": "A look inside an Ancient DNA lab",
+    "subtitle": "What does a bioarchaeologist and ancient geneticist do, actually?",
+    "summary": "",
+    "cardCategory": "Social Media",
+    "year": "2023",
+    "role": "Publicity Assistant",
+    "client": "",
+    "institution": "University of York",
+    "tags": [
+      "Heritage",
+      "film"
+    ],
+    "coverImage": "https://www.youtube-nocookie.com/embed/FuXFXX3WxGo",
+    "coverCaption": "The video with Dr. Nathan Wales",
+    "coverAlt": "The video with Dr. Nathan Wales",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "Working as a publicity assistant for the University of York's Department of Archaeology, I produced this short film about the university's ancient DNA laboratory, one of the specialist research facilities within the department, along with an interview with Dr. Nathan Wales, a bioarchaeologist and ancient geneticist in the department. The piece was designed to give a general audience an accessible window into how ancient DNA analysis works and why it matters for understanding the past.\n\nI also took 360° images, video, and timelapses inside the lab, which were then passed on to the university's IT department to build an interactive walkthrough of the aDNA lab.\n\nI handled the full production from research, scripting, filming on-site in the lab, to editing. The video was published across the department's social media channels as part of a broader program of research communication content I was producing throughout my time at York.\n\nAlong with a stand-up interview with Dr. Nathan Wales, filming the b-roll involved decontaminating myself and my equipment in order to record in the highly sensitive aDNA laboratory!",
+    "tools": [
+      "Sony A7 III",
+      "Rode Wireless Go lav mics",
+      "DaVinci Resolve",
+      "Insta360 X3 360° camera"
+    ],
+    "methods": [
+      "Videography + Direction",
+      "Editing",
+      "Audio recording",
+      "360° capture"
+    ],
+    "media": [
+      {
+        "url": "images/projects/adnalab/NathanWales.webp",
+        "caption": "Dr. Nathan Wales",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/adnalab/People.webp",
+        "caption": "Inside the lab",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/adnalab/Insidethefridge.webp",
+        "caption": "Inside the fridge",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/adnalab/Pipette.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/adnalab/Whirlything.webp",
+        "caption": "",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "adnalab"
+  },
+  {
     "id": "the-huntingdon-exhibit",
     "title": "The Huntingdon Exhibit - A VR Museum",
     "subtitle": "A fully interactive virtual museum looking at artifacts, 3D models, media, and more from the Star Carr Mesolithic site.",
@@ -555,8 +864,52 @@
     "links": [],
     "featured": false,
     "summary": "",
-    "cardCategory": "Heritage & XR",
-    "coverCaption": "A screenshot of the virtual museum"
+    "cardCategory": "Immersive Storytelling",
+    "coverCaption": "A screenshot of the virtual museum",
+    "galleryFolder": ""
+  },
+  {
+    "id": "cnn-go-there",
+    "title": "Go There - CNN",
+    "subtitle": "A daily mini-doc series exploring a variety of human-centred stories, from climate change to social justice.",
+    "category": "Documentary Film",
+    "year": "2019–2022",
+    "role": "Video Producer",
+    "client": "CNN Digital",
+    "institution": "",
+    "tags": [
+      "film",
+      "documentary"
+    ],
+    "coverImage": "",
+    "coverAlt": "CNN Go There",
+    "introText": "Produced 50+ mini-documentaries with a combined 60+ million views for CNN Digital's daily show covering climate change, indigenous rights, and global affairs.",
+    "body": "I was a video producer on “Go There”, CNN’s daily digital news show that took viewers to a new part of the world every day, covering stories that primetime news often looked past. Our small team based in NYC published hundreds of mini-documentaries, filmed in more than 55 countries, and became one of the most watched social media news programs in the world.\n\nAs a video producer, I handled every stage of production for my pieces from pitching and research through to filming, scripting, fact-checking, and publishing. Our videos were human-centred, character-driven stories that explored a single topic, spanning climate change, social justice, international affairs, conflict, and more. I field produced multiple videos, shooting B-cam and conducting the interviews, and also worked with CNN’s global pool of correspondents and contributors to source stories from all corners of the globe.\n\nGo There ended its run having published hundreds of mini-documentaries, with my videos alone accruing a combined reach of more than 60 million views on Facebook Watch. Go There was nominated for a Shorty Award in 2020, after one of our videos that gave an inside look into the start of the Covid-19 pandemic became the most-watched news video on Facebook of all time.",
+    "tools": [
+      "Premiere Pro",
+      "After Effects",
+      "Photoshop"
+    ],
+    "methods": [
+      "Field Production",
+      "Scripting",
+      "Fact-checking",
+      "Story Development"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [],
+    "links": [
+      {
+        "label": "CNN Digital",
+        "url": "https://edition.cnn.com"
+      }
+    ],
+    "featured": false,
+    "coverCaption": "CNN Go There",
+    "summary": "",
+    "cardCategory": "Documentary",
+    "galleryFolder": ""
   },
   {
     "id": "yellow-cab-drivers",
@@ -648,38 +1001,95 @@
       }
     ],
     "links": [],
-    "featured": false
+    "featured": false,
+    "coverCaption": "",
+    "galleryFolder": ""
   },
   {
-    "id": "beme-news",
-    "title": "BEME News",
-    "subtitle": "Weekly desk explainer series on CNN's YouTube channel",
-    "category": "Digital Journalism",
-    "year": "2017–2019",
-    "role": "Researcher",
-    "client": "BEME News / CNN",
-    "institution": "",
+    "id": "pine-ridge",
+    "title": "The struggle for Native Americans to get water in South Dakota",
+    "subtitle": "A story of how people from a neglected community are helping to provide their fellow tribe members access to basic resources.",
+    "summary": "",
+    "cardCategory": "Documentary",
+    "year": "2019",
+    "role": "Producer",
+    "client": "",
+    "institution": "CNN",
     "tags": [
-      "film"
+      "Film",
+      "Documentary"
     ],
-    "coverImage": "",
-    "coverAlt": "BEME News",
-    "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
-    "body": "One of the founding researchers on BEME News, CNN's YouTube-native explainer channel, producing over 100 episodes of the weekly desk show.\n\nDeveloped and maintained the research and fact-checking infrastructure that underpinned every episode — compiling detailed background documents, verifying claims against primary sources, and ensuring all content met broadcast standards before scripts were finalised.\n\nThe channel operated with the pace and editorial standards of a news organisation but the creative sensibility of digital-native video, requiring a constant balance between rigour and accessibility.",
-    "tools": [
-      "Premiere Pro",
-      "After Effects"
-    ],
-    "methods": [
-      "Production Research",
-      "Fact-checking",
-      "Script Development"
-    ],
+    "coverImage": "https://player.vimeo.com/video/443166237",
+    "coverCaption": "",
+    "coverAlt": "",
     "ctaLabel": "",
     "ctaUrl": "",
-    "media": [],
+    "body": "This is one of my favourite stories I worked on at CNN. I produced and filmed (B-cam) this piece.\n\nFor the Oglala Lakota people on Pine Ridge Indian Reservation in South Dakota, many don’t have access to running water. The reservation is plagued with unemployment, low life expectancy and poverty, but one organization is hoping to alleviate the conditions by connecting homes to piped water for free.\n\nIn 2019, I reached out to Running Strong, a nonprofit based out of Pine Ridge who were working towards improving the general infrastructure and livelihoods of the people living on the reservation. We followed Ken Lone Elk, Running Strong’s project coordinator, and his partners as they provided support to various residents.\n\nI pitched the story, found the characters, filmed B-cam, interviewed the subjects, scripted the story, and handled the final fact-check and publishing of the video. The story was a success on Facebook Watch, with more than 4 million people watching the piece.",
+    "tools": [
+      "Sony A7s III",
+      "Sony FS7",
+      "Sennheiser Wireless Lav Mics"
+    ],
+    "methods": [
+      "Production coordination",
+      "Field production",
+      "Videography",
+      "Scripting",
+      "Fact checking"
+    ],
+    "media": [
+      {
+        "url": "images/projects/pineridge/takingwater.webp",
+        "caption": "Residents on Pine Ridge sometimes have to collect water from a frozen creek",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/pineridge/markcottier.webp",
+        "caption": "Mark Cottier, Pine Ridge resident with no access to piped water",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/pineridge/gracerooks.webp",
+        "caption": "Grace Rooks and her grandson",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/pineridge/ken.webp",
+        "caption": "Ken Lone Elk, project coordinator for Running Strong",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/pineridge/construction.webp",
+        "caption": "Running Strong contractors connecting a home to piped water",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/pineridge/dishes.webp",
+        "caption": "A pile of dishes in a sink with no water",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      }
+    ],
     "links": [],
-    "featured": false
+    "featured": false,
+    "galleryFolder": "pineridge"
   },
   {
     "id": "360-immersive-cylinders",
@@ -715,82 +1125,45 @@
     "ctaUrl": "",
     "media": [],
     "links": [],
-    "featured": false
+    "featured": false,
+    "coverCaption": "360° Immersive Projection Content",
+    "summary": "",
+    "cardCategory": "Immersive Storytelling",
+    "galleryFolder": ""
   },
   {
-    "id": "lost-treasures-egypt",
-    "title": "Lost Treasures of Egypt",
-    "subtitle": "Production research for National Geographic archaeology docuseries",
-    "category": "Documentary Film",
-    "year": "2023–2024",
+    "id": "beme-news",
+    "title": "BEME News",
+    "subtitle": "A weekly desk explainer show breaking down complex topics, from human psychology to international affairs.",
+    "category": "Digital Journalism",
+    "year": "2017–2019",
     "role": "Researcher",
-    "client": "Windfall Films / National Geographic",
-    "institution": "",
-    "tags": [
-      "film",
-      "heritage"
-    ],
-    "coverImage": "",
-    "coverAlt": "Lost Treasures of Egypt",
-    "introText": "Conducted production research and fact-checking for two National Geographic archaeology docuseries, coordinating with archaeological teams across the Middle East.",
-    "body": "Joined Windfall Films as a researcher on two concurrent National Geographic docuseries — Lost Treasures of Egypt and Lost Treasures of the Bible — both commissioned for international TV broadcast.\n\nResponsibilities spanned the full research pipeline: pre-production background research, coordination with active archaeological excavations across Egypt, Jordan, and the wider Middle East, and rigorous episode-by-episode fact-checking in compliance with National Geographic's editorial standards.\n\nEach hour-long episode required building relationships with specialist academics and field archaeologists, often working across significant time zone differences to gather accurate, verifiable information under tight production deadlines.",
-    "tools": [
-      "Premiere Pro",
-      "Avid Media Composer"
-    ],
-    "methods": [
-      "Production Research",
-      "Fact-checking",
-      "Archival Research",
-      "Expert Interviews"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
-    "links": [
-      {
-        "label": "National Geographic — Lost Treasures of Egypt",
-        "url": "https://www.nationalgeographic.com/tv/shows/lost-treasures-of-egypt"
-      }
-    ],
-    "featured": true
-  },
-  {
-    "id": "cnn-go-there",
-    "title": "CNN Go There",
-    "subtitle": "Mini-documentaries on climate, indigenous rights, and global affairs",
-    "category": "Documentary Film",
-    "year": "2019–2022",
-    "role": "Video Producer",
-    "client": "CNN Digital",
-    "institution": "",
+    "client": "",
+    "institution": "BEME News/CNN",
     "tags": [
       "film"
     ],
     "coverImage": "",
-    "coverAlt": "CNN Go There",
-    "introText": "Produced 50+ mini-documentaries with a combined 60+ million views for CNN Digital's daily show covering climate change, indigenous rights, and global affairs.",
-    "body": "Spent three years at CNN Digital producing content for 'Go There', a daily short-form documentary series covering underreported stories at the intersection of climate change, indigenous rights, and global affairs.\n\nOver 50 films produced across that period, collectively reaching more than 60 million views. Each film was developed from initial concept through to publication — encompassing story development, field production, scripting, fact-checking, and final edit oversight.\n\nAlongside the flagship show, developed original episodes for new CNN streaming series hosted by Dr Sanjay Gupta, Anderson Cooper, Audie Cornish, and Scott Galloway, working across both CNN Digital and CNN International distribution.",
+    "coverAlt": "BEME News",
+    "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
+    "body": "I worked as researcher and associate producer for BEME News, an independent digital media company that was absorbed by CNN Digital. I was part of a small team producing weekly desk explainer videos covering a breadth of topics, providing deep-dives into subjects like global affairs, climate change, infrastructure, and human psychology.\n\nAt BEME, I pitched stories, conducted research, found industry experts to interview, collected and licensed stock images and archival media, and did the final fact-checking, QC’ing, subtitling, and publishing for the episodes.\n\nAlong with the desk explainer show, we also published longer field pieces where a producer would cover a story on location. For these, I helped with the research and background, editing, and fact-checking, QC, and publication.\n\nEach episode was between 10-15 minutes long and published on YouTube under the BEME News YouTube channel. Visit the channel to see the entire catalog.",
     "tools": [
       "Premiere Pro",
-      "After Effects",
-      "Photoshop"
+      "After Effects"
     ],
     "methods": [
-      "Field Production",
-      "Scripting",
+      "Production Research",
       "Fact-checking",
-      "Story Development"
+      "Script Development"
     ],
     "ctaLabel": "",
     "ctaUrl": "",
     "media": [],
-    "links": [
-      {
-        "label": "CNN Digital",
-        "url": "https://edition.cnn.com"
-      }
-    ],
-    "featured": true
+    "links": [],
+    "featured": false,
+    "coverCaption": "BEME News",
+    "summary": "",
+    "cardCategory": "Digital Media",
+    "galleryFolder": "bemenews"
   }
 ]

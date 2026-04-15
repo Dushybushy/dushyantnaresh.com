@@ -92,7 +92,7 @@ nav.dark .nav-links a:hover { color: var(--cream); }
 
 body.deep { background: var(--nav-dark); }
 .nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
-.nav-cta:hover { background: var(--earth); color: var(--cream); }
+.nav-cta:hover { background: var(--ink); color: var(--cream); }
 
 /* ═══════════════════════════════════
    DEPTH RAIL
@@ -382,7 +382,6 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .hero-info-cta svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; }
 @media (max-width: 768px) { .hero-info-cta { display: none; } }
 
-
 /* ═══════════════════════════════════
    LAYER 1 — DISCIPLINES
 ═══════════════════════════════════ */
@@ -455,7 +454,6 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
   object-fit: cover;
   object-position: center top;
 }
-
 .field-note { border-left: 2px solid rgba(201,180,151,0.4); padding: 2px 0 2px 16px; margin-bottom: 28px; }
 .field-note p { font-family: var(--font-m); font-size: 10px; color: var(--l4-acc); opacity: 0.6; letter-spacing: 0.04em; line-height: 1.7; }
 .about-bio { font-family: var(--font-d); font-size: 26px; font-weight: 300; line-height: 1.6; color: var(--l4-fg); margin-bottom: 24px; }
@@ -1143,7 +1141,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     <li><a href="photography.html">Photography</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="#" class="nav-cta" id="navCta">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#b4dad5c6d1c7dc9ad0c1c7dcf4d3d9d5ddd89ad7dbd9" class="contactCta>Get in touch</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
   </button>
@@ -1154,7 +1152,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
   <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
   <a href="about.html" onclick="toggleMobileNav()">About</a>
-  <a href="#" id="mobileNavCta" onclick="toggleMobileNav()">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#0d636c7f687e652369787e654d6a606c6461236e6260" onclick="toggleMobileNav()">Get in touch</a>
 </div>
 
 <div id="stratDepthCounter"></div>
@@ -1619,7 +1617,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     <div class="photo-header">
       <div class="eyebrow section-eyebrow-large">My photography</div>
       <p class="section-intro" style="color:var(--l3-sub)">Travel keeps me alive. I love photographing new places, people, and cultures, from India to England and beyond.</p>
-      <a href="photography.html" class="link-all" style="color:var(--l3-acc)">Full gallery →</a>
+      <a href="#" class="link-all" style="color:var(--l3-acc)">Full gallery →</a>
     </div>
     <div class="photo-strip" id="l3PhotoStrip"></div>
   </div>
@@ -1649,7 +1647,6 @@ nav.dark .nav-hamburger span { background: var(--cream); }
       </div>
     </div>
 
-
     <div class="about-right">
       <div class="field-note">
         <p>PROJECT: DN-PORTFOLIO<br>RECORDER: D. NARESH<br>LAYER: IV - BIOGRAPHY</p>
@@ -1678,7 +1675,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
           <div class="meta-value">CNN · National Geographic</div>
         </div>
       </div>
-      <a href="about.html" class="btn-outline">
+      <a href="#" class="btn-outline">
         Full biography &amp; CV
         <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
           <path d="M1 5h12M8 1.5l4.5 3.5L8 8.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
@@ -1695,7 +1692,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="footer-right">
-      York, UK
+      York, UK &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#234d425146504b0d4756504b63444e424a4f0d404c4e"><span class="__cf_email__" data-cfemail="2f414e5d4a5c47014b5a5c476f48424e4643014c4042">[email&#160;protected]</span></a>
     </div>
   </footer>
   </div><!-- /layer-body -->
@@ -1737,12 +1734,12 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── EMAIL PROTECTION ─────────────────────────────────────────
+
 (function() {
   var u = 'hsud.hseran', d = 'gmail', t = 'com';
   var addr = u.split('').reverse().join('') + '@' + d + '.' + t;
   var href = 'mailto:' + addr;
-  ['navCta','mobileNavCta'].forEach(function(id) {
+  ['contactCta','mobileNavCta'].forEach(function(id) {
     var el = document.getElementById(id);
     if (el) el.addEventListener('click', function(e) {
       e.preventDefault();

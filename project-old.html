@@ -61,7 +61,7 @@ nav {
 .nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
 .nav-links a:hover, .nav-links a.active { color: var(--earth); }
 .nav-cta { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
-.nav-cta:hover { background: var(--earth); color: var(--cream); }
+.nav-cta:hover { background: var(--ink); color: var(--cream); }
 
 /* ── PAGE SHELL ─────────────────────────────── */
 .page { padding-top: 64px; position: relative; }
@@ -506,7 +506,7 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
     <li><a href="photography.html">Photography</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
-  <a href="#" class="nav-cta" id="navCta">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#d2bcb3a0b7a1bafcb6a7a1ba92b5bfb3bbbefcb1bdbf" class="nav-cta">Get in touch</a>
   <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
     <span></span><span></span><span></span>
   </button>
@@ -517,7 +517,7 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
   <a href="projects.html" onclick="toggleMobileNav()">Projects</a>
   <a href="photography.html" onclick="toggleMobileNav()">Photography</a>
   <a href="about.html" onclick="toggleMobileNav()">About</a>
-  <a href="#" id="mobileNavCta" onclick="toggleMobileNav()">Get in touch</a>
+  <a href="/cdn-cgi/l/email-protection#5b353a293e2833753f2e28331b3c363a323775383436" onclick="toggleMobileNav()">Get in touch</a>
 </div>
 
 <div class="page" id="pageRoot">
@@ -544,20 +544,6 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// ── EMAIL PROTECTION ─────────────────────────────────────────
-(function() {
-  var u = 'hsud.hseran', d = 'gmail', t = 'com';
-  var addr = u.split('').reverse().join('') + '@' + d + '.' + t;
-  var href = 'mailto:' + addr;
-  ['navCta','mobileNavCta'].forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) el.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.location.href = href;
-    });
-  });
-})();
-
 // ── Lightbox ─────────────────────────────────────────────────
 var galleryItems = [];
 var galleryIndex = 0;
@@ -788,7 +774,7 @@ async function loadProject() {
     +'<footer class="site-footer">'
     +'<a href="index.html" class="footer-logo">Dushyant <em style="font-style:italic;color:var(--earth)">Naresh</em></a>'
     +'<ul class="footer-nav"><li><a href="projects.html">Projects</a></li><li><a href="photography.html">Photography</a></li><li><a href="about.html">About</a></li></ul>'
-    +'<div class="footer-right"></div>'
+    +'<div class="footer-right"><a href="mailto:naresh.dush@gmail.com">naresh.dush@gmail.com</a></div>'
     +'</footer>';
 
   // Register gallery items for lightbox

@@ -11,9 +11,9 @@
 
 :root {
   --void:        #0b0201;
-  --void-lift:   #1D0603;
+  --void-lift:   #180704;
   --void-mid:    #1e1108;
-  --void-high:   #301502;
+  --void-high:   #3f1c03;
   --dust:        #C4845A;
   --bronze:      #c47938;
   --dust-faint:  rgba(196,132,90,0.15);
@@ -108,8 +108,9 @@ nav{
 .header-zone{
   overflow:hidden;
   background: radial-gradient(ellipse 200% 200% at 0% 0%,
-    var(--void-high) 0%, #160c08 55%, var(--void) 91%);
+    var(--void-high) 15%, #160c08 50%, var(--void) 91%);
 }
+
 /* grain overlay appended here by JS — no position:relative needed
    because the JS now uses a wrapper approach */
 .page-header{padding:52px 52px 48px;position:relative;height:200px;overflow:hidden}
@@ -129,17 +130,10 @@ nav{
   z-index:200;
   /* wrapper handles grain via ::before pseudo */
 }
-.album-strip-wrapper::before{
-  /* grain texture via CSS — avoids JS touching position */
-  content:'';
-  position:absolute;inset:0;
-  pointer-events:none;z-index:1;
-  mix-blend-mode:multiply;opacity:0.22;
-  /* populated by JS: background-image set after canvas generation */
-}
+
 .album-strip{
   background:linear-gradient(to right, #180e0a, #120906);
-  border-top:1px solid rgba(251, 139, 64, 0.15);
+  border-top:.5px solid rgba(251, 139, 64, 0.2);
   border-bottom:0px solid rgba(251, 139, 64, 0.15);
   display:flex;
   align-items:stretch;
@@ -151,7 +145,7 @@ nav{
 }
 .album-strip::-webkit-scrollbar{display:none}
 
-.album-tab+.album-tab{border-left:.5px solid rgba(251, 139, 64, 0.15)}
+.album-tab+.album-tab{border-left:.5px solid rgba(251, 139, 64, 0.2)}
 .album-tab{
   position:relative;
   flex-shrink:0;
@@ -358,7 +352,7 @@ nav{
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography-alt-v1.html" class="active">Photography</a></li>
+    <li><a href="photography.html" class="active">Photography</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <a href="#" class="nav-cta">Get in touch</a>
@@ -369,7 +363,7 @@ nav{
 <div class="nav-mobile">
   <a href="index.html">Home</a>
   <a href="projects.html">Projects</a>
-  <a href="photography-alt-v1.html" class="active">Photography</a>
+  <a href="photography.html" class="active">Photography</a>
   <a href="about.html">About</a>
   <a href="#">Get in touch</a>
 </div>
@@ -390,7 +384,7 @@ nav{
     <div class="page-header">
       <div class="page-header-inner">
         <h1 class="page-title">Photography</h1>
-        <p class="page-subtitle">A brief glimpse at the world through my eyes.</p>
+        <p class="page-subtitle">A glimpse at the world through my eyes.</p>
       </div>
     </div>
   </div>
@@ -410,8 +404,9 @@ nav{
   <footer class="site-footer">
     <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
     <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
-      <li><a href="photography-alt-v1.html">Photography</a></li>
+      <li><a href="photography.html">Photography</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
     <div class="footer-right"><a href="#"><span class="__cf_email__" data-cfemail="0a626f6666654a6e7f7962736b647e646b786f796224696567">[email&#160;protected]</span></a></div>
