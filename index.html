@@ -30,6 +30,7 @@
   --font-d: 'Cormorant Garamond', Georgia, serif;
   --font-b: 'Syne', sans-serif;
   --font-m: 'Roboto Mono', monospace;
+  --content-max: none;
   --nav-dark: #180704;
   --nav-dark-acc: #E8A87A;
   --l0-bg: #EDE8DC;  --l0-fg: #1A1814;  --l0-sub: #6B6559;  --l0-acc: #85211C;
@@ -52,8 +53,18 @@ a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
 
 /* ═══════════════════════════════════
-   STICKY LAYER SYSTEM
+   CONTENT WIDTH CONTAINER
+   Backgrounds fill edge-to-edge; content
+   is centred with a max-width cap.
 ═══════════════════════════════════ */
+.inner-wrap {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 .layer { position: sticky; top: 64px; height: 100vh; }
 .layer-0 { z-index: 10; }
 .layer-1 { z-index: 20; }
@@ -73,9 +84,14 @@ img { display: block; max-width: 100%; }
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200; overflow: visible;
   background: var(--cream); border-bottom: 1px solid var(--rule);
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 52px; height: 64px;
+  display: flex; align-items: center; justify-content: center;
+  height: 64px;
   transition: background 0.4s, border-color 0.4s;
+}
+.nav-inner {
+  width: 100%; max-width: var(--content-max);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
 }
 nav.dark { background: var(--nav-dark); border-bottom-color: rgba(255,255,255,0.07); }
 nav.dark .nav-logo { color: rgba(244,239,228,0.85); }
@@ -121,6 +137,13 @@ body.deep { background: var(--nav-dark); }
 .strat-bar {
   display: flex; align-items: stretch; height: 38px; position: relative;
 }
+/* On screens wider than content-max, nudge the chip to align with content */
+.strat-bar-inner {
+  display: flex; align-items: stretch;
+  width: 100%; max-width: var(--content-max);
+  margin-left: auto; margin-right: auto;
+  position: relative;
+}
 .strat-bar-left {
   display: inline-flex; align-items: center; gap: 16px;
   width: 320px; flex-shrink: 0; padding: 0 40px 0 20px;
@@ -152,7 +175,7 @@ body.deep { background: var(--nav-dark); }
 }
 
 /* Layer body — carries background colour, sits below transparent strat-bar */
-.layer-body { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow-y: auto; }
+.layer-body { flex: 1; display: flex; flex-direction: column; min-height: 0; overflow: hidden; }
 .l1 .layer-body { box-shadow: 0 -3px 12px rgba(26,24,20,0.10); }
 .l2 .layer-body { box-shadow: 0 -3px 12px rgba(26,24,20,0.13); }
 .l3 .layer-body { box-shadow: 0 -3px 12px rgba(26,24,20,0.16); }
@@ -218,14 +241,14 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 }
 .eyebrow::before { content: ''; display: block; width: 28px; height: 1px; background: var(--earth); flex-shrink: 0; }
 .section-eyebrow-large {
-  font-size: 28px !important; font-family: var(--font-d) !important;
+  font-size: clamp(18px, 2.2vw, 28px) !important; font-family: var(--font-d) !important;
   font-weight: 300 !important; letter-spacing: 0.02em !important;
-  text-transform: none !important; margin-bottom: 24px !important; gap: 18px !important;
+  text-transform: none !important; margin-bottom: clamp(12px, 1.5vw, 24px) !important; gap: 18px !important;
 }
 .section-eyebrow-large::before { width: 36px !important; height: 1.5px !important; }
-.section-intro { font-family: var(--font-b); font-size: 19px; line-height: 1.75; color: var(--ink-soft); width: 100%; }
+.section-intro { font-family: var(--font-b); font-size: clamp(14px, 1.4vw, 19px); line-height: 1.65; color: var(--ink-soft); width: 100%; }
 .l2 .section-intro { color: var(--l2-fg); }
-.section-header { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 56px; max-width: 66%; }
+.section-header { display: flex; flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: clamp(24px, 3.5vw, 56px); max-width: 66%; }
 .l1 .eyebrow { color: var(--l1-acc); }
 .l1 .eyebrow::before { background: var(--l1-acc); }
 .l2 .eyebrow { color: var(--l2-acc); }
@@ -386,13 +409,13 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 /* ═══════════════════════════════════
    LAYER 1 — DISCIPLINES
 ═══════════════════════════════════ */
-.l1 .section-disciplines { flex: 1; padding: 72px 52px 96px; }
+.l1 .section-disciplines { flex: 1; padding: clamp(20px, 3.5vw, 72px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 96px); }
 .disc-list { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid rgba(26,24,20,0.1); }
-.disc-item { padding: 44px 40px 52px; border-right: 1px solid rgba(26,24,20,0.1); position: relative; }
+.disc-item { padding: clamp(20px, 3vw, 44px) clamp(20px, 3vw, 40px) clamp(24px, 3.5vw, 52px); border-right: 1px solid rgba(26,24,20,0.1); position: relative; }
 .disc-item:last-child { border-right: none; }
-.disc-num { font-family: var(--font-d); font-size: 11px; letter-spacing: 0.1em; color: var(--stone); margin-bottom: 28px; }
-.disc-name { font-family: var(--font-d); font-size: 24px; font-weight: 400; color: var(--ink); margin-bottom: 14px; line-height: 1.2; }
-.disc-desc { font-family: var(--font-b); font-size: 15px; line-height: 1.8; color: var(--l1-sub); margin-bottom: 28px; }
+.disc-num { font-family: var(--font-d); font-size: 11px; letter-spacing: 0.1em; color: var(--stone); margin-bottom: clamp(12px, 1.8vw, 28px); }
+.disc-name { font-family: var(--font-d); font-size: clamp(18px, 1.8vw, 24px); font-weight: 400; color: var(--ink); margin-bottom: clamp(8px, 1vw, 14px); line-height: 1.2; }
+.disc-desc { font-family: var(--font-b); font-size: clamp(13px, 1.2vw, 15px); line-height: 1.7; color: var(--l1-sub); margin-bottom: clamp(14px, 2vw, 28px); }
 .disc-link { font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--earth); background: transparent; border: 1.5px solid var(--earth); display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; width: fit-content; margin-top: 8px; transition: background 0.2s, color 0.2s; }
 .disc-link:hover { background: var(--earth); color: var(--l1-bg); }
 .disc-item::before { content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 2px; background: var(--earth); transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease; }
@@ -401,8 +424,8 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 /* ═══════════════════════════════════
    LAYER 2 — PORTFOLIO
 ═══════════════════════════════════ */
-.l2 .section-featured { flex: 1; padding: 72px 52px 140px; }
-.feat-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 48px; row-gap: 16px; align-items: start; margin-bottom: 52px; width: 100%; }
+.l2 .section-featured { flex: 1; padding: clamp(20px, 3.5vw, 72px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 140px); }
+.feat-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 48px; row-gap: 16px; align-items: start; margin-bottom: clamp(24px, 3.5vw, 52px); width: 100%; }
 .feat-header > .eyebrow { grid-column: 1; grid-row: 1; max-width: 66%; }
 .feat-header > .section-intro { grid-column: 1; grid-row: 2; max-width: 66%; }
 .feat-header > .link-all { grid-column: 2; grid-row: 2; align-self: end; }
@@ -415,15 +438,15 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 /* ═══════════════════════════════════
    LAYER 3 — PHOTOGRAPHY
 ═══════════════════════════════════ */
-.l3 .section-photo { flex: 1; padding: 72px 52px 120px; }
-.photo-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 48px; row-gap: 16px; align-items: start; margin-bottom: 52px; }
+.l3 .section-photo { flex: 1; padding: clamp(20px, 3.5vw, 72px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 120px); }
+.photo-header { display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; column-gap: 48px; row-gap: 16px; align-items: start; margin-bottom: clamp(24px, 3.5vw, 52px); }
 .photo-header > .eyebrow { grid-column: 1; grid-row: 1; max-width: 66%; }
 .photo-header > .section-intro { grid-column: 1; grid-row: 2; max-width: 66%; }
 .photo-header > .link-all { grid-column: 2; grid-row: 2; align-self: end; }
 .photo-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; align-items: end; }
 .photo-polaroid { background: #ffffff; padding: 10px 10px 36px 10px; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.12), 0 6px 24px rgba(0,0,0,0.10); transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease; position: relative; }
 .photo-polaroid:hover { transform: translateY(-3px) scale(1.01); box-shadow: 0 4px 14px rgba(0,0,0,0.16), 0 8px 28px rgba(0,0,0,0.10); }
-.photo-polaroid-img { width: 100%; aspect-ratio: 3/4; background: rgba(69,34,16,0.12); overflow: hidden; }
+.photo-polaroid-img { width: 100%; aspect-ratio: 3/4; max-height: calc(100vh - 320px); background: rgba(69,34,16,0.12); overflow: hidden; }
 .photo-polaroid-img .placeholder { width: 100%; height: 100%; background: rgba(69,34,16,0.08); }
 .photo-polaroid-img .placeholder span { display: none; }
 .photo-polaroid-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -434,14 +457,14 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 /* ═══════════════════════════════════
    LAYER 4 — ABOUT
 ═══════════════════════════════════ */
-.l4 .section-about { flex: 1; padding: 72px 52px 96px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+.l4 .section-about { flex: 1; padding: clamp(20px, 3.5vw, 72px) clamp(20px, 4vw, 52px) clamp(24px, 4vw, 96px); display: grid; grid-template-columns: 1fr 1.5fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
 .about-left .eyebrow { margin-bottom: 16px; }
 .about-portrait { margin-top: 32px; aspect-ratio: 3/4; max-width: 440px; background: rgba(255,255,255,0.06); }
 
 /* Polaroid frame for headshot in L4 */
 .about-portrait-polaroid {
-  margin-top: 32px;
-  max-width: 280px;
+  margin-top: clamp(16px, 2vw, 32px);
+  max-width: clamp(160px, 18vw, 280px);
   background: #ffffff;
   padding: 8px 8px 8px 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.25), 0 10px 32px rgba(0,0,0,0.20);
@@ -454,17 +477,30 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
   object-position: center top;
 }
 
-.field-note { border-left: 2px solid rgba(201,180,151,0.4); padding: 2px 0 2px 16px; margin-bottom: 28px; }
+.field-note { border-left: 2px solid rgba(201,180,151,0.4); padding: 2px 0 2px 16px; margin-bottom: clamp(14px, 2vw, 28px); }
 .field-note p { font-family: var(--font-m); font-size: 10px; color: var(--l4-acc); opacity: 0.6; letter-spacing: 0.04em; line-height: 1.7; }
-.about-bio { font-family: var(--font-d); font-size: 26px; font-weight: 300; line-height: 1.6; color: var(--l4-fg); margin-bottom: 24px; }
+.about-bio { font-family: var(--font-d); font-size: clamp(18px, 1.8vw, 26px); font-weight: 300; line-height: 1.5; color: var(--l4-fg); margin-bottom: clamp(12px, 1.5vw, 24px); }
 .about-bio strong { font-weight: 400; }
-.about-body { font-family: var(--font-b); font-size: 16px; line-height: 1.8; color: var(--l4-sub); margin-bottom: 40px; }
-.about-meta { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-bottom: 44px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.08); }
+.about-body { font-family: var(--font-b); font-size: clamp(13px, 1.1vw, 16px); line-height: 1.75; color: var(--l4-sub); margin-bottom: clamp(16px, 2.5vw, 40px); }
+.about-meta { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(12px, 1.5vw, 24px) clamp(16px, 2vw, 32px); margin-bottom: clamp(20px, 3vw, 44px); padding-top: clamp(16px, 2vw, 32px); border-top: 1px solid rgba(255,255,255,0.08); }
 .meta-label { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--l4-acc); margin-bottom: 5px; opacity: 0.75; }
 .meta-value { font-family: var(--font-d); font-size: 14px; color: var(--l4-sub); line-height: 1.45; }
 .btn-outline { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--l4-fg); border: 1px solid rgba(255,255,255,0.25); padding: 13px 26px; display: inline-flex; align-items: center; gap: 12px; transition: background 0.2s, border-color 0.2s; }
 .btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.4); }
-.site-footer { background: rgba(0,0,0,0.3); padding: 32px 52px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px; border-top: 1px solid rgba(255,255,255,0.07); margin-top: auto; }
+.site-footer {
+  background: rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  margin-top: auto;
+  flex-shrink: 0;
+  padding: 0;
+}
+.site-footer-inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: clamp(16px, 2vw, 32px) clamp(20px, 4vw, 52px);
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 40px;
+}
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: rgba(244,239,228,0.6); }
 .footer-logo em { font-style: italic; color: var(--nav-dark-acc); }
 .footer-nav { display: flex; gap: 30px; list-style: none; }
@@ -588,6 +624,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .proj-card-eq:hover .proj-card-tray-eq { background: rgba(255,255,255,1); }
 .proj-visual-eq {
   width: 100%; aspect-ratio: 16/10;
+  max-height: calc((100vh - 280px) / 2);
   overflow: hidden; background: var(--cream-dark);
   display: block; position: relative;
 }
@@ -696,11 +733,36 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 .nav-mobile a:hover { color: var(--earth); }
 
 /* ═══════════════════════════════════════════════════════════════
+   ULTRAWIDE — aspect ratio ≥ 2:1 (21:9 monitors and wider)
+   A 16" laptop at 2560×1600 is ~1.6:1 — untouched.
+   A 34" ultrawide at 3440×1440 is ~2.4:1 — gets the cap.
+═══════════════════════════════════════════════════════════════ */
+@media (min-aspect-ratio: 2/1) {
+  /* Apply content width cap only on genuinely ultrawide screens */
+  :root { --content-max: 1520px; }
+
+  /* Hero name can grow a little more */
+  .hp-name { font-size: clamp(88px, 5.8vw, 112px); }
+  /* Section type scales with the wider column */
+  .section-eyebrow-large { font-size: clamp(28px, 2vw, 36px) !important; }
+  .section-intro { font-size: clamp(19px, 1.2vw, 22px); }
+  .disc-name { font-size: clamp(24px, 1.5vw, 28px); }
+  .disc-desc { font-size: clamp(15px, 1vw, 17px); }
+  .about-bio { font-size: clamp(26px, 1.5vw, 32px); }
+  .about-body { font-size: clamp(16px, 0.9vw, 18px); }
+}
+
+/* Below 2:1 ratio — no content-max cap, full fluid layout */
+@media (max-aspect-ratio: 2/1) {
+  :root { --content-max: none; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    RESPONSIVE — HOMEPAGE
 ═══════════════════════════════════════════════════════════════ */
 
 @media (max-width: 1100px) {
-  nav { padding: 0 32px; }
+  .nav-inner { padding: 0 32px; }
   .nav-links { gap: 24px; }
   .hero-postcard { grid-template-columns: 44% 56%; height: auto; min-height: 0; }
   .hp-right { max-height: calc(100vh - 130px); }
@@ -708,13 +770,8 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .hp-name { font-size: clamp(44px, 5vw, 72px); }
   .hp-right { padding: 20px 24px 20px 8px; }
   .polaroid-card { width: 120px; }
-  .l1 .section-disciplines { padding: 52px 32px 72px; }
-  .l2 .section-featured { padding: 52px 32px 100px; }
   .projects-grid-equal { grid-template-columns: repeat(2, 1fr); }
-  .l3 .section-photo { padding: 52px 32px 80px; }
   .photo-strip { gap: 16px; }
-  .l4 .section-about { padding: 52px 32px 72px; gap: 48px; }
-  .site-footer { padding: 24px 32px; }
   #depthRail { left: 10px; }
 }
 
@@ -753,7 +810,8 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   #stratDepthCounter { display: none; }
   .l0, .l1, .l2, .l3, .l4 { height: auto; }
 
-  nav { padding: 0 24px; height: 56px; overflow: visible; }
+  nav { height: 56px; overflow: visible; }
+  .nav-inner { padding: 0 24px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
@@ -808,18 +866,20 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
   /* Space between polaroids and L1 */
   .l0 .layer-body { padding-bottom: 40px; }
-  .section-eyebrow-large { font-size: 10px; }
-  .section-intro { font-size: 15px; line-height: 1.65; }
+  /* On mobile the sticky system is off — eyebrow/intro can be smaller */
+  .section-eyebrow-large { font-size: clamp(16px, 5vw, 22px) !important; margin-bottom: 10px !important; }
+  .section-intro { font-size: 15px; line-height: 1.6; }
   .disc-list { display: flex; flex-direction: column; border: none; }
-  .disc-item { padding: 28px 20px; border-right: none; border-bottom: 1px solid rgba(26,24,20,0.1); }
+  .disc-item { padding: 24px 20px; border-right: none; border-bottom: 1px solid rgba(26,24,20,0.1); }
   .disc-item:last-child { border-bottom: none; }
   .disc-item::before { display: none; }
-  .disc-name { font-size: 22px; }
+  .disc-name { font-size: 20px; }
   .disc-desc { font-size: 14px; }
   .disc-link { font-size: 10px; padding: 11px 18px; }
 
   /* L2 — Projects carousel */
-  .l2 .section-featured { padding: 40px 0 52px; }
+  /* L2 — Projects carousel — zero sides so cards bleed to edges */
+  .l2 .section-featured { padding-left: 0; padding-right: 0; }
   .l2 .feat-header { padding: 0 24px; }
   .feat-header { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
   .feat-header > .link-all { align-self: flex-start; }
@@ -846,7 +906,8 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   }
 
   /* L3 — Photo strip carousel */
-  .l3 .section-photo { padding: 40px 0 52px; }
+  /* L3 — Photo strip carousel — zero sides so polaroids bleed to edges */
+  .l3 .section-photo { padding-left: 0; padding-right: 0; }
   .l3 .photo-header { padding: 0 24px; }
   .photo-header { display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; }
   .photo-header > .link-all { align-self: flex-start; }
@@ -874,23 +935,21 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .photo-polaroid-label { display: none; }
   .photo-polaroid-img { aspect-ratio: 4/5; }
 
-  /* L4 — About */
-  .l4 .section-about { display: flex; flex-direction: column; gap: 28px; padding: 40px 24px 52px; }
-  .about-portrait { max-width: 160px; }
-  .about-bio { font-size: 22px; line-height: 1.5; }
-  .about-body { font-size: 14px; line-height: 1.75; margin-bottom: 28px; }
-  .about-meta { grid-template-columns: 1fr 1fr; gap: 16px 20px; }
-  .meta-value { font-size: 13px; }
+  /* L4 — About: stack to column on mobile */
+  .l4 .section-about { display: flex; flex-direction: column; gap: 24px; }
+  .about-portrait-polaroid { max-width: 140px; margin-top: 12px; }
+  .about-meta { grid-template-columns: 1fr 1fr; }
   .btn-outline { font-size: 10px; padding: 12px 20px; }
 
-  /* Footer */
-  .site-footer { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: 28px 24px; height: auto; }
+  /* Footer — stack on mobile */
+  .site-footer-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer-nav { gap: 18px; flex-wrap: wrap; }
   .footer-right { text-align: left; }
 }
 
 @media (max-width: 480px) {
-  nav { padding: 0 20px; height: 52px; }
+  nav { height: 52px; }
+  .nav-inner { padding: 0 20px; }
   .nav-logo { font-size: 16px; }
   .hp-left { padding: 24px 20px 16px; }
   .hp-right { padding: 0 20px 0; }
@@ -902,20 +961,11 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .polaroid-nav-mobile-slot .polaroid-label { font-size: 9px; }
   .polaroid-nav-mobile-slot .polaroid-quill-wrap { width: 52px; height: 60px; }
   .polaroid-nav-mobile-slot .polaroid-quill-wrap svg { width: 52px; height: 60px; }
-  .l1 .section-disciplines { padding: 28px 20px 44px; }
-  .disc-item { padding: 24px 16px; }
-  .disc-name { font-size: 20px; }
-  .disc-desc { font-size: 13px; }
-  .disc-link { font-size: 10px; padding: 10px 16px; }
-  .l2 .section-featured { padding: 28px 20px 44px; }
-  .l3 .section-photo { padding: 28px 20px 44px; }
-  .photo-strip { grid-template-columns: 1fr 1fr; gap: 10px; }
-  .l4 .section-about { padding: 28px 20px 44px; }
-  .about-bio { font-size: 20px; }
-  .about-body { font-size: 13px; }
+  .disc-item { padding: 20px 16px; }
+  .disc-link { padding: 10px 16px; }
+  .l2 .section-featured { padding-left: 0; padding-right: 0; }
+  .l3 .section-photo { padding-left: 0; padding-right: 0; }
   .about-meta { grid-template-columns: 1fr; }
-  .meta-value { font-size: 13px; }
-  .site-footer { padding: 24px 20px; }
   .footer-nav { gap: 14px; }
 }
 
@@ -1135,17 +1185,19 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 <body>
 
 <nav id="siteNav">
-  <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html">Projects</a></li>
-    <li><a href="photography.html">Photography</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-  <a href="#" class="nav-cta" id="navCta">Get in touch</a>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Dushyant <em>Naresh</em></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="photography.html">Photography</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <a href="#" class="nav-cta" id="navCta">Get in touch</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" onclick="toggleMobileNav()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
 <div class="nav-mobile" id="navMobile">
@@ -1166,6 +1218,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
 <div class="layer layer-0 l0" id="layer-0">
   <div class="strat-bar">
+  <div class="strat-bar-inner">
     <div class="strat-bar-left">
       <span class="strat-ctx">CTX.000</span>
       <span class="strat-pip"></span>
@@ -1173,9 +1226,11 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     </div>
     <span class="strat-depth">0.0m</span>
   </div>
+  </div><!-- /strat-bar-inner -->
   <div class="layer-body">
 
   <!-- ══ HERO — POSTCARD LAYOUT ══════════════════════════════ -->
+  <div class="inner-wrap">
   <div class="hero-postcard">
 
     <!-- LEFT: name, subheading, CTA, scroll hint -->
@@ -1533,13 +1588,15 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
       </div>
 
-  </div>
+  </div><!-- /hero-postcard -->
+  </div><!-- /inner-wrap -->
   </div><!-- /layer-body -->
 </div><!-- /layer-0 -->
 <div class="layer-spacer"></div>
 
 <div class="layer layer-1 l1" id="layer-1">
   <div class="strat-bar">
+  <div class="strat-bar-inner">
     <div class="strat-bar-left">
       <span class="strat-ctx">CTX.001</span>
       <span class="strat-pip"></span>
@@ -1547,8 +1604,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     </div>
     <span class="strat-depth">0.3m</span>
   </div>
+  </div><!-- /strat-bar-inner -->
   <div class="layer-body">
-  <div class="section-disciplines">
+  <div class="section-disciplines inner-wrap">
     <div class="section-header">
       <div class="eyebrow section-eyebrow-large">What I do</div>
       <p class="section-intro">My work is inherently interdisciplinary. I bring academic rigour from my background in research and archaeology, and my experience in digital media and immersive production enables me to tell stories in novel, innovative ways.</p>
@@ -1582,6 +1640,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
 <div class="layer layer-2 l2" id="layer-2">
   <div class="strat-bar">
+  <div class="strat-bar-inner">
     <div class="strat-bar-left">
       <span class="strat-ctx">CTX.002</span>
       <span class="strat-pip"></span>
@@ -1589,8 +1648,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     </div>
     <span class="strat-depth">0.6m</span>
   </div>
+  </div><!-- /strat-bar-inner -->
   <div class="layer-body">
-  <div class="section-featured">
+  <div class="section-featured inner-wrap">
     <div class="feat-header">
       <div class="eyebrow section-eyebrow-large">My portfolio</div>
       <p class="section-intro">A selection of projects spanning heritage communication, documentary production, and immersive media, from interactive VR museums to creative research outputs.</p>
@@ -1606,6 +1666,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
 <div class="layer layer-3 l3" id="layer-3">
   <div class="strat-bar">
+  <div class="strat-bar-inner">
     <div class="strat-bar-left">
       <span class="strat-ctx">CTX.003</span>
       <span class="strat-pip"></span>
@@ -1613,8 +1674,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     </div>
     <span class="strat-depth">0.9m</span>
   </div>
+  </div><!-- /strat-bar-inner -->
   <div class="layer-body">
-  <div class="section-photo">
+  <div class="section-photo inner-wrap">
     <div class="photo-header">
       <div class="eyebrow section-eyebrow-large">My photography</div>
       <p class="section-intro" style="color:var(--l3-sub)">Travel keeps me alive. I love photographing new places, people, and cultures, from India to England and beyond.</p>
@@ -1630,6 +1692,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
 
 <div class="layer layer-4 l4" id="layer-4">
   <div class="strat-bar">
+  <div class="strat-bar-inner">
     <div class="strat-bar-left">
       <span class="strat-ctx">CTX.004</span>
       <span class="strat-pip"></span>
@@ -1637,9 +1700,10 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     </div>
     <span class="strat-depth">1.2m</span>
   </div>
+  </div><!-- /strat-bar-inner -->
   <div class="layer-body">
 
-  <div class="section-about">
+  <div class="section-about inner-wrap">
     <div class="about-left">
       <div class="eyebrow section-eyebrow-large" style="color:var(--l4-acc)">Who I am</div>
       <p class="section-intro" style="color:var(--l4-sub);margin-top:16px;max-width:240px"></p>
@@ -1687,15 +1751,17 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   </div>
 
   <footer class="site-footer">
-    <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
-    <ul class="footer-nav">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="photography.html">Photography</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="footer-right">
-      York, UK
+    <div class="site-footer-inner">
+      <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="photography.html">Photography</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="footer-right">
+        York, UK
+      </div>
     </div>
   </footer>
   </div><!-- /layer-body -->
