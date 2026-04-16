@@ -953,11 +953,11 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   width: calc(100% - 20px); height: calc(100% - 66px);
   pointer-events: none; z-index: 4;
   opacity: 0; transition: opacity 0.2s ease;
-  -webkit-mask-image: url('/images/site/cors-y-gedol3.png');
+  -webkit-mask-image: url('images/site/cors-y-gedol3.png');
   -webkit-mask-size: cover;
   -webkit-mask-position: center 60%;
   -webkit-mask-repeat: no-repeat;
-  mask-image: url('/images/site/cors-y-gedol3.png');
+  mask-image: url('images/site/cors-y-gedol3.png');
   mask-size: cover;
   mask-position: center 60%;
   mask-repeat: no-repeat;
@@ -1045,9 +1045,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   width: calc(100% - 20px); height: calc(100% - 66px);
   pointer-events: none; z-index: 4;
   opacity: 0; transition: opacity 0.2s ease;
-  -webkit-mask-image: url('/images/site/cors-y-gedol_cairn.webp');
+  -webkit-mask-image: url('images/site/cors-y-gedol_cairn.webp');
   -webkit-mask-size: cover; -webkit-mask-position: center 60%; -webkit-mask-repeat: no-repeat;
-  mask-image: url('/images/site/cors-y-gedol_cairn.webp');
+  mask-image: url('images/site/cors-y-gedol_cairn.webp');
   mask-size: cover; mask-position: center 60%; mask-repeat: no-repeat;
 }
 .hp-photo-frame.cairn-active .cairn-scanner { opacity: 1; transition: none; }
@@ -1096,9 +1096,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   width: calc(100% - 20px); height: calc(100% - 66px);
   pointer-events: none; z-index: 4;
   opacity: 0; transition: opacity 0.2s ease;
-  -webkit-mask-image: url('/images/site/cors-y-gedol_support.webp');
+  -webkit-mask-image: url('images/site/cors-y-gedol_support.webp');
   -webkit-mask-size: cover; -webkit-mask-position: center 60%; -webkit-mask-repeat: no-repeat;
-  mask-image: url('/images/site/cors-y-gedol_support.webp');
+  mask-image: url('images/site/cors-y-gedol_support.webp');
   mask-size: cover; mask-position: center 60%; mask-repeat: no-repeat;
 }
 .hp-photo-frame.support-active .support-scanner { opacity: 1; transition: none; }
@@ -1328,7 +1328,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
         <div class="hp-photo-frame" data-title="Cors y Gedol" data-focal="24mm" data-aperture="f/2.8" data-shutter="1/1250">
 
           <!-- Static photo — desaturates on hover -->
-          <img src="/images/site/cors-y-gedol.webp"
+          <img src="images/site/cors-y-gedol.webp"
                alt="Cors y Gedol burial chamber, Gwynedd, Wales"
                class="hp-photo-img" id="heroPhoto" />
 
@@ -1346,7 +1346,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
           </svg>
 
           <!-- Capstone overlay — full colour cutout, lighten blend -->
-          <img src="/images/site/cors-y-gedol3.png"
+          <img src="images/site/cors-y-gedol3.png"
                alt="" class="capstone-overlay" aria-hidden="true"/>
 
           <!-- Scanner — masked to PNG shape -->
@@ -1365,7 +1365,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
           </svg>
 
           <!-- ── CAIRN HOTSPOT — trigger is the PNG itself, per-pixel alpha ── -->
-          <img src="/images/site/cors-y-gedol_cairn.webp"
+          <img src="images/site/cors-y-gedol_cairn.webp"
                alt="" class="cairn-overlay" aria-hidden="true"/>
           <div class="cairn-scanner"><div class="cairn-scan-line"></div></div>
           <div class="cairn-chip"><span>Cairn</span></div>
@@ -1374,7 +1374,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
           </svg>
 
           <!-- ── SUPPORT HOTSPOT — trigger is the PNG itself, per-pixel alpha ── -->
-          <img src="/images/site/cors-y-gedol_support.webp"
+          <img src="images/site/cors-y-gedol_support.webp"
                alt="" class="support-overlay" aria-hidden="true"/>
           <div class="support-scanner"><div class="support-scan-line"></div></div>
           <div class="support-chip"><span>Supporting Stones</span></div>
@@ -1809,7 +1809,7 @@ document.getElementById('photoLightbox').addEventListener('click', function(e) {
 
 // ── 360° HERO VIEWER ─────────────────────────────────────────
 var pannellumViewer = null;
-var EQUIRECTANGULAR_URL = '/images/site/cors_y_gedol_equirectangular.jpg';
+var EQUIRECTANGULAR_URL = 'images/site/cors_y_gedol_equirectangular.jpg';
 
 function open360Viewer(e) {
   e.stopPropagation();
