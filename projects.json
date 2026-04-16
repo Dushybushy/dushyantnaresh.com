@@ -164,7 +164,7 @@
       "heritage",
       "immersive"
     ],
-    "coverImage": "/images/projects/landmarktrust/Xray.webp",
+    "coverImage": "images/projects/landmarktrust/Xray.webp",
     "coverAlt": "\"X-ray\" view of the ground floor of the property",
     "body": "In 2025, I put in a successful bid on behalf of Visualising Heritage that won the team a free stay at “The White House”, a 13th century homestead in Shropshire, UK. We used this opportunity to record, document, and interpret the heritage of the site, test out new equipment, upskill, and take some time away from campus.\n\nWe documented the property internally and externally through various rapid capture techniques using drones, 360° cameras, handheld laser scanners, terrestrial laser scanners, mirrorless cameras, and spatial microphones. Using a combination of these methods allowed us to create different types of digital representations, from high-resolution 3D photogrammetry models to interactive 360° tours of the property.\n\nExperimenting and training up on these novel capture techniques was invaluable, as it gave each team member the opportunity to test new approaches and determine their applicability in our current workflows. This opportunity also provided us a testing bed for experimental storytelling and interpretation using digital surrogates.\n\nOutputs from our stay at The White House are still being produced, and any media will be added below.\n\nFor more information about the White House, visit <a href=\"https://www.landmarktrust.org.uk/properties/white-house/\" target=\"_blank\" rel=\"noopener\">the Landmark Trust website.</a>",
     "tools": [
@@ -185,7 +185,7 @@
     "ctaUrl": "",
     "media": [
       {
-        "url": "/images/projects/landmarktrust/Textured.webp",
+        "url": "images/projects/landmarktrust/Textured.webp",
         "caption": "Textured render from the laser scan data of the White House",
         "layout": "cs-img-landscape",
         "type": "image",
@@ -193,7 +193,7 @@
         "thumbnail": false
       },
       {
-        "url": "/images/projects/landmarktrust/Xray.webp",
+        "url": "images/projects/landmarktrust/Xray.webp",
         "caption": "\"X-ray\" view of the ground floor of the property",
         "layout": "cs-img-landscape",
         "type": "image",
