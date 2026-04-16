@@ -80,7 +80,7 @@ nav {
 nav.dark { background: var(--nav-dark); border-bottom-color: rgba(255,255,255,0.07); }
 nav.dark .nav-logo { color: rgba(244,239,228,0.85); }
 nav.dark .nav-cta { color: rgba(244,239,228,0.85); border-color: rgba(244,239,228,0.25); }
-nav.dark .nav-cta:hover { background: rgba(244,239,228,0.12); color: var(--cream); border-color: rgba(244,239,228,0.5); }
+nav.dark .nav-cta:hover { background: var(--nav-dark-acc); color: var(--ink); border-color: var(--ink); }
 .nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
 .nav-logo em { font-style: italic; color: var(--earth); }
 nav.dark .nav-logo em { color: var(--nav-dark-acc); }
@@ -436,14 +436,12 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 ═══════════════════════════════════ */
 .l4 .section-about { flex: 1; padding: 72px 52px 96px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
 .about-left .eyebrow { margin-bottom: 16px; }
-.about-portrait { margin-top: 32px; aspect-ratio: 3/4; max-width: 240px; background: rgba(255,255,255,0.06); }
-.about-portrait .placeholder { background: rgba(255,255,255,0.06); color: rgba(244,239,228,0.3); }
-.about-portrait .placeholder span { color: rgba(244,239,228,0.3); }
+.about-portrait { margin-top: 32px; aspect-ratio: 3/4; max-width: 440px; background: rgba(255,255,255,0.06); }
 
 /* Polaroid frame for headshot in L4 */
 .about-portrait-polaroid {
   margin-top: 32px;
-  max-width: 220px;
+  max-width: 280px;
   background: #ffffff;
   padding: 8px 8px 8px 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.25), 0 10px 32px rgba(0,0,0,0.20);
@@ -467,9 +465,10 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .btn-outline { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--l4-fg); border: 1px solid rgba(255,255,255,0.25); padding: 13px 26px; display: inline-flex; align-items: center; gap: 12px; transition: background 0.2s, border-color 0.2s; }
 .btn-outline:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.4); }
 .site-footer { background: rgba(0,0,0,0.3); padding: 32px 52px; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 40px; border-top: 1px solid rgba(255,255,255,0.07); margin-top: auto; }
-.footer-logo { font-family: var(--font-d); font-size: 17px; font-weight: 400; color: rgba(244,239,228,0.6); }
+.footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: rgba(244,239,228,0.6); }
+.footer-logo em { font-style: italic; color: var(--nav-dark-acc); }
 .footer-nav { display: flex; gap: 30px; list-style: none; }
-.footer-nav a { font-family: var(--font-b); font-size: 9.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); transition: color 0.2s; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); transition: color 0.2s; }
 .footer-nav a:hover { color: var(--cream); }
 .footer-right { text-align: right; font-family: var(--font-b); font-size: 11.5px; color: rgba(201,180,151,0.5); }
 .footer-right a { color: rgba(244,239,228,0.6); }
@@ -1690,6 +1689,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   <footer class="site-footer">
     <a href="index.html" class="footer-logo">Dushyant <em>Naresh</em></a>
     <ul class="footer-nav">
+      <li><a href="index.html">Home</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="photography.html">Photography</a></li>
       <li><a href="about.html">About</a></li>

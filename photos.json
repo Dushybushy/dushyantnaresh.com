@@ -1,8 +1,8 @@
 {
   "albums": [
     {
-      "id": "around-the-world",
-      "name": "Around the World",
+      "id": "big-rocks",
+      "name": "Big Rocks",
       "order": 1,
       "hidden": false
     },
@@ -13,14 +13,14 @@
       "hidden": false
     },
     {
-      "id": "manmade",
-      "name": "Manmade",
+      "id": "around-the-world",
+      "name": "Around the World",
       "order": 3,
       "hidden": false
     },
     {
-      "id": "big-rocks",
-      "name": "Big Rocks",
+      "id": "manmade",
+      "name": "Manmade",
       "order": 4,
       "hidden": false
     },
@@ -64,7 +64,7 @@
       "focalLength": "42mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 17
+      "order": 14
     },
     {
       "id": "photo-cors-y-gedol",
@@ -101,7 +101,7 @@
     {
       "id": "photo-dsc00063",
       "title": "John, Paul, George, Ringo",
-      "album": "english-countrysides",
+      "album": "reject",
       "tags": [
         "urban",
         "architecture"
@@ -146,7 +146,7 @@
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
       "order": 11,
-      "featured": true,
+      "featured": false,
       "hpOrder": null
     },
     {
@@ -162,7 +162,7 @@
       "focalLength": "50mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/3200s",
-      "order": 23
+      "order": 22
     },
     {
       "id": "photo-dsc09495",
@@ -209,7 +209,7 @@
       "focalLength": "70mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/640s",
-      "order": 13,
+      "order": 12,
       "featured": false,
       "hpOrder": null
     },
@@ -259,7 +259,7 @@
       "focalLength": "38mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/80s",
-      "order": 18
+      "order": 15
     },
     {
       "id": "photo-dsc09550",
@@ -289,7 +289,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/160s",
-      "order": 10,
+      "order": 9,
       "featured": false,
       "hpOrder": null
     },
@@ -313,7 +313,7 @@
     {
       "id": "photo-digging-for-treasure",
       "title": "Digging for Treasure",
-      "album": "around-the-world",
+      "album": "animals",
       "tags": [
         "heritage",
         "people"
@@ -323,9 +323,9 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/80s",
-      "order": 12,
-      "featured": true,
-      "hpOrder": null
+      "order": 11,
+      "featured": false,
+      "hpOrder": 3
     },
     {
       "id": "photo-dot",
@@ -340,7 +340,8 @@
       "aperture": "f/2.8",
       "shutterSpeed": "1/1600s",
       "order": 3,
-      "featured": true
+      "featured": false,
+      "hpOrder": 4
     },
     {
       "id": "photo-english-ivy",
@@ -395,7 +396,7 @@
     {
       "id": "photo-lines-pt-2",
       "title": "Lines pt. 2",
-      "album": "animals",
+      "album": "around-the-world",
       "tags": [
         "still life",
         "urban"
@@ -405,7 +406,9 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1000s",
-      "order": 21
+      "order": 27,
+      "featured": false,
+      "hpOrder": null
     },
     {
       "id": "photo-lines",
@@ -421,7 +424,7 @@
       "aperture": "f/4.5",
       "shutterSpeed": "1/1000s",
       "order": 1,
-      "featured": true,
+      "featured": false,
       "hpOrder": null
     },
     {
@@ -437,7 +440,7 @@
       "focalLength": "68mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 8,
+      "order": 7,
       "featured": false,
       "hpOrder": null
     },
@@ -483,7 +486,7 @@
       "focalLength": "48mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/200s",
-      "order": 16
+      "order": 13
     },
     {
       "id": "photo-not-enough-rain-in-england",
@@ -514,7 +517,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/250s",
-      "order": 33,
+      "order": 24,
       "featured": false,
       "hpOrder": null
     },
@@ -801,7 +804,7 @@
     },
     {
       "id": "photo-20250719-dsc02676",
-      "title": "",
+      "title": "Carreg Coetan Arthur",
       "album": "big-rocks",
       "tags": [
         "heritage"
@@ -882,7 +885,7 @@
       "focalLength": "25mm",
       "aperture": "f/2.8",
       "shutterSpeed": "2s",
-      "order": 9,
+      "order": 8,
       "featured": false,
       "hpOrder": null
     },
@@ -1012,8 +1015,8 @@
       "aperture": "f/5.6",
       "shutterSpeed": "1/640s",
       "order": 15,
-      "featured": false,
-      "hpOrder": null
+      "featured": true,
+      "hpOrder": 4
     },
     {
       "id": "photo-20250825-dsc03181",
@@ -1061,7 +1064,7 @@
       "focalLength": "400mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/200s",
-      "order": 22,
+      "order": 21,
       "featured": false,
       "hpOrder": null
     },
@@ -1244,8 +1247,8 @@
       "aperture": "f/2.8",
       "shutterSpeed": "1/320s",
       "order": 1,
-      "featured": false,
-      "hpOrder": null
+      "featured": true,
+      "hpOrder": 1
     },
     {
       "id": "photo-20251012-dsc03933",
@@ -1276,7 +1279,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 82,
+      "order": 25,
       "featured": false,
       "hpOrder": null
     },
@@ -1309,7 +1312,7 @@
       "focalLength": "55mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/60s",
-      "order": 19,
+      "order": 16,
       "featured": false,
       "hpOrder": null
     },
@@ -1356,7 +1359,7 @@
       "focalLength": "49mm",
       "aperture": "f/3.2",
       "shutterSpeed": "1/500s",
-      "order": 20,
+      "order": 17,
       "featured": false,
       "hpOrder": null
     },
@@ -1423,7 +1426,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1600s",
-      "order": 21,
+      "order": 18,
       "featured": false,
       "hpOrder": null
     },
@@ -1440,7 +1443,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/320s",
-      "order": 22,
+      "order": 21,
       "featured": false,
       "hpOrder": null
     },
@@ -1492,14 +1495,14 @@
       "focalLength": "200mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/250s",
-      "order": 24,
+      "order": 23,
       "featured": false,
       "hpOrder": null
     },
     {
       "id": "photo-dsc01261",
       "title": "Silhouetted",
-      "album": "manmade",
+      "album": "english-countrysides",
       "tags": [
         "people",
         "landscape"
@@ -1526,7 +1529,7 @@
       "focalLength": "53mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 7,
+      "order": 6,
       "featured": false,
       "hpOrder": null
     },
@@ -1626,7 +1629,7 @@
       "focalLength": "85mm",
       "aperture": "f/8",
       "shutterSpeed": "1/640s",
-      "order": 11,
+      "order": 10,
       "featured": false,
       "hpOrder": null
     },
@@ -1642,7 +1645,7 @@
       "focalLength": "85mm",
       "aperture": "f/8",
       "shutterSpeed": "1/640s",
-      "order": 24,
+      "order": 23,
       "featured": false,
       "hpOrder": null
     },
@@ -1660,7 +1663,7 @@
       "focalLength": "35mm",
       "aperture": "f/8",
       "shutterSpeed": "1/400s",
-      "order": 26,
+      "order": 25,
       "featured": false,
       "hpOrder": null
     },
@@ -1727,7 +1730,7 @@
       "focalLength": "35mm",
       "aperture": "f/8",
       "shutterSpeed": "1/500s",
-      "order": 23,
+      "order": 22,
       "featured": false,
       "hpOrder": null
     },
@@ -1760,7 +1763,7 @@
       "focalLength": "53mm",
       "aperture": "f/4",
       "shutterSpeed": "1/160s",
-      "order": 27,
+      "order": 26,
       "featured": false,
       "hpOrder": null
     },
@@ -1778,8 +1781,8 @@
       "aperture": "f/2.8",
       "shutterSpeed": "1/30s",
       "order": 4,
-      "featured": false,
-      "hpOrder": null
+      "featured": true,
+      "hpOrder": 2
     },
     {
       "id": "photo-dsc06133",
@@ -1793,7 +1796,7 @@
       "focalLength": "44mm",
       "aperture": "f/9",
       "shutterSpeed": "1/500s",
-      "order": 28,
+      "order": 27,
       "featured": false,
       "hpOrder": null
     },
@@ -1811,7 +1814,7 @@
       "focalLength": "70mm",
       "aperture": "f/8",
       "shutterSpeed": "1/60s",
-      "order": 29,
+      "order": 28,
       "featured": false,
       "hpOrder": null
     },
@@ -1828,7 +1831,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/5000s",
-      "order": 30,
+      "order": 29,
       "featured": false,
       "hpOrder": null
     },
@@ -1880,9 +1883,9 @@
       "focalLength": "43mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/50s",
-      "order": 25,
-      "featured": false,
-      "hpOrder": null
+      "order": 24,
+      "featured": true,
+      "hpOrder": 3
     },
     {
       "id": "photo-dsc06217",
@@ -1914,7 +1917,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/3200s",
-      "order": 31,
+      "order": 30,
       "featured": false,
       "hpOrder": null
     },
@@ -1946,7 +1949,7 @@
       "focalLength": "24mm",
       "aperture": "f/3.2",
       "shutterSpeed": "1/2000s",
-      "order": 32,
+      "order": 31,
       "featured": false,
       "hpOrder": null
     },
@@ -1963,7 +1966,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/160s",
-      "order": 6,
+      "order": 5,
       "featured": false,
       "hpOrder": null
     },
@@ -2064,7 +2067,119 @@
       "focalLength": "44mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/100s",
-      "order": 33,
+      "order": 32,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02576",
+      "title": "Druid's Home",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/20250719-DSC02576.webp",
+      "orientation": "portrait",
+      "focalLength": "27mm",
+      "aperture": "f/3.5",
+      "shutterSpeed": "1/30s",
+      "order": 26,
+      "featured": false,
+      "hpOrder": 2
+    },
+    {
+      "id": "photo-dsc04350",
+      "title": "Oaxacan Nights",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC04350.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/250s",
+      "order": 20,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04391",
+      "title": "Dog Days",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/DSC04391.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/500s",
+      "order": 27,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04431",
+      "title": "The Biggest Tree in the World",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/DSC04431.webp",
+      "orientation": "portrait",
+      "focalLength": "41mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/1000s",
+      "order": 19,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04455",
+      "title": "Tenochtitlan",
+      "album": "manmade",
+      "tags": [],
+      "src": "images/photography/DSC04455.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/8",
+      "shutterSpeed": "1/500s",
+      "order": 106,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04568",
+      "title": "Contour Lines",
+      "album": "manmade",
+      "tags": [],
+      "src": "images/photography/DSC04568.webp",
+      "orientation": "portrait",
+      "focalLength": "68mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/50s",
+      "order": 107,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04593",
+      "title": "Hero Shot",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC04593.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 19,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04600",
+      "title": "Piedra del Sol",
+      "album": "manmade",
+      "tags": [],
+      "src": "images/photography/DSC04600.webp",
+      "orientation": "portrait",
+      "focalLength": "54mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 109,
       "featured": false,
       "hpOrder": null
     }

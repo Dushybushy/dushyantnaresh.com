@@ -874,27 +874,27 @@
     "subtitle": "A daily mini-doc series exploring a variety of human-centred stories, from climate change to social justice.",
     "category": "Documentary Film",
     "year": "2019–2022",
-    "role": "Video Producer",
-    "client": "CNN Digital",
-    "institution": "",
+    "role": "Producer",
+    "client": "",
+    "institution": "CNN",
     "tags": [
-      "film",
-      "documentary"
+      "film"
     ],
-    "coverImage": "",
-    "coverAlt": "CNN Go There",
+    "coverImage": "images/projects/cnngothere/thumbnail.webp",
+    "coverAlt": "",
     "introText": "Produced 50+ mini-documentaries with a combined 60+ million views for CNN Digital's daily show covering climate change, indigenous rights, and global affairs.",
     "body": "I was a video producer on “Go There”, CNN’s daily digital news show that took viewers to a new part of the world every day, covering stories that primetime news often looked past. Our small team based in NYC published hundreds of mini-documentaries, filmed in more than 55 countries, and became one of the most watched social media news programs in the world.\n\nAs a video producer, I handled every stage of production for my pieces from pitching and research through to filming, scripting, fact-checking, and publishing. Our videos were human-centred, character-driven stories that explored a single topic, spanning climate change, social justice, international affairs, conflict, and more. I field produced multiple videos, shooting B-cam and conducting the interviews, and also worked with CNN’s global pool of correspondents and contributors to source stories from all corners of the globe.\n\nGo There ended its run having published hundreds of mini-documentaries, with my videos alone accruing a combined reach of more than 60 million views on Facebook Watch. Go There was nominated for a Shorty Award in 2020, after one of our videos that gave an inside look into the start of the Covid-19 pandemic became the most-watched news video on Facebook of all time.",
     "tools": [
-      "Premiere Pro",
-      "After Effects",
-      "Photoshop"
+      "Adobe Creative Suite",
+      "Sony A7s III/Sony FS7",
+      "Sennheiser shotgun + lav mics",
+      "YouTube Creator Studio"
     ],
     "methods": [
-      "Field Production",
-      "Scripting",
-      "Fact-checking",
-      "Story Development"
+      "Field Production and Coordination",
+      "Videography and Editing",
+      "Research and script writing",
+      "Fact-checking"
     ],
     "ctaLabel": "",
     "ctaUrl": "",
@@ -906,10 +906,10 @@
       }
     ],
     "featured": false,
-    "coverCaption": "CNN Go There",
+    "coverCaption": "",
     "summary": "",
     "cardCategory": "Documentary",
-    "galleryFolder": ""
+    "galleryFolder": "cnngothere"
   },
   {
     "id": "yellow-cab-drivers",
@@ -922,8 +922,7 @@
     "client": "",
     "institution": "CNN Digital Productions",
     "tags": [
-      "film",
-      "documentary"
+      "film"
     ],
     "coverImage": "/images/projects/yellowcab/thumb.webp",
     "coverAlt": "",
@@ -1016,8 +1015,7 @@
     "client": "",
     "institution": "CNN",
     "tags": [
-      "Film",
-      "Documentary"
+      "Film"
     ],
     "coverImage": "https://player.vimeo.com/video/443166237",
     "coverCaption": "",
@@ -1092,78 +1090,155 @@
     "galleryFolder": "pineridge"
   },
   {
-    "id": "360-immersive-cylinders",
-    "title": "Threads Through Time",
-    "subtitle": "",
-    "category": "Immersive Media",
-    "year": "2025-2026",
-    "role": "Lead Producer",
-    "client": "Bradford City of Culture 2025",
-    "institution": "Visualising Heritage, University of Bradford",
-    "tags": [
-      "heritage",
-      "film",
-      "immersive"
-    ],
-    "coverImage": "",
-    "coverAlt": "360° Immersive Projection Content",
-    "introText": "Filmed and produced 360° content for use in immersive projection cylinders, virtual tours, VR headsets, and social media.",
-    "body": "A sustained programme of 360° content production developed for deployment across multiple immersive display formats — including Igloo-style projection cylinders, standalone VR headsets, web-based virtual tours, and social media platforms.\n\nShooting with the Insta360 Pro 2 and Titan cameras, the content was captured across multiple heritage sites in Yorkshire. Post-production involved spatial audio mixing, equirectangular editing in Premiere Pro, and format-specific export for each deployment context.\n\nThe project required close collaboration with the Igloo Core Engine team to ensure content met the technical specifications for cylindrical projection.",
-    "tools": [
-      "Insta360 Pro 2",
-      "Insta360 Titan",
-      "Premiere Pro",
-      "Igloo Core Engine"
-    ],
-    "methods": [
-      "360° Capture",
-      "Spatial Audio",
-      "VR Post-production",
-      "Multi-format Export"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
-    "links": [],
-    "featured": false,
-    "coverCaption": "360° Immersive Projection Content",
-    "summary": "",
-    "cardCategory": "Immersive Storytelling",
-    "galleryFolder": ""
-  },
-  {
     "id": "beme-news",
     "title": "BEME News",
     "subtitle": "A weekly desk explainer show breaking down complex topics, from human psychology to international affairs.",
     "category": "Digital Journalism",
     "year": "2017–2019",
     "role": "Researcher",
-    "client": "",
-    "institution": "BEME News/CNN",
+    "client": "CNN",
+    "institution": "BEME News",
     "tags": [
       "film"
     ],
-    "coverImage": "",
-    "coverAlt": "BEME News",
+    "coverImage": "images/projects/bemenews/thumb.webp",
+    "coverAlt": "It's Lou!",
     "introText": "Produced 100+ episodes of a weekly desk explainer show for CNN's BEME News YouTube channel.",
-    "body": "I worked as researcher and associate producer for BEME News, an independent digital media company that was absorbed by CNN Digital. I was part of a small team producing weekly desk explainer videos covering a breadth of topics, providing deep-dives into subjects like global affairs, climate change, infrastructure, and human psychology.\n\nAt BEME, I pitched stories, conducted research, found industry experts to interview, collected and licensed stock images and archival media, and did the final fact-checking, QC’ing, subtitling, and publishing for the episodes.\n\nAlong with the desk explainer show, we also published longer field pieces where a producer would cover a story on location. For these, I helped with the research and background, editing, and fact-checking, QC, and publication.\n\nEach episode was between 10-15 minutes long and published on YouTube under the BEME News YouTube channel. Visit the channel to see the entire catalog.",
+    "body": "I worked as researcher and associate producer for BEME News, an independent digital media company that was absorbed by CNN Digital. I was part of a small team producing weekly desk explainer videos covering a breadth of topics, providing deep-dives into subjects like global affairs, climate change, infrastructure, and human psychology.\n\nAt BEME, I pitched stories, conducted research, found industry experts to interview, collected and licensed stock images and archival media, and did the final fact-checking, QC’ing, subtitling, and publishing for the episodes.\n\nAlong with the desk explainer show, we also published longer field pieces where a producer would cover a story on location. For these, I helped with the research and background, editing, and fact-checking, QC, and publication.\n\nEach episode was between 10-15 minutes long and published on YouTube under the BEME News YouTube channel. <a href=\"https://www.youtube.com/@bemenews/videos\" target=\"_blank\" rel=\"noopener\">Visit the channel</a> to see the entire catalog.",
     "tools": [
-      "Premiere Pro",
-      "After Effects"
+      "Adobe Creative Suite",
+      "Sony A7s III/Sony FS7",
+      "MS Office/Google Workspace"
     ],
     "methods": [
-      "Production Research",
-      "Fact-checking",
-      "Script Development"
+      "Research",
+      "Archival media research",
+      "Fact checking"
     ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [],
+    "ctaLabel": "View the playlist",
+    "ctaUrl": "https://www.youtube.com/playlist?list=PLMXPa80td27qt_oZYjIuRoOAzs_yNcfMW",
+    "media": [
+      {
+        "url": "images/projects/bemenews/studiostill.webp",
+        "caption": "A screencap from one of our videos",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/bemenews/weed.webp",
+        "caption": "Thumbnail for \"Everyone is wrong about marijuana\"",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/bemenews/studiostill2.webp",
+        "caption": "Another still from a piece on bicycling",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/21jnPS6j8K4",
+        "caption": "Saudi Arabia’s Luxury Prison For Billionaires",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 4,
+        "thumbnail": false
+      }
+    ],
     "links": [],
     "featured": false,
-    "coverCaption": "BEME News",
+    "coverCaption": "It's Lou!",
     "summary": "",
     "cardCategory": "Digital Media",
     "galleryFolder": "bemenews"
+  },
+  {
+    "id": "threads-through-time",
+    "title": "Threads Through Time - an immersive film",
+    "subtitle": "Exploring the heritage of Yorkshire and the history of its textile industry through immersive film.",
+    "category": "Immersive Media",
+    "year": "2025-2026",
+    "role": "Lead Producer",
+    "client": "Bradford City of Culture 2025",
+    "institution": "Visualising Heritage",
+    "tags": [
+      "heritage",
+      "film",
+      "immersive"
+    ],
+    "coverImage": "images/projects/threadsthroughtime/Woolsculpture.webp",
+    "coverAlt": "The \"Tower of Wool\" sculpture atop Penistone Hill",
+    "introText": "Filmed and produced 360° content for use in immersive projection cylinders, virtual tours, VR headsets, and social media.",
+    "body": "“Threads Through Time” is an immersive film slated as part of Bradford 2025’s City of Culture programme, led by the Visualising Heritage team at the University of Bradford. I worked as the director and editor on the piece, using pro-grade 360° cameras, 360° action cameras, VR microphones, laser scanners, and drones to film and stitch together a fully immersive film meant for viewing in the university’s 360° projection cylinder.\n\nWe worked with local residents to showcase their art, hobbies, specialisations, and daily lives, weaving together their stories with the complicated, intertwined history of Bradford and Yorkshire. We filmed across the county with an Insta360 Titan, from a soon-to-be-demolished car park in city centre to the top of Penistone Hill on an incredibly windy, wet day. Featuring historic sites such as the Twelve Apostles stone circle and the Hirst Wood ancient woodland helped merge the themes of modernity with local heritage.\n\nI edited the 8k equirectangular footage in Adobe Premiere Pro, using After Effects to rotoscope subjects and create animations. Music was recorded in the field, with additional audio recorded by participants and obtained through an audio library. I also created my own set of automations in Photoshop, allowing me to quickly edit out tripod legs from the 360° footage. Lastly, I incorporated different types of media, from archival 2D media to renders from laser scans taken by our team.\n\nThe full piece will be shown at the University of Bradford and will be catalogued and archived as part of the broader BD25 City of Culture legacy.",
+    "tools": [
+      "Insta360 Titan",
+      "Insta360 X4/One Inch",
+      "Sony A7s III/A7R IV",
+      "Adobe Creative Suite",
+      "Rode Wireless Go lav mics",
+      "Igloo Core Engine"
+    ],
+    "methods": [
+      "360° A/V capture",
+      "360° video editing",
+      "360° animation",
+      "Scripting and post-production"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [
+      {
+        "url": "images/projects/threadsthroughtime/apostles.webp",
+        "caption": "12 Apostles, Yorkshire, in 360°",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/hirstwood.webp",
+        "caption": "Filming in Hirst Wood with local families",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/threads.webp",
+        "caption": "\"Threads\" woven on screen",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/Woolsculpture.webp",
+        "caption": "The Tower of Wool sculpture on Penistone Hill, Yorkshire",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": true
+      },
+      {
+        "url": "images/projects/threadsthroughtime/oastler.webp",
+        "caption": "Skateboarding in an abandoned car park in Bradford",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "coverCaption": "The \"Tower of Wool\" sculpture atop Penistone Hill",
+    "summary": "",
+    "cardCategory": "Immersive Storytelling",
+    "galleryFolder": "threadsthroughtime"
   }
 ]
