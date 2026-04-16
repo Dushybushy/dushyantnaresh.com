@@ -880,8 +880,8 @@
     "tags": [
       "film"
     ],
-    "coverImage": "images/projects/cnngothere/thumbnail.webp",
-    "coverAlt": "",
+    "coverImage": "https://player.vimeo.com/video/562834616",
+    "coverAlt": "My CNN reel from 2021",
     "introText": "Produced 50+ mini-documentaries with a combined 60+ million views for CNN Digital's daily show covering climate change, indigenous rights, and global affairs.",
     "body": "I was a video producer on “Go There”, CNN’s daily digital news show that took viewers to a new part of the world every day, covering stories that primetime news often looked past. Our small team based in NYC published hundreds of mini-documentaries, filmed in more than 55 countries, and became one of the most watched social media news programs in the world.\n\nAs a video producer, I handled every stage of production for my pieces from pitching and research through to filming, scripting, fact-checking, and publishing. Our videos were human-centred, character-driven stories that explored a single topic, spanning climate change, social justice, international affairs, conflict, and more. I field produced multiple videos, shooting B-cam and conducting the interviews, and also worked with CNN’s global pool of correspondents and contributors to source stories from all corners of the globe.\n\nGo There ended its run having published hundreds of mini-documentaries, with my videos alone accruing a combined reach of more than 60 million views on Facebook Watch. Go There was nominated for a Shorty Award in 2020, after one of our videos that gave an inside look into the start of the Covid-19 pandemic became the most-watched news video on Facebook of all time.",
     "tools": [
@@ -898,7 +898,32 @@
     ],
     "ctaLabel": "",
     "ctaUrl": "",
-    "media": [],
+    "media": [
+      {
+        "url": "https://player.vimeo.com/video/562834616",
+        "caption": "My CNN reel from 2021",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "https://player.vimeo.com/video/443166237",
+        "caption": "The struggle for Native Americans to get water",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/cnngothere/thumbnail.webp",
+        "caption": "CNN Go There promo image",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": true
+      }
+    ],
     "links": [
       {
         "label": "CNN Digital",
@@ -906,7 +931,7 @@
       }
     ],
     "featured": false,
-    "coverCaption": "",
+    "coverCaption": "My CNN reel from 2021",
     "summary": "",
     "cardCategory": "Documentary",
     "galleryFolder": "cnngothere"
@@ -1196,7 +1221,7 @@
       {
         "url": "images/projects/threadsthroughtime/apostles.webp",
         "caption": "12 Apostles, Yorkshire, in 360°",
-        "layout": "cs-img-landscape",
+        "layout": "cs-img-equirectangular",
         "type": "image",
         "order": 1,
         "thumbnail": false
@@ -1204,7 +1229,7 @@
       {
         "url": "images/projects/threadsthroughtime/hirstwood.webp",
         "caption": "Filming in Hirst Wood with local families",
-        "layout": "cs-img-landscape",
+        "layout": "cs-img-equirectangular",
         "type": "image",
         "order": 2,
         "thumbnail": false
@@ -1212,7 +1237,7 @@
       {
         "url": "images/projects/threadsthroughtime/threads.webp",
         "caption": "\"Threads\" woven on screen",
-        "layout": "cs-img-landscape",
+        "layout": "cs-img-equirectangular",
         "type": "image",
         "order": 3,
         "thumbnail": false
@@ -1228,7 +1253,7 @@
       {
         "url": "images/projects/threadsthroughtime/oastler.webp",
         "caption": "Skateboarding in an abandoned car park in Bradford",
-        "layout": "cs-img-landscape",
+        "layout": "cs-img-equirectangular",
         "type": "image",
         "order": 5,
         "thumbnail": false
