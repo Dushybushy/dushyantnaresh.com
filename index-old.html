@@ -100,10 +100,10 @@ nav.dark .nav-cta:hover { background: var(--nav-dark-acc); color: var(--ink); bo
 .nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
 .nav-logo em { font-style: italic; color: var(--earth); }
 nav.dark .nav-logo em { color: var(--nav-dark-acc); }
-.nav-links { display: flex; aling-items: center; gap: 36px; list-style: none; }
-.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); padding: 22px 4px; transition: color 0.2s; }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
 .nav-links a:hover { color: var(--earth); }
-nav.dark .nav-links a { color: var(--nav-dark-acc); padding: 22px 4px;}
+nav.dark .nav-links a { color: var(--nav-dark-acc); }
 nav.dark .nav-links a:hover { color: var(--cream); }
 
 body.deep { background: var(--nav-dark); }
@@ -265,12 +265,12 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
    LAYER 0 — HERO
 ═══════════════════════════════════ */
 .hero-postcard { display: grid; grid-template-columns: 38% 62%; min-height: calc(100vh - 102px); max-height: calc(100vh - 102px); align-items: stretch; overflow: hidden; }
-.hp-left { padding: clamp(24px, 4vh, 52px) 44px clamp(24px, 4vh, 52px) 52px; display: flex; flex-direction: column; justify-content: center; }
-.hp-eyebrow { font-family: var(--font-b); font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); display: flex; align-items: center; gap: 14px; margin-bottom: clamp(14px, 2.2vh, 28px); }
+.hp-left { padding: 52px 44px 52px 52px; display: flex; flex-direction: column; justify-content: center; }
+.hp-eyebrow { font-family: var(--font-b); font-size: 14px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--earth); display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
 .hp-rule { display: block; width: 28px; height: 1.5px; background: var(--earth); flex-shrink: 0; }
-.hp-name { font-family: var(--font-d); font-size: clamp(56px, 5.8vw, 88px); font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; color: var(--ink); margin-bottom: clamp(16px, 2.5vh, 32px); }
+.hp-name { font-family: var(--font-d); font-size: clamp(56px, 5.8vw, 88px); font-weight: 300; line-height: 1.0; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 32px; }
 .hp-name em { font-style: italic; color: #85211C; display: block; }
-.hp-sub { font-family: var(--font-b); font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--ink-soft); max-width: 340px; margin-bottom: clamp(20px, 3.5vh, 44px); }
+.hp-sub { font-family: var(--font-b); font-size: 16px; font-weight: 400; line-height: 1.75; color: var(--ink-soft); max-width: 340px; margin-bottom: 44px; }
 .polaroid-nav-mobile-slot { display: none; }
 /* Mobile slot — lock all polaroids into their final animated state */
 #polaroid-nav-mobile .polaroid-quill-wrap { transform: rotate(-7deg) translateY(-5px); }
@@ -323,7 +323,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .polaroid-card:hover .pol-corner.br { transition-delay:0.12s; }
 .pol-reticle { position: absolute; top:50%; left:50%; transform: translate(-50%,-50%) scale(1.2); opacity: 0; width: 44px; height: 44px; transition: opacity 0.38s 0.1s ease, transform 0.42s 0.1s cubic-bezier(0.34,1.2,0.64,1); }
 .polaroid-card:hover .pol-reticle { opacity:1; transform:translate(-50%,-50%) scale(1); }
-.hp-scroll-hint { margin-top: clamp(20px, 4vh, 60px); display: flex; flex-direction: column; align-items: center; width: fit-content; gap: 12px; }
+.hp-scroll-hint { margin-top: 60px; display: flex; flex-direction: column; align-items: center; width: fit-content; gap: 12px; }
 .hp-scroll-text { font-family: var(--font-b); font-size: 14px; font-weight: 400; letter-spacing: 0.1em; color: var(--ink-soft); opacity: 0.75; }
 .hp-scroll-arrow { display: flex; justify-content: center; opacity: 0.55; }
 .hp-right { position: relative; padding: 20px 40px 20px 8px; display: flex; align-items: stretch; max-height: calc(100vh - 142px); }
@@ -342,8 +342,8 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
   opacity: 0; transition: opacity 0.5s ease;
 }
 .hp-photo-frame:hover .hp-photo-grid { opacity: 1; }
-.film-meta { position: absolute; bottom: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; gap: 8px; overflow: hidden; }
-.film-title, .film-data { font-family: var(--font-m); font-size: 16px; letter-spacing: 0.05em; color: #6B5848; opacity: 0.85; line-height: 1; white-space: nowrap; }
+.film-meta { position: absolute; bottom: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px; pointer-events: none; }
+.film-title, .film-data { font-family: var(--font-m); font-size: 16px; letter-spacing: 0.05em; color: #6B5848; opacity: 0.85; line-height: 1; }
 .hero-info-card { position: absolute; bottom: 56px; left: 18px; max-width: 350px; background: rgba(243, 240, 233, 0.75); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); padding: 16px 20px 18px; opacity: 0; transition: opacity 0.35s ease, transform 0.35s ease; pointer-events: none; z-index: 10; transform: translateY(6px); }
 .hp-photo-frame:hover .hero-info-card { opacity: 1; transform: translateY(0); }
 .hero-info-site { font-family: var(--font-d); font-size: 24px; font-weight: 400; ;font-style:italic; color: #1A1814; margin-bottom: 3px; }
@@ -504,7 +504,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: rgba(244,239,228,0.6); }
 .footer-logo em { font-style: italic; color: var(--nav-dark-acc); }
 .footer-nav { display: flex; gap: 30px; list-style: none; }
-.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); padding: 22px 4px; transition: color 0.2s; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); transition: color 0.2s; }
 .footer-nav a:hover { color: var(--cream); }
 .footer-right { text-align: right; font-family: var(--font-b); font-size: 11.5px; color: rgba(201,180,151,0.5); }
 .footer-right a { color: rgba(244,239,228,0.6); }
@@ -576,8 +576,6 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
   font-family: var(--font-m); font-size: 10px; letter-spacing: 0.18em;
   text-transform: uppercase; color: rgba(244,239,228,0.25);
 }
-/* Mobile nav row — hidden on desktop */
-.lbx-mobile-nav { display: none; }
 
 /* ═══════════════════════════════════
    360° VIEWER
@@ -768,87 +766,13 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .nav-links { gap: 24px; }
   .hero-postcard { grid-template-columns: 44% 56%; height: auto; min-height: 0; }
   .hp-right { max-height: calc(100vh - 130px); }
-  .hp-left { padding: 36px 32px 36px 40px; }
+  .hp-left { padding: 40px 32px; }
   .hp-name { font-size: clamp(44px, 5vw, 72px); }
-  .hp-right { padding: 16px 24px 16px 8px; }
+  .hp-right { padding: 20px 24px 20px 8px; }
   .polaroid-card { width: 120px; }
   .projects-grid-equal { grid-template-columns: repeat(2, 1fr); }
   .photo-strip { gap: 16px; }
   #depthRail { left: 10px; }
-  /* Ensure section side padding is never less than 32px on mid-small screens */
-  .l2 .section-featured { padding-left: max(32px, clamp(20px, 4vw, 52px)); padding-right: max(32px, clamp(20px, 4vw, 52px)); }
-  .l3 .section-photo { padding-left: max(32px, clamp(20px, 4vw, 52px)); padding-right: max(32px, clamp(20px, 4vw, 52px)); }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   RESPONSIVE — SHORT VIEWPORT (13" laptops, ~800–900px tall)
-   Targets desktop-width screens that are vertically constrained
-═══════════════════════════════════════════════════════════════ */
-@media (max-height: 820px) and (min-width: 901px) {
-  /* Shrink nav slightly to reclaim vertical space */
-  nav { height: 56px; }
-  .layer { top: 56px; }
-  #stratDepthCounter { top: 56px; }
-
-  /* Hero postcard: recalculate with smaller nav offset */
-  .hero-postcard {
-    min-height: calc(100vh - 88px);
-    max-height: calc(100vh - 88px);
-  }
-
-  /* Left panel: tighter internal spacing */
-  .hp-left {
-    padding: 20px 36px 20px 44px;
-    justify-content: center;
-  }
-
-  /* Scale down the name proportionally */
-  .hp-name {
-    font-size: clamp(40px, 4.2vw, 60px);
-    margin-bottom: 12px;
-  }
-
-  /* Tighten sub text */
-  .hp-sub {
-    font-size: 14px;
-    line-height: 1.65;
-    margin-bottom: 18px;
-  }
-
-  .hp-eyebrow {
-    font-size: 12px;
-    margin-bottom: 14px;
-  }
-
-  /* Polaroid cards: scale down proportionally */
-  .polaroid-card {
-    width: 116px;
-    padding: 7px 7px 30px 7px;
-  }
-  .polaroid-label { font-size: 11px; }
-  .polaroid-quill-wrap { width: 64px; height: 74px; }
-  .polaroid-quill-wrap svg { width: 64px; height: 74px; }
-  .polaroid-nav { gap: 12px; padding-bottom: 4px; }
-
-  /* Hide scroll hint on short screens — it pushes content down */
-  .hp-scroll-hint { display: none; }
-
-  /* Right panel: tighter padding */
-  .hp-right {
-    padding: 12px 28px 12px 8px;
-    max-height: calc(100vh - 100px);
-  }
-
-}
-
-/* Even shorter screens — e.g. 13" with browser toolbar visible */
-@media (max-height: 720px) and (min-width: 901px) {
-  .hp-name { font-size: clamp(34px, 3.6vw, 50px); }
-  .hp-left { padding: 14px 32px 14px 40px; }
-  .polaroid-card { width: 98px; padding: 6px 6px 26px 6px; }
-  .polaroid-label { font-size: 10px; }
-  .polaroid-quill-wrap { width: 54px; height: 62px; }
-  .polaroid-quill-wrap svg { width: 54px; height: 62px; }
 }
 
 @media (max-width: 900px) {
@@ -862,35 +786,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .hp-photo-frame { width: 100%; height: auto; padding: 8px 8px 48px 8px; display: block; position: relative; }
   .hp-photo-img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
   .hp-photo-frame:hover .hp-photo-img { filter: none; }
-  /* Disable all desktop hover animations — nothing fires on touch except .tapped */
-  .hp-photo-frame:hover .hp-photo-grid { opacity: 0 !important; }
-  .capstone-scanner, .cairn-scanner, .support-scanner,
-  .capstone-overlay, .cairn-overlay, .support-overlay,
-  .capstone-chip, .cairn-chip, .support-chip,
-  .capstone-svg, #capstoneConnector, #cairnConnector, #supportConnector,
-  .hp-photo-frame.capstone-active .capstone-chip,
-  .hp-photo-frame.cairn-active .cairn-chip,
-  .hp-photo-frame.support-active .support-chip { display: none !important; }
-  .hp-photo-frame.capstone-active .capstone-overlay,
-  .hp-photo-frame.capstone-active .capstone-scanner,
-  .hp-photo-frame.cairn-active .cairn-overlay,
-  .hp-photo-frame.cairn-active .cairn-scanner,
-  .hp-photo-frame.support-active .support-overlay,
-  .hp-photo-frame.support-active .support-scanner { opacity: 0 !important; }
   .film-meta { height: 48px; padding: 0 10px; }
-  .film-title, .film-data { font-size: clamp(10px, 2.8vw, 14px); }
-  /* Info card: properly contained within the photo frame, above the film strip */
-  .hero-info-card {
-    display: block !important;
-    opacity: 0;
-    pointer-events: auto;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    bottom: 52px; left: 8px; right: 8px;
-    max-width: none;
-    padding: 12px 14px 14px;
-  }
-  .hero-info-site { font-size: 18px; }
-  .hero-info-desc { font-size: 12px; line-height: 1.6; }
+  .film-title, .film-data { font-size: 14px; }
+  .hero-info-card { display: block !important; opacity: 0; pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; bottom: 48px; left: 8px; right: 8px; max-width: none; }
   .hp-photo-frame.tapped .hero-info-card { opacity: 1; transform: translateY(0); }
   /* Hide polaroid-nav in hp-left, show clone slot below photo */
   .polaroid-nav { display: none; }
@@ -938,33 +836,10 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .hp-photo-frame { width: 100%; height: 100%; padding: 6px 6px 44px 6px; display: block; position: relative; }
   .hp-photo-img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0; }
   .hp-photo-frame:hover .hp-photo-img { filter: none; }
-  /* Redundant safety net — ensure hotspot elements can never appear at this size */
-  .capstone-scanner, .cairn-scanner, .support-scanner,
-  .capstone-overlay, .cairn-overlay, .support-overlay,
-  .capstone-chip, .cairn-chip, .support-chip,
-  .capstone-svg, #capstoneConnector, #cairnConnector, #supportConnector { display: none !important; }
-  .hp-photo-frame.capstone-active .capstone-overlay,
-  .hp-photo-frame.capstone-active .capstone-scanner,
-  .hp-photo-frame.cairn-active .cairn-overlay,
-  .hp-photo-frame.cairn-active .cairn-scanner,
-  .hp-photo-frame.support-active .support-overlay,
-  .hp-photo-frame.support-active .support-scanner { opacity: 0 !important; }
-  /* Info card: sits above the 44px film strip, fully within the frame */
-  .hero-info-card {
-    display: block !important;
-    opacity: 0;
-    pointer-events: auto;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    bottom: 48px; left: 6px; right: 6px;
-    max-width: none;
-    padding: 10px 12px 12px;
-  }
-  .hero-info-site { font-size: 16px; margin-bottom: 2px; }
-  .hero-info-period { font-size: 9px; margin-bottom: 6px; }
-  .hero-info-desc { font-size: 11px; line-height: 1.55; }
+  .hero-info-card { display: block !important; opacity: 0; pointer-events: auto; transition: opacity 0.3s ease, transform 0.3s ease; bottom: 28px; left: 6px; right: 6px; max-width: none; }
   .hp-photo-frame.tapped .hero-info-card { opacity: 1; transform: translateY(0); }
   .film-meta { height: 44px; padding: 0 8px; }
-  .film-title, .film-data { font-size: clamp(9px, 2.5vw, 13px); }
+  .film-title, .film-data { font-size: 13px; }
 
   /* Strat bar */
   .strat-bar-left { width: 350px !important; padding: 0 32px 0 16px; white-space: nowrap; }
@@ -1020,8 +895,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 8px 20px 16px 20px;
-    scroll-padding-left: 20px;
+    padding: 8px 24px 16px;
     scrollbar-width: none;
   }
   .projects-grid-equal::-webkit-scrollbar { display: none; }
@@ -1046,8 +920,7 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding: 8px 20px 16px 20px;
-    scroll-padding-left: 20px;
+    padding: 8px 24px 16px;
     scrollbar-width: none;
     align-items: end;
   }
@@ -1072,63 +945,6 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .site-footer-inner { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; }
   .footer-nav { gap: 18px; flex-wrap: wrap; }
   .footer-right { text-align: left; }
-
-  /* ── LIGHTBOX — mobile layout ── */
-  /* Frame: no side padding, arrows removed from sides */
-  .lbx-frame { padding: 0 16px; max-height: 75vh; }
-  .lbx-arrow { display: none; }
-  /* Postcard: full width, constrained height, image centred */
-  .lbx-postcard {
-    width: 100%;
-    padding: 8px 8px 40px 8px;
-    max-height: 75vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  #lbxImg {
-    width: 100%;
-    height: auto;
-    max-height: calc(75vh - 60px);
-    object-fit: contain;
-    object-position: center;
-    display: block;
-  }
-  .lbx-meta { width: 100%; }
-  .lbx-title { font-size: 11px; }
-  .lbx-tech { font-size: 11px; gap: 8px; }
-  /* Desktop counter hidden — mobile nav row handles it */
-  .lbx-counter { display: none; }
-  /* Mobile nav row: arrows flanking the counter */
-  .lbx-mobile-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-    margin-top: 20px;
-    width: 100%;
-    max-width: calc(100vw - 32px);
-  }
-  .lbx-arrow-mob {
-    width: 52px; height: 52px;
-    background: none;
-    border: 1px solid rgba(244,239,228,0.18);
-    color: rgba(244,239,228,0.55);
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    transition: border-color 0.2s, color 0.2s;
-    flex-shrink: 0;
-  }
-  .lbx-arrow-mob:active { border-color: rgba(244,239,228,0.6); color: var(--cream); }
-  .lbx-arrow-mob svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  .lbx-counter-mob {
-    flex: 1;
-    text-align: center;
-    font-family: var(--font-m); font-size: 10px; letter-spacing: 0.18em;
-    text-transform: uppercase; color: rgba(244,239,228,0.3);
-  }
-  /* Close button: smaller on mobile */
-  .lbx-close { top: 16px; right: 16px; width: 38px; height: 38px; font-size: 14px; }
 }
 
 @media (max-width: 480px) {
@@ -1149,8 +965,6 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .disc-link { padding: 10px 16px; }
   .l2 .section-featured { padding-left: 0; padding-right: 0; }
   .l3 .section-photo { padding-left: 0; padding-right: 0; }
-  .projects-grid-equal { padding: 8px 16px 16px 16px; scroll-padding-left: 16px; }
-  .photo-strip { padding: 8px 16px 16px 16px; scroll-padding-left: 16px; }
   .about-meta { grid-template-columns: 1fr; }
   .footer-nav { gap: 14px; }
 }
@@ -1985,16 +1799,6 @@ nav.dark .nav-hamburger span { background: var(--cream); }
       <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
   </div>
-  <!-- Mobile nav row — arrows + counter inline, shown only on mobile -->
-  <div class="lbx-mobile-nav">
-    <button class="lbx-arrow-mob left" onclick="navigateLightbox(-1)">
-      <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-    </button>
-    <div class="lbx-counter-mob" id="lbxCounterMob"></div>
-    <button class="lbx-arrow-mob right" onclick="navigateLightbox(1)">
-      <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
-    </button>
-  </div>
   <div class="lbx-counter" id="lbxCounter"></div>
 </div>
 
@@ -2045,19 +1849,13 @@ function showLightboxPhoto() {
   var photo = lbxStrip[lbxIndex];
   if (!photo) return;
   var img = document.getElementById('lbxImg');
-  // Reset dimensions before loading new src to avoid stale sizing on first load
-  img.style.width = '';
-  img.style.height = '';
   img.src = photo.src || '';
   img.alt = photo.title || '';
   img.style.display = photo.src ? 'block' : 'none';
   document.getElementById('lbxTitle').textContent = photo.title || '';
   var tech = [photo.focalLength, photo.aperture, photo.shutterSpeed].filter(Boolean);
   document.getElementById('lbxTech').textContent = tech.join('  ·  ');
-  var counterText = (lbxIndex + 1) + ' / ' + lbxStrip.length;
-  document.getElementById('lbxCounter').textContent = counterText;
-  var mobCounter = document.getElementById('lbxCounterMob');
-  if (mobCounter) mobCounter.textContent = counterText;
+  document.getElementById('lbxCounter').textContent = (lbxIndex + 1) + ' / ' + lbxStrip.length;
 }
 
 function navigateLightbox(dir) {
@@ -2248,8 +2046,6 @@ document.addEventListener('click', function(e) {
 
 // ── HERO IMAGE TAP (mobile) ───────────────────────────────────
 document.addEventListener('DOMContentLoaded', function() {
-  var isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-  if (!isTouchDevice) return;
   var frame = document.querySelector('.hp-photo-frame');
   if (!frame) return;
   frame.addEventListener('click', function(e) {
@@ -2478,7 +2274,6 @@ document.addEventListener('keydown', function(e) {
 
 // ── CAPSTONE HOTSPOT ──────────────────────────────────────────
 (function() {
-  if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0)) return;
   var zone  = document.getElementById('capstoneZone');
   var frame = document.querySelector('.hp-photo-frame');
   if (!zone || !frame) return;
@@ -2496,7 +2291,6 @@ document.addEventListener('keydown', function(e) {
 
 // ── CAPSTONE CONNECTOR ────────────────────────────────────────
 (function() {
-  if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0)) return;
   var svg   = document.getElementById('capstoneConnector');
   var line  = document.getElementById('connLine');
   var frame = document.querySelector('.hp-photo-frame');
@@ -2557,7 +2351,6 @@ document.addEventListener('keydown', function(e) {
 // Cairn:   x 28–51%, y 65–86%
 // Support: x 50–88%, y 55–91%
 (function() {
-  if (('ontouchstart' in window) || (navigator.maxTouchPoints > 0)) return;
   function makeHotspot(cfg) {
     // cfg: { activeClass, chipSelector, lineId, lineOffsetX, lineOffsetY,
     //        x1pct, y1pct, x2pct, y2pct }  — hit box in % of frame
