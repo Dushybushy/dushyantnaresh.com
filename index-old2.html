@@ -100,8 +100,8 @@ nav.dark .nav-cta:hover { background: var(--nav-dark-acc); color: var(--ink); bo
 .nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; }
 .nav-logo em { font-style: italic; color: var(--earth); }
 nav.dark .nav-logo em { color: var(--nav-dark-acc); }
-.nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { padding: 22px 4px; font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-soft); padding: 22px 4px; transition: color 0.2s; }
 .nav-links a:hover { color: var(--earth); }
 nav.dark .nav-links a { color: var(--nav-dark-acc); padding: 22px 4px;}
 nav.dark .nav-links a:hover { color: var(--cream); }
@@ -504,7 +504,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 400; color: rgba(244,239,228,0.6); }
 .footer-logo em { font-style: italic; color: var(--nav-dark-acc); }
 .footer-nav { display: flex; gap: 30px; list-style: none; }
-.footer-nav a { padding: 22px 4px; font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); transition: color 0.2s; }
+.footer-nav a { font-family: var(--font-b); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(201,180,151,0.5); padding: 22px 4px; transition: color 0.2s; }
 .footer-nav a:hover { color: var(--cream); }
 .footer-right { text-align: right; font-family: var(--font-b); font-size: 11.5px; color: rgba(201,180,151,0.5); }
 .footer-right a { color: rgba(244,239,228,0.6); }
@@ -796,11 +796,10 @@ nav.dark .nav-hamburger span { background: var(--cream); }
     max-height: calc(100vh - 88px);
   }
 
-  /* Left panel: position content toward upper-centre rather than dead-centre */
+  /* Left panel: tighter internal spacing */
   .hp-left {
     padding: 20px 36px 20px 44px;
-    justify-content: flex-start;
-    padding-top: clamp(20px, 8vh, 60px);
+    justify-content: center;
   }
 
   /* Scale down the name proportionally */
@@ -832,36 +831,13 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   .polaroid-nav { gap: 12px; padding-bottom: 4px; }
 
   /* Hide scroll hint on short screens — it pushes content down */
-  /* .hp-scroll-hint intentionally kept visible — there is space for it */
+  .hp-scroll-hint { display: none; }
 
   /* Right panel: tighter padding */
   .hp-right {
     padding: 12px 28px 12px 8px;
     max-height: calc(100vh - 100px);
   }
-
-  /* Film meta strip: scale down to match the rest of the hero text */
-  .film-meta { height: 44px; padding: 0 8px; }
-  .film-title, .film-data { font-size: clamp(9px, 2.2vw, 12px); }
-
-  /* Extra scroll runway so the footer clears the viewport on short screens.
-     The footer is ~70px tall; adding that on top of the standard 30vh spacer
-     ensures the page can scroll far enough to fully reveal it. */
-  #final-spacer { height: calc(30vh + 70px); }
-
-  /* L1/L2/L3 — moderate reduction of top/bottom padding; still breathable */
-  .l1 .section-disciplines,
-  .l2 .section-featured,
-  .l3 .section-photo { padding-top: clamp(24px, 3vh, 48px); padding-bottom: clamp(24px, 3vh, 48px); }
-
-  /* Tighten the header blocks above the cards — noticeable but not cramped */
-  .feat-header,
-  .photo-header { margin-bottom: clamp(20px, 3vh, 40px); row-gap: 10px; }
-  .section-header { margin-bottom: clamp(20px, 3vh, 40px); }
-
-  /* Scale down the intro text moderately */
-  .section-intro { font-size: clamp(13px, 1.2vw, 16px); line-height: 1.55; }
-  .section-eyebrow-large { font-size: clamp(16px, 1.8vw, 24px) !important; margin-bottom: 10px !important; }
 
 }
 
@@ -1976,7 +1952,9 @@ nav.dark .nav-hamburger span { background: var(--cream); }
   </footer>
   </div><!-- /layer-body -->
 </div><!-- /layer-4 -->
-<div class="layer-spacer" id="final-spacer"></div> onclick="close360IfOutside(event)">
+<div class="layer-spacer"></div>
+
+<div id="viewer360" onclick="close360IfOutside(event)">
           <div class="viewer360-inner">
             <div class="viewer360-header">
               <div class="viewer360-title">
