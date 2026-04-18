@@ -287,8 +287,22 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
 }
 .cs-img-placeholder span { font-family: var(--font-b); font-size: 9px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.6; }
 .cs-img-full, .cs-img-wide, .cs-img-med, .cs-img-half, .cs-img-third { }
-.cs-img-360 { cursor: default; }
-.cs-img-360 .pnlm-container { width: 100%; aspect-ratio: 2/1; }
+.cs-img-360 {
+  cursor: pointer;
+  padding-bottom: 8px;
+}
+/* The Pannellum viewer needs an explicit pixel height on its direct parent */
+.cs-img-360-viewer {
+  width: 100%;
+  height: 340px; /* fixed height — Pannellum works reliably with px, not % */
+  position: relative;
+  overflow: hidden;
+}
+/* Pannellum injects .pnlm-container — force it to fill our wrapper */
+.cs-img-360-viewer .pnlm-container {
+  width: 100% !important;
+  height: 100% !important;
+}
 .cs-img-360-badge {
   position: absolute; top: 10px; right: 10px; z-index: 10;
   background: rgba(26,20,14,0.72); color: rgba(244,239,228,0.88);
@@ -362,6 +376,41 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
 .lbx-close { position: fixed; top: 24px; right: 28px; background: none; border: 1px solid rgba(244,239,228,0.2); color: rgba(244,239,228,0.5); font-size: 16px; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color 0.2s, color 0.2s; z-index: 10000; }
 .lbx-close:hover { border-color: rgba(244,239,228,0.7); color: var(--cream); }
 .lbx-counter { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); font-family: var(--font-m); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(244,239,228,0.25); }
+
+/* ── 360° LIGHTBOX ──────────────────────────── */
+#lbx360 {
+  display: none; position: fixed; inset: 0;
+  background: rgba(14,11,9,0.98);
+  z-index: 9999; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+#lbx360.open { display: flex; }
+.lbx360-inner {
+  display: flex; flex-direction: column;
+  width: 92vw; max-width: 1400px;
+  height: 88vh;
+}
+.lbx360-header {
+  display: flex; align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 14px; flex-shrink: 0;
+}
+.lbx360-title {
+  font-family: var(--font-d); font-size: 22px; font-style: italic;
+  color: var(--cream); letter-spacing: 0.02em;
+}
+.lbx360-hint {
+  font-family: var(--font-m); font-size: 9px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: rgba(244,239,228,0.3);
+}
+#lbx360Viewer {
+  flex: 1; min-height: 0; position: relative;
+}
+#lbx360Viewer .pnlm-container {
+  width: 100% !important;
+  height: 100% !important;
+  background: #1A1814;
+}
 
 /* ── ERROR / LOADING ──────────────────────────── */
 .page-loading, .page-error { padding: 120px 52px; text-align: center; }
@@ -541,6 +590,18 @@ img.cs-media-img { width: 100%; height: auto; display: block; }
     </button>
   </div>
   <div class="lbx-counter" id="lbxCounter"></div>
+  </div>
+  
+  <!-- 360° LIGHTBOX -->
+<div id="lbx360">
+  <button class="lbx-close" onclick="close360Lightbox()">&#x2715;</button>
+  <div class="lbx360-inner">
+    <div class="lbx360-header">
+      <span id="lbx360Title" class="lbx360-title"></span>
+      <span class="lbx360-hint">drag to explore · scroll to zoom</span>
+    </div>
+    <div id="lbx360Viewer"></div>
+  </div>
 </div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -563,6 +624,7 @@ var galleryItems = [];
 var galleryIndex = 0;
 
 function openLightbox(el) {
+  if (el.classList.contains('cs-img-360')) return;
   galleryIndex = galleryItems.indexOf(el);
   showLightboxItem(galleryIndex);
   document.getElementById('csLightbox').classList.add('open');
@@ -588,6 +650,58 @@ function closeLightbox() {
   document.getElementById('csLightbox').classList.remove('open');
   document.body.style.overflow = '';
 }
+
+// ── 360° LIGHTBOX ─────────────────────────────────────────────
+var pnlmViewer360 = null;
+var current360Src = null;
+
+function open360Lightbox(el) {
+  var src = el.getAttribute('data-src360');
+  var title = el.getAttribute('data-title') || '';
+  if (!src) return;
+
+  document.getElementById('lbx360Title').textContent = title;
+  document.getElementById('lbx360').classList.add('open');
+  document.body.style.overflow = 'hidden';
+
+  // Destroy previous instance if src changed
+  if (pnlmViewer360 && current360Src !== src) {
+    try { pnlmViewer360.destroy(); } catch(e) {}
+    pnlmViewer360 = null;
+    document.getElementById('lbx360Viewer').innerHTML = '';
+  }
+
+  if (!pnlmViewer360) {
+    current360Src = src;
+    setTimeout(function() {
+      pnlmViewer360 = pannellum.viewer('lbx360Viewer', {
+        type: 'equirectangular',
+        panorama: src,
+        autoLoad: true,
+        autoRotate: -0.5,
+        autoRotateInactivityDelay: 3000,
+        showFullscreenCtrl: true,
+        showZoomCtrl: true,
+        mouseZoom: true,
+        compass: false,
+        hfov: 100,
+        minHfov: 50,
+        maxHfov: 130,
+        pitch: 0, yaw: 0,
+        backgroundColor: [26, 24, 20],
+      });
+    }, 80);
+  }
+}
+
+function close360Lightbox() {
+  document.getElementById('lbx360').classList.remove('open');
+  document.body.style.overflow = '';
+  if (pnlmViewer360) {
+    try { pnlmViewer360.stopAutoRotate(); } catch(e) {}
+  }
+}
+
 function openHeroMedia(el) {
   if (el.classList.contains('is-video')) return;
   var img = el.querySelector('.cs-media-img');
@@ -601,9 +715,12 @@ function openHeroMedia(el) {
   document.body.style.overflow = 'hidden';
 }
 document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    if (document.getElementById('lbx360').classList.contains('open')) { close360Lightbox(); return; }
+    if (document.getElementById('csLightbox').classList.contains('open')) { closeLightbox(); }
+  }
   var lb = document.getElementById('csLightbox');
   if (!lb.classList.contains('open')) return;
-  if (e.key === 'Escape')     closeLightbox();
   if (e.key === 'ArrowRight') lbxNav(1);
   if (e.key === 'ArrowLeft')  lbxNav(-1);
 });
@@ -658,11 +775,15 @@ function renderGallery(media) {
       return '<div class="'+lc+' cs-img"><iframe src="'+esc(url)+'" allowfullscreen style="width:100%;height:100%;border:none;display:block;"></iframe></div>';
     }
     if (m.type === '360') {
-      var pid = 'pnlm-' + i;
-      return '<div class="'+lc+' cs-img cs-img-360" data-pnlm-src="'+esc(url)+'" id="'+pid+'">'
-        +'<div class="cs-img-360-badge">360°</div>'
-        +'</div>';
+    lc = 'cs-img-full';
+    var pid = 'pnlm-' + i;
+    return '<div class="'+lc+' cs-img cs-img-360" data-title="'+esc(m.caption||'')+'" data-src360="'+esc(url)+'">'
+     +'<img src="'+esc(url)+'" alt="'+esc(m.caption||'')+'" loading="lazy" style="width:100%;height:auto;display:block;cursor:pointer;" onclick="open360Lightbox(this.parentNode)">'
+     +'<div class="cs-img-360-badge">360°</div>'
+     +'<div class="cs-img-caption">'+(m.caption ? esc(m.caption) : '')+'</div>'
+     +'</div>';
     }
+      
     var captionHtml = '<div class="cs-img-caption">'+(m.caption ? esc(m.caption) : '')+'</div>';
     return '<div class="'+lc+' cs-img" data-title="'+esc(m.caption||'')+'" data-meta="" onclick="openLightbox(this)">'
       +'<img src="'+esc(url)+'" alt="'+esc(m.caption||'')+'" loading="lazy" onload="var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p)p.style.display=\'none\';" onerror="this.style.display=\'none\';var p=this.parentNode.querySelector(\'.cs-img-placeholder\');if(p){p.style.display=\'flex\';}">'
@@ -674,7 +795,7 @@ function renderGallery(media) {
     +'<div class="cs-gallery-header"><div class="cs-section-label" style="width:100%;margin-bottom:0">Project media</div></div>'
     +'<div class="cs-gallery-grid">'+cells+'</div>'
     +'</div>';
-}
+  }
 
 async function loadProject() {
   const root = document.getElementById('pageRoot');
@@ -792,7 +913,7 @@ async function loadProject() {
     +'</footer>';
 
   // Register gallery items for lightbox
-  galleryItems = Array.from(document.querySelectorAll('.cs-img[data-title]'));
+  galleryItems = Array.from(document.querySelectorAll('.cs-img[data-title]:not(.cs-img-360)'));
 
   // Align meta col once postcard image loads
   var coverImg = document.querySelector('.cs-media-img');
@@ -806,25 +927,10 @@ async function loadProject() {
   } else {
     requestAnimationFrame(alignMetaCol);
   }
-
-  // Initialise Pannellum 360 viewers
-  document.querySelectorAll('.cs-img-360[data-pnlm-src]').forEach(function(el) {
-    var src = el.getAttribute('data-pnlm-src');
-    if (!src || typeof pannellum === 'undefined') return;
-    pannellum.viewer(el.id, {
-      type: 'equirectangular',
-      panorama: src,
-      autoLoad: true,
-      showFullscreenCtrl: true,
-      showZoomCtrl: false,
-      mouseZoom: false,
-      compass: false,
-      hfov: 100,
-    });
-  });
 }
 
 loadProject();
+
 
 // ── ALIGN META ROW under postcard ────────────────────────────
 // Runs after the cover image loads so we know the postcard's actual height.

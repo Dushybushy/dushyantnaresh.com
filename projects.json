@@ -156,7 +156,7 @@
     "title": "Bringing a medieval home to life through rapid 3D capture",
     "subtitle": "Using experimental tools and techniques to rapidly document and visualise a heritage property",
     "category": "Heritage Documentation",
-    "year": "2025",
+    "year": "2025-2026",
     "role": "Lead Research Technician",
     "client": "Landmark Trust",
     "institution": "Visualising Heritage",
@@ -276,6 +276,89 @@
     "cardCategory": "Heritage Visualisations",
     "coverCaption": "\"X-ray\" view of the ground floor of the property",
     "galleryFolder": ""
+  },
+  {
+    "id": "threads-through-time",
+    "title": "Threads Through Time - an immersive film",
+    "subtitle": "Exploring the heritage of Yorkshire and the history of its textile industry through immersive film.",
+    "category": "Immersive Media",
+    "year": "2025-2026",
+    "role": "Lead Producer",
+    "client": "Bradford City of Culture 2025",
+    "institution": "Visualising Heritage",
+    "tags": [
+      "heritage",
+      "film",
+      "immersive"
+    ],
+    "coverImage": "images/projects/threadsthroughtime/woolsculpture.webp",
+    "coverAlt": "The \"Tower of Wool\" sculpture atop Penistone Hill",
+    "introText": "Filmed and produced 360° content for use in immersive projection cylinders, virtual tours, VR headsets, and social media.",
+    "body": "“Threads Through Time” is an immersive film slated as part of Bradford 2025’s City of Culture programme, led by the Visualising Heritage team at the University of Bradford. I worked as the director and editor on the piece, using pro-grade 360° cameras, 360° action cameras, VR microphones, laser scanners, and drones to film and stitch together a fully immersive film meant for viewing in the university’s 360° projection cylinder.\n\nWe worked with local residents to showcase their art, hobbies, specialisations, and daily lives, weaving together their stories with the complicated, intertwined history of Bradford and Yorkshire. We filmed across the county with an Insta360 Titan, from a soon-to-be-demolished car park in city centre to the top of Penistone Hill on an incredibly windy, wet day. Featuring historic sites such as the Twelve Apostles stone circle and the Hirst Wood ancient woodland helped merge the themes of modernity with local heritage.\n\nI edited the 8k equirectangular footage in Adobe Premiere Pro, using After Effects to rotoscope subjects and create animations. Music was recorded in the field, with additional audio recorded by participants and obtained through an audio library. I also created my own set of automations in Photoshop, allowing me to quickly edit out tripod legs from the 360° footage. Lastly, I incorporated different types of media, from archival 2D media to renders from laser scans taken by our team.\n\nThe full piece will be shown at the University of Bradford and will be catalogued and archived as part of the broader BD25 City of Culture legacy.",
+    "tools": [
+      "Insta360 Titan",
+      "Insta360 X4/One Inch",
+      "Sony A7s III/A7R IV",
+      "Adobe Creative Suite",
+      "Rode Wireless Go lav mics",
+      "Igloo Core Engine"
+    ],
+    "methods": [
+      "360° A/V capture",
+      "360° video editing",
+      "360° animation",
+      "Scripting and post-production"
+    ],
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "media": [
+      {
+        "url": "images/projects/threadsthroughtime/apostles.webp",
+        "caption": "12 Apostles, Yorkshire, in 360°",
+        "layout": "cs-img-equirectangular",
+        "type": "360",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/hirstwood.webp",
+        "caption": "Filming in Hirst Wood with local families",
+        "layout": "cs-img-equirectangular",
+        "type": "360",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/threads.webp",
+        "caption": "\"Threads\" woven on screen",
+        "layout": "cs-img-equirectangular",
+        "type": "360",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/oastler.webp",
+        "caption": "Skateboarding in an abandoned car park in Bradford",
+        "layout": "cs-img-equirectangular",
+        "type": "360",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/threadsthroughtime/sculpture360.webp",
+        "caption": "The \"Tower of Wool\" sculpture in 360°",
+        "layout": "cs-img-landscape",
+        "type": "360",
+        "order": 6,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "coverCaption": "The \"Tower of Wool\" sculpture atop Penistone Hill",
+    "summary": "",
+    "cardCategory": "Immersive Storytelling",
+    "galleryFolder": "threadsthroughtime"
   },
   {
     "id": "lost-treasures-egypt",
@@ -1182,88 +1265,5 @@
     "summary": "",
     "cardCategory": "Digital Media",
     "galleryFolder": "bemenews"
-  },
-  {
-    "id": "threads-through-time",
-    "title": "Threads Through Time - an immersive film",
-    "subtitle": "Exploring the heritage of Yorkshire and the history of its textile industry through immersive film.",
-    "category": "Immersive Media",
-    "year": "2025-2026",
-    "role": "Lead Producer",
-    "client": "Bradford City of Culture 2025",
-    "institution": "Visualising Heritage",
-    "tags": [
-      "heritage",
-      "film",
-      "immersive"
-    ],
-    "coverImage": "images/projects/threadsthroughtime/Woolsculpture.webp",
-    "coverAlt": "The \"Tower of Wool\" sculpture atop Penistone Hill",
-    "introText": "Filmed and produced 360° content for use in immersive projection cylinders, virtual tours, VR headsets, and social media.",
-    "body": "“Threads Through Time” is an immersive film slated as part of Bradford 2025’s City of Culture programme, led by the Visualising Heritage team at the University of Bradford. I worked as the director and editor on the piece, using pro-grade 360° cameras, 360° action cameras, VR microphones, laser scanners, and drones to film and stitch together a fully immersive film meant for viewing in the university’s 360° projection cylinder.\n\nWe worked with local residents to showcase their art, hobbies, specialisations, and daily lives, weaving together their stories with the complicated, intertwined history of Bradford and Yorkshire. We filmed across the county with an Insta360 Titan, from a soon-to-be-demolished car park in city centre to the top of Penistone Hill on an incredibly windy, wet day. Featuring historic sites such as the Twelve Apostles stone circle and the Hirst Wood ancient woodland helped merge the themes of modernity with local heritage.\n\nI edited the 8k equirectangular footage in Adobe Premiere Pro, using After Effects to rotoscope subjects and create animations. Music was recorded in the field, with additional audio recorded by participants and obtained through an audio library. I also created my own set of automations in Photoshop, allowing me to quickly edit out tripod legs from the 360° footage. Lastly, I incorporated different types of media, from archival 2D media to renders from laser scans taken by our team.\n\nThe full piece will be shown at the University of Bradford and will be catalogued and archived as part of the broader BD25 City of Culture legacy.",
-    "tools": [
-      "Insta360 Titan",
-      "Insta360 X4/One Inch",
-      "Sony A7s III/A7R IV",
-      "Adobe Creative Suite",
-      "Rode Wireless Go lav mics",
-      "Igloo Core Engine"
-    ],
-    "methods": [
-      "360° A/V capture",
-      "360° video editing",
-      "360° animation",
-      "Scripting and post-production"
-    ],
-    "ctaLabel": "",
-    "ctaUrl": "",
-    "media": [
-      {
-        "url": "images/projects/threadsthroughtime/apostles.webp",
-        "caption": "12 Apostles, Yorkshire, in 360°",
-        "layout": "cs-img-equirectangular",
-        "type": "image",
-        "order": 1,
-        "thumbnail": false
-      },
-      {
-        "url": "images/projects/threadsthroughtime/hirstwood.webp",
-        "caption": "Filming in Hirst Wood with local families",
-        "layout": "cs-img-equirectangular",
-        "type": "image",
-        "order": 2,
-        "thumbnail": false
-      },
-      {
-        "url": "images/projects/threadsthroughtime/threads.webp",
-        "caption": "\"Threads\" woven on screen",
-        "layout": "cs-img-equirectangular",
-        "type": "image",
-        "order": 3,
-        "thumbnail": false
-      },
-      {
-        "url": "images/projects/threadsthroughtime/Woolsculpture.webp",
-        "caption": "The Tower of Wool sculpture on Penistone Hill, Yorkshire",
-        "layout": "cs-img-landscape",
-        "type": "image",
-        "order": 4,
-        "thumbnail": true
-      },
-      {
-        "url": "images/projects/threadsthroughtime/oastler.webp",
-        "caption": "Skateboarding in an abandoned car park in Bradford",
-        "layout": "cs-img-equirectangular",
-        "type": "image",
-        "order": 5,
-        "thumbnail": false
-      }
-    ],
-    "links": [],
-    "featured": false,
-    "coverCaption": "The \"Tower of Wool\" sculpture atop Penistone Hill",
-    "summary": "",
-    "cardCategory": "Immersive Storytelling",
-    "galleryFolder": "threadsthroughtime"
   }
 ]
