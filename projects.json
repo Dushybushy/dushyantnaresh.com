@@ -1,5 +1,95 @@
 [
   {
+    "id": "roche-rock",
+    "title": "A view to Roche Rock (upcoming)",
+    "subtitle": "A narrative-driven, fully interactive map exploring prehistoric landscapes in Cornwall",
+    "summary": "",
+    "cardCategory": "Interactive Heritage",
+    "year": "2025-2026",
+    "role": "",
+    "client": "",
+    "institution": "",
+    "tags": [
+      "heritage",
+      "immersive"
+    ],
+    "coverImage": "images/projects/rocherock/20251011-DSC03860.webp",
+    "coverCaption": "Roche Rock, Cornwall",
+    "coverAlt": "Roche Rock, Cornwall",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "In Summer 2025, I visited Cornwall to stay with my friend Jack (<a href=\"https://www.instagram.com/achy.legs.jack\" target=\"_blank\" rel=\"noopener\">@achy.legs.jack</a>), an archaeologist who focuses on geospatial data visualisation and analysis. Among the numerous prehistoric burial chambers, stone circles, and standing stones we visited is a site called Roche Rock, a distinctive stone outcrop that sits stark in the Cornish landscape. Atop Roche Rock are the remnants of a medieval chapel dedicated to St. Michael, with the chapel window perfectly framing the scenery behind it.\n\nIn any landscape, Roche Rock would stand out. In the context of Cornish history and heritage, Roche Rock is not only iconic, but also poses an intriguing question about the relationship between people, culture, and the physical landscape.\n\nWe wondered if a prominent, visually memorable geological feature - one that is located notably close to numerous Neolithic and Bronze Age sites - could have served as a spiritual symbol for the people who inhabited ancient Cornwall. A <a href=\"https://www.tandfonline.com/doi/full/10.1080/1751696X.2023.2245158\" target=\"_blank\" rel=\"noopener\">2023 journal article</a> argued that prehistoric sites in Bodmin Moor, just ~15 miles from Roche Rock, “pay tribute” to another unique geological feature, Rough Tor.\n\nJack and I wanted to explore this theory using Roche Rock as our case study, combining our respective skill sets to create a fully interactive, narrative-driven multimedia storymap that allows visitors to explore the interconnected prehistoric landscape through maps, view sheds, 360° imagery, drone shots, and 3D models.\n\nWe’re currently processing our data and building our website, and hope to launch the project in Summer 2026.",
+    "tools": [
+      "Sony A7 III",
+      "Insta360 X4",
+      "Dji Mini 4k",
+      "QGIS",
+      "Lichtfeld Studio",
+      "Blender"
+    ],
+    "methods": [
+      "360° capture",
+      "Drone photography/videography",
+      "Photography",
+      "Gaussian Splatting",
+      "View shed analysis/Monte Carlo analysis",
+      "Web development"
+    ],
+    "media": [
+      {
+        "url": "images/projects/rocherock/20251011-DSC03863.webp",
+        "caption": "Jack and I near Roche Rock",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/20251011-DSC03852.webp",
+        "caption": "Jack flying the drone",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/20251011-DSC03856.webp",
+        "caption": "Getting some drone orbits around Roche Rock",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/20251011-DSC03881.webp",
+        "caption": "Helman Tor, another significant feature and prehistoric site near Roche Rock",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/20251011-DSC03876.webp",
+        "caption": "The view to Roche Rock from Helman Tor",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/IMG_20251011_153947_00_264.webp",
+        "caption": "A 360° atop Roche Rock",
+        "layout": "cs-img-landscape",
+        "type": "360",
+        "order": 6,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "rocherock"
+  },
+  {
     "id": "fountains-abbey-revealed",
     "title": "Fountains Abbey: Revealed!",
     "subtitle": "How can innovative digital experiences enable archaeologists to communicate complex geophysics to the public?",
@@ -283,7 +373,7 @@
     "subtitle": "Exploring the heritage of Yorkshire and the history of its textile industry through immersive film.",
     "category": "Immersive Media",
     "year": "2025-2026",
-    "role": "Lead Producer",
+    "role": "Film/Creative Technologist",
     "client": "Bradford City of Culture 2025",
     "institution": "Visualising Heritage",
     "tags": [
@@ -359,6 +449,134 @@
     "summary": "",
     "cardCategory": "Immersive Storytelling",
     "galleryFolder": "threadsthroughtime"
+  },
+  {
+    "id": "artifact-photography",
+    "title": "History in Macro - Artifact Photography",
+    "subtitle": "High resolution, detailed studio photos of historical artifacts taken from up close",
+    "summary": "",
+    "cardCategory": "Heritage & Archaeology",
+    "year": "2025",
+    "role": "Lead Research Technician",
+    "client": "",
+    "institution": "Visualising Heritage, University of Bradford",
+    "tags": [
+      "Heritage"
+    ],
+    "coverImage": "images/projects/objectphotos/Point oblique.webp",
+    "coverCaption": "A neolithic arrowhead",
+    "coverAlt": "A neolithic arrowhead",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "The archaeology department at the University of Bradford has uncovered some fantastic artifacts, from Neolithic arrowheads to medieval ceramics. I wanted to take high resolution, close-up photos of these objects to document them, practice my macro + studio photography skills, and use the images/video as publicity material for the department.\n\nI used a Sony a7r IV with a variety of macro lenses, including a Sigma 105mm, a Laowa 25mm Ultra Macro, and a Laowa 24mm 2x Macro Probe lens. Objects were shot in our makeshift photo studio using widely-available lights, tripods, and turntables.\n\nTo achieve maximum detail, I used a technique called “focus stacking”, where multiple images consisting of different focal points are blended together in post-processing, creating a final output image that has the entirety of the object in perfect focus.\n\nIn addition to photos, I took videos of some of the objects as well, with my favourite being this video of a glass shampoo bottle excavated in Lister Park, Bradford.",
+    "tools": [
+      "Sony A7R IV",
+      "Sigma 105mm Macro",
+      "Laowa 25mm Ultra Macro",
+      "Adobe Lightroom/Photoshop",
+      "Helicon Focus"
+    ],
+    "methods": [
+      "Macro photography",
+      "Studio/object photography",
+      "Focus stacking"
+    ],
+    "media": [
+      {
+        "url": "images/projects/objectphotos/Barbed point front.webp",
+        "caption": "A neolithic barbed arrowhead",
+        "layout": "cs-img-portrait",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/objectphotos/Amber bead.webp",
+        "caption": "An amber bead",
+        "layout": "cs-img-portrait",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/objectphotos/Faceted bead side.webp",
+        "caption": "A faceted bead",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/objectphotos/Flint point BW.webp",
+        "caption": "A flint arrowhead in black and white",
+        "layout": "cs-img-portrait",
+        "type": "image",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/objectphotos/Coin flat.webp",
+        "caption": "An early 20th century coin",
+        "layout": "cs-img-portrait",
+        "type": "image",
+        "order": 6,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "objectphotos"
+  },
+  {
+    "id": "amami-bottle",
+    "title": "Friday Nights are Amami Nights!",
+    "subtitle": "Making a luxury perfume advertisement for an excavated artifact",
+    "summary": "",
+    "cardCategory": "Heritage Media",
+    "year": "2025",
+    "role": "Lead Research Technician",
+    "client": "",
+    "institution": "Visualising Heritage, University of Bradford",
+    "tags": [
+      "Heritage"
+    ],
+    "coverImage": "https://www.youtube-nocookie.com/embed/KTBmbJDX9UA",
+    "coverCaption": "Amami WaveSet - excavated Summer 2025 in Lister Park, Bradford",
+    "coverAlt": "Amami WaveSet - excavated Summer 2025 in Lister Park, Bradford",
+    "ctaLabel": "",
+    "ctaUrl": "",
+    "body": "In Summer 2025, the University of Bradford’s department of archaeology ran summer excavations for the public in Lister Park. One of the units managed to find a 20th century corked glass bottle containing an unidentified liquid, branded “Amami”.\n\nA bit of light research revealed that Amami was a British brand specialising in hair products, including lotions and shampoos, inspired by the Japanese pine.\n\nAlong with macro photos of the artifact, I wanted to do something more creative. I ended up filming b-roll of the bottle in Visualising Heritage’s studio, using fun lights, lenses, and compositions to create a video of the bottle in the style of a luxury perfume advertisement. Artifacts are inherently fascinating - why can’t we make them look cool as well?",
+    "tools": [],
+    "methods": [],
+    "media": [
+      {
+        "url": "images/projects/Amami4k/20220202-DSC00620.webp",
+        "caption": "The front of the bottle",
+        "layout": "cs-img-portrait",
+        "type": "image",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/Amami4k/20220202-DSC00619.webp",
+        "caption": "The back of the bottle",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/Amami4k/amamithumb.webp",
+        "caption": "Amami WaveSet - Found 2025, Lister Park",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 3,
+        "thumbnail": false
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "Amami4k"
   },
   {
     "id": "lost-treasures-egypt",

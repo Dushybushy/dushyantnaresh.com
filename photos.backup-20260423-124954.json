@@ -50,7 +50,7 @@
       "focalLength": "200mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/160s",
-      "order": 17
+      "order": 19
     },
     {
       "id": "photo-barns",
@@ -64,7 +64,7 @@
       "focalLength": "42mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 14
+      "order": 12
     },
     {
       "id": "photo-cors-y-gedol",
@@ -128,7 +128,7 @@
       "focalLength": "30mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/640s",
-      "order": 11,
+      "order": 12,
       "featured": false,
       "hpOrder": null
     },
@@ -179,7 +179,7 @@
       "focalLength": "35mm",
       "aperture": "f/8",
       "shutterSpeed": "1/500s",
-      "order": 13,
+      "order": 14,
       "featured": false,
       "hpOrder": null
     },
@@ -211,7 +211,7 @@
       "focalLength": "70mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/640s",
-      "order": 12,
+      "order": 20,
       "featured": false,
       "hpOrder": null
     },
@@ -261,7 +261,7 @@
       "focalLength": "38mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/80s",
-      "order": 15
+      "order": 13
     },
     {
       "id": "photo-dsc09550",
@@ -308,7 +308,7 @@
       "focalLength": "50mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/250s",
-      "order": 14,
+      "order": 15,
       "featured": false,
       "hpOrder": null
     },
@@ -358,7 +358,7 @@
       "focalLength": "43mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/160s",
-      "order": 16
+      "order": 17
     },
     {
       "id": "photo-kings-arms",
@@ -408,7 +408,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1000s",
-      "order": 27,
+      "order": 26,
       "featured": false,
       "hpOrder": null
     },
@@ -488,7 +488,7 @@
       "focalLength": "48mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/200s",
-      "order": 13
+      "order": 11
     },
     {
       "id": "photo-not-enough-rain-in-england",
@@ -502,7 +502,7 @@
       "focalLength": "58mm",
       "aperture": "f/7.1",
       "shutterSpeed": "1/100s",
-      "order": 10,
+      "order": 11,
       "featured": false,
       "hpOrder": null
     },
@@ -621,7 +621,7 @@
       "focalLength": "46mm",
       "aperture": "f/4",
       "shutterSpeed": "1/800s",
-      "order": 12,
+      "order": 13,
       "featured": false,
       "hpOrder": null
     },
@@ -668,7 +668,7 @@
       "focalLength": "60mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/800s",
-      "order": 15,
+      "order": 16,
       "featured": false,
       "hpOrder": null
     },
@@ -717,7 +717,7 @@
       "focalLength": "24mm",
       "aperture": "f/8",
       "shutterSpeed": "1/250s",
-      "order": 22,
+      "order": 25,
       "featured": false,
       "hpOrder": null
     },
@@ -894,7 +894,7 @@
     {
       "id": "photo-20250721-dsc02874",
       "title": "Caerleon",
-      "album": "manmade",
+      "album": "reject",
       "tags": [
         "heritage"
       ],
@@ -1032,7 +1032,7 @@
       "focalLength": "276mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/640s",
-      "order": 18,
+      "order": 20,
       "featured": false,
       "hpOrder": null
     },
@@ -1049,7 +1049,7 @@
       "focalLength": "179mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/160s",
-      "order": 21,
+      "order": 24,
       "featured": false,
       "hpOrder": null
     },
@@ -1066,7 +1066,7 @@
       "focalLength": "400mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/200s",
-      "order": 24,
+      "order": 27,
       "featured": false,
       "hpOrder": null
     },
@@ -1082,7 +1082,7 @@
       "focalLength": "352mm",
       "aperture": "f/5.6",
       "shutterSpeed": "1/160s",
-      "order": 20,
+      "order": 22,
       "featured": false,
       "hpOrder": null
     },
@@ -1099,7 +1099,7 @@
       "focalLength": "41mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/640s",
-      "order": 17,
+      "order": 18,
       "featured": false,
       "hpOrder": null
     },
@@ -1116,7 +1116,7 @@
       "focalLength": "33mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/40s",
-      "order": 10,
+      "order": 9,
       "featured": false,
       "hpOrder": null
     },
@@ -1165,7 +1165,7 @@
       "focalLength": "52mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/50s",
-      "order": 11,
+      "order": 10,
       "featured": false,
       "hpOrder": null
     },
@@ -1231,7 +1231,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/640s",
-      "order": 11,
+      "order": 12,
       "featured": false,
       "hpOrder": null
     },
@@ -1281,7 +1281,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 25,
+      "order": 28,
       "featured": false,
       "hpOrder": null
     },
@@ -1298,14 +1298,14 @@
       "focalLength": "34mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 12,
+      "order": 13,
       "featured": false,
       "hpOrder": null
     },
     {
       "id": "photo-20251013-dsc03998",
       "title": "Kaleidescope",
-      "album": "animals",
+      "album": "reject",
       "tags": [
         "nature"
       ],
@@ -1314,7 +1314,7 @@
       "focalLength": "55mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/60s",
-      "order": 27,
+      "order": 14,
       "featured": false,
       "hpOrder": null
     },
@@ -1344,7 +1344,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/100s",
-      "order": 13,
+      "order": 14,
       "featured": false,
       "hpOrder": null
     },
@@ -1361,7 +1361,7 @@
       "focalLength": "49mm",
       "aperture": "f/3.2",
       "shutterSpeed": "1/500s",
-      "order": 17,
+      "order": 14,
       "featured": false,
       "hpOrder": null
     },
@@ -1428,7 +1428,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1600s",
-      "order": 18,
+      "order": 15,
       "featured": false,
       "hpOrder": null
     },
@@ -1445,7 +1445,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/320s",
-      "order": 21,
+      "order": 18,
       "featured": false,
       "hpOrder": null
     },
@@ -1462,7 +1462,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/200s",
-      "order": 16,
+      "order": 18,
       "featured": false,
       "hpOrder": null
     },
@@ -1497,7 +1497,7 @@
       "focalLength": "200mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/250s",
-      "order": 23,
+      "order": 21,
       "featured": false,
       "hpOrder": null
     },
@@ -1565,7 +1565,7 @@
       "focalLength": "36mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 12,
+      "order": 11,
       "featured": false,
       "hpOrder": null
     },
@@ -1647,7 +1647,7 @@
       "focalLength": "85mm",
       "aperture": "f/8",
       "shutterSpeed": "1/640s",
-      "order": 23,
+      "order": 22,
       "featured": false,
       "hpOrder": null
     },
@@ -1665,7 +1665,7 @@
       "focalLength": "35mm",
       "aperture": "f/8",
       "shutterSpeed": "1/400s",
-      "order": 25,
+      "order": 24,
       "featured": false,
       "hpOrder": null
     },
@@ -1681,7 +1681,7 @@
       "focalLength": "35mm",
       "aperture": "f/1.8",
       "shutterSpeed": "1/400s",
-      "order": 13,
+      "order": 14,
       "featured": false,
       "hpOrder": null
     },
@@ -1697,7 +1697,7 @@
       "focalLength": "35mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/400s",
-      "order": 14,
+      "order": 21,
       "featured": false,
       "hpOrder": null
     },
@@ -1732,7 +1732,7 @@
       "focalLength": "35mm",
       "aperture": "f/8",
       "shutterSpeed": "1/500s",
-      "order": 22,
+      "order": 19,
       "featured": false,
       "hpOrder": null
     },
@@ -1765,7 +1765,7 @@
       "focalLength": "53mm",
       "aperture": "f/4",
       "shutterSpeed": "1/160s",
-      "order": 26,
+      "order": 25,
       "featured": false,
       "hpOrder": null
     },
@@ -1816,7 +1816,7 @@
       "focalLength": "70mm",
       "aperture": "f/8",
       "shutterSpeed": "1/60s",
-      "order": 28,
+      "order": 29,
       "featured": false,
       "hpOrder": null
     },
@@ -1833,7 +1833,7 @@
       "focalLength": "24mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/5000s",
-      "order": 29,
+      "order": 30,
       "featured": false,
       "hpOrder": null
     },
@@ -1869,7 +1869,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/1250s",
-      "order": 19,
+      "order": 21,
       "featured": false,
       "hpOrder": null
     },
@@ -1885,7 +1885,7 @@
       "focalLength": "43mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/50s",
-      "order": 24,
+      "order": 23,
       "featured": true,
       "hpOrder": 3
     },
@@ -1919,7 +1919,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/3200s",
-      "order": 30,
+      "order": 31,
       "featured": false,
       "hpOrder": null
     },
@@ -2069,7 +2069,7 @@
       "focalLength": "44mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/100s",
-      "order": 32,
+      "order": 33,
       "featured": false,
       "hpOrder": null
     },
@@ -2097,7 +2097,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/250s",
-      "order": 20,
+      "order": 17,
       "featured": false,
       "hpOrder": null
     },
@@ -2111,7 +2111,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/500s",
-      "order": 26,
+      "order": 17,
       "featured": false,
       "hpOrder": null
     },
@@ -2125,7 +2125,7 @@
       "focalLength": "41mm",
       "aperture": "f/4.5",
       "shutterSpeed": "1/1000s",
-      "order": 23,
+      "order": 26,
       "featured": false,
       "hpOrder": null
     },
@@ -2167,7 +2167,7 @@
       "focalLength": "70mm",
       "aperture": "f/2.8",
       "shutterSpeed": "1/100s",
-      "order": 19,
+      "order": 16,
       "featured": false,
       "hpOrder": null
     },
@@ -2182,6 +2182,202 @@
       "aperture": "f/2.8",
       "shutterSpeed": "1/100s",
       "order": 1,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250422-dsc02483",
+      "title": "Touchdown",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/20250422-DSC02483.webp",
+      "orientation": "landscape",
+      "focalLength": "200mm",
+      "aperture": "f/5",
+      "shutterSpeed": "1/1000s",
+      "order": 23,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02662",
+      "title": "Navy Blue",
+      "album": "english-countrysides",
+      "tags": [],
+      "src": "images/photography/20250719-DSC02662.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/2000s",
+      "order": 10,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-20250719-dsc02711",
+      "title": "Kodak",
+      "album": "english-countrysides",
+      "tags": [],
+      "src": "images/photography/20250719-DSC02711.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/3.5",
+      "shutterSpeed": "1/400s",
+      "order": 22,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc00068",
+      "title": "Liverpool Dusk",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC00068.webp",
+      "orientation": "landscape",
+      "focalLength": "52mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/640s",
+      "order": 34,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc00456",
+      "title": "Bumps",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC00456.webp",
+      "orientation": "portrait",
+      "focalLength": "70mm",
+      "aperture": "f/10",
+      "shutterSpeed": "1/800s",
+      "order": 35,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc01109",
+      "title": "Foggy Days",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC01109.webp",
+      "orientation": "landscape",
+      "focalLength": "24mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/400s",
+      "order": 36,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc02184",
+      "title": "Juan Diego",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/DSC02184.webp",
+      "orientation": "portrait",
+      "focalLength": "35mm",
+      "aperture": "f/1.8",
+      "shutterSpeed": "1/640s",
+      "order": 16,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc06365",
+      "title": "Peak Hotel",
+      "album": "english-countrysides",
+      "tags": [],
+      "src": "images/photography/DSC06365.webp",
+      "orientation": "landscape",
+      "focalLength": "70mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/800s",
+      "order": 30,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc07052",
+      "title": "Reflections",
+      "album": "big-rocks",
+      "tags": [],
+      "src": "images/photography/DSC07052.webp",
+      "orientation": "landscape",
+      "focalLength": "33mm",
+      "aperture": "f/8",
+      "shutterSpeed": "2.5s",
+      "order": 11,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc07660",
+      "title": "Complementary",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/DSC07660.webp",
+      "orientation": "portrait",
+      "focalLength": "59mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/640s",
+      "order": 37,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-p1055486",
+      "title": "What's for dinner?",
+      "album": "animals",
+      "tags": [],
+      "src": "images/photography/P1055486.webp",
+      "orientation": "landscape",
+      "focalLength": "100mm",
+      "aperture": "f/4.5",
+      "shutterSpeed": "1/500s",
+      "order": 29,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-spaceneedle",
+      "title": "Soviet",
+      "album": "around-the-world",
+      "tags": [],
+      "src": "images/photography/spaceneedle.webp",
+      "orientation": "portrait",
+      "focalLength": "",
+      "aperture": "",
+      "shutterSpeed": "",
+      "order": 32,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04621",
+      "title": "Grumpy",
+      "album": "manmade",
+      "tags": [],
+      "src": "images/photography/DSC04621.webp",
+      "orientation": "portrait",
+      "focalLength": "51mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 13,
+      "featured": false,
+      "hpOrder": null
+    },
+    {
+      "id": "photo-dsc04629",
+      "title": "Endless Thread",
+      "album": "manmade",
+      "tags": [],
+      "src": "images/photography/DSC04629.webp",
+      "orientation": "portrait",
+      "focalLength": "30mm",
+      "aperture": "f/2.8",
+      "shutterSpeed": "1/100s",
+      "order": 12,
       "featured": false,
       "hpOrder": null
     }
