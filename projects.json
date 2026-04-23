@@ -571,7 +571,7 @@
         "layout": "cs-img-landscape",
         "type": "image",
         "order": 3,
-        "thumbnail": false
+        "thumbnail": true
       }
     ],
     "links": [],
