@@ -747,6 +747,102 @@
     "galleryFolder": "losttreasuresbible"
   },
   {
+    "id": "see-northern-wales-in-360",
+    "title": "See Northern Wales in 360!",
+    "subtitle": "A series of 360° videos taken across the atmospheric Northern Wales",
+    "summary": "",
+    "cardCategory": "Immersive Video",
+    "year": "2024",
+    "role": "",
+    "client": "",
+    "institution": "",
+    "tags": [
+      "Immersive"
+    ],
+    "coverImage": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
+    "coverCaption": "Benar Beach",
+    "coverAlt": "Benar Beach",
+    "ctaLabel": "View the full playlist",
+    "ctaUrl": "https://www.youtube.com/playlist?list=PLpi-tAfRr2oD9IoPkYTod8FUhmPRgvS_i",
+    "body": "Enjoy a playlist of peaceful, scenic 360° videos taken at various places in Northern Wales.\n\nI shot these in December 2024 on an Insta360 X4 and edited in Insta360 Studio.",
+    "tools": [
+      "Insta360 X4",
+      "Insta360 Studio"
+    ],
+    "methods": [
+      "360° capture"
+    ],
+    "media": [
+      {
+        "url": "https://www.youtube-nocookie.com/embed/xjA2WYhWfT4",
+        "caption": "Cors y Gedol",
+        "layout": "cs-img-square",
+        "type": "video",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/z5KV2Q8wtJI",
+        "caption": "Cwmorthin Waterfall",
+        "layout": "cs-img-equirectangular",
+        "type": "video",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/ocIKD94d2IQ",
+        "caption": "Cwmorthin",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/w1a3ZlCcPTY",
+        "caption": "Northern Wales - unnamed hill",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/uKSn0QHNGiY",
+        "caption": "Tomen y Mur",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/3Dj4473_Pok",
+        "caption": "Ducks near a pond",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
+        "caption": "Benar Beach",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/wales360/thumb.webp",
+        "caption": "A still from Benar Beach",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 8,
+        "thumbnail": true
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "wales360"
+  },
+  {
     "id": "an-avebury-story",
     "title": "An Avebury Story - a 360° interactive story",
     "subtitle": "Creating an interactive VR game set in the Neolithic stone circles at Avebury",
@@ -1500,101 +1596,5 @@
     "summary": "",
     "cardCategory": "Digital Media",
     "galleryFolder": "bemenews"
-  },
-  {
-    "id": "see-northern-wales-in-360",
-    "title": "See Northern Wales in 360!",
-    "subtitle": "A series of 360° videos taken across the atmospheric Northern Wales",
-    "summary": "",
-    "cardCategory": "Immersive Video",
-    "year": "2024",
-    "role": "",
-    "client": "",
-    "institution": "",
-    "tags": [
-      "Immersive"
-    ],
-    "coverImage": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
-    "coverCaption": "Benar Beach",
-    "coverAlt": "Benar Beach",
-    "ctaLabel": "View the full playlist",
-    "ctaUrl": "https://www.youtube.com/playlist?list=PLpi-tAfRr2oD9IoPkYTod8FUhmPRgvS_i",
-    "body": "Enjoy a playlist of peaceful, scenic 360° videos taken at various places in Northern Wales.\n\nI shot these in December 2024 on an Insta360 X4 and edited in Insta360 Studio.",
-    "tools": [
-      "Insta360 X4",
-      "Insta360 Studio"
-    ],
-    "methods": [
-      "360° capture"
-    ],
-    "media": [
-      {
-        "url": "https://www.youtube-nocookie.com/embed/xjA2WYhWfT4",
-        "caption": "Cors y Gedol",
-        "layout": "cs-img-square",
-        "type": "video",
-        "order": 1,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/z5KV2Q8wtJI",
-        "caption": "Cwmorthin Waterfall",
-        "layout": "cs-img-equirectangular",
-        "type": "video",
-        "order": 2,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/ocIKD94d2IQ",
-        "caption": "Cwmorthin",
-        "layout": "cs-img-landscape",
-        "type": "video",
-        "order": 3,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/w1a3ZlCcPTY",
-        "caption": "Northern Wales - unnamed hill",
-        "layout": "cs-img-landscape",
-        "type": "video",
-        "order": 4,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/uKSn0QHNGiY",
-        "caption": "Tomen y Mur",
-        "layout": "cs-img-landscape",
-        "type": "video",
-        "order": 5,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/3Dj4473_Pok",
-        "caption": "Ducks near a pond",
-        "layout": "cs-img-landscape",
-        "type": "video",
-        "order": 6,
-        "thumbnail": false
-      },
-      {
-        "url": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
-        "caption": "Benar Beach",
-        "layout": "cs-img-landscape",
-        "type": "video",
-        "order": 7,
-        "thumbnail": false
-      },
-      {
-        "url": "images/projects/wales360/thumb.webp",
-        "caption": "A still from Benar Beach",
-        "layout": "cs-img-landscape",
-        "type": "image",
-        "order": 8,
-        "thumbnail": true
-      }
-    ],
-    "links": [],
-    "featured": false,
-    "galleryFolder": "wales360"
   }
 ]
