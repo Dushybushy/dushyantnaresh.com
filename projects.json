@@ -554,8 +554,17 @@
     "ctaLabel": "",
     "ctaUrl": "",
     "body": "In Summer 2025, the University of Bradford’s department of archaeology ran summer excavations for the public in Lister Park. One of the units managed to find a 20th century corked glass bottle containing an unidentified liquid, branded “Amami”.\n\nA bit of light research revealed that Amami was a British brand specialising in hair products, including lotions and shampoos, inspired by the Japanese pine.\n\nAlong with macro photos of the artifact, I wanted to do something more creative. I ended up filming b-roll of the bottle in Visualising Heritage’s studio, using fun lights, lenses, and compositions to create a video of the bottle in the style of a luxury perfume advertisement. Artifacts are inherently fascinating - why can’t we make them look cool as well?",
-    "tools": [],
-    "methods": [],
+    "tools": [
+      "Sony A7S III",
+      "Sigma 105mm Macro",
+      "Sony 24-70mm",
+      "Adobe Premiere Pro"
+    ],
+    "methods": [
+      "Object/macro videography",
+      "Studio lighting",
+      "Video editing"
+    ],
     "media": [
       {
         "url": "images/projects/Amami4k/20220202-DSC00620.webp",
@@ -1491,5 +1500,101 @@
     "summary": "",
     "cardCategory": "Digital Media",
     "galleryFolder": "bemenews"
+  },
+  {
+    "id": "see-northern-wales-in-360",
+    "title": "See Northern Wales in 360!",
+    "subtitle": "A series of 360° videos taken across the atmospheric Northern Wales",
+    "summary": "",
+    "cardCategory": "Immersive Video",
+    "year": "2024",
+    "role": "",
+    "client": "",
+    "institution": "",
+    "tags": [
+      "Immersive"
+    ],
+    "coverImage": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
+    "coverCaption": "Benar Beach",
+    "coverAlt": "Benar Beach",
+    "ctaLabel": "View the full playlist",
+    "ctaUrl": "https://www.youtube.com/playlist?list=PLpi-tAfRr2oD9IoPkYTod8FUhmPRgvS_i",
+    "body": "Enjoy a playlist of peaceful, scenic 360° videos taken at various places in Northern Wales.\n\nI shot these in December 2024 on an Insta360 X4 and edited in Insta360 Studio.",
+    "tools": [
+      "Insta360 X4",
+      "Insta360 Studio"
+    ],
+    "methods": [
+      "360° capture"
+    ],
+    "media": [
+      {
+        "url": "https://www.youtube-nocookie.com/embed/xjA2WYhWfT4",
+        "caption": "Cors y Gedol",
+        "layout": "cs-img-square",
+        "type": "video",
+        "order": 1,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/z5KV2Q8wtJI",
+        "caption": "Cwmorthin Waterfall",
+        "layout": "cs-img-equirectangular",
+        "type": "video",
+        "order": 2,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/ocIKD94d2IQ",
+        "caption": "Cwmorthin",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 3,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/w1a3ZlCcPTY",
+        "caption": "Northern Wales - unnamed hill",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 4,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/uKSn0QHNGiY",
+        "caption": "Tomen y Mur",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 5,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/3Dj4473_Pok",
+        "caption": "Ducks near a pond",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 6,
+        "thumbnail": false
+      },
+      {
+        "url": "https://www.youtube-nocookie.com/embed/OgVc22158_4",
+        "caption": "Benar Beach",
+        "layout": "cs-img-landscape",
+        "type": "video",
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/wales360/thumb.webp",
+        "caption": "A still from Benar Beach",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 8,
+        "thumbnail": true
+      }
+    ],
+    "links": [],
+    "featured": false,
+    "galleryFolder": "wales360"
   }
 ]
