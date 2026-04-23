@@ -41,7 +41,7 @@
         "caption": "Jack and I near Roche Rock",
         "layout": "cs-img-landscape",
         "type": "image",
-        "order": 1,
+        "order": 2,
         "thumbnail": false
       },
       {
@@ -49,7 +49,7 @@
         "caption": "Jack flying the drone",
         "layout": "cs-img-landscape",
         "type": "image",
-        "order": 2,
+        "order": 3,
         "thumbnail": false
       },
       {
@@ -57,7 +57,7 @@
         "caption": "Getting some drone orbits around Roche Rock",
         "layout": "cs-img-landscape",
         "type": "image",
-        "order": 3,
+        "order": 4,
         "thumbnail": false
       },
       {
@@ -65,7 +65,7 @@
         "caption": "Helman Tor, another significant feature and prehistoric site near Roche Rock",
         "layout": "cs-img-landscape",
         "type": "image",
-        "order": 4,
+        "order": 5,
         "thumbnail": false
       },
       {
@@ -73,7 +73,7 @@
         "caption": "The view to Roche Rock from Helman Tor",
         "layout": "cs-img-landscape",
         "type": "image",
-        "order": 5,
+        "order": 6,
         "thumbnail": false
       },
       {
@@ -81,7 +81,15 @@
         "caption": "A 360° atop Roche Rock",
         "layout": "cs-img-landscape",
         "type": "360",
-        "order": 6,
+        "order": 7,
+        "thumbnail": false
+      },
+      {
+        "url": "images/projects/rocherock/droneshot.webp",
+        "caption": "Roche Rock from above, taken on a DJI Mini 4k",
+        "layout": "cs-img-landscape",
+        "type": "image",
+        "order": 1,
         "thumbnail": false
       }
     ],
