@@ -6,7 +6,7 @@
 <title>About — Dushyant Naresh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -55,17 +55,15 @@ nav {
   padding: 0 52px; height: 64px; overflow: visible;
 }
 .nav-logo { padding: 22px 4px; font-family: var(--font-d); font-size: 18px; font-weight: 500; color: #c47938; }
-.nav-logo em { font-style: normal; color: inherit; }
+.nav-logo em { font-style: normal; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,228,0.6); transition: color 0.2s; }
-.nav-links a:hover { color: #E8A87A; }
-.nav-links a.active { color: #E8A87A; }
+.nav-links a { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,228,0.6); }
 .nav-cta { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #e6b168; border: 1px solid #e6b168; padding: 10px 22px; transition: background 0.2s, color 0.2s; }
 .nav-cta:hover { background: #e6b168; color: var(--ink); }
 
 /* Nav links: boxed targets that fill with the accent on hover / keyboard focus */
 .nav-links { gap: 6px; }
-nav .nav-links a, nav.dark .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+nav .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 nav .nav-links a:hover, nav .nav-links a:focus-visible { background: #E8A87A; color: var(--ink); border-color: #E8A87A; }
 nav .nav-links a.active { color: #E8A87A; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 /* Current page: no hover fill, so it doesn't flash when the new page loads under the cursor */
@@ -524,7 +522,7 @@ nav .nav-cta:focus-visible { background: #E8A87A; color: var(--ink); border-colo
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .site-footer { background: rgba(54,26,11,0.08); padding: 0 52px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(54,26,11,0.15); }
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 500; color: #c47938; padding: 22px 4px;}
-.footer-logo em { font-style: normal; color: inherit; }
+.footer-logo em { font-style: normal; }
 .footer-nav { display: flex; gap: 36px; list-style: none; }
 .footer-nav a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,228,0.6); transition: color 0.2s; }
 .footer-nav a:hover { color: #E8A87A; }

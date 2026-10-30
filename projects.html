@@ -6,7 +6,7 @@
 <title>Projects — Dushyant Naresh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -42,16 +42,15 @@ nav {
   padding: 0 52px; height: 64px; overflow: visible;
 }
 .nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 500; color: var(--earth); }
-.nav-logo em { font-style: normal; color: inherit; }
+.nav-logo em { font-style: normal; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
-.nav-links a:hover, .nav-links a.active { color: var(--earth); }
+.nav-links a { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
 .nav-cta { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
 .nav-cta:hover { background: var(--earth); color: var(--cream); }
 
 /* Nav links: boxed targets that fill with the accent on hover / keyboard focus */
 .nav-links { gap: 6px; }
-nav .nav-links a, nav.dark .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+nav .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 nav .nav-links a:hover, nav .nav-links a:focus-visible { background: var(--earth); color: var(--cream); border-color: var(--earth); }
 nav .nav-links a.active { color: var(--earth); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 /* Current page: no hover fill, so it doesn't flash when the new page loads under the cursor */
@@ -115,7 +114,7 @@ nav .nav-cta:focus-visible { background: var(--earth); color: var(--cream); bord
 .page-title {
   font-family: var(--font-d); font-size: clamp(40px, 4.2vw, 68px);
   font-weight: 500; font-style: normal; line-height: 1.0;
-  color: var(--hdr-fg); margin-bottom: 14px;
+  color: var(--hdr-fg); margin-bottom: 26px;
   letter-spacing: -0.01em; hyphens: none;
 }
 .page-subtitle {
@@ -350,9 +349,9 @@ nav .nav-cta:focus-visible { background: var(--earth); color: var(--cream); bord
 /* ── FOOTER ──────────────────────────────────────────────────── */
 .site-footer { background: var(--cream); padding: 0 52px; height: 64px; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--rule); }
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 500; color: #6B3A12; }
-.footer-logo em { font-style: normal; color: inherit; }
+.footer-logo em { font-style: normal; }
 .footer-nav { display: flex; gap: 36px; list-style: none; }
-.footer-nav a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
+.footer-nav a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
 .footer-nav a:hover { color: var(--earth); }
 .footer-right { font-family: var(--font-b); font-size: 12px; color: var(--ink-soft); }
 .footer-right a { color: var(--ink-soft); transition: color 0.2s; }
@@ -379,7 +378,7 @@ nav .nav-cta:focus-visible { background: var(--earth); color: var(--cream); bord
   .page { padding-top: 56px; }
   .page-header { padding: 32px 24px 28px; height: auto; min-height: 0; }
   .page-header-inner { max-width: 100%; }
-  .page-title { font-size: clamp(36px, 9vw, 52px); margin-bottom: 14px; }
+  .page-title { font-size: clamp(36px, 9vw, 52px); margin-bottom: 20px; }
   .page-subtitle { font-size: 17px; }
   .page-breadcrumb { padding: 0 28px 0 16px; }
   .projects-grid { grid-template-columns: 1fr; padding: 20px; gap: 20px; }

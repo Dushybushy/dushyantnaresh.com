@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 
 
@@ -25,7 +25,6 @@
   --ink-mid:    #3D3930;
   --ink-soft:   #6B6559;
   --ink-faint:  #6E665A;
-  --stone:      #B8AC98;
   --rule:       rgba(26,24,20,0.12);
   --earth:      #85211C;
   --font-d: 'Rowan', Georgia, serif;
@@ -99,13 +98,10 @@ nav.dark .nav-logo { color: #c47938; }
 nav.dark .nav-cta { color: rgba(244,239,228,0.85); border-color: rgba(244,239,228,0.25); }
 nav.dark .nav-cta:hover { background: var(--nav-dark-acc); color: var(--ink); border-color: var(--ink); }
 .nav-logo { font-family: var(--font-d); font-size: 18px; font-weight: 500; color: var(--earth); }
-.nav-logo em { font-style: normal; color: inherit; }
-nav.dark .nav-logo em { color: inherit; }
+.nav-logo em { font-style: normal; }
 .nav-links { display: flex; gap: 36px; list-style: none; }
-.nav-links a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); transition: color 0.2s; }
-.nav-links a:hover { color: var(--earth); }
-nav.dark .nav-links a { color: var(--nav-dark-acc); padding: 22px 4px;}
-nav.dark .nav-links a:hover { color: var(--cream); }
+.nav-links a { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+nav.dark .nav-links a { color: var(--nav-dark-acc); }
 
 body.deep { background: var(--nav-dark); }
 .nav-cta { font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--rule); padding: 10px 22px; transition: background 0.2s, color 0.2s; }
@@ -519,7 +515,7 @@ body.deep #stratDepthCounter { color: var(--l3-sub); }
   align-items: center; gap: 40px;
 }
 .footer-logo { font-family: var(--font-d); font-size: 18px; font-weight: 500; color: #c47938; }
-.footer-logo em { font-style: normal; color: inherit; }
+.footer-logo em { font-style: normal; }
 .footer-nav { display: flex; gap: 30px; list-style: none; }
 .footer-nav a { padding: 22px 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(201,180,151,0.78); transition: color 0.2s; }
 .footer-nav a:hover { color: var(--cream); }

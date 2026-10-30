@@ -6,7 +6,7 @@
 <title>Photography — Dushyant Naresh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -66,17 +66,15 @@ nav{
   padding:0 52px;
 }
 .nav-logo{font-family:var(--font-d);font-size:18px;font-weight:500;color:var(--bronze)}
-.nav-logo em{font-style: normal;color:inherit}
+.nav-logo em{font-style:normal}
 .nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone);padding: 22px 4px;transition:color 0.2s;}
-.nav-links a:hover{color:var(--paper)}
-.nav-links a.active{color:var(--dust)}
+.nav-links a{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone)}
 .nav-cta{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.08em;text-transform:uppercase;color:rgba(240,232,220,0.75);border:1px solid var(--paper-faint);padding:10px 22px;transition:background 0.2s,color 0.2s,border-color 0.2s}
 .nav-cta:hover{background:var(--dust);color:var(--void);border-color:var(--void)}
 
 /* Nav links: boxed targets that fill with the accent on hover / keyboard focus */
 .nav-links { gap: 6px; }
-nav .nav-links a, nav.dark .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+nav .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 nav .nav-links a:hover, nav .nav-links a:focus-visible { background: var(--dust); color: var(--void); border-color: var(--dust); }
 nav .nav-links a.active { color: var(--dust); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
 /* Current page: no hover fill, so it doesn't flash when the new page loads under the cursor */
@@ -127,7 +125,7 @@ nav .nav-cta:focus-visible { background: var(--dust); color: var(--void); border
    because the JS now uses a wrapper approach */
 .page-header{padding:52px 52px 48px;position:relative;height:200px;overflow:hidden}
 .page-header-inner{position:relative;z-index:1;max-width:52%}
-.page-title{font-family:var(--font-d);font-size:clamp(40px,4.2vw,68px);font-weight:500;font-style: normal;line-height:1.0;color:var(--bronze);margin-bottom:14px;letter-spacing:-0.01em;hyphens:none}
+.page-title{font-family:var(--font-d);font-size:clamp(40px,4.2vw,68px);font-weight:500;font-style: normal;line-height:1.0;color:var(--bronze);margin-bottom:26px;letter-spacing:-0.01em;hyphens:none}
 .page-subtitle{font-family:var(--font-d);font-size:20px;font-style:normal;line-height:1.6;color:var(--bronze);opacity:0.85; font-weight: 500;}
 
 /* ── ALBUM STRIP ─────────────────────────────────────────────
@@ -311,7 +309,7 @@ nav .nav-cta:focus-visible { background: var(--dust); color: var(--void); border
 /* ── FOOTER ─────────────────────────────────────────────────── */
 .site-footer{background:var(--void-lift);border-top:1px solid var(--rule);padding:0 52px;height:64px;display:flex;align-items:center;justify-content:space-between}
 .footer-logo{font-family:var(--font-d);font-size:18px;font-weight:500;color:var(--bronze)}
-.footer-logo em{font-style: normal;color:inherit}
+.footer-logo em{font-style:normal}
 .footer-nav{display:flex;gap:36px;list-style:none}
 .footer-nav a{padding: 22px 4px;font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone);opacity:0.75;transition:opacity 0.2s,color 0.2s}
 .footer-nav a:hover{opacity:1;color:var(--paper)}
@@ -331,7 +329,7 @@ nav .nav-cta:focus-visible { background: var(--dust); color: var(--void); border
   .nav-hamburger{display:flex}
   .page-header{padding:32px 24px 28px;height:auto;min-height:0}
   .page-header-inner{max-width:100%}
-  .page-title{font-size:clamp(36px,9vw,52px)}
+  .page-title{font-size:clamp(36px,9vw,52px);margin-bottom:20px}
   .page-subtitle{font-size:17px}
   .album-strip{padding:0 16px}
   .album-tab{padding:0 14px}
