@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photo Admin — Dushyant Naresh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -14,12 +15,12 @@
   --sandy:    #d2ba98;
   --ink:      #1A1814;
   --ink-soft: #6B6559;
-  --ink-faint:#9A9188;
+  --ink-faint:#6E665A;
   --rule:     rgba(26,24,20,0.12);
   --earth:    #85211C;
   --green:    #2A6040;
-  --font-d: 'Cormorant Garamond', Georgia, serif;
-  --font-b: 'Syne', sans-serif;
+  --font-d: 'Rowan', Georgia, serif;
+  --font-b: 'Radio Canada', sans-serif;
   --font-m: 'Roboto Mono', monospace;
 }
 html, body { height: 100%; }
@@ -33,8 +34,8 @@ body { background: var(--cream); color: var(--ink); font-family: var(--font-b); 
   padding: 0 32px; height: 52px;
 }
 .topbar-left { display: flex; align-items: center; gap: 20px; }
-.topbar-logo { font-family: var(--font-d); font-size: 17px; }
-.topbar-logo em { font-style: italic; color: var(--sandy); }
+.topbar-logo { font-family: var(--font-d); font-size: 17px; font-weight: 500;}
+.topbar-logo em { font-style: normal; color: var(--sandy); }
 .topbar-title { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(244,239,228,0.4); }
 .topbar-actions { display: flex; gap: 10px; align-items: center; }
 .pending-badge { font-family: var(--font-m); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(244,239,228,0.75); display: none; }
@@ -46,12 +47,12 @@ body { background: var(--cream); color: var(--ink); font-family: var(--font-b); 
   background: var(--tan); border-bottom: 1px solid var(--rule);
   display: flex; padding: 0 32px;
 }
-.tab { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; border: none; background: none; color: var(--ink-soft); border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; }
+.tab { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 13px 20px; cursor: pointer; border: none; background: none; color: var(--ink-soft); border-bottom: 3px solid transparent; margin-bottom: -1px; transition: color 0.15s, border-color 0.15s; }
 .tab:hover { color: var(--ink); }
 .tab.active { color: var(--earth); border-bottom-color: var(--earth); }
 
 /* ── BUTTONS ─────────────────── */
-.btn { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 9px 18px; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 7px; transition: background 0.15s, color 0.15s, opacity 0.15s; flex-shrink: 0; }
+.btn { font-family: var(--font-b); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 9px 18px; cursor: pointer; border: none; display: inline-flex; align-items: center; gap: 7px; transition: background 0.15s, color 0.15s, opacity 0.15s; flex-shrink: 0; }
 .btn:disabled { opacity: 0.3; cursor: not-allowed; }
 .btn-primary { background: var(--earth); color: var(--cream); }
 .btn-primary:hover:not(:disabled) { background: #6e1a16; }
@@ -141,7 +142,7 @@ body { background: var(--cream); color: var(--ink); font-family: var(--font-b); 
 /* Editor form */
 .editor-form { padding: 20px 24px 80px; display: flex; flex-direction: column; gap: 20px; }
 .editor-form-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--rule); }
-.editor-form-title { font-family: var(--font-d); font-size: 22px; font-weight: 300; }
+.editor-form-title { font-family: var(--font-d); font-size: 22px; font-weight: 500; }
 
 /* ── FORM FIELDS ─────────────── */
 .form-section-title { font-family: var(--font-m); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
@@ -162,7 +163,7 @@ input[type="text"], input[type="url"], select {
 input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(--cream); }
 .tags-input { display: flex; flex-wrap: wrap; gap: 5px; align-items: center; padding: 7px 9px; background: var(--tan); border: 1px solid var(--rule); min-height: 44px; cursor: text; transition: border-color 0.15s; }
 .tags-input:focus-within { border-color: rgba(133,33,28,0.5); background: var(--cream); }
-.tag-chip { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-b); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sandy); color: var(--ink); padding: 3px 8px; }
+.tag-chip { display: inline-flex; align-items: center; gap: 4px; font-family: var(--font-b); font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; background: var(--sandy); color: var(--ink); padding: 3px 8px; }
 .tag-chip-del { background: none; border: none; cursor: pointer; color: var(--ink-soft); font-size: 12px; padding: 0; line-height: 1; }
 .tag-chip-del:hover { color: var(--earth); }
 .tag-input-field { border: none; background: transparent; outline: none; font-family: var(--font-b); font-size: 14px; color: var(--ink); min-width: 80px; flex: 1; padding: 2px 3px; }
@@ -220,7 +221,7 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 .album-detail-name-wrap { display: flex; align-items: center; gap: 12px; flex: 1; min-width: 0; }
-.album-name-input { font-family: var(--font-d); font-size: 22px; font-weight: 300; color: var(--ink); background: transparent; border: none; border-bottom: 1px solid transparent; outline: none; width: 100%; transition: border-color 0.15s; padding-bottom: 2px; }
+.album-name-input { font-family: var(--font-d); font-size: 22px; font-weight: 500; color: var(--ink); background: transparent; border: none; border-bottom: 1px solid transparent; outline: none; width: 100%; transition: border-color 0.15s; padding-bottom: 2px; }
 .album-name-input:focus { border-bottom-color: var(--earth); }
 .album-detail-actions { display: flex; gap: 8px; flex-shrink: 0; }
 
@@ -264,7 +265,7 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; z-index: 500;
 }
 .load-screen.hidden { display: none; }
-.load-screen-title { font-family: var(--font-d); font-size: 28px; font-weight: 300; color: var(--ink); }
+.load-screen-title { font-family: var(--font-d); font-size: 28px; font-weight: 500; color: var(--ink); }
 .load-screen-sub { font-family: var(--font-m); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
 
 /* ── TOAST ───────────────────── */
@@ -297,7 +298,7 @@ input:focus, select:focus { border-color: rgba(133,33,28,0.5); background: var(-
 
 <!-- Load screen -->
 <div class="load-screen" id="loadScreen">
-  <div class="load-screen-title">Dushyant <em style="font-style:italic;color:var(--sandy)">Naresh</em></div>
+  <div class="load-screen-title">Dushyant <em style="font-style: normal;color:var(--sandy)">Naresh</em></div>
   <div class="load-screen-sub">Photo Admin</div>
   <button class="btn btn-light" onclick="loadFromFile()" style="margin-top:8px">Load photos.json</button>
   <input type="file" id="fileInput" accept=".json" style="display:none" onchange="onFileChosen(event)">

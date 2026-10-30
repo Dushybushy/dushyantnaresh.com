@@ -14,12 +14,12 @@
   --ink:        #1A1814;
   --ink-mid:    #3D3930;
   --ink-soft:   #6B6559;
-  --ink-faint:  #9A9188;
+  --ink-faint:  #6E665A;
   --stone:      #B8AC98;
   --rule:       rgba(26,24,20,0.12);
   --earth:      #85211C;
-  --font-d: 'Cormorant Garamond', Georgia, serif;
-  --font-b: 'Syne', sans-serif;
+  --font-d: 'Rowan', Georgia, serif;
+  --font-b: 'Radio Canada', sans-serif;
   --font-m: 'Roboto Mono', monospace;
 
   --l0-bg: #F4EFE4;  --l0-fg: #1A1814;
@@ -60,16 +60,16 @@ nav {
 
 .nav-logo {
   font-family: var(--font-d);
-  font-size: 18px; font-weight: 400;
+  font-size: 18px; font-weight: 500;
   color: var(--ink);
 }
-.nav-logo em { font-style: italic; color: var(--earth); }
+.nav-logo em { font-style: normal; color: var(--earth); }
 
 .nav-links { display: flex; gap: 38px; list-style: none; }
 .nav-links a {
   font-family: var(--font-b);
-  font-size: 10.5px; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft); transition: color 0.2s;
 }
 .nav-links a:hover,
@@ -77,8 +77,8 @@ nav {
 
 .nav-cta {
   font-family: var(--font-b);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink); border: 1px solid var(--ink);
   padding: 9px 22px; transition: background 0.2s, color 0.2s;
 }
@@ -114,8 +114,8 @@ nav {
 
 .page-eyebrow {
   font-family: var(--font-b);
-  font-size: 9.5px; font-weight: 600;
-  letter-spacing: 0.24em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--l3-acc);
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 14px;
@@ -129,7 +129,7 @@ nav {
 .page-title {
   font-family: var(--font-d);
   font-size: clamp(40px, 4.5vw, 58px);
-  font-weight: 300; line-height: 1.0;
+  font-weight: 500; line-height: 1.0;
   color: var(--l3-fg);
   margin-bottom: 16px;
 }
@@ -208,8 +208,8 @@ nav {
 }
 .proj-card-placeholder span {
   font-family: var(--font-b);
-  font-size: 9px; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
   opacity: 0.6;
 }
 
@@ -250,8 +250,8 @@ nav {
 
 .proj-card-category {
   font-family: var(--font-b);
-  font-size: 8.5px; font-weight: 600;
-  letter-spacing: 0.2em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--earth);
 }
 
@@ -263,7 +263,7 @@ nav {
 
 .proj-card-title {
   font-family: var(--font-d);
-  font-size: 22px; font-weight: 400;
+  font-size: 22px; font-weight: 500;
   line-height: 1.2; color: var(--ink);
 }
 
@@ -281,16 +281,16 @@ nav {
 
 .proj-tag {
   font-family: var(--font-b);
-  font-size: 8px; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft); border: 1px solid var(--rule);
   padding: 3px 9px; background: rgba(244,239,228,0.7);
 }
 
 .proj-card-cta {
   font-family: var(--font-b);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--earth);
   margin-top: 4px;
   display: flex; align-items: center; gap: 8px;
@@ -318,8 +318,8 @@ nav {
 }
 .project-back a {
   font-family: var(--font-b);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft);
   display: inline-flex; align-items: center; gap: 8px;
   transition: color 0.2s;
@@ -346,8 +346,8 @@ nav {
 
 .project-eyebrow {
   font-family: var(--font-b);
-  font-size: 9.5px; font-weight: 600;
-  letter-spacing: 0.24em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--l3-acc);
   display: flex; align-items: center; gap: 12px;
   margin-bottom: 20px;
@@ -360,7 +360,7 @@ nav {
 .project-title {
   font-family: var(--font-d);
   font-size: clamp(40px, 5vw, 64px);
-  font-weight: 300; line-height: 1.05;
+  font-weight: 500; line-height: 1.05;
   color: var(--l3-fg); margin-bottom: 16px;
 }
 
@@ -397,8 +397,8 @@ nav {
 
 .project-tag {
   font-family: var(--font-b);
-  font-size: 8.5px; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--l3-acc); border: 1px solid rgba(232,168,122,0.3);
   padding: 4px 12px;
 }
@@ -416,8 +416,8 @@ nav {
   align-items: center; justify-content: center;
   flex-direction: column; gap: 12px;
   color: var(--ink-faint); font-family: var(--font-b);
-  font-size: 9.5px; font-weight: 500;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: 0.08em; text-transform: uppercase;
   border-bottom: 1px solid var(--rule);
 }
 
@@ -434,7 +434,7 @@ nav {
 
 .project-text h3 {
   font-family: var(--font-d);
-  font-size: 28px; font-weight: 400;
+  font-size: 28px; font-weight: 500;
   color: var(--ink); margin-bottom: 20px;
   padding-top: 48px;
 }
@@ -467,8 +467,8 @@ nav {
 
 .sidebar-block-label {
   font-family: var(--font-b);
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--earth); margin-bottom: 16px;
   display: flex; align-items: center; gap: 10px;
 }
@@ -506,7 +506,7 @@ nav {
 }
 .project-error h2 {
   font-family: var(--font-d);
-  font-size: 32px; font-weight: 300;
+  font-size: 32px; font-weight: 500;
   margin-bottom: 12px; color: var(--ink);
 }
 
@@ -527,7 +527,7 @@ nav {
 
 .admin-header h1 {
   font-family: var(--font-d);
-  font-size: 42px; font-weight: 300;
+  font-size: 42px; font-weight: 500;
   color: var(--ink);
 }
 
@@ -539,8 +539,8 @@ nav {
 
 .admin-tab {
   font-family: var(--font-b);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft);
   padding: 14px 24px;
   background: transparent; border: none;
@@ -560,8 +560,8 @@ nav {
 
 .form-label {
   font-family: var(--font-b);
-  font-size: 9.5px; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft);
 }
 .form-hint {
@@ -591,8 +591,8 @@ nav {
 
 .form-btn {
   font-family: var(--font-b);
-  font-size: 10px; font-weight: 600;
-  letter-spacing: 0.18em; text-transform: uppercase;
+  font-size: 12px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--cream); background: var(--ink);
   border: none; padding: 14px 30px;
   cursor: pointer; transition: background 0.2s;
@@ -619,8 +619,8 @@ nav {
 
 .json-copy-btn {
   font-family: var(--font-b);
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--l3-acc); background: transparent;
   border: 1px solid rgba(232,168,122,0.3);
   padding: 8px 18px; cursor: pointer;
@@ -651,7 +651,7 @@ nav {
 
 .admin-proj-title {
   font-family: var(--font-d);
-  font-size: 17px; font-weight: 400; color: var(--ink);
+  font-size: 17px; font-weight: 500; color: var(--ink);
 }
 .admin-proj-tags {
   font-family: var(--font-m);
@@ -666,8 +666,8 @@ nav {
 .admin-proj-actions { display: flex; gap: 8px; }
 .admin-proj-btn {
   font-family: var(--font-b);
-  font-size: 8.5px; font-weight: 600;
-  letter-spacing: 0.14em; text-transform: uppercase;
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-soft); background: transparent;
   border: 1px solid var(--rule);
   padding: 6px 14px; cursor: pointer;

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Photography — Dushyant Naresh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Syne:wght@400;500;600&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=rowan@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Radio+Canada:ital,wght@0,400;0,500;0,600;1,400&family=Roboto+Mono:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
@@ -25,8 +26,8 @@
   --stone:       #9A8E84;
   --rule:        rgba(196,132,90,0.12);
   --rule-soft:   rgba(240,232,220,0.06);
-  --font-d: 'Cormorant Garamond', Georgia, serif;
-  --font-b: 'Syne', sans-serif;
+  --font-d: 'Rowan', Georgia, serif;
+  --font-b: 'Radio Canada', sans-serif;
   --font-m: 'Roboto Mono', monospace;
   --polaroid-bg:  #F5F0E8;
   --polaroid-ink: #3A3028;
@@ -64,19 +65,30 @@ nav{
   display:flex;align-items:center;justify-content:space-between;
   padding:0 52px;
 }
-.nav-logo{font-family:var(--font-d);font-size:18px;font-weight:400;color:rgba(240,232,220,0.85)}
-.nav-logo em{font-style:italic;color:var(--dust)}
+.nav-logo{font-family:var(--font-d);font-size:18px;font-weight:500;color:var(--bronze)}
+.nav-logo em{font-style: normal;color:inherit}
 .nav-links{display:flex;gap:36px;list-style:none}
-.nav-links a{font-family:var(--font-b);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);padding: 22px 4px;transition:color 0.2s;}
+.nav-links a{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone);padding: 22px 4px;transition:color 0.2s;}
 .nav-links a:hover{color:var(--paper)}
 .nav-links a.active{color:var(--dust)}
-.nav-cta{font-family:var(--font-b);font-size:10px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,232,220,0.75);border:1px solid var(--paper-faint);padding:10px 22px;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.nav-cta{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.08em;text-transform:uppercase;color:rgba(240,232,220,0.75);border:1px solid var(--paper-faint);padding:10px 22px;transition:background 0.2s,color 0.2s,border-color 0.2s}
 .nav-cta:hover{background:var(--dust);color:var(--void);border-color:var(--void)}
+
+/* Nav links: boxed targets that fill with the accent on hover / keyboard focus */
+.nav-links { gap: 6px; }
+nav .nav-links a, nav.dark .nav-links a { display: inline-block; padding: 12px 16px; border: 1px solid transparent; transition: background 0.2s, color 0.2s, border-color 0.2s; }
+nav .nav-links a:hover, nav .nav-links a:focus-visible { background: var(--dust); color: var(--void); border-color: var(--dust); }
+nav .nav-links a.active { color: var(--dust); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
+/* Current page: no hover fill, so it doesn't flash when the new page loads under the cursor */
+nav .nav-links a.active:hover, nav .nav-links a.active:focus-visible { background: transparent; border-color: transparent; color: var(--dust); cursor: default; }
+@view-transition { navigation: auto; }
+nav .nav-links a:focus-visible, nav .nav-cta:focus-visible { outline: 2px solid var(--dust); outline-offset: 2px; }
+nav .nav-cta:focus-visible { background: var(--dust); color: var(--void); border-color: var(--dust); }
 .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;margin-left:auto}
 .nav-hamburger span{display:block;width:22px;height:1.5px;background:rgba(240,232,220,0.6);border-radius:1px}
 .nav-mobile{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--void-lift);border-bottom:1px solid var(--rule);padding:20px 24px 24px;z-index:299;flex-direction:column}
 .nav-mobile.open{display:flex}
-.nav-mobile a{font-family:var(--font-b);font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);padding:14px 0;border-bottom:1px solid var(--rule-soft);transition:color 0.2s}
+.nav-mobile a{font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone);padding:14px 0;border-bottom:1px solid var(--rule-soft);transition:color 0.2s}
 .nav-mobile a:last-child{border-bottom:none}
 .nav-mobile a:hover,.nav-mobile a.active{color:var(--paper)}
 
@@ -102,7 +114,7 @@ nav{
 }
 .bc-ctx{font-family:var(--font-m);font-size:9px;letter-spacing:0.06em;opacity:0.55}
 .bc-pip{width:3px;height:3px;border-radius:50%;background:currentColor;opacity:0.25;flex-shrink:0}
-.bc-name{font-family:var(--font-b);font-size:9px;font-weight:600;letter-spacing:0.26em;text-transform:uppercase;opacity:0.45}
+.bc-name{font-family:var(--font-b);font-size:11px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;opacity:0.7}
 
 /* ── HEADER — radial gradient zone ─────────────────────────── */
 .header-zone{
@@ -115,8 +127,8 @@ nav{
    because the JS now uses a wrapper approach */
 .page-header{padding:52px 52px 48px;position:relative;height:200px;overflow:hidden}
 .page-header-inner{position:relative;z-index:1;max-width:52%}
-.page-title{font-family:var(--font-d);font-size:clamp(40px,4.2vw,68px);font-weight:500;font-style:italic;line-height:1.0;color:var(--bronze);margin-bottom:14px;letter-spacing:-0.01em;hyphens:none}
-.page-subtitle{font-family:var(--font-d);font-size:20px;font-style:normal;line-height:1.6;color:var(--bronze);opacity:0.65}
+.page-title{font-family:var(--font-d);font-size:clamp(40px,4.2vw,68px);font-weight:500;font-style: normal;line-height:1.0;color:var(--bronze);margin-bottom:14px;letter-spacing:-0.01em;hyphens:none}
+.page-subtitle{font-family:var(--font-d);font-size:20px;font-style:normal;line-height:1.6;color:var(--bronze);opacity:0.85; font-weight: 500;}
 
 /* ── ALBUM STRIP ─────────────────────────────────────────────
    CRITICAL: only one position declaration — sticky.
@@ -181,7 +193,7 @@ nav{
 .album-tab:hover:not(.active) .tab-num{opacity:0.75}
 
 .tab-name{
-  font-family:var(--font-d);font-size:18px;font-weight:300;font-style:italic;
+  font-family:var(--font-d);font-size:18px;font-weight:500;font-style: normal;
   line-height:1;color:rgba(240,232,220,0.6);transition:color 0.22s;
 }
 .album-tab.active .tab-name{color:var(--bronze); font-size: 20px;}
@@ -196,8 +208,8 @@ nav{
   display:flex;align-items:baseline;gap:14px;
 }
 .album-eyebrow{font-family:var(--font-m);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--dust);opacity:0.55;flex-shrink:0;white-space:nowrap}
-.album-slash{font-family:var(--font-d);font-size:clamp(26px,2.6vw,38px);font-weight:300;font-style:italic;color:var(--dust);opacity:0.6;flex-shrink:0;line-height:1}
-.album-title-text{font-family:var(--font-d);font-size:clamp(26px,2.6vw,38px);font-weight:300;font-style:italic;color:var(--paper);opacity:0.85;letter-spacing:-0.01em;white-space:nowrap}
+.album-slash{font-family:var(--font-d);font-size:clamp(26px,2.6vw,38px);font-weight:500;font-style: normal;color:var(--dust);opacity:0.6;flex-shrink:0;line-height:1}
+.album-title-text{font-family:var(--font-d);font-size:clamp(26px,2.6vw,38px);font-weight:500;font-style: normal;color:var(--paper);opacity:0.85;letter-spacing:-0.01em;white-space:nowrap}
 
 /* ══════════════════════════════════════════════════════════════
    FIELD CONTACT SHEET GALLERY LAYOUT
@@ -298,15 +310,15 @@ nav{
 
 /* ── FOOTER ─────────────────────────────────────────────────── */
 .site-footer{background:var(--void-lift);border-top:1px solid var(--rule);padding:0 52px;height:64px;display:flex;align-items:center;justify-content:space-between}
-.footer-logo{font-family:var(--font-d);font-size:18px;font-weight:400;color:var(--paper-mid)}
-.footer-logo em{font-style:italic;color:var(--dust)}
+.footer-logo{font-family:var(--font-d);font-size:18px;font-weight:500;color:var(--bronze)}
+.footer-logo em{font-style: normal;color:inherit}
 .footer-nav{display:flex;gap:36px;list-style:none}
-.footer-nav a{padding: 22px 4px;font-family:var(--font-b);font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);opacity:0.45;transition:opacity 0.2s,color 0.2s}
+.footer-nav a{padding: 22px 4px;font-family:var(--font-b);font-size:12px;font-weight:600;letter-spacing: 0.1em;text-transform:uppercase;color:var(--stone);opacity:0.75;transition:opacity 0.2s,color 0.2s}
 .footer-nav a:hover{opacity:1;color:var(--paper)}
-.footer-right{font-family:var(--font-b);font-size:11px;color:var(--stone);opacity:0.35}
+.footer-right{font-family:var(--font-b);font-size:12px;color:var(--stone);opacity:0.7}
 .footer-right a{color:inherit;transition:opacity 0.2s}
 .footer-right a:hover{opacity:1}
-.footer-cta{font-family:var(--font-b);font-size:8.5px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,232,220,0.65);border:1px solid var(--paper-faint);padding:7px 16px;opacity:1;transition:background 0.2s,color 0.2s,border-color 0.2s}
+.footer-cta{font-family:var(--font-b);font-size:11px;font-weight:600;letter-spacing: 0.08em;text-transform:uppercase;color:rgba(240,232,220,0.65);border:1px solid var(--paper-faint);padding:7px 16px;opacity:1;transition:background 0.2s,color 0.2s,border-color 0.2s}
 .footer-cta:hover{background:var(--bronze);color:var(--void);border-color:var(--void)}
 
 /* ── RESPONSIVE ─────────────────────────────────────────────── */
